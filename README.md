@@ -13,6 +13,7 @@ Ideas for introductory materials
 * ClojureDoc's [Introduction to Clojure](http://clojure-doc.org/articles/tutorials/introduction.html)
 * Look at [Railsbridge curriculum](http://docs.railsbridge.org/docs/) for guidance
 * [clojure-school](https://github.com/likely/clojure-school)
+* Clinton and Alan used these slides for a Clojure intro: [rendered](http://cndreisbach.github.io/clojure-tutorial/org/) and in [org-mode](https://github.com/cndreisbach/clojure-tutorial/tree/master/src/org). The [original repo](https://github.com/cndreisbach/clojure-tutorial).
 
 
 
