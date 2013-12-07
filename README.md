@@ -1,7 +1,15 @@
-curriculum
-==========
+ClojureBridge Curriculum
+========================
 
-Curriculum will go here eventually.
+Outline
+-------
+* [Getting Set Up](setup.md)
+* [Introduction to Programming with Clojure](intro.md)
+* [Functions](functions.md)
+* [Making Your First Program](first-program.md)
+* [Introduction to Web Applications](web.md)
+* [Making Your Own Web Application](app.md)
+* [Putting Your Application Online](deploy.md)
 
 
 Ideas for introductory materials
