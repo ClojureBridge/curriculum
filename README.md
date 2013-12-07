@@ -3,13 +3,13 @@ ClojureBridge Curriculum
 
 Outline
 -------
-* [Getting Set Up](setup.md)
-* [Introduction to Programming with Clojure](intro.md)
-* [Functions](functions.md)
-* [Making Your First Program](first-program.md)
-* [Introduction to Web Applications](web.md)
-* [Making Your Own Web Application](app.md)
-* [Putting Your Application Online](deploy.md)
+* [Getting Set Up](outline/setup.md)
+* [Introduction to Programming with Clojure](outline/intro.md)
+* [Functions](outline/functions.md)
+* [Making Your First Program](outline/first-program.md)
+* [Introduction to Web Applications](outline/web.md)
+* [Making Your Own Web Application](outline/app.md)
+* [Putting Your Application Online](outline/deploy.md)
 
 
 Ideas for introductory materials
