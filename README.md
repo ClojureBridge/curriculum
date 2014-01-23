@@ -3,15 +3,15 @@ ClojureBridge Curriculum
 
 Outline
 -------
-* [Getting Set Up](outline/setup.md)
-* [Introduction to Programming with Clojure](outline/intro.md)
-* [Functions](outline/functions.md)
-* [Data Structures](outline/data_structures.md)
-* [Flow Control](outline/flow_control.md)
-* [Making Your First Program](outline/first-program.md)
-* [Introduction to Web Applications](outline/web.md)
-* [Making Your Own Web Application](outline/app.md)
-* [Putting Your Application Online](outline/deploy.md)
+* [Getting Set Up](outline/setup.md) **IN-PROGRESS**
+* [Introduction to Programming with Clojure](outline/intro.md) **IN-PROGRESS**
+* [Data Structures](outline/data_structures.md) *DONE*
+* [Functions](outline/functions.md) **TODO**
+* [Flow Control](outline/flow_control.md) **IN-PROGRESS**
+* [Making Your First Program](outline/first-program.md) **TODO**
+* [Introduction to Web Applications](outline/web.md) **TODO**
+* [Making Your Own Web Application](outline/app.md) **TODO**
+* [Putting Your Application Online](outline/deploy.md) **TODO**
 
 
 Ideas for introductory materials
