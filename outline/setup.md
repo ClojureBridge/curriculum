@@ -74,9 +74,9 @@ Once you have downloaded the right Java version, run the executable you download
 
 Next, go back to the Leiningen Windows installer site and download the file linked as "leiningen-win-installer." Run this executable and follow the "Detailed installation" section at the Leiningen Windows Installer site. At the end of the installation, leave "Run a Clojure REPL" checked before you click "Finish." If a terminal window opens that looks like the one on the Leiningen Windows installer site, then you are good to go.
 
-## Installing Lighttable
+## Installing LightTable
 
-First, go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table for your operating system. Again, if you are running Linux, you know which to download and you can figure it out.
+First, go to the [LightTable site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for LightTable for your operating system. Again, if you are running Linux, you know which to download and you can figure it out.
 
 ![LightTable downloads](img/light-table-download.png)
 
@@ -89,3 +89,34 @@ If you are running OS X, click the "OS X 10.7+" button and you will download a .
 If you are running Windows, click the "Win" button and you will download a .zip file. Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "LightTable". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
 
 Inside the LightTable directory, there is an application called LightTable. You may want to right-click it and choose "Pin to Start Menu" or "Pin to Taskbar" so you can start it more quickly.
+
+## Get setup with Heroku
+
+Heroku is the tool we will use in order to put your application online where others can see it.
+
+First, we need to create an account. Go to [Heroku](http://heroku.com) and click the "Sign up" link.
+
+![Heroku step 1](img/heroku-step1.png)
+
+You will be taken to a form where you need to enter your email address in order to sign up. Fill out that form, and you will be sent an email with a link to click to continue the signup process.
+
+![Heroku step 2](img/heroku-step2.png)
+
+After clicking on the link, you will be taken to another form where you will need to choose a password. Choose one and enter it twice.
+
+![Heroku step 3](img/heroku-step3.png)
+
+After all that, you should be at your Heroku dashboard. There will be a link on the dashboard to download the Heroku Toolbelt for your operating system. Download it now.
+
+![Heroku dashboard](img/heroku-dashboard.png)
+
+## OS X
+
+On OS X, you will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation program. You will need your password to complete installation. Once installation, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+
+## Windows
+
+On Windows, you will download an .exe file. Run this executable to install the Heroku Toolbelt and follow all prompts from the installation wizard.
+
+You will now need to open a command prompt. Look for "Command Prompt" in your Start menu, or search for "cmd". When you have started a command prompt, run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+
