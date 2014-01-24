@@ -2,10 +2,8 @@ Getting Set Up
 ==============
 
 * Get Leiningen installed
-* Get text editor installed
-* Get Heroku installed
-    - And heroku-push: https://github.com/ddollar/heroku-push
-    - Or something to handle git
+* Get LightTable installed
+* Get Heroku installed (includes Git)
 * Test installation
 
 ## Requirements
@@ -20,17 +18,22 @@ Leiningen is a tool used on the command line to manage Clojure projects. Its ins
 
 ### Linux
 
-Ok, smarty-pants. Go to http://leiningen.org/ and read the instructions. You know what you are doing. Help everyone around you.
+Ok, smarty-pants. Make sure you have Java installed, then go to [the Leiningen website](http://leiningen.org) and read the instructions. You know what you are doing. Help everyone around you.
 
 ### OS X
 
+First, make sure you have Java installed. Open Terminal.app (which can be found under /Applications/Utilities). Run `java -version` in your terminal. If you do not have Java installed, this will prompt you to install it.
+
+You will need your terminal for the rest of this install, so keep it open.
+
 #### Homebrew
 
-If you already have [Homebrew](http://brew.sh/) installed, you are in luck! Run the following command in your terminal:
+If you already have [Homebrew](http://brew.sh/) installed, you are in luck! Run the following commands in your terminal:
 
+    brew update
     brew install leiningen
 
-Now help everyone else out, because you are a smarty!
+Now help everyone else out!
 
 If you do not have Homebrew installed, do not attempt to install it for this program.
 
@@ -38,11 +41,11 @@ If you do not have Homebrew installed, do not attempt to install it for this pro
 
 Go to the [Leiningen website](http://leiningen.org/). You will see a link to the `lein` script under "Install." Right-click that link and choose "Save Link As...". Save it in your Downloads directory.
 
-Then, open Terminal.app. Type the following commands in the terminal:
+After that, type the following commands in your terminal. You will be prompted to enter your password.
 
 ```
-mv ~/Downloads/lein /usr/local/bin/lein
-chmod a+x /usr/local/bin/lein
+sudo mv ~/Downloads/lein /usr/local/bin/lein
+sudo chmod a+x /usr/local/bin/lein
 ```
 
 #### Testing
