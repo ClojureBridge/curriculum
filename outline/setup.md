@@ -26,16 +26,6 @@ First, make sure you have Java installed. Open Terminal.app (which can be found 
 
 You will need your terminal for the rest of this install, so keep it open.
 
-#### Homebrew
-
-If you already have [Homebrew](http://brew.sh/) installed, you are in luck! Run the following commands in your terminal:
-
-    brew update
-    brew install leiningen
-
-Now help everyone else out!
-
-If you do not have Homebrew installed, do not attempt to install it for this program.
 
 #### Everyone else
 
