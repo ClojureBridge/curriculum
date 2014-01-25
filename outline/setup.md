@@ -44,8 +44,6 @@ Everyone, Homebrew and non-Homebrew alike, should do the next step. Open up Term
 
 ### Windows
 
-**NOTE**: These instructions are written for Windows 7. They _should_ work on Windows 8, but have not been vetted yet.
-
 Go to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/). You should see two links, one for installing Java and another for "leiningen-win-installer." First, click the Java link. Then, you should see a screen like the following:
 
 ![First page of Java download](img/java-download1.png)
@@ -54,13 +52,21 @@ Click the button above "Java Platform (JDK)," as you can see in the above pictur
 
 ![Second page of Java download](img/java-download2.png)
 
-Click the radio button to accept the license agreement, and then download one of the two Windows choices. If you are running 32-bit Windows, choose "Windows x86." If you are running 64-bit Windows, choose "Windows x64." If you do not know, find your "My Computer" icon and right-click it. Choose "Properties." You should see a window like the following:
+Click the radio button to accept the license agreement, and then download one of the two Windows choices. If you are running 32-bit Windows, choose "Windows x86." If you are running 64-bit Windows, choose "Windows x64."
+
+If you do not know if you are running 32-bit or 64-bit Windows, you can find out using the following instructions, based on whether you are running Windows 7 or Windows 8.
+
+**Windows 7 instructions:** Find your "My Computer" icon and right-click it. Choose "Properties." You should see a window like the following:
 
 ![Windows My Computer properties](img/windows-my-computer.png)
 
 You should see if you are running 32- or 64-bit Windows beside "System Type."
 
-Once you have downloaded the right Java version, run the executable you downloaded to install Java. Follow the prompts.
+**Windows 8 instructions:** Go to the "Windows" screen (the "Start Screen") and type "PC Info". This should bring up your PC Info settings.
+
+Once you have downloaded the right Java version, run the executable you downloaded to install Java. Follow the installation wizard. Make sure and note where Java is being installed. This should be on one of the first wizard screens.
+
+**Windows 8 only:** You have to make sure Java shows up to other programs on your system correctly by making sure it is in your `PATH`. Go to the "Windows" screen (the "Start Screen") and type "environment". This will bring up several options on your screen. Pick "Edit environment variables for your account." When that comes up, add the directory where Java was installed, plus `\bin`, to your `PATH`. The directory should look similar to `C:\Program Files\Java\jdk1.7.0_51\bin`.
 
 Next, go back to the Leiningen Windows installer site and download the file linked as "leiningen-win-installer." Run this executable and follow the "Detailed installation" section at the Leiningen Windows Installer site. At the end of the installation, leave "Run a Clojure REPL" checked before you click "Finish." If a terminal window opens that looks like the one on the Leiningen Windows installer site, then you are good to go.
 
