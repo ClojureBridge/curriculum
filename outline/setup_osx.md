@@ -1,4 +1,4 @@
-OS X setup
+OS X Setup
 ==========
 
 * Start a terminal
@@ -8,7 +8,7 @@ OS X setup
 * Get Heroku installed (includes Git)
 * Test installation
 
-## The terminal
+## Starting a terminal
 
 For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer and you can open it by running Terminal.app, which is found under `/Applications/Utilities`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
 
@@ -49,7 +49,7 @@ After you run the above commands, run the `lein` command. It should take a while
 
 ## Installing LightTable
 
-First, go to the [LightTable site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for LightTable. Click the "OS X 10.7+" button and you will download a .zip file.
+Go to the [LightTable site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for LightTable. Click the "OS X 10.7+" button and you will download a .zip file.
 
 ![LightTable downloads](img/os_x/light-table-download.png)
 

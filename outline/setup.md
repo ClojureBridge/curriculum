@@ -22,6 +22,6 @@ By the end of these instructions, you will have the following installed:
 Choose your operating system to get setup instructions:
 
 * [OS X](setup_osx.md)
-* Windows 7
+* [Windows 7](setup_win7.md)
 * Windows 8
 * Ubuntu Linux
