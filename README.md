@@ -3,7 +3,7 @@ ClojureBridge Curriculum
 
 Outline
 -------
-* [Getting Set Up](outline/setup.md) **IN-PROGRESS**
+* [Getting Set Up](outline/setup.md) **DONE**
 * [Introduction to Programming with Clojure](outline/intro.md) **IN-PROGRESS**
 * [Data Structures](outline/data_structures.md) *DONE*
 * [Functions](outline/functions.md) **TODO**
