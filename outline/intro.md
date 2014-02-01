@@ -132,6 +132,7 @@ I used integers with all of the above, but they can use floats or ratios just fi
 (- 9 4.2 1/2) ;=> 4.3
 (* 8 1/4)     ;=> 2
 (/ 27/2 1.5)  ;=> 3.0
+```
 
 ### EXERCISE: Basic arithmetic
 
