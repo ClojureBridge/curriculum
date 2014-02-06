@@ -66,27 +66,7 @@ One thing you may have noticed is tha you are only allowed to evaluate one expre
 ; => "I wonder if 0 has low self-esteem"
 ```
 
-Sometimes you might want to do multiple conditional checks. For example, your software might show a user a bunch of buttons and do different things depending on what button was pressed. In that situation, you can use `case`:
-
-```clojure
-(case button-pressed
-  1 "You pressed button number 1"
-  2 "You pressed button number 2"
-  3 "You pressed button number 3")
-```
-
-This is equivalent to writing something like:
-
-```clojure
-(if (= 1 button-pressed)
-  "You pressed button number 1"
-  (if (= 2 button-pressed)
-    "You pressed button number 2"
-    (if (= 3 button-pressed)
-      "You pressed button number 1")))
-```
-
-Another way do multiple conditional checks is with the `cond` operator. Here's the general form of `cond`:
+Sometimes you might want to do multiple conditional checks. For example, you might want to check whether a number is within a certain range. Here's the general form of `cond`:
 
 ```clojure
 (cond
@@ -96,12 +76,19 @@ Another way do multiple conditional checks is with the `cond` operator. Here's t
   :else expression-to-evaluate-when-no-test-conditions-are-true)
 ```
 
-Here's how it might be used:
+Here's how you could use it to check that a number is within a range:
 
 ```clojure
-(cond
-  (> 0 3) "This is false"
-  (= "flowers" "unicorns") "This is false, too"
-  (= 5 5) "5 is indeed equal to 5 so this is the return value")
-; => "5 is indeed equal to 5 so this is the return value"
+(let [breaths-taken-today 100]
+  (cond
+   (and (> breaths-taken-today 0) (< breaths-taken-today 50))
+   "That's a good start! You probably want to breathe more, though."
+
+   (and (> breaths-taken-today 51) (< breaths-taken-today 100))
+   "Wow, you're breathing like a pro!"
+
+   :else
+   "Hold on there buddy, that's a lot of breathing. Might want to hold off on that a bit."))
 ```
+
+Clojure has other conditional operators, but they're just there to make your code slightly more concise. `if`, `do`, and `cond` will allow you to express the behavior you want for every condition!
