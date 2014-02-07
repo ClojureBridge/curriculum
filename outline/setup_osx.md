@@ -41,7 +41,8 @@ Go to the [Leiningen website](http://leiningen.org/). You will see a link to the
 After that, run the following commands in your terminal. You will be prompted to enter your password.
 
 ```
-sudo mv ~/Downloads/lein /usr/local/bin/lein
+sudo mkdir -p /usr/local/bin/
+sudo mv ~/Downloads/lein* /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
 ```
 
@@ -139,6 +140,8 @@ Enter "yes" if you are asked if you are sure you want to connect, like in the fo
 Your browser should open (and take a long time to load) and you should see a website like the following:
 
 ![Testing heroku working](img/os_x/testing-step7.png)
+
+If your browser does not open after running `heroku open`, start a browser and go to the URL displayed after you ran `heroku create`.
 
 Congratulations! That website is running code you have on your computer that you have uploaded. You have actually made a very simple Clojure app, and your computer is all set up to make more.
 
