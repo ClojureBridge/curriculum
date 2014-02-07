@@ -18,7 +18,7 @@ If you've never programmed before, you may not know that there are many language
 
 So why are we teaching Clojure? It's not as popular as any of those languages. We're using Clojure because of three qualities it has that make it an ideal first language to learn -- or great language to learn in addition to others you might already know:
 
-* Clojure is _simple_. That's not to say it's not powerful; it is. The number of concepts you have to know to program in Clojure are very small, however, and easy to grasp. Clojure grows with you as you learn it, and you can be very productive with a small subset of the language.
+* Clojure is _simple_. That's not to say it's not powerful; it is. The number of concepts you have to know to program in Clojure is very small, however, and easy to grasp. Clojure grows with you as you learn it, and you can be very productive with a small subset of the language.
 
 * Clojure is _all-purpose_. Some languages have a specific focus. JavaScript, for example, was traditionally used only in web pages (although that's changed somewhat.) Objective-C is used mainly for iPhone apps. We're going to make a web application today, but you can use Clojure for any sort of application easily.
 
