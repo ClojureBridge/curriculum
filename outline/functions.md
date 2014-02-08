@@ -189,9 +189,10 @@ Here is an example of how it should work:
 ```clj
 (get-names [{:first "Margaret" :last "Atwood"}
             {:first "Doris" :last "Lessing"}
-            {:first "Ursula" :last "Le Guin"}])
+            {:first "Ursula" :last "Le Guin"}
+            {:first "Alice" "Munro"}])
 
-;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin"]
+;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
 
 ## `let`
