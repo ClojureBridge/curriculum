@@ -1,7 +1,7 @@
 Introduction to Web Applications
 ================================
 
-* How does the web work?
+##How does the web work?
     
 A web application is software that runs in a web browser (like Chrome, Firefox, Internet Explorer, Safari). It communicates with a server over the Internet that can do central processing and data storage. The browser is the client, or user interface, to the web app where users interact with it. The server does the heavy lifting.
 
@@ -18,7 +18,7 @@ A web app accepts an HTTP request from the client and gives it a response. Think
 This function accepts 'request' as a parameter, then returns a map with a status of 200. In HTTP, a status of 200 means everything worked fine.
    
 
-* What is HTML?
+##What is HTML?
 
 When you bring up something in your web browser you want more than a status code, though. You want to see words and images and dancing gifs (ok, maybe not that). You want it to be easy to read and pleasant to look at. HTML is what makes web pages look that way. It is a markup language, which is different from a programming language. It is a way to put tags around words that suggest to the web browser the way you want them to look. 
 
@@ -31,7 +31,7 @@ Go to the [ClojureBridge](http://www.clojurebridge.org/) web site. Then in your 
 Look at the parts that have angle brackets around them like <this>. Those are HTML tags. Search for <h1>. That is a tag that tells the browser to display the text until the close tag, </h1>, as a level one header. Look at the web page and see how that text displays.
 
 
-* Making the simplest web application
+##Making the simplest web application
 
 Let's make the simplest possible web application. It will say hello in the bbrowser
 
@@ -51,7 +51,35 @@ Let's make the simplest possible web application. It will say hello in the bbrow
               
 ````
 
-* Making it look nicer with HTML
+We need some supporting pieces to run this. We need the project.clj for Leiningen.
+
+```clj
+(defproject request-echo "0.1.0-SNAPSHOT"
+
+  ;; We require ring.
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [ring "1.1.8"]]
+  
+  ;; We use the lein-ring plugin to start ring.
+  :plugins [[lein-ring "0.8.3"]]
+  
+  ;; We tell Ring what our handler function is and
+  ;; what port to start on.
+  :ring {:handler request-echo/handler
+         :port 3001})
+````
+
+There are multiple dependencies in this file: Ring and Lein-ring. Ring is a Clojure library [need to talk about libraries in First Program section] that handles HTTP requests and responses. Lein-ring allows Leiningen to start ring.
+
+To run the web app, type the following at the command line:
+
+```
+lein ring server
+````
+ 
+
+
+##Making it look nicer with HTML
 
 Now let's do the same thing but with HTML so that the text displays with formatting.
 
@@ -73,10 +101,9 @@ Now let's do the same thing but with HTML so that the text displays with formatt
               "</pre>")})
 ````
    
-   *** Talk about Ring here or before?
-   *** Need ring depended lein project definiton
-* URLs and routes
+##URLs and routes
 
+TODO: fill in info about URLs and routes
 ```clj
 (require '[compojure.core :refer [routes]])
 (require '[compojure.route :as route])
@@ -95,5 +122,5 @@ Now let's do the same thing but with HTML so that the text displays with formatt
   (route/resources "/")
   (route/not-found "Page not found"))
 ````
-  *** Compojure
+  *** Compojure - explain and add dependencies to project.clj
 
