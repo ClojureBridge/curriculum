@@ -105,7 +105,7 @@ Now let's do the same thing but with HTML so that the text displays with formatt
 The web browser gets to the right server with an address called a URL. Take a look at the following URLS:
 
 + http://www.google.com/advanced_search 
-+ http://www.amazon.com/Learn-You-Haskell-Great-Good/dp/1593272839/ 
++ http://www.amazon.com/Clojure-Programming-Chas-Emerick/dp/1449394701
 
 After the "http://", "www.google.com" identifies the server. Then the part after that, "/advanced_search" is the path to the resource (or program?) on that server that will handle this request. In a single web application, you will almost certainly have many actions. For example, you may want to order a book, look up all the books you ordered, or check the status of an order. If one web applications handles all of that, it needs to track who takes care of what.
 
