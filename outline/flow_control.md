@@ -62,6 +62,7 @@ Write a function `format-name` that takes a map representing a user, with keys `
 
 (format-name {:first "Ursula" :last "Le Guin" :middle "K."})
 ;=> "Ursula K. Le Guin"
+```
 
 ### BONUS: Flexible name formatting
 
@@ -77,6 +78,7 @@ If you've never seen this concept in programming before, remember that it follow
 Look at this truth table:
 
 | x     | y     | (and x y) | (or x y) | (not x) | (not y) |
+| ----- | ----- | --------- | -------- | ------- | ------- |
 | false | false | false | false | true  | true  |
 | true  | false | false | true  | false | true  |
 | true  | true  | true  | true  | false | false |
