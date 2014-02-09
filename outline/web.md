@@ -101,9 +101,16 @@ Now let's do the same thing but with HTML so that the text displays with formatt
               "</pre>")})
 ````
    
-##URLs and routes
+##URLs and Routes
+The web browser gets to the right server with an address called a URL. Take a look at the following URLS:
 
-TODO: fill in info about URLs and routes
++ http://www.google.com/advanced_search 
++ http://www.amazon.com/Learn-You-Haskell-Great-Good/dp/1593272839/ 
+
+After the "http://", "www.google.com" identifies the server. Then the part after that, "/advanced_search" is the path to the resource on that server that will handle this request. In a single web application, you will almost certainly have many actions. For example, you may want to order a book, look up all the books you ordered, or check the status of an order. If one web applications handles all of that, it needs to track who takes care of what.
+
+The process of coordinating which path goes to what action is called routing. The Clojure library that does this is called Compojure.
+
 ```clj
 (require '[compojure.core :refer [routes]])
 (require '[compojure.route :as route])
@@ -122,5 +129,5 @@ TODO: fill in info about URLs and routes
   (route/resources "/")
   (route/not-found "Page not found"))
 ````
-  *** Compojure - explain and add dependencies to project.clj
+
 
