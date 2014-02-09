@@ -28,12 +28,12 @@ Go to the [ClojureBridge](http://www.clojurebridge.org/) web site. Then in your 
 - In Safari, go to Safari menu - Preferences - Advanced - Check "Show Develop menu in menu bar." Then go to Develop - Show Page Source
 - In Internet Exploer, go to View - Source 
 
-Look at the parts that have angle brackets around them like <this>. Those are HTML tags. Search for <h1>. That is a tag that tells the browser to display the text until the close tag, </h1>, as a level one header. Look at the web page and see how that text displays.
+Look at the parts that have angle brackets around them like `<this>`. Those are HTML tags. Search for `<h1>`. That is a tag that tells the browser to display the text until the close tag, `</h1>`, as a level one header. Look at the web page and see how that text displays.
 
 
 ##Making the simplest web application
 
-Let's make the simplest possible web application. It will say hello in the bbrowser
+Let's make the simplest possible web application. It will say hello in the browser
 
 ```clj
 (ns hello) 
@@ -58,10 +58,10 @@ We need some supporting pieces to run this. We need the project.clj for Leininge
 
   ;; We require ring.
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [ring "1.1.8"]]
+                 [ring "1.2.1"]]
   
   ;; We use the lein-ring plugin to start ring.
-  :plugins [[lein-ring "0.8.3"]]
+  :plugins [[lein-ring "0.8.10"]]
   
   ;; We tell Ring what our handler function is and
   ;; what port to start on.
