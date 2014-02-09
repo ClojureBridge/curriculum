@@ -107,9 +107,9 @@ The web browser gets to the right server with an address called a URL. Take a lo
 + http://www.google.com/advanced_search 
 + http://www.amazon.com/Learn-You-Haskell-Great-Good/dp/1593272839/ 
 
-After the "http://", "www.google.com" identifies the server. Then the part after that, "/advanced_search" is the path to the resource on that server that will handle this request. In a single web application, you will almost certainly have many actions. For example, you may want to order a book, look up all the books you ordered, or check the status of an order. If one web applications handles all of that, it needs to track who takes care of what.
+After the "http://", "www.google.com" identifies the server. Then the part after that, "/advanced_search" is the path to the resource (or program?) on that server that will handle this request. In a single web application, you will almost certainly have many actions. For example, you may want to order a book, look up all the books you ordered, or check the status of an order. If one web applications handles all of that, it needs to track who takes care of what.
 
-The process of coordinating which path goes to what action is called routing. The Clojure library that does this is called Compojure.
+The process of coordinating which path goes to what action is called routing. The Clojure library that does this is called Compojure. Here is an example of routing with Compojure.
 
 ```clj
 (require '[compojure.core :refer [routes]])
@@ -129,5 +129,7 @@ The process of coordinating which path goes to what action is called routing. Th
   (route/resources "/")
   (route/not-found "Page not found"))
 ````
+
+The verbs - GET, POST - are part of the http request and say what you want to do with this URL. GET is just fetching some data. POST is usually doing some processing on that data. The route is the path part of the URL. The handler is the Clojure function that is going to handle this particular request. The routes table maps that combination of verb and route to the handler function. 
 
 
