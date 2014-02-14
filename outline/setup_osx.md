@@ -76,13 +76,13 @@ After all that, you should be at your Heroku dashboard. There will be a link on 
 
 ![Heroku dashboard](img/heroku-dashboard.png)
 
-This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your password to complete installation. Once installation, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your OS X account password to complete installation. Once installation is finished, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
 ![Heroku login](img/os_x/heroku_login.png)
 
 ## Testing your setup
 
-You have set up Java, Leiningen, LightTable, Git, and Heroku on your computer, all the tools you will need for this program. Before starting, we need to test them out.
+You have set up Java, Leiningen, LightTable, Git, and Heroku on your computer, all the tools you will need for this course. Before starting, we need to test them out.
 
 Go to your terminal and run the following command:
 
