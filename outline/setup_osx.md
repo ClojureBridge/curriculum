@@ -144,6 +144,3 @@ Your browser should open (and take a long time to load), and you should see a we
 If your browser does not open after running `heroku open`, start a browser and go to the URL displayed after you ran `heroku create`.
 
 Congratulations! That website is running code you have on your computer that you have uploaded. You have actually made a very simple Clojure app, and your computer is all set up to make more.
-
-
-
