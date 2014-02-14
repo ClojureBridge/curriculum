@@ -86,7 +86,9 @@ You have set up Java, Leiningen, LightTable, Git, and Heroku on your computer, a
 
 Go to your terminal and run the following command:
 
-`git clone https://github.com/heroku/clojure-sample.git`
+```
+git clone https://github.com/heroku/clojure-sample.git
+```
 
 This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
 
@@ -94,11 +96,15 @@ This will check out a sample Clojure application from GitHub, a central reposito
 
 Then run the command:
 
-`cd clojure-sample`
+```
+cd clojure-sample
+```
 
 This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
 
-`lein repl`
+```
+lein repl
+```
 
 This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
