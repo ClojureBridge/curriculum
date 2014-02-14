@@ -46,7 +46,7 @@ sudo mv ~/Downloads/lein* /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
 ```
 
-After you run the above commands, run the `lein` command. It should take a while to run, as it will download some resources it needs the first time. If it completes succesfully, you are golden! If not, ask an instructor for help.
+After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes succesfully, you are golden! If not, ask an instructor for help.
 
 ## Installing LightTable
 
