@@ -10,7 +10,7 @@ OS X Setup
 
 ## Starting a terminal
 
-For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer and you can open it by running Terminal.app, which is found under `/Applications/Utilities`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
+For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer, and you can open it by running Terminal.app, which is found under `/Applications/Utilities`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
 
 Go ahead and open your terminal now. It should look something like this:
 
@@ -28,7 +28,7 @@ If Java is installed, you will see something like this in your terminal:
 
 ![Java version](img/os_x/java_version.png)
 
-The details of Java's version may differ from what you see above: that is perfectly fine.
+The details of Java's version may differ from what you see above; that is perfectly fine.
 
 ## Installing Leiningen
 
@@ -46,7 +46,7 @@ sudo mv ~/Downloads/lein* /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
 ```
 
-After you run the above commands, run the `lein` command. It should take a while to run, as it will download some resources it needs the first time. If it completes succesfully, you are golden! If not, ask an instructor for help.
+After you run the above commands, run the `lein` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
 ## Installing LightTable
 
@@ -76,13 +76,13 @@ After all that, you should be at your Heroku dashboard. There will be a link on 
 
 ![Heroku dashboard](img/heroku-dashboard.png)
 
-This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your password to complete installation. Once installation, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your OS X account password to complete installation. Once installation is finished, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
 ![Heroku login](img/os_x/heroku_login.png)
 
 ## Testing your setup
 
-You have set up Java, Leiningen, LightTable, Git, and Heroku on your computer, all the tools you will need for this program. Before starting, we need to test them out.
+You have set up Java, Leiningen, LightTable, Git, and Heroku on your computer, all the tools you will need for this course. Before starting, we need to test them out.
 
 Go to your terminal and run the following command:
 
@@ -137,13 +137,10 @@ Enter "yes" if you are asked if you are sure you want to connect, like in the fo
 
 ![Connecting via SSH](img/os_x/testing-step6.png)
 
-Your browser should open (and take a long time to load) and you should see a website like the following:
+Your browser should open (and take a long time to load), and you should see a website like the following:
 
 ![Testing heroku working](img/os_x/testing-step7.png)
 
 If your browser does not open after running `heroku open`, start a browser and go to the URL displayed after you ran `heroku create`.
 
 Congratulations! That website is running code you have on your computer that you have uploaded. You have actually made a very simple Clojure app, and your computer is all set up to make more.
-
-
-
