@@ -6,7 +6,7 @@ Outline
 * [Getting Set Up](outline/setup.md) *DONE*
 * [Introduction to Programming with Clojure](outline/intro.md) *DONE*
 * [Data Structures](outline/data_structures.md) *DONE*
-* [Functions](outline/functions.md) **TODO**
+* [Functions](outline/functions.md) *DONE*
 * [Flow Control](outline/flow_control.md) **IN-PROGRESS**
 * [Making Your First Program](outline/first-program.md) **TODO**
 * [Introduction to Web Applications](outline/web.md) **TODO**
