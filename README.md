@@ -10,7 +10,7 @@ Outline
 * [Flow Control](outline/flow_control.md) **IN-PROGRESS**
 * [Making Your First Program](outline/first-program.md) **TODO**
 * [Introduction to Web Applications](outline/web.md) **TODO**
-* [Making Your Own Web Application](outline/app.md) **TODO**
+* [Making Your Own Web Application](outline/app.md) **IN-PROGRESS**
 * [Putting Your Application Online](outline/deploy.md) **TODO**
 
 
