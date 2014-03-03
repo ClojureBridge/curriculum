@@ -1,48 +1,61 @@
 Making Your Own Web Application
 ===============================
 
-Open Light Table.
+1. Open Light Table.
+2. Load the global-growth project. File -> Open folder -> find global-growth project.
+3. Evaluate the namespace: Go to the line "(ns global-growth.core" and do cmd-shift-enter.
+4. Open the instarepl (Ctrl-space, "instarepl") and choose the "global-growth-0.1.0-SNAPSHOT" client.
+5. Input the below statements, one-by-one, into the instarepl.
 
-Load the global-growth project. File -> Open folder -> find global-growth project.
+World Bank API
+--------------
+The World Bank provides a collection of world development indicators data, showing the current state of global development. They provide an API to this data. A web API is a way to provide access for one program to call another program over HTTP. In this case, the World Bank Indicators API provides access to their set of data. 
 
-Evaluate the namespace. Go to the line "(ns global-growth.core" and do cmd-shift-enter.
+We will use the World Bank Indicators API to explore some of the world development indicators for different countries. We will sort and compare certain indicators. [Say something about why Clojure is good for this task?]
+  
+Using Libraries
+---------------
+Libraries are collections of programs packaged to be reused by others. Common activities such as reading or writing files, doing math, or drawing charts generally have libraries available that you can use. [something about including the dependencies in Leiningen project]
 
-Open the instarepl and choose the "global-growth-0.1.0-SNAPSHOT" client.
+The clj-http library allows you to communicate over HTTP. Load the library and give it an alias that you can use to call it.
 
-Input the following statements, one-by-one, into the instarepl
-
-    ; load library clj-http.client. Give it an alias
     (use '[clj-http.client :as client])
 
-    ; define a constant for the API URL
+Define a constant for the URI for the World Bank API so that we can easily refer to it as we need it in our program.
+
     (def base-uri "http://api.worldbank.org")
 
-    ; define a specific API URL - list of countries
+Each type of data available through the World Bank API has an API endpoint. The endpoint has a specific path added to the base URI. http://api.worldbank.org/countries is the endpoint that lists all of the countries with data available.
+ 
     (def base-path (str base-uri "/countries"))
   
-    ; use clj-http.client to make an api call
+Now make a call to the API endpoint: http://api.worldbank.org/countries.
+
     (client/get base-path)
 
-    ; define query parametesr for the api call - get JSON formatted results; get 10000 per page
+Query parameters are a part of a URL that provide additional information to the api call - we will ask for JSON formatted results; get 10000 results per page. [Talk about JSON?]
+
     (def query-params {:format "json" :per_page 10000})
 
-    ; load cheshire.core library for parsing json
+Now load another library: cheshire. It parses JSON.
     (use '[cheshire.core :as json])
 
-    ; create a function to parse json using cheshire library
+Let's create a function to parse json with the cheshire library.
     (defn parse-json [str]
       (json/parse-string str true))
 
-    ; put the above together to make call to the countries API
+Put all the above together to make a call to the countries API with the query parameters; get the body of that HTTP response; and parse the JSON results. Define a var to hold the result.
+
     (def response (parse-json (:body (client/get base-path {:query-params query-params}))))
 
-    ; first part of the response is metadata
+Look at the result of the API call. There are two parts to each result.
+Define a var to hold the metadata part. 
     (def metadata (first response))
 
-    ; second part of the response are the actual results
+Define a var to hold the results. 
     (def results (second response))
 
-    ; put it all together into a function
+Put all of the above together into a function.
     (defn get-api
       "Returns map representing API response."
       [path qp]
@@ -54,14 +67,15 @@ Input the following statements, one-by-one, into the instarepl
           {:metadata metadata
            :results results}))
 
+Define a var to hold the results of calling get-api for the countries endpoint.
     (def countries (get-api "/countries" query-params))
 
+
+Try going through the results to pull out a couple of the values associated with keys in the results.
     (for [item (:results countries)]
                  [(:name item) (:longitude item)])
 
-
-
-    ; put it together into a functon
+Make that into a function where the two keys are parameters that can be passed to the function. Put the values into a map with "into {}"
     (defn get-value-map
       "Returns relation of two keys from API response"
       [path query-params key1 key2]
@@ -69,28 +83,23 @@ Input the following statements, one-by-one, into the instarepl
             (into {} (for [item (:results response)]
                            [(key1 item) (key2 item)]))))
 
-    ; Call get-value-map to get the map of urban development indicators 
-    ; including their name and indicators.
-    ; The id will be used to retrieve the values for those indicators
+Call get-value-map to get the map of urban development indicators including their name and indicator ids.The id will be used to retrieve the values for those indicators
     (get-value-map "/topics/16/indicators" {} :name :id)
 
-    ; Create a function based on the above
+Create a function based on the above.
     (defn get-indicator-map []
       "Gets map of indicators.
       /topics/16/indicators:   All urban development"
       (get-value-map "/topics/16/indicators" {} :name :id))
 
-    ; Define the resutls of calling get-indicator-map
+Define the results of calling get-indicator-map.
     (def indicator-map (get-indicator-map))
 
-    ; On to getting the values for a specific indicators
-    ; API endpoint for getting a certain indicator for all countries:
-    ; http://api.worldbank.org/countries/all/indicators/EP.PMP.SGAS.CD
-    ; ?format=json&per_page=10000&date=2010
+On to getting the values for a specific indicators API endpoint for getting a certain indicator for all countries:
+http://api.worldbank.org/countries/all/indicators/EP.PMP.SGAS.CD?format=json&per_page=10000&date=2010
     (get-value-map (str "/countries/all/indicators/EP.PMP.SGAS.CD") {:date 2012} :country :value)
 
-
-    ; Turn it into a function
+Turn it into a function
     (defn get-indicator-all
       "Returns indicator for a specified year for all countries"
       [indicator year key1 key2]
@@ -102,9 +111,51 @@ Input the following statements, one-by-one, into the instarepl
                           key1
                           key2))
 
+Just type these into the REPL. We aren't talking about these.
+    (def list-size 10)
 
-    ; I would like to cover sorted-indicator-map as it's the meat of the data processing
-    ; but not quite sure what to do here
+    (defn remove-aggregate-countries
+      "Remove all countries that aren't actually countries, but are aggregates."
+        [countries]
+          (remove (fn [country]
+                      (= (get-in country [:region :value]) "Aggregates")) countries))
+
+    (defn get-country-ids
+      "Get set of country ids so we can filter out aggregate values."
+        []
+          (let [countries (remove-aggregate-countries (:results (get-api "/countries" {})))]
+              (set (map :iso2Code countries))))
+
+    (def country-ids (get-country-ids))
+
+
+Call get-indicator-all to get the pump price indicator for 2012.
+    (def inds (get-indicator-all "EP.PMP.SGAS.CD" "2012" :country :value))
+
+Go through the results, making sure that they are actually countries by matching up against the country-ids, then ...
+    (for [[k v] inds
+          :when (and v (country-ids (:id k)))]
+        [(:value k) (read-string v)])
+
+Put those results into a map
+    (into {} (for [[k v] inds
+                  :when (and v (country-ids (:id k)))]
+                [(:value k) (read-string v)]))
+
+Sort those values with the sort-by function.
+    (sort-by val >
+      (into {} (for [[k v] inds
+                    :when (and v (country-ids (:id k)))]
+                  [(:value k) (read-string v)])))
+       
+Take just the top 10 of the sorted lists.              
+    (take list-size
+      (sort-by val >
+          (into {} (for [[k v] inds
+                        :when (and v (country-ids (:id k)))]
+                      [(:value k) (read-string v)]))))
+
+Make that into a function.
     (defn sorted-indicator-map
       "Sort the map of indicator numeric values"
       [inds]
