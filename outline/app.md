@@ -38,24 +38,31 @@ Query parameters are a part of a URL that provide additional information to the 
     (def query-params {:format "json" :per_page 10000})
 
 Now load another library: cheshire. It parses JSON.
+
     (use '[cheshire.core :as json])
 
 Let's create a function to parse json with the cheshire library.
+
     (defn parse-json [str]
       (json/parse-string str true))
 
+Call an API
+-----------
 Put all the above together to make a call to the countries API with the query parameters; get the body of that HTTP response; and parse the JSON results. Define a var to hold the result.
 
     (def response (parse-json (:body (client/get base-path {:query-params query-params}))))
 
 Look at the result of the API call. There are two parts to each result.
 Define a var to hold the metadata part. 
+
     (def metadata (first response))
 
 Define a var to hold the results. 
+
     (def results (second response))
 
 Put all of the above together into a function.
+
     (defn get-api
       "Returns map representing API response."
       [path qp]
@@ -68,14 +75,19 @@ Put all of the above together into a function.
            :results results}))
 
 Define a var to hold the results of calling get-api for the countries endpoint.
+
     (def countries (get-api "/countries" query-params))
 
 
+Filter the results
+------------------
 Try going through the results to pull out a couple of the values associated with keys in the results.
+
     (for [item (:results countries)]
                  [(:name item) (:longitude item)])
 
 Make that into a function where the two keys are parameters that can be passed to the function. Put the values into a map with "into {}"
+
     (defn get-value-map
       "Returns relation of two keys from API response"
       [path query-params key1 key2]
@@ -84,22 +96,27 @@ Make that into a function where the two keys are parameters that can be passed t
                            [(key1 item) (key2 item)]))))
 
 Call get-value-map to get the map of urban development indicators including their name and indicator ids.The id will be used to retrieve the values for those indicators
+
     (get-value-map "/topics/16/indicators" {} :name :id)
 
 Create a function based on the above.
+
     (defn get-indicator-map []
       "Gets map of indicators.
       /topics/16/indicators:   All urban development"
       (get-value-map "/topics/16/indicators" {} :name :id))
 
 Define the results of calling get-indicator-map.
+
     (def indicator-map (get-indicator-map))
 
 On to getting the values for a specific indicators API endpoint for getting a certain indicator for all countries:
 http://api.worldbank.org/countries/all/indicators/EP.PMP.SGAS.CD?format=json&per_page=10000&date=2010
+
     (get-value-map (str "/countries/all/indicators/EP.PMP.SGAS.CD") {:date 2012} :country :value)
 
-Turn it into a function
+Turn it into a function.
+
     (defn get-indicator-all
       "Returns indicator for a specified year for all countries"
       [indicator year key1 key2]
@@ -111,7 +128,10 @@ Turn it into a function
                           key1
                           key2))
 
+Some supporting functions
+-------------------------
 Just type these into the REPL. We aren't talking about these.
+
     (def list-size 10)
 
     (defn remove-aggregate-countries
@@ -129,26 +149,33 @@ Just type these into the REPL. We aren't talking about these.
     (def country-ids (get-country-ids))
 
 
+Sort the data 
+-------------
 Call get-indicator-all to get the pump price indicator for 2012.
+
     (def inds (get-indicator-all "EP.PMP.SGAS.CD" "2012" :country :value))
 
 Go through the results, making sure that they are actually countries by matching up against the country-ids, then ...
+
     (for [[k v] inds
           :when (and v (country-ids (:id k)))]
         [(:value k) (read-string v)])
 
 Put those results into a map
+
     (into {} (for [[k v] inds
                   :when (and v (country-ids (:id k)))]
                 [(:value k) (read-string v)]))
 
 Sort those values with the sort-by function.
+
     (sort-by val >
       (into {} (for [[k v] inds
                     :when (and v (country-ids (:id k)))]
                   [(:value k) (read-string v)])))
        
 Take just the top 10 of the sorted lists.              
+
     (take list-size
       (sort-by val >
           (into {} (for [[k v] inds
@@ -156,6 +183,7 @@ Take just the top 10 of the sorted lists.
                       [(:value k) (read-string v)]))))
 
 Make that into a function.
+
     (defn sorted-indicator-map
       "Sort the map of indicator numeric values"
       [inds]
