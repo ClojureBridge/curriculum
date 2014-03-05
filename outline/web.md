@@ -10,7 +10,7 @@ The way that the client and server communicate with each other is through a prot
 A web app accepts an HTTP request from the client and gives it a response. Think of the server as just like the Clojure functions we have written. They take the input of a request and give the output of a response. In fact, we can write that function:
 
 ```clj
-(defn handler 
+(defn app
   [request]
 
   {:status 200})
@@ -33,39 +33,42 @@ Look at the parts that have angle brackets around them like `<this>`. Those are 
 
 ##Making the simplest web application
 
-Let's make the simplest possible web application. It will say hello in the browser
+Let's make the simplest possible web application. It will say hello in the browser.
+
+First, run ```lein new basic-app``` in the console.
+
+Create the file ```src/basic_app.clj``` and make it look like this:
 
 ```clj
-(ns hello) 
+(ns basic-app)
 
-(defn handler
-    
+(defn app
+
   "Return a status."
-  ;; A request comes in the handler.  
+  ;; A request comes in the handler.
   [request]
 
   ;; The handler returns a response map.
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body ( "Hello, world.")})
-              
+   :body "Hello, world."})
 ````
 
 We need some supporting pieces to run this. We need the project.clj for Leiningen.
 
 ```clj
-(defproject request-echo "0.1.0-SNAPSHOT"
+(defproject basic-app "0.1.0-SNAPSHOT"
 
   ;; We require ring.
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [ring "1.2.1"]]
-  
+
   ;; We use the lein-ring plugin to start ring.
   :plugins [[lein-ring "0.8.10"]]
-  
+
   ;; We tell Ring what our handler function is and
   ;; what port to start on.
-  :ring {:handler request-echo/handler
+  :ring {:handler basic-app/app
          :port 3001})
 ````
 
@@ -84,13 +87,13 @@ lein ring server
 Now let's do the same thing but with HTML so that the text displays with formatting.
 
 ```clj
-(ns hello 
-    (:require [clojure.pprint :refer [pprint]]))
+(ns basic-app
+  (:require [clojure.pprint :refer [pprint]]))
 
-(defn handler
-    
+(defn app
+
   "Return the request as HTML."
-  ;; A request comes in the handler.  
+  ;; A request comes in the handler.
   [request]
 
   ;; The handler returns a response map.
@@ -100,7 +103,7 @@ Now let's do the same thing but with HTML so that the text displays with formatt
               (with-out-str (pprint request))
               "</pre>")})
 ````
-   
+
 ##URLs and Routes
 The web browser gets to the right server with an address called a URL. Take a look at the following URLS:
 
@@ -112,22 +115,38 @@ After the "http://", "www.google.com" identifies the server. Then the part after
 The process of coordinating which path goes to what action is called routing. The Clojure library that does this is called Compojure. Here is an example of routing with Compojure.
 
 ```clj
-(require '[compojure.core :refer [routes]])
-(require '[compojure.route :as route])
+(ns basic-app
+  (:use compojure.core)
+  (:require [clojure.pprint :refer [pprint]]
+            [compojure.route :as route]))
 
-(routes
-         
-  ;verb  route   parameters        handler
-  (GET   "/"     []                (index-page))
-  (GET   "/debts/:person" [person] (person-page person))
-  (GET   "/add-debt" []            (add-debt-page))
-  (POST  "/add-debt" [from to amount] 
-        (add-debt-post {:from from,
-                        :to to,
-                        :amount amount}))
-  
+
+(defn index-page []
+  "index content")
+
+(defn person-page [person]
+  "person content")
+
+(defn add-debt-page []
+  "add debt content")
+
+(defn add-debt-post [xfer]
+  "add debt post content")
+
+(defroutes app
+
+  ;verb  route             parameters        handler
+  (GET   "/"               []                (index-page))
+  (GET   "/debts/:person"  [person]          (person-page person))
+  (GET   "/add-debt"       []                (add-debt-page))
+  (POST  "/add-debt"       [from to amount]
+         (add-debt-post {:from from,
+                         :to to,
+                         :amount amount}))
+
   (route/resources "/")
   (route/not-found "Page not found"))
+
 ````
 
 The verbs - GET, POST - are part of the http request and say what you want to do with this URL. GET is just fetching some data. POST is usually doing some processing on that data. The route is the path part of the URL. The handler is the Clojure function that is going to handle this particular request. The routes table maps that combination of verb and route to the handler function. 
