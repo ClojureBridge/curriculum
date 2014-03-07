@@ -130,7 +130,7 @@ Turn it into a function.
 
 Some supporting functions
 -------------------------
-Just type these into the REPL. We aren't talking about these.
+Just copy/paste these into the REPL. We aren't talking about these.
 
     (def list-size 10)
 
@@ -155,7 +155,7 @@ Call get-indicator-all to get the pump price indicator for 2012.
 
     (def inds (get-indicator-all "EP.PMP.SGAS.CD" "2012" :country :value))
 
-Go through the results, making sure that they are actually countries by matching up against the country-ids, then ...
+Go through the results, making sure that they are actually countries by matching up against the country-ids, then get the value from the country and convert the value from a string.  
 
     (for [[k v] inds
           :when (and v (country-ids (:id k)))]
@@ -195,4 +195,7 @@ Make that into a function.
 
 
 
+
+
+[The rest of this will be to plug calls to the above functions into provided code.]
 

@@ -4,13 +4,13 @@ OS X Setup
 * Start a terminal
 * Make sure Java is installed
 * Get Leiningen installed
-* Get LightTable installed
+* Get Light Table installed
 * Get Heroku installed (includes Git)
 * Test installation
 
 ## Starting a terminal
 
-For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer and you can open it by running Terminal.app, which is found under `/Applications/Utilities`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
+For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer, and you can open it by running Terminal.app, which is found under `/Applications/Utilities`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
 
 Go ahead and open your terminal now. It should look something like this:
 
@@ -28,7 +28,7 @@ If Java is installed, you will see something like this in your terminal:
 
 ![Java version](img/os_x/java_version.png)
 
-The details of Java's version may differ from what you see above: that is perfectly fine.
+The details of Java's version may differ from what you see above; that is perfectly fine.
 
 ## Installing Leiningen
 
@@ -41,17 +41,18 @@ Go to the [Leiningen website](http://leiningen.org/). You will see a link to the
 After that, run the following commands in your terminal. You will be prompted to enter your password.
 
 ```
-sudo mv ~/Downloads/lein /usr/local/bin/lein
+sudo mkdir -p /usr/local/bin/
+sudo mv ~/Downloads/lein* /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
 ```
 
-After you run the above commands, run the `lein` command. It should take a while to run, as it will download some resources it needs the first time. If it completes succesfully, you are golden! If not, ask an instructor for help.
+After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
-## Installing LightTable
+## Installing Light Table
 
-Go to the [LightTable site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for LightTable. Click the "OS X 10.7+" button and you will download a .zip file.
+Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "OS X 10.7+" button and you will download a .zip file.
 
-![LightTable downloads](img/os_x/light-table-download.png)
+![Light Table downloads](img/os_x/light-table-download.png)
 
 Unzip the downloaded file. It should be in your Downloads folder and be named LightTableMac.zip. Once unzipped, move LightTable.app to your Applications folder.
 
@@ -75,17 +76,21 @@ After all that, you should be at your Heroku dashboard. There will be a link on 
 
 ![Heroku dashboard](img/heroku-dashboard.png)
 
-This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your password to complete installation. Once installation, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+If you do not see this link on your dashboard, you can download the toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com/).
+
+This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your OS X account password to complete installation. Once installation, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
 ![Heroku login](img/os_x/heroku_login.png)
 
 ## Testing your setup
 
-You have set up Java, Leiningen, LightTable, Git, and Heroku on your computer, all the tools you will need for this program. Before starting, we need to test them out.
+You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer, all the tools you will need for this course. Before starting, we need to test them out.
 
 Go to your terminal and run the following command:
 
-`git clone https://github.com/heroku/clojure-sample.git`
+```
+git clone https://github.com/heroku/clojure-sample.git
+```
 
 This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
 
@@ -93,11 +98,15 @@ This will check out a sample Clojure application from GitHub, a central reposito
 
 Then run the command:
 
-`cd clojure-sample`
+```
+cd clojure-sample
+```
 
 This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
 
-`lein repl`
+```
+lein repl
+```
 
 This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
@@ -105,15 +114,15 @@ This could take a long time, and will download many other pieces of code it reli
 
 This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
 
-Now, start LightTable. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
 
-![Testing LightTable - starting instarepl](img/os_x/testing-step3.png)
+![Testing Light Table - starting instarepl](img/os_x/testing-step3.png)
 
 At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
 
-![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
+![Testing Light Table - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! Close LightTable. We only have one more thing to test, Heroku.
+If that worked, great! Close Light Table. We only have one more thing to test, Heroku.
 
 Go back to your terminal. You should still be in the `clojure-sample` directory.
 
@@ -136,11 +145,10 @@ Enter "yes" if you are asked if you are sure you want to connect, like in the fo
 
 ![Connecting via SSH](img/os_x/testing-step6.png)
 
-Your browser should open (and take a long time to load) and you should see a website like the following:
+Your browser should open (and take a long time to load), and you should see a website like the following:
 
 ![Testing heroku working](img/os_x/testing-step7.png)
 
+If your browser does not open after running `heroku open`, start a browser and go to the URL displayed after you ran `heroku create`.
+
 Congratulations! That website is running code you have on your computer that you have uploaded. You have actually made a very simple Clojure app, and your computer is all set up to make more.
-
-
-
