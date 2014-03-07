@@ -8,7 +8,7 @@ Making Your Own Web Application
 5. Input the below statements, one-by-one, into the instarepl.
 
 World Bank API
---------------
+-------------
 The World Bank provides a collection of world development indicators data, showing the current state of global development. They provide an API to this data. A web API is a way to provide access for one program to call another program over HTTP. In this case, the World Bank Indicators API provides access to their set of data. 
 
 We will use the World Bank Indicators API to explore some of the world development indicators for different countries. We will sort and compare certain indicators. [Say something about why Clojure is good for this task?]
@@ -195,7 +195,25 @@ Make that into a function.
 
 
 
+Package up the app
+------------------
+
+1. In Light Table, click global-growth/src/global_growth/core.clj.
+2. Copy and paste the functions we have written in the Instarepl into core.clj underneath the namespace definition.
+3. Then find in core.clj where it says <<FILL IN THE BLANK>> under ;; WEB APP
 
 
-[The rest of this will be to plug calls to the above functions into provided code.]
+That is the place in the web app where you will use the sorted-indicator-map and get-indicator-all functions to call the API to get the indicator data.
+
+When you properly fill in the blanks, save the file. 
+
+4. Go to the command line. Change directories to the global-growth project.
+
+    cd global-growth
+
+5. Run:
+
+    lein ring server
+
+6. Then use your web browser to go to: http://localhost:3000
 
