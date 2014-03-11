@@ -19,9 +19,9 @@ Libraries are collections of programs packaged to be reused by others. Common ac
 
 The clj-http library allows you to communicate over HTTP. Load the library and give it an alias that you can use to call it.
 
-    (use '[clj-http.client :as client])
+    (require '[clj-http.client :as client])
 
-Define a constant for the URI for the World Bank API so that we can easily refer to it as we need it in our program.
+Define a symbol for the URI for the World Bank API so that we can easily refer to it as we need it in our program.
 
     (def base-uri "http://api.worldbank.org")
 
@@ -39,7 +39,7 @@ Query parameters are a part of a URL that provide additional information to the 
 
 Now load another library: cheshire. It parses JSON.
 
-    (use '[cheshire.core :as json])
+    (require '[cheshire.core :as json])
 
 Let's create a function to parse json with the cheshire library.
 
@@ -130,7 +130,7 @@ Turn it into a function.
 
 Some supporting functions
 -------------------------
-Just copy/paste these into the REPL. We aren't talking about these.
+Just copy/paste these into the REPL (they are in the provided source file). We aren't talking about these.
 
     (def list-size 10)
 
