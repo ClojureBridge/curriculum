@@ -132,7 +132,7 @@ We write maps by enclosing alternating keys and values in curly braces, like so:
 {}
 ```
 
-Maps are useful because they can hold data in a way we normally think about it. Take our made up example, Sally Brown. A map can hold her first name and last name, her address, her favorite food, or anything else. It's a simple way to collect that data and make it easy to look up.
+Maps are useful because they can hold data in a way we normally think about it. Take our made up example, Sally Brown. A map can hold her first name and last name, her address, her favorite food, or anything else. It's a simple way to collect that data and make it easy to look up. That last example? It is an empty map. It is a map that is ready to hold some things, but doesn't have anything in it yet.
 
 Let's look at some functions we can use with maps:
 
@@ -169,6 +169,9 @@ Let's look at some functions we can use with maps:
 
 (vals {:first "Sally" :last "Brown"})
 ;=> ("Sally" "Brown")
+
+(into {} [[1 2] [3 4]])
+;=> {1 2, 3 4}
 ```
 
 We don't have nearly as many functions here in common as vectors and lists did. We still have `sequential?` and `associative?` to tell us what our collections are like. Note that `sequential?` is now false: maps don't hold things in a certain order.
@@ -179,7 +182,9 @@ We don't have nearly as many functions here in common as vectors and lists did. 
 
 We have `count`, like we have with every collection. Why do you think the answer is two? `count` is returning the number of associations.
 
-Lastly, we have `keys` and `vals`, which are pretty simple: they return the keys and values in the map. The order is not guaranteed, so we could have gotten `(:first :last)` or `(:last :first)`.
+Then we have `keys` and `vals`, which are pretty simple: they return the keys and values in the map. The order is not guaranteed, so we could have gotten `(:first :last)` or `(:last :first)`.
+
+The last one - into - works with any kind of collection. It takes everything from one collection and puts it into another one, so it's useful for converting from one type of collection to another.
 
 Let's look at one more thing about maps before we move on. You can always use `get` to get values out of maps, but you'll more often see something like the following:
 
@@ -254,6 +259,13 @@ Then, use `disj` to remove your name from the set.
 ## Sequences
 
 The reason you see the same functions used on different types of collections is because they are all _sequences_. (Technically, they all provide access to their elements as a sequence. While this is an important distinction for advanced Clojure developers, the simpler way of talking about sequences is useful at this stage.) A sequence is a Clojure abstraction, a unified way to look at many different types of collections. The data structures you've seen so far -- vectors, lists, maps, and sets -- are not the only things to be represented as sequences. Many other things, such as lists of files, lines of text, or records in a database, can be represented as sequences, and so you can use all sequence functions with them.
+
+Here is one example. The sequence function take makes a new sequence with the first so many items from a provided collection. 
+
+```clj
+(take 3 [1 2 3 4 5 6 7 8])
+;=> (1 2 3) 
+```
 
 We will see many other functions that can be used with sequences as we move forward.
 
