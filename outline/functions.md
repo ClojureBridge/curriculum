@@ -88,7 +88,7 @@ A large part of programming is manipulating strings. The most important string f
 ;=> "Chocolate, strawberry, and vanilla"
 ```
 
-TODO add more string functions from clojure.string?
+TODO add more string functions from clojure.string? **NO**
 
 ### Collection functions
 
