@@ -11,37 +11,37 @@ World Bank API
 -------------
 The World Bank provides a collection of world development indicators data, showing the current state of global development. They provide an API to this data. A web API is a way to provide access for one program to call another program over HTTP. In this case, the World Bank Indicators API provides access to their set of data. 
 
-We will use the World Bank Indicators API to explore some of the world development indicators for different countries. We will sort and compare certain indicators. [Say something about why Clojure is good for this task?]
+We will use the World Bank Indicators API to explore some of the world development indicators for different countries. We will sort and compare certain indicators. This is a task that Clojure is well suited for.
   
 Using Libraries
 ---------------
-Libraries are collections of programs packaged to be reused by others. Common activities such as reading or writing files, doing math, or drawing charts generally have libraries available that you can use. [something about including the dependencies in Leiningen project]
+Libraries are collections of programs packaged to be reused by other programs. Common activities such as reading or writing files, doing math, or drawing charts generally have libraries available that you can use. We saw how to use libraries in Clojure projects when we wrote our first program. 
 
 The clj-http library allows you to communicate over HTTP. Load the library and give it an alias that you can use to call it.
 
     (require '[clj-http.client :as client])
 
-Define a symbol for the URI for the World Bank API so that we can easily refer to it as we need it in our program.
+Define a symbol for the URL for the World Bank API so that we can easily refer to it as we need it in our program.
 
     (def base-uri "http://api.worldbank.org")
 
-Each type of data available through the World Bank API has an API endpoint. The endpoint has a specific path added to the base URI. http://api.worldbank.org/countries is the endpoint that lists all of the countries with data available.
+Each type of data available through the World Bank API has an API endpoint. The endpoint has a specific path added to the base URL. http://api.worldbank.org/countries is the endpoint that lists all of the countries with data available. Create a var to refer to that URL by combining the base-uri and "/countries".
  
     (def base-path (str base-uri "/countries"))
   
-Now make a call to the API endpoint: http://api.worldbank.org/countries.
+Now make a call using the clj-http client's get function to the API endpoint: http://api.worldbank.org/countries.
 
     (client/get base-path)
 
-Query parameters are a part of a URL that provide additional information to the api call - we will ask for JSON formatted results; get 10000 results per page. [Talk about JSON?]
+Query parameters are part of the query string that is the part of a URL that provide additional information to the api call - we will ask for JSON formatted results; get 10000 results per page. 
 
     (def query-params {:format "json" :per_page 10000})
 
-Now load another library: cheshire. It parses JSON.
+Now load another library: cheshire. It reads and understands the JSON format.
 
     (require '[cheshire.core :as json])
 
-Let's create a function to parse json with the cheshire library.
+Let's create a function to read (parse) json with the cheshire library. Pass the second argument true to get Clojure keywords back for the map keys.
 
     (defn parse-json [str]
       (json/parse-string str true))
@@ -52,16 +52,17 @@ Put all the above together to make a call to the countries API with the query pa
 
     (def response (parse-json (:body (client/get base-path {:query-params query-params}))))
 
-Look at the result of the API call. There are two parts to each result.
-Define a var to hold the metadata part. 
+Look at the result of the API call. Notice the format of the result. See how each country has its own section surrounded by {}. Each country has its own data such as longitude and latitude. There are two parts to each result.
+Metadata is data about data. The metadata here are things like the number of results. Define a var to hold the metadata part.
 
     (def metadata (first response))
 
-Define a var to hold the results. 
+Define a var to hold the actual results. 
 
     (def results (second response))
 
-Put all of the above together into a function.
+Put all of the above together into a function called get-api. You will need two parameters to the function to hold the path in the API you are calling (such as "/countries") and any additional query parameters that need to be added to the API URL. You can put all of the above pieces into the let part of the function.  You need: base-path, query-params, response, metadata, and results. Then return a map with keys :metadata and :results, each of which has that corresponding value.
+
 
     (defn get-api
       "Returns map representing API response."
@@ -74,19 +75,19 @@ Put all of the above together into a function.
           {:metadata metadata
            :results results}))
 
-Define a var to hold the results of calling get-api for the countries endpoint.
+Define a var to hold the results of calling get-api for the countries endpoint. You have to pass get-api the path and query-params that you need to call that API.
 
-    (def countries (get-api "/countries" query-params))
+    (def countries (get-api "/countries" {}))
 
 
 Filter the results
 ------------------
-Try going through the results to pull out a couple of the values associated with keys in the results.
+Try going through the results to pull out a couple of the values associated with keys in the results. You can use the for function to do this.  You want to pull out the values for the "name" and "longitude" items from the results section. Those will have been turned into Clojure keywords by the json library, so you can refer to them as :name and :longitude.
 
     (for [item (:results countries)]
-                 [(:name item) (:longitude item)])
+          [(:name item) (:longitude item)])
 
-Make that into a function where the two keys are parameters that can be passed to the function. Put the values into a map with "into {}"
+Make that into a function called get-value-map where the two keys to look up in the results are parameters that can be passed to the function. Put the values into a map with "into {}"
 
     (defn get-value-map
       "Returns relation of two keys from API response"
@@ -99,23 +100,24 @@ Call get-value-map to get the map of urban development indicators including thei
 
     (get-value-map "/topics/16/indicators" {} :name :id)
 
-Create a function based on the above.
+Create a function based on the above called get-indicator-map.
 
     (defn get-indicator-map []
       "Gets map of indicators.
       /topics/16/indicators:   All urban development"
       (get-value-map "/topics/16/indicators" {} :name :id))
 
-Define the results of calling get-indicator-map.
+Define a var to hold the results of calling get-indicator-map.
 
     (def indicator-map (get-indicator-map))
 
-On to getting the values for a specific indicators API endpoint for getting a certain indicator for all countries:
+Onto getting the values for a specific indicators API endpoint for getting a certain indicator for all countries. Here is the URL that does that:
 http://api.worldbank.org/countries/all/indicators/EP.PMP.SGAS.CD?format=json&per_page=10000&date=2010
+Out of the results, we want "country" and "value"
 
     (get-value-map (str "/countries/all/indicators/EP.PMP.SGAS.CD") {:date 2012} :country :value)
 
-Turn it into a function.
+Turn it into a function called get-indicator-all. The indicator name needs to be a parameter to the function. So should the data and two keys. We make these parameters so we would be able to get other indicators and pull out different pieces of the results.
 
     (defn get-indicator-all
       "Returns indicator for a specified year for all countries"
@@ -151,23 +153,25 @@ Just copy/paste these into the REPL (they are in the provided source file). We a
 
 Sort the data 
 -------------
-Call get-indicator-all to get the pump price indicator for 2012.
+Call get-indicator-all to get the pump price indicator for 2012. EP.PMP.SGAS.CD is the indicator name. We want the country and value. 
 
     (def inds (get-indicator-all "EP.PMP.SGAS.CD" "2012" :country :value))
 
-Go through the results, making sure that they are actually countries by matching up against the country-ids, then get the value from the country and convert the value from a string.  
+Take a look at the results. There are a pair of values that describe a country with keys :id and :value. Then there is a value with the actual pump price.
+
+Go through the results, making sure that they are actually countries by matching up against the country-ids, then get the value from the country and convert the value from a string. Use for, :when, and and. Another function, read-string, allows you to pull a value out of a string, which you will want to do with the value. [This is a crazy one... not sure how to make this simpler]
 
     (for [[k v] inds
           :when (and v (country-ids (:id k)))]
         [(:value k) (read-string v)])
 
-Put those results into a map
+Put those results into a map with into{}
 
     (into {} (for [[k v] inds
                   :when (and v (country-ids (:id k)))]
                 [(:value k) (read-string v)]))
 
-Sort those values with the sort-by function.
+Sort those values from biggest to smallest with the sort-by function.
 
     (sort-by val >
       (into {} (for [[k v] inds
@@ -176,13 +180,13 @@ Sort those values with the sort-by function.
        
 Take just the top 10 of the sorted lists.              
 
-    (take list-size
+    (take 10 
       (sort-by val >
           (into {} (for [[k v] inds
                         :when (and v (country-ids (:id k)))]
                       [(:value k) (read-string v)]))))
 
-Make that into a function.
+Make that into a function called sorted-indicator-map.
 
     (defn sorted-indicator-map
       "Sort the map of indicator numeric values"
