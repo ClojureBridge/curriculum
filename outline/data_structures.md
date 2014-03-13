@@ -182,7 +182,7 @@ We don't have nearly as many functions here in common as vectors and lists did. 
 
 We have `count`, like we have with every collection. Why do you think the answer is two? `count` is returning the number of associations.
 
-Lastly, we have `keys` and `vals`, which are pretty simple: they return the keys and values in the map. The order is not guaranteed, so we could have gotten `(:first :last)` or `(:last :first)`.
+Then we have `keys` and `vals`, which are pretty simple: they return the keys and values in the map. The order is not guaranteed, so we could have gotten `(:first :last)` or `(:last :first)`.
 
 The last one - into - works with any kind of collection. It takes everything from one collection and puts it into another one, so it's useful for converting from one type of collection to another.
 
@@ -260,7 +260,7 @@ Then, use `disj` to remove your name from the set.
 
 The reason you see the same functions used on different types of collections is because they are all _sequences_. (Technically, they all provide access to their elements as a sequence. While this is an important distinction for advanced Clojure developers, the simpler way of talking about sequences is useful at this stage.) A sequence is a Clojure abstraction, a unified way to look at many different types of collections. The data structures you've seen so far -- vectors, lists, maps, and sets -- are not the only things to be represented as sequences. Many other things, such as lists of files, lines of text, or records in a database, can be represented as sequences, and so you can use all sequence functions with them.
 
-Here are two examples. The sequence function take makes a new sequence with the first so many items from a provided collection. 
+Here is one example. The sequence function take makes a new sequence with the first so many items from a provided collection. 
 
 ```clj
 (take 3 [1 2 3 4 5 6 7 8])
