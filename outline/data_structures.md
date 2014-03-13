@@ -232,7 +232,7 @@ Sets are useful for holding any data that cannot have duplicates: lists of peopl
 ;=> true
 
 (set ["earth" "mars" "venus"])
-;=> #{1 2 3}
+;=> #{"earth" "mars" "venus"}
 
 (conj #{"earth" "mars" "venus"} "jupiter")
 ;=> #{"earth" "mars" "venus" "jupiter"}
