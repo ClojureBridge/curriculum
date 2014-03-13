@@ -98,7 +98,7 @@ Look at this truth table:
 ```
 
 
-## cond
+## cond **CANDIDATE FOR REMOVAL**
 
 Sometimes you might want to do multiple conditional checks. For example, you might want to check whether a number is within a certain range. Here's the general form of `cond`:
 
@@ -132,7 +132,7 @@ Clojure has other conditional operators, but they're just there to make your cod
 Rewrite the `leap-year?` function shown earlier to use `cond` instead of nested boolean logic.
 
 
-## do
+## do **CANDIDATE FOR REMOVAL**
 
 One thing you may have noticed is that you are only allowed to evaluate one expression for each branch of the `if` expression. The `do` operator allows you to "bundle up" multiple expressions so that you can "do" multiple things. Here's an example:
 

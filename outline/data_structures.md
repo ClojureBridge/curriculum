@@ -205,7 +205,7 @@ You can use a keyword like you would use a function in order to look up values i
 Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using `assoc` or `merge`.
 
 
-## Sets
+## Sets **CANDIDATE FOR REMOVAL**
 
 Sets are the last of the four major data structures in Clojure. Like lists and vectors, they are a collection of items, but unlike them, the collection is not ordered and can have no duplicate items. We write them using curly braces, like maps, but with a hash in front. Here are some examples of sets:
 
