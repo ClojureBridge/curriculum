@@ -151,4 +151,23 @@ The process of coordinating which path goes to what action is called routing. Th
 
 The verbs - GET, POST - are part of the http request and say what you want to do with this URL. GET is just fetching some data. POST is usually doing some processing on that data. The route is the path part of the URL. The handler is the Clojure function that is going to handle this particular request. The routes table maps that combination of verb and route to the handler function. 
 
+One more thing about URLs. They can contain query strings at the end. These are a way to pass additional information to web applications.
+
++ https://twitter.com/search?q=marmots&lang=en
+
+Here you see the URL for Twitter search: https://twitter.com/search. The part after the ? is the query string: q=marmots&lang=en. What am I searching for? Marmots. What language do I want results for? English.
+
+##JSON
+A brief word about JSON. JSON is a format for providing data. Sometimes, instead of a web page you see in your browser, you want to provide a list of information from a web application. Having a format that everyone agrees on makes it easier to deal with the data. Here's an example that describes a book:
+
+```
+{"book": {
+    "title": "The Fault in our Stars",
+    "author": "John Green",
+    "characters": [
+        {"name": "Hazel Grace Lancaster", "age": 16},
+        {"name": "Augustus Waters", "age": 17}
+       ]
+}}
+```
 

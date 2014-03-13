@@ -149,6 +149,12 @@ First, `reduce` calls `join-with-space` with "i" and "like", returning "i like".
 * `(join-with-space "i like peanut butter" "and")`
 * `(join-with-space "i like peanut butter and" "jelly")`
 
+One more example of a function that uses a function, sort-by. It takes a function and sorts a sequence by applying that function to each element of the sequence. 
+
+```clj
+(sort-by val > {:amy 3, :renee 5, :lisa 4})
+;=> ([:renee 5] [:lisa 4] [:amy 3])
+```
 ### Anonymous functions
 
 So far, all the functions we've seen have names, like `+` and `str` and `reduce`. Functions don't have to have names, though, just like values don't have to have names. We call functions without names _anonymous functions_.

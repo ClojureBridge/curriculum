@@ -24,18 +24,17 @@ Concepts required for building the app
 - lein project setup 
 - ring 
 - lein ring plugin 
+- call a function that you define 
+- empty map {}
+- into{} 
+- take
+- URL query string 
+- JSON 
+- sort-by 
 
 Required concepts that are missing in the curriculum
 ----------------------------------------------------
-- query parameters
-- JSON 
 - return a map from a function
-- call a function that you define -- might want to make this explicit in functions section
-- for 
-- into{} 
-- empty map -- it's in there in data structures, but might need to call it out
-- :when 
+- for (include :when modifier) 
 - read-string 
-- sort-by 
-- take
 - using the command line
