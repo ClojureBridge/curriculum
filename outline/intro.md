@@ -130,7 +130,7 @@ I used integers with all of the above, but they can use floats or ratios just fi
 ```clj
 (+ 4/3 7/8)   ;=> 53/24
 (- 9 4.2 1/2) ;=> 4.3
-(* 8 1/4)     ;=> 2
+(* 8 1/4)     ;=> 2   ;; this produces 2N which means 2 is a BigInt. 
 (/ 27/2 1.5)  ;=> 3.0
 ```
 
