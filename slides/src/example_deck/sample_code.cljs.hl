@@ -1,0 +1,262 @@
+(ns example-deck.sample-code
+    (:require [hoplon.reveal :refer [highlight]]))
+
+
+(defn get-simple-ring-app []
+  (highlight
+    ;;{{
+    (ns request-echo
+      (:require [clojure.pprint :refer [pprint]]))
+
+    (defn handler
+      "Return the request as HTML."
+      ;; A request comes in the handler.
+      [request]
+
+      ;; The handler returns a response map.
+      {:status 200
+       :headers {"Content-Type" "text/html"}
+       :body (str "<h1>Request Echo</h1><pre>"
+                  (with-out-str (pprint request))
+                  "</pre>")})
+    ;;}}
+    ))
+
+(defn get-hoplon-with-html []
+  (highlight
+    ;;{{
+    <script type="text/hoplon">
+      (page "index.html")
+      (defn duo [x y]
+        (ul (li x)
+            (li y)))
+    </script>
+    <html>
+      <body>
+        <h1>Hello, Hoplon</h1>
+        <!-- an HTML syntax call to the duo function -->
+        <duo>
+          <div>first thing</div>
+          <div>second thing</div>
+        </duo>
+      </body>
+    </html>
+    ;;}}
+    ))
+
+(defn get-hoplon-with-cljs []
+  (highlight
+    ;;{{
+    (page "index.html")
+
+    (defn duo [x y]
+      (ul (li x)
+          (li y)))
+
+    (html
+      (body
+        (h1 "Hello, Hoplon")
+        (duo "first thing" "second thing")))
+    ;;}}
+    ))
+
+(defn get-hoplon-defelem []
+  (highlight
+    ;;{{
+    (defelem slideshow
+      [attrs children]
+      (div :class "reveal"
+           (div (assoc attrs :class "slides")
+                children)))
+    ;;}}
+    ))
+
+(defn get-hoplon-slidedeck []
+  (highlight
+    ;;{{
+    (slideshow :theme "sky"
+      (intro :title "Secrets of Clojure Web Development"
+        (bullet "Clinton N. Dreisbach")
+        (bullet "CodeMash 2014"))
+      (chapter :title "Web Dev w/Clojure"
+        (slide :title "The Big Secret"
+          (ul
+            (li "Web development is functional")
+            (li "Clojure is great at web development"))
+        (notes "A request comes in, a transformation is performed, a "
+             "response is returned."))))
+    ;;}}
+    ))
+
+(defn get-hoplon-cell []
+  (highlight
+    ;;{{
+    (def state       (cell []))
+    (def completed   (cell= (filter :completed state)))
+    (def active      (cell= (remove :completed state)))
+    (def plural-item (cell= (pluralize "item" (count active))))
+
+    ;; Later in the page
+    (span :id "todo-count"
+          (strong (text "~(count active) "))
+          (span (text " ~{plural-item} left")))
+    ;;}}
+    ))
+
+(defn get-hoplon-dom []
+  (highlight
+    ;;{{
+    (input
+      :id "new-todo"
+      :type "text"
+      :do-focus loaded?
+      :do-attr (cell= {:placeholder (if loaded?
+                                        "What needs to be done?"
+                                        "Loading...")})
+      :on-focusout #(do! (by-id :new-todo) :value ""))
+    ;;}}
+    ))
+
+(defn get-liberator-simple []
+  (highlight
+    ;;{{
+    (require '[liberator.core :refer [defresource]])
+
+    (defresource hello
+      :exists? (fn [ctx]
+                   (let [lang (get-in ctx [:request :params :lang])]
+                     (contains? #{"en" "es"} lang)))
+      :handle-ok (fn [ctx]
+                     (let [lang (get-in ctx [:request :params :lang])]
+                       (if (= lang "es")
+                         "Hola mundo!"
+                         "Hello world!")))
+      :handle-not-found (fn [ctx]
+                            "Language not found."))
+    ;;}}
+    ))
+
+(defn get-liberator-context []
+  (highlight
+    ;;{{
+    (require '[liberator.core :refer [defresource]])
+
+    (defresource hello
+      :exists? (fn [ctx]
+                   (let [lang (get-in ctx [:request :params :lang])]
+                     (if (contains? #{"en" "es"} lang)
+                       {:lang lang})))
+      :handle-ok (fn [ctx]
+                     (let [lang (:lang ctx)]
+                       (if (= lang "es")
+                         "Hola mundo!"
+                         "Hello world!")))
+      :handle-not-found (fn [ctx]
+                            "Language not found."))
+      ;;}}
+      ))
+
+(defn get-liberator-context-with-failure []
+  (highlight
+    ;;{{
+    (require '[liberator.core :refer [defresource]])
+
+    (defresource hello
+      :exists? (fn [{:keys req}]
+                   (let [lang (get-in req [:params :lang])]
+                     ;; Return a vector instead of a map.
+                     [(contains? #{"en" "es"} lang) {:lang lang}]))
+      :handle-ok (fn [{:keys [lang]}]
+                     (if (= lang "es")
+                       "Hola mundo!"
+                       "Hello world!"))
+      :handle-not-found (fn [{:keys [lang]}]
+                            (str "Language " lang " not found.")))
+      ;;}}
+      ))
+
+(defn get-liberator-todo []
+  (highlight
+    ;;{{
+    (defresource todos-resource
+      :allowed-methods [:get :post]
+      :available-media-types ["application/edn"]
+      :handle-ok (fn [_] @todo-list)
+      :post! (fn [{:keys [request]}]
+                 (let [body (-> (:body request)
+                                slurp
+                                read-string)
+                       new-todo (assoc body :id (new-id))]
+                   (swap! todo-list conj new-todo)
+                   {:todo new-todo}))
+      :handle-created (fn [{:keys [todo]}] todo))
+      ;;}}
+  ))
+
+(defn get-http-streaming []
+  (highlight
+    ;;{{
+    (defn streaming-handler [request]
+      (with-channel request channel
+        (on-close channel (fn [status] (println "channel closed, " status)))
+        (doseq [i (range 1 10)]
+          (send! channel
+                 (str "message #" i)
+                 false) ; false -> don't close after send
+          (Thread/sleep 200))
+        (close channel)))
+    ;;}}
+    ))
+
+(defn get-http-outstream-p1 []
+  (highlight
+    ;;{{
+    (defn ch->outputstream [ch]
+      (proxy [java.io.OutputStream] []
+        (close [] (close ch))
+        (write
+          ([^bytes bs] ;; bytes of byte
+            (send! ch (String. bs) false))
+          ([^bytes bs off len]
+            (send! ch (String. bs off len) false)))))
+
+      (defn ch->writer [ch]
+        (io/writer (ch->outputstream ch)))
+    ;;}}
+    ))
+
+(defn get-http-outstream-p2 []
+  (highlight
+    ;;{{
+      (defn stream-slice-query-json
+        [request response resource]
+        (let [resource (hal/json-representation resource)]
+          (with-channel request ch
+            (send! ch response false)
+            (with-open [writer (ch->writer ch)]
+              (json/generate-stream resource writer))
+            (close ch))
+          response))
+    ;;}}
+    ))
+
+(defn get-http-websocket []
+  (highlight
+    ;;{{
+    (defn ws-handler [request]
+      (with-channel request channel
+        (swap! channels conj channel)
+        (println "channel opened: " channel)
+        (on-close channel
+                  (fn [status]
+                    (swap! channels disj channel)
+                    (println "channel closed: " channel " - " status)))
+        (on-receive channel
+                    (fn [data]
+                      (println "data received: " data)
+                      (doseq [chan (disj @channels channel)]
+                        (println "sending data: " channel " - " data)
+                        (send! chan data))))))
+    ;;}}
+    ))
+

@@ -1,0 +1,11 @@
+(page "index.html"
+      (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide notes highlight]]))
+
+(html
+  (head)
+  (body
+    (slideshow
+     :theme "/mozilla-theme.css"
+     (intro
+      :title "ClojureBridge"
+      (bullet "Durham, NC")))))

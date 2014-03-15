@@ -1,0 +1,4 @@
+resources/public/
+.boot/
+target
+.lein-*

@@ -1,0 +1,19 @@
+{
+  "name": "slides",
+  "version": "0.0.0",
+  "authors": [
+    "Clinton N. Dreisbach <clinton@dreisbach.us>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~2.6.1"
+  }
+}

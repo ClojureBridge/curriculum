@@ -1,0 +1,8 @@
+(ns example-deck.chapter1
+    (:require [hoplon.reveal :refer [intro bullet]]))
+
+
+(defn slides []
+  (intro :title "Secrets of Clojure Web Development"
+    (bullet "Clinton N. Dreisbach")
+    (bullet "CodeMash 2014")))
