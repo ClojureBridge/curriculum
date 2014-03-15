@@ -194,7 +194,7 @@ Here is an example of how it should work:
 (get-names [{:first "Margaret" :last "Atwood"}
             {:first "Doris" :last "Lessing"}
             {:first "Ursula" :last "Le Guin"}
-            {:first "Alice" "Munro"}])
+            {:first "Alice" :last "Munro"}])
 
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
