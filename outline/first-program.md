@@ -90,7 +90,7 @@ A man who carries a cat by the tail learns something he can learn in no other wa
 
 So, you can write programs of arbitrary complexity. Just make sure to use `-main` to kick them off.
 
-## Organization (Good candidate for cutting/mentioning briefly if time is running short)
+## Organization 
 
 As your programs get more complex, you'll need to organize them. You organize your Clojure code by placing related functions and data in separate files. Clojure expects each file to correspond to a *namespace*, so you must *declare* a namespace at the top of each file.
 
