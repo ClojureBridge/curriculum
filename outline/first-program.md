@@ -96,7 +96,7 @@ As your programs get more complex, you'll need to organize them. You organize yo
 
 Until now, you haven't really had to care about namespaces. Namespaces allow you to define new functions and data structures without worrying about whether the name you'd like is already taken. For example, you could create a function named `println` within the custom namespace `my-special-namespace`, and it would not interfere with Clojure's built-in `println` function. You can use the *fully-qualified name* `my-special-namespace/println` to distinguish your function from the built-in `println`.
 
-Let's create a new namespace for making world bank API calls. First, create the file `src/global_growth/core.clj`. Then write this in it:
+A namespace exists in the file `src/global_growth/core.clj`. Open it, and find this line: 
 
 ```clojure
 (ns global-growth.core)
