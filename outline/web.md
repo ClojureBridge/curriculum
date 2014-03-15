@@ -26,7 +26,7 @@ Go to the [ClojureBridge](http://www.clojurebridge.org/) web site. Then in your 
 - In Chrome, go to View - Developer - View Source
 - In Firefox, go to Tools - Web Developer - Page Source
 - In Safari, go to Safari menu - Preferences - Advanced - Check "Show Develop menu in menu bar." Then go to Develop - Show Page Source
-- In Internet Exploer, go to View - Source 
+- In Internet Explorer, go to View - Source 
 
 Look at the parts that have angle brackets around them like `<this>`. Those are HTML tags. Search for `<h1>`. That is a tag that tells the browser to display the text until the close tag, `</h1>`, as a level one header. Look at the web page and see how that text displays.
 
