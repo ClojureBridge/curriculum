@@ -96,32 +96,14 @@ As your programs get more complex, you'll need to organize them. You organize yo
 
 Until now, you haven't really had to care about namespaces. Namespaces allow you to define new functions and data structures without worrying about whether the name you'd like is already taken. For example, you could create a function named `println` within the custom namespace `my-special-namespace`, and it would not interfere with Clojure's built-in `println` function. You can use the *fully-qualified name* `my-special-namespace/println` to distinguish your function from the built-in `println`.
 
-Let's create a new namespace for making world bank API calls. First, create the file `src/global_growth/api.clj`. Then write this in it:
-
-```clojure
-(ns global-growth.api)
-```
-
-This line establishes that everything you define in this file will be stored within the `global-growth.api` namespace. For example, add this to your file:
-
-```clojure
-(def base-uri "http://api.worldbank.org")
-```
-
-You should be able to access that from your `core.clj` file. Change that file so that it reads:
+Let's create a new namespace for making world bank API calls. First, create the file `src/global_growth/core.clj`. Then write this in it:
 
 ```clojure
 (ns global-growth.core)
-(require '[global-growth.api :as api])
-
-(defn -main
-  [& args]
-  (println api/base-uri))
 ```
 
-If you run the `-main` function it should print `http://api.worldbank.org`.
+This line establishes that everything you define in this file will be stored within the `global-growth.core` namespace. 
 
-There are couple things going on here. First, you use `require` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `api/base-uri` instead of `global-growth.api/base-uri`.
 
 ## Dependencies
 
@@ -141,10 +123,19 @@ That's where you specify your dependencies. You can add a dependency by adding a
                [cheshire "5.3.1"]]
 ```
 
-Now you can require the namespaces defined in `clj-http` within your own project. Update `src/global_growth/api.clj` so that it looks like this:
+Now you can require the namespaces defined in `clj-http` within your own project. Update `src/global_growth/core.clj` so that it looks like this:
 
 ```clojure
-(ns global-growth.api)
+(ns global-growth.core)
+(require '[clj-http.client :as client])
+```
+
+There are a couple of things going on here. First, you use `require` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `client/get` instead of `clj-http.client/get`.
+
+Now add:
+
+```clojure
+(ns global-growth.core)
 (require '[clj-http.client :as client])
 (require '[cheshire.core :as json])
 
