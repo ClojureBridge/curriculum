@@ -45,13 +45,14 @@
  *********************************************/
 body {
   background: #d7d3c8;
-  background: -moz-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f4f1e9), color-stop(100%, #d7d3c8));
-  background: -webkit-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
-  background: -o-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
-  background: -ms-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
-  background: radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
+  background: url(logo.png) bottom 15px left 15px, -moz-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
+  background: url(logo.png) bottom 15px left 15px, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f4f1e9), color-stop(100%, #d7d3c8));
+  background: url(logo.png) bottom 15px left 15px, -webkit-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
+  background: url(logo.png) bottom 15px left 15px, -o-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
+  background: url(logo.png) bottom 15px left 15px, -ms-radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
+  background: url(logo.png) bottom 15px left 15px, radial-gradient(center, circle cover, #f4f1e9 0%, #d7d3c8 100%);
   background-color: #f7fbfc;
+  background-repeat: no-repeat;
 }
 
 .reveal {
@@ -184,4 +185,11 @@ body {
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/* OTHER */
+
+.reveal code {
+  font-size: 130%;
+  line-height: 135%;
 }

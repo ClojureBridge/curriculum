@@ -8,4 +8,28 @@
      :theme "/mozilla-theme.css"
      (intro
       :title "ClojureBridge"
-      (bullet "Durham, NC")))))
+      (bullet "Durham, NC")
+      (bullet "April 5, 2014"))
+     (chapter
+      :title "Introduction to Programming with Clojure"
+      (slide
+       :title "Why Clojure?"
+       (p "Clojure is simple and powerful.")
+       (p "Clojure is all-purpose.")
+       (p "Clojure is " (em "fun") "."))
+      (slide
+       :title "What is Clojure good at?"
+       (ul
+        (li "data processing")
+        (li "concurrent applications")
+        (li "web applications")
+        (li "everything!")))
+      (slide
+       :title "What does Clojure look like?"
+       (highlight
+        ;;{{
+        (+ 3 4)
+        (max 8 17 2)
+        (eat "sandwich")
+        ;;}}
+        ))))))
