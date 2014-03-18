@@ -25,7 +25,10 @@
 (deftask development
   "Build for development."
   []
-  (comp (watch) (hoplon {:prerender false :pretty-print true}) (serve)))
+  (println "Serving auto-reloading page at http://localhost:8000/?dev")
+  (comp (watch)
+        (hoplon {:prerender false :pretty-print true})
+        (web/dev-server)))
 
 (deftask production
   "Build for production."
