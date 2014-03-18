@@ -189,7 +189,7 @@ body {
 
 /* OTHER */
 
-.reveal code {
+.reveal pre code {
   font-size: 130%;
   line-height: 135%;
 }

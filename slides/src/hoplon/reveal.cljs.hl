@@ -89,6 +89,10 @@
 
 (def bullet div)
 
+(defelem bullet
+  [attrs children]
+  (div (assoc attrs :style "text-align: left") children))
+
 (defn quicklist
   [& things]
   (ul
@@ -102,3 +106,11 @@
 (defelem highlight
   [attrs children]
   (pre (code attrs children)))
+
+(defelem column
+  [{:keys [percent] :as attr} children]
+  (let [attrs (dissoc attrs :percent)
+        attrs (if percent
+                (assoc attrs :style (str "float: left; width: " percent "%;"))
+                (assoc attrs :style (str "float: left;")))]
+    (div attrs children)))
