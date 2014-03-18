@@ -1,0 +1,142 @@
+(page "index.html"
+      (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
+                                       notes highlight column quicklist]]))
+
+(html
+  (head)
+  (body
+    (slideshow
+     :theme "/mozilla-theme.css"
+     (intro
+      :title "ClojureBridge"
+      (p "Durham, NC")
+      (p "April 5, 2014"))
+     (chapter
+      :title "Introduction to Programming with Clojure"
+      (slide
+       :title "Why Clojure?"
+       (p "Clojure is simple and powerful.")
+       (p "Clojure is all-purpose.")
+       (p "Clojure is " (em "fun") "."))
+      (slide
+       :title "What is Clojure good at?"
+       (ul
+        (li "data processing")
+        (li "concurrent applications")
+        (li "web applications")
+        (li "everything!")))
+      (slide
+       :title "What does Clojure look like?"
+       (highlight
+        ;;{{
+        (+ 3 4)
+        (max 8 17 2)
+        (eat "sandwich")
+        ;;}}
+        ))
+      (slide
+       :title "What is a REPL?"
+       (div
+        (column
+         :percent 40
+         (ul
+          (li (b "R") "ead")
+          (li (b "E") "val")
+          (li (b "P") "rint")
+          (li (b "L") "oop")))
+        (column
+         (img :src "/img/instarepl.png")))))
+     (chapter
+      :title "Simple values"
+      (slide
+       :title "Value types"
+       (quicklist "numbers" "strings" "booleans" "keywords") )
+      (slide
+       :title "Numbers"
+       (highlight
+        ;;{{
+        ;; integers
+        12
+        -42
+
+        ;; floats
+        10.5
+        0.00000072725
+
+        ;; ratios
+        1/2
+        -7/3
+        ;;}}
+        ))
+      (slide
+       :title "Arithmetic"
+       (highlight
+        ;;{{
+        (+ 1 1)  ;=> 1 + 1 = 2
+        (- 12 4) ;=> 12 - 4 = 8
+        (* 13 2) ;=> 13 * 2 = 26
+        (/ 27 9) ;=> 27 / 9 = 3
+        ;;}}
+        ))
+      (slide
+       :title "Infix vs. prefix notation"
+       (p
+        (bullet "Infix: " (code "1 + 2 * 3 / 4 + 5 - 6 * 7 / 8 + 9"))
+        (bullet "Prefix: " (code "(+ (- (+ (+ 1 (/ (* 2 3) 4)) 5) (/ (* 6 7) 8)) 9)")))
+       (p
+        (bullet "Infix: " (code "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9"))
+        (bullet "Prefix: " (code "(+ 1 2 3 4 5 6 7 8 9)"))))
+      (slide
+       :title "Arithmetic with all number types"
+       (highlight
+        ;;{{
+        (+ 4/3 7/8)    ;=> 53/24
+        (- 9 4.2 1/2)  ;=> 4.3
+        (* 8 1/4)      ;=> 2
+        (/ 27/2 1.5)   ;=> 3.0
+        ;;}}
+        ))
+      (slide
+       :title "Exercise: Basic arithmetic"
+       (ul
+        (li "Take your height in feet and inches and convert it to inches using arithmetic in Clojure.")
+        (li "Then convert that to meters. There are 39.3701 inches in a meter.")
+        (li "Lastly, ask two people near you for their height in meters. Find the average of your heights.")
+        (li (p "Bonus: convert that average back to feet and inches.")
+            (p (code "(mod x y)")
+               " will give you the remainder when dividing two numbers."))))
+      (slide
+       :title "Strings"
+       (highlight :class "language-clojure"
+        ;;{{
+        "Hello world"
+        "This is a longer string that I wrote for purposes of an example."
+        "Aubrey said, \"I think we should go to the Orange Julius.\""
+        ;;}}
+        ))
+      (slide
+       :title "Booleans and nil"
+       (p "Answers to questions")
+       (highlight
+        ;;{{
+        true
+        false
+        nil
+        ;;}}
+        )))
+     (chapter
+      :title "Assigning names to values"
+      (slide
+       :title "def"
+       (highlight
+        ;;{{
+        (def apples 3)
+        (def oranges 5)
+        (+ apples oranges)
+        ;;}}
+        ))
+      (slide
+       :title "Exercise: Store the name of your hometown"
+       (p "Write the name of your hometown as a string and then assign that string to the symbol "
+          (code "my-hometown")
+          "."))))))

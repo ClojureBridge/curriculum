@@ -1,0 +1,116 @@
+(ns hoplon.reveal
+    (:require [clojure.string :as string]
+              [hoplon.util :as util]))
+
+
+(defelem markdown-slide
+  [attrs children]
+  (section (merge attrs {:data-markdown ""})
+           (script :type "text/template" children)))
+
+(defelem intro-title
+  [attrs children]
+  (if (util/is-text? children)
+    (add-attributes! (h1 (first children)) {:class "slide-title intro"})
+    children))
+
+(defelem chapter-title
+  [attrs children]
+  (if (util/is-text? children)
+    (add-attributes! (h2 (first children)) {:class "slide-title chapter"})
+    children))
+
+(defelem slide-title
+  [attrs children]
+  (if (util/is-text? children)
+    (add-attributes! (h3 (first children)) {:class "slide-title slide"})
+    children))
+
+(defelem slide
+  [{:keys [markdown title background transition] :as attrs} children]
+  ;; TODO
+  ;; - add data-background-repeat
+  ;; - add data-background-size
+  ;; - add class -> data-state
+  ;; - abstract out this nonsense
+  (let [attrs (dissoc attrs :markdown :title :background :transition)
+        attrs (if background
+                (assoc attrs :data-background background)
+                attrs)
+        attrs (if transition
+                (assoc attrs :data-transition transition)
+                attrs)
+        children (if title
+                   (concat [(slide-title title)] children)
+                   children)]
+    (if markdown
+      (markdown-slide attrs children)
+      (section attrs children))))
+
+(defelem chapter
+  [{:keys [title] :as attrs} children]
+  (if (empty? title)
+    (slide {} children)
+    (slide {} (concat [(slide (chapter-title title))] children))))
+
+(defelem intro
+  [{:keys [title] :as attrs} children]
+  (if (empty? title)
+    (slide {} children)
+    (slide {} (concat [(intro-title title)] children))))
+
+(defelem slideshow
+  [{:keys [theme] :as attrs :or {theme "default"}} children]
+  (add-initfn!
+   (fn []
+     (.initialize
+      js/Reveal
+      (clj->js {:history true
+                :dependencies
+                [{:src "reveal.js/plugin/markdown/marked.js"}
+                 {:src "reveal.js/plugin/markdown/markdown.js"}
+                 {:src "reveal.js/plugin/highlight/highlight.js"
+                  :async true
+                  :callback (fn [] (.initHighlightingOnLoad js/hljs))}
+                 {:src "reveal.js/plugin/notes/notes.js"
+                  :async true}]}))))
+
+  (div (-> attrs (dissoc :theme) (merge {:class "reveal"}))
+       (link :rel "stylesheet"
+             :href "reveal.js/css/reveal.css")
+       (link :rel "stylesheet"
+             :href (if (re-find #"\.css$" theme)
+                     theme
+                     (str "reveal.js/css/theme/" theme ".css"))
+             :id "theme")
+       (link :rel "stylesheet"
+             :href "reveal.js/plugin/highlight/github.min.css")
+       (div :class "slides" children)))
+
+(def bullet div)
+
+(defelem bullet
+  [attrs children]
+  (div (assoc attrs :style "text-align: left") children))
+
+(defn quicklist
+  [& things]
+  (ul
+   (loop-tpl :bindings [x things]
+             (li @x))))
+
+(defelem notes
+  [attrs children]
+  (aside (merge attrs {:class "notes"}) children))
+
+(defelem highlight
+  [attrs children]
+  (pre (code attrs children)))
+
+(defelem column
+  [{:keys [percent] :as attr} children]
+  (let [attrs (dissoc attrs :percent)
+        attrs (if percent
+                (assoc attrs :style (str "float: left; width: " percent "%;"))
+                (assoc attrs :style (str "float: left;")))]
+    (div attrs children)))
