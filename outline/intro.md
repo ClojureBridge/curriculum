@@ -56,7 +56,7 @@ How about the last line? That has a thing called a string in it, which we'll lea
 
 "REPL" stands for "Read-Eval-Print-Loop," which still doesn't make a ton of sense without context. Many programming languages, including Clojure, have a way to execute code interactively so you get instant feedback. In other words, the code is read, then it is evaluated, then the result is printed, and you begin again--thus, a loop.
 
-Clojure has a REPL that you can run from the terminal easily, and we'll touch on that more later, but for now, let's use Light Table's "insta-REPL," a nice way to interact from within Light Table.
+Clojure has a REPL that you can run from the terminal easily, and we'll talk more about that later, but for now, let's use Light Table's "insta-REPL," a nice way to interact from within Light Table.
 
 Go ahead and start Light Table if you haven't already. Once it's started, go to the View menu and click "Commands." Notice that you can get to the command by typing ctrl+space from now on, if that's faster for you. Type "insta" and press enter when the "Instarepl: Open a Clojure instarepl" choice is highlighted.
 
