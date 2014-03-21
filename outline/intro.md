@@ -30,7 +30,7 @@ So, we said Clojure is all-purpose, and it is. That doesn't mean it doesn't have
 
 Clojure is known for being good at data processing. That's because it has a good set of data structures -- that is, it has several built-in ways to represent data that are easy to use and powerful.
 
-Clojure is known for its concurrency. Think about writing instructions for four of your friends about how to assemble a treehouse, but instead of writing them so one step is done at a time, each of your friends does part of the job and they coordinate at the right time to assemble those parts into bigger parts, and they do this over and over until the end when it all comes together. Those instructions would be really complicated and hard to write and probably hard to read, too. Clojure gives us some easy ways to write these sort of instructions for computers.
+Clojure is known for its concurrency. Think about writing instructions for four of your friends about how to assemble a treehouse, but instead of writing them so one step is done at a time, each of your friends does part of the job. Then, they coordinate at the right time to assemble those parts into bigger parts, and they do this over and over again until the end, when it all comes together. Those instructions would be really complicated and hard to write--and probably hard to read, too. Clojure gives us some easy ways to write these sorts of instructions for computers.
 
 Clojure works well for building web applications, which is what we're going to do together.
 
