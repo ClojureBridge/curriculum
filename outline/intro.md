@@ -190,4 +190,4 @@ Look at the last line, and see how we can use symbols by themselves to refer to 
 
 ## EXERCISE: Store the name of your hometown
 
-Write the name of your hometown as a string and then assign that string to the symbol `my-hometown`.
+Write the name of your hometown as a string, and then assign that string to the symbol `my-hometown`.
