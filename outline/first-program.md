@@ -10,7 +10,7 @@ In order to do that, you'll first create a *project*. You'll learn how to organi
 Up until now you've been experimenting in a REPL. Unfortunately, all the work you do in a REPL is lost when you close the REPL. You can think of a project as a permanent home for your code. You'll be using a tool called "Leiningen" to help you create and manage your project. To create a new project, run this command:
 
 ```clojure
-lein new app world-bank
+lein new app global-growth
 ```
 
 This should create a directory structure that looks like this:
@@ -23,10 +23,10 @@ This should create a directory structure that looks like this:
 | resources
 | README.md
 | src
-| | world_bank
+| | global_growth
 | | | core.clj
 | test
-| | world_bank
+| | global_growth
 | | | core_test.clj
 ```
 
@@ -36,9 +36,9 @@ There's nothing inherently special or Clojure-y about this project skeleton. It'
   Leiningen answer questions like, "What dependencies does this
   project have?" and "When this Clojure program runs, what function
   should get executed first?"
-- `src/world_bank/core.clj` is where we'll be doing our
+- `src/global_growth/core.clj` is where we'll be doing our
   Clojure coding for awhile. In general, your source code will fall
-  under `src/{world_bank}`
+  under `src/{global_growth}`
 - The `test` directory obviously contains tests, which we won't be covering.
 - `resources` is a place for you to store assets like images; we won't
   be using it for awhile.
@@ -46,7 +46,7 @@ There's nothing inherently special or Clojure-y about this project skeleton. It'
 Now let's go ahead and actually run this project. Enter this at the command line:
 
 ```
-cd world_bank
+cd global_growth
 lein run
 ```
 
@@ -58,7 +58,7 @@ Hello, world!
 
 ## Modify Project
 
-Pretty cool! But also pretty useless. To change the behavior of this project, open up `src/world_bank/core.clj` and monkey around with the `-main` function. Try changing it so that it reads:
+Pretty cool! But also pretty useless. To change the behavior of this project, open up `src/global_growth/core.clj` and monkey around with the `-main` function. Try changing it so that it reads:
 
 ```clojure
 (defn -main
@@ -90,38 +90,20 @@ A man who carries a cat by the tail learns something he can learn in no other wa
 
 So, you can write programs of arbitrary complexity. Just make sure to use `-main` to kick them off.
 
-## Organization (Good candidate for cutting/mentioning briefly if time is running short)
+## Organization 
 
 As your programs get more complex, you'll need to organize them. You organize your Clojure code by placing related functions and data in separate files. Clojure expects each file to correspond to a *namespace*, so you must *declare* a namespace at the top of each file.
 
 Until now, you haven't really had to care about namespaces. Namespaces allow you to define new functions and data structures without worrying about whether the name you'd like is already taken. For example, you could create a function named `println` within the custom namespace `my-special-namespace`, and it would not interfere with Clojure's built-in `println` function. You can use the *fully-qualified name* `my-special-namespace/println` to distinguish your function from the built-in `println`.
 
-Let's create a new namespace for making world bank API calls. First, create the file `src/world_bank/api.clj`. Then write this in it:
+A namespace exists in the file `src/global_growth/core.clj`. Open it, and find this line: 
 
 ```clojure
-(ns world-bank.api)
+(ns global-growth.core)
 ```
 
-This line establishes that everything you define in this file will be stored within the `world-bank.api` namespace. For example, add this to your file:
+This line establishes that everything you define in this file will be stored within the `global-growth.core` namespace. 
 
-```clojure
-(def base-uri "http://api.worldbank.org")
-```
-
-You should be able to access that from your `core.clj` file. Change that file so that it reads:
-
-```clojure
-(ns world-bank.core)
-(require '[world-bank.api :as api])
-
-(defn -main
-  [& args]
-  (println api/base-uri))
-```
-
-If you run the `-main` function it should print `http://api.worldbank.org`.
-
-There are couple things going on here. First, you use `require` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `api/base-uri` instead of `world-bank.api/base-uri`.
 
 ## Dependencies
 
@@ -141,15 +123,27 @@ That's where you specify your dependencies. You can add a dependency by adding a
                [cheshire "5.3.1"]]
 ```
 
-Now you can require the namespaces defined in `clj-http` within your own project. Update `src/world_bank/api.clj` so that it looks like this:
+Now you can require the namespaces defined in `clj-http` within your own project. Update `src/global_growth/core.clj` so that it looks like this:
 
 ```clojure
-(ns world-bank.api)
+(ns global-growth.core)
 (require '[clj-http.client :as client])
-(require '[cheshire.core :as json]
+```
+
+There are a couple of things going on here. First, you use `require` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `client/get` instead of `clj-http.client/get`.
+
+Now add:
+
+```clojure
+(ns global-growth.core)
+(require '[clj-http.client :as client])
+(require '[cheshire.core :as json])
 
 (def base-uri "http://api.worldbank.org")
 (def query-params {:format "json" :per_page 10000})
+
+(defn parse-json [str]
+  (json/parse-string str true))
 
 (defn get-api
   "Returns map representing API response."
