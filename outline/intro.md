@@ -16,11 +16,11 @@ Introduction to Programming with Clojure
 
 If you've never programmed before, you may not know that there are many languages to choose from. Some of the other languages you might have heard of or will hear of are C, JavaScript, Python, and Java.
 
-So why are we teaching Clojure? It's not as popular as any of those languages. We're using Clojure because of three qualities it has that make it an ideal first language to learn -- or a great language to learn in addition to others you might already know:
+So why are we teaching Clojure? It's not as popular as any of those languages. We're using Clojure because of three qualities it has that make it an ideal first language to learn--or a great language to learn in addition to others you might already know:
 
 * Clojure is _simple_. That's not to say it's not powerful; it is. The number of concepts you have to know to program in Clojure is very small, however, and easy to grasp. Clojure grows with you as you learn it, and you can be very productive with a small subset of the language.
 
-* Clojure is _all-purpose_. Some languages have a specific focus. JavaScript, for example, was traditionally used only in web pages (although that's changed somewhat.) Objective-C is used mainly for iPhone apps. We're going to make a web application today, but you can use Clojure for any sort of application easily.
+* Clojure is _all-purpose_. Some languages have a specific focus. JavaScript, for example, was traditionally used only in web pages (although that's changed somewhat). Objective-C is used mainly for iPhone apps. We're going to make a web application today, but you can use Clojure for any sort of application easily.
 
 * Clojure is _fun_. That's a matter of opinion, of course, but we think it holds true. I hope that during this course you experience the joy of seeing a Clojure program come together and do something powerful and surprising.
 
@@ -28,11 +28,11 @@ So why are we teaching Clojure? It's not as popular as any of those languages. W
 
 So, we said Clojure is all-purpose, and it is. That doesn't mean it doesn't have strong suits, though.
 
-Clojure is known for being good at data processing. That's because it has a good set of data structures -- that is, it has several built-in ways to represent data that are easy to use and powerful.
+Clojure is known for being good at data processing. That's because it has a good set of data structures--that is, it has several built-in ways to represent data that are easy to use and powerful.
 
-Clojure is known for its concurrency. Think about writing instructions for four of your friends about how to assemble a treehouse, but instead of writing them so one step is done at a time, each of your friends does part of the job and they coordinate at the right time to assemble those parts into bigger parts, and they do this over and over until the end when it all comes together. Those instructions would be really complicated and hard to write and probably hard to read, too. Clojure gives us some easy ways to write these sort of instructions for computers.
+Clojure is known for its concurrency. Think about writing instructions for four of your friends about how to assemble a treehouse, but instead of writing them so one step is done at a time, each of your friends does part of the job. Then, they coordinate at the right time to assemble those parts into bigger parts, and they do this over and over again until the end, when it all comes together. Those instructions would be really complicated and hard to write--and probably hard to read, too. Clojure gives us some easy ways to write these sorts of instructions for computers.
 
-Clojure works well for building web applications, which is what we're going to do together.
+Clojure also works well for building web applications, which is what we're going to do together.
 
 ## What does Clojure look like?
 
@@ -44,9 +44,9 @@ Here's an example of a few lines of Clojure:
 (eat "sandwich")
 ```
 
-The first thing you notice are parentheses, probably. Parentheses enclose instructions to the computer in Clojure. Every time you see a left parenthesis, the next thing you see will be an instruction of some sort. That instruction is normally what we call a _function_. Functions do all the hard work in Clojure. They take in _arguments_, which is everything else inside the parentheses after the function and return a new value.
+The first thing you notice are parentheses, probably. Parentheses enclose instructions to the computer in Clojure. Every time you see a left parenthesis, the next thing you see will be an instruction of some sort. That instruction is normally what we call a _function_. Functions do all the hard work in Clojure. They take in _arguments_--which is everything else inside the parentheses after the function--and return a new value.
 
-Take a look at the first line. The plus sign that you see is a function. It takes all its arguments and adds them together, returning the sum. This might look confusing if you try to think of it like writing out math, because you'd put the plus sign in a different place that way. Just think of the plus as a function. If you've used Excel, imagine the `SUM()` function in there: it works like that.
+Take a look at the first line. The plus sign that you see is a function. It takes all its arguments and adds them together, returning the sum. This might look confusing if you try to think of it like writing out math, because you'd put the plus sign in a different place that way. Just think of the plus as a function. If you've used Excel, imagine the `SUM()` function in there; it works like that.
 
 What is the function on the next line? What are its arguments? What do you think it returns? It returns the number 17, which is the largest of the three numbers.
 
@@ -54,13 +54,13 @@ How about the last line? That has a thing called a string in it, which we'll lea
 
 ## What is the REPL?
 
-REPL stands for Read-Eval-Print-Loop, which still doesn't make a ton of sense without context. Many programming languages, including Clojure, have a way to execute code interactively so you get instant feedback. In other words, the code is read, then it is evaluated, then the result is printed, and you begin again, thus, a loop.
+"REPL" stands for "Read-Eval-Print-Loop," which still doesn't make a ton of sense without context. Many programming languages, including Clojure, have a way to execute code interactively so you get instant feedback. In other words, the code is read, then it is evaluated, then the result is printed, and you begin again--thus, a loop.
 
-Clojure has a REPL that you can run from the terminal easily, and we'll touch on that more later, but for now, let's use Light Table's "insta-REPL," a nice way to interact from within Light Table.
+Clojure has a REPL that you can run from the terminal easily, and we'll talk more about that later, but for now, let's use Light Table's "insta-REPL," a nice way to interact from within Light Table.
 
-Go ahead and start Light Table if you haven't already. Once it's started, go to the View menu and click "Commands." Notice that you can get to the command by typing ctrl+space from now on, if that's faster for you. Type "insta" and press enter when the "Instarepl: Open a Clojure instarepl" choice is highlighted.
+Go ahead and start Light Table, if you haven't already. Once it's started, go to the "View" menu and click "Commands." Notice that you can get to the command by typing ctrl+space from now on, if that's faster for you. Type "insta" and press enter when the "Instarepl: Open a Clojure instarepl" choice is highlighted.
 
-After you hit enter, a blank new page will open. At the bottom of Light Table, you should see a message about connecting. Wait for the instarepl to finish connecting before typing anything. Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what happens. Did you see the result appearing beside what you were typing? Once you'd done that, hit enter and type `(max 8 17 2)`. You might see an error in red while typing. This happens because Light Table is continually evaluating what you are typing, and before you finish, the code might not be valid.
+After you hit enter, a blank new page will open. At the bottom of Light Table, you should see a message about "connecting" or "retrieving deps." Wait for the instarepl to finish connecting before typing anything. Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what happens. Did you see the result appearing beside what you were typing? Once you'd done that, hit enter and type `(max 8 17 2)`. You might see an error in red while typing. This happens because Light Table is continually evaluating what you are typing, and before you finish, the code might not be valid.
 
 ## Simple values
 
@@ -142,7 +142,7 @@ Then convert that to meters. There are 39.3701 inches in a meter.
 
 Lastly, ask two people near you for their height in meters. Find the average of your heights.
 
-Bonus: convert that average back to feet and inches. (mod x y) will give you the remainder when dividing two numbers.
+Bonus: Convert that average back to feet and inches. `(mod x y)` will give you the remainder when dividing two numbers.
 
 ### Strings and characters
 
@@ -186,8 +186,8 @@ When you assign a name to a value, that name is called a _symbol_. You can assig
 average-fruit-amount
 ```
 
-Look at the last line: see how we can use symbols by themselves to refer to a value.
+Look at the last line, and see how we can use symbols by themselves to refer to a value.
 
 ## EXERCISE: Store the name of your hometown
 
-Write the name of your hometown as a string and then assign that string to the symbol `my-hometown`.
+Write the name of your hometown as a string, and then assign that string to the symbol `my-hometown`.
