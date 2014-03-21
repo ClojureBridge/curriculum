@@ -160,3 +160,5 @@ Congratulations! That website is running code you have on your computer that you
 
 
 
+### Troubleshooting
+* If you receive errors while running Light Table about Java or JDK, these may be resolved by finishing the installation of Leiningen first. If not, see a TA to look at your environment variables.
