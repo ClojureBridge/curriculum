@@ -186,7 +186,7 @@ When you assign a name to a value, that name is called a _symbol_. You can assig
 average-fruit-amount
 ```
 
-Look at the last line: see how we can use symbols by themselves to refer to a value.
+Look at the last line, and see how we can use symbols by themselves to refer to a value.
 
 ## EXERCISE: Store the name of your hometown
 
