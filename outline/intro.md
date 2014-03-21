@@ -16,7 +16,7 @@ Introduction to Programming with Clojure
 
 If you've never programmed before, you may not know that there are many languages to choose from. Some of the other languages you might have heard of or will hear of are C, JavaScript, Python, and Java.
 
-So why are we teaching Clojure? It's not as popular as any of those languages. We're using Clojure because of three qualities it has that make it an ideal first language to learn -- or a great language to learn in addition to others you might already know:
+So why are we teaching Clojure? It's not as popular as any of those languages. We're using Clojure because of three qualities it has that make it an ideal first language to learn--or a great language to learn in addition to others you might already know:
 
 * Clojure is _simple_. That's not to say it's not powerful; it is. The number of concepts you have to know to program in Clojure is very small, however, and easy to grasp. Clojure grows with you as you learn it, and you can be very productive with a small subset of the language.
 
@@ -28,7 +28,7 @@ So why are we teaching Clojure? It's not as popular as any of those languages. W
 
 So, we said Clojure is all-purpose, and it is. That doesn't mean it doesn't have strong suits, though.
 
-Clojure is known for being good at data processing. That's because it has a good set of data structures -- that is, it has several built-in ways to represent data that are easy to use and powerful.
+Clojure is known for being good at data processing. That's because it has a good set of data structures--that is, it has several built-in ways to represent data that are easy to use and powerful.
 
 Clojure is known for its concurrency. Think about writing instructions for four of your friends about how to assemble a treehouse, but instead of writing them so one step is done at a time, each of your friends does part of the job. Then, they coordinate at the right time to assemble those parts into bigger parts, and they do this over and over again until the end, when it all comes together. Those instructions would be really complicated and hard to write--and probably hard to read, too. Clojure gives us some easy ways to write these sorts of instructions for computers.
 
