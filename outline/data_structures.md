@@ -9,7 +9,7 @@ Data Structures
 
 ## Collections
 
-So far, we've dealt with discrete pieces of data, one number, one string, one value. When programming, it is more often the case that you want to work with groups of data. Clojure has great facilities for working with these groups, or _collections_ of data. Not only does it provide four different types of collections, but it also provides a uniform way to use all of these collections together.
+So far, we've dealt with discrete pieces of data: one number, one string, one value. When programming, it is more often the case that you want to work with groups of data. Clojure has great facilities for working with these groups, or _collections_, of data. Not only does it provide four different types of collections, but it also provides a uniform way to use all of these collections together.
 
 
 ## Vectors
