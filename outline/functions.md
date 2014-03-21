@@ -88,8 +88,6 @@ A large part of programming is manipulating strings. The most important string f
 ;=> "Chocolate, strawberry, and vanilla"
 ```
 
-TODO add more string functions from clojure.string?
-
 ### Collection functions
 
 When we learned about data structures, we saw many functions that operated on those data structures. Some of them were:
@@ -196,7 +194,7 @@ Here is an example of how it should work:
 (get-names [{:first "Margaret" :last "Atwood"}
             {:first "Doris" :last "Lessing"}
             {:first "Ursula" :last "Le Guin"}
-            {:first "Alice" "Munro"}])
+            {:first "Alice" :last "Munro"}])
 
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```

@@ -1,0 +1,11 @@
+(ns hoplon.util)
+
+
+(defn is-text?
+  [children]
+  (and (= (count children) 1)
+       (not (= (.-nodeType (first children)) 1))))
+
+(defn url
+  [href]
+  (a {:href href} href))

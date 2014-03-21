@@ -54,7 +54,7 @@ Go to the [Light Table site](http://www.lighttable.com/). On the page there, you
 
 ![Light Table downloads](img/os_x/light-table-download.png)
 
-Unzip the downloaded file. It should be in your Downloads folder and be named LightTableMac.zip. Once unzipped, move LightTable.app to your Applications folder.
+There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
 
 ## Getting setup with Heroku
 
@@ -78,13 +78,13 @@ After all that, you should be at your Heroku dashboard. There will be a link on 
 
 If you do not see this link on your dashboard, you can download the toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com/).
 
-This will download a .pkg file. Click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your OS X account password to complete installation. Once installation, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+This will download a .pkg file. Double-click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your OS X account password to complete installation. Once the Heroku Toolbelt is installed, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
 ![Heroku login](img/os_x/heroku_login.png)
 
 ## Testing your setup
 
-You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer, all the tools you will need for this course. Before starting, we need to test them out.
+You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer--all the tools you will need for this course. Before starting, we need to test them out.
 
 Go to your terminal and run the following command:
 
