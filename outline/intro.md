@@ -58,7 +58,7 @@ How about the last line? That has a thing called a string in it, which we'll lea
 
 Clojure has a REPL that you can run from the terminal easily, and we'll talk more about that later, but for now, let's use Light Table's "insta-REPL," a nice way to interact from within Light Table.
 
-Go ahead and start Light Table if you haven't already. Once it's started, go to the View menu and click "Commands." Notice that you can get to the command by typing ctrl+space from now on, if that's faster for you. Type "insta" and press enter when the "Instarepl: Open a Clojure instarepl" choice is highlighted.
+Go ahead and start Light Table, if you haven't already. Once it's started, go to the "View" menu and click "Commands." Notice that you can get to the command by typing ctrl+space from now on, if that's faster for you. Type "insta" and press enter when the "Instarepl: Open a Clojure instarepl" choice is highlighted.
 
 After you hit enter, a blank new page will open. At the bottom of Light Table, you should see a message about connecting. Wait for the instarepl to finish connecting before typing anything. Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what happens. Did you see the result appearing beside what you were typing? Once you'd done that, hit enter and type `(max 8 17 2)`. You might see an error in red while typing. This happens because Light Table is continually evaluating what you are typing, and before you finish, the code might not be valid.
 
