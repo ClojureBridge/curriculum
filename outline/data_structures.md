@@ -24,7 +24,7 @@ Vectors are written using square brackets with any number of pieces of data insi
 []
 ```
 
-What can you do with vectors? Vectors are easily to add more items to, delete items from, or pull arbitrary items out of. Here are some functions that operate on vectors.
+What can you do with vectors? Vectors are easy to add more items to, delete items from, or pull arbitrary items out of. Here are some functions that operate on vectors.
 
 ```clj
 (vector? [:a :b :c])
