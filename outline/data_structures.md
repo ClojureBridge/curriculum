@@ -58,7 +58,7 @@ Let's look at these functions together. First, you see a function called `vector
 
 `associative?` is a little harder. It lets us know whether we can look up values in this collection using keys. We can with a vector; each item in the vector has a key starting with zero and going up that points to it. In our vector `[:a :b :c]`, the key 0 points to `:a`, the key 1 points to `:b`, and the key 2 points to `:c`.
 
-The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector. `conj` is an interesting function that you'll see used with all the data structures. With vectors, it takes a vector and an item and returns a new vector with that item added to the end of the vector. Why the name `conj`? The verb "conjugate" has an archaic meaning to join together, which is what we're doing: we're joining the new item to the vector.
+The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector. `conj` is an interesting function that you'll see used with all the data structures. With vectors, it takes a vector and an item and returns a new vector with that item added to the end of the vector. Why the name `conj`? The verb "conjugate" has an archaic meaning "to join together," which is what we're doing: we're joining the new item to the vector.
 
 If you've programmed in another language before, you might be wondering if `conj` changes the vector. It's important to note that it does not. All collections in Clojure are _immutable_: that is, unchangable. When we say that a function "adds to" or "removes from" a collection, what we mean is that the function returns a new collection with an item added or removed.
 
