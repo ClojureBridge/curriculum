@@ -84,7 +84,7 @@ We write lists by calling the function `list` with the items we want in the list
 (list)
 ```
 
-Note that the last example there is an empty list.
+Note that the last example produces an empty list.
 
 What can you do with lists? You'll usually use a vector to store a collection of data (I want to say "list" here, but that's super-confusing.) Sometimes, though, you want a collection that you can quickly add and remove the head of. Think of a list like this as a stack of something -- coins, plates, books, whatever. It's easy to add to the top or take stuff off the top. Can you see why it'd be hard to remove things from the bottom of a list?
 
