@@ -210,7 +210,7 @@ Make a map representing yourself. Make sure it contains your first name and last
 
 ## Sequences
 
-The reason you see the same functions used on different types of collections is because they are all _sequences_. (Technically, they all provide access to their elements as a sequence. While this is an important distinction for advanced Clojure developers, the simpler way of talking about sequences is useful at this stage.) A sequence is a Clojure abstraction, a unified way to look at many different types of collections. The data structures you've seen so far -- vectors, lists, maps, and sets -- are not the only things to be represented as sequences. Many other things, such as lists of files, lines of text, or records in a database, can be represented as sequences, and so you can use all sequence functions with them.
+The reason you see the same functions used on different types of collections is because all of these collections are different kinds types of _sequences_. (Technically, they all provide access to their elements as a sequence. While this is an important distinction for advanced Clojure developers, the simpler way of talking about sequences is useful at this stage.) A sequence is a Clojure abstraction, a unified way to look at many different types of collections. The data structures you've seen so far -- vectors, lists, maps, and sets -- are not the only things to be represented as sequences. Many other things, such as lists of files, lines of text, or records in a database, can be represented as sequences, and so you can use all sequence functions with them.
 
 Here is one example. The sequence function take makes a new sequence with the first so many items from a provided collection. 
 
