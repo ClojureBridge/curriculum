@@ -125,7 +125,7 @@ Lastly, there's a function here we didn't see before: `rest`. `rest` removes the
 
 ## Maps
 
-Maps hold a set of keys and values associated with them. You can think of it like a dictionary: you look up things using a word (a key) and see the definition (its value). If you've programmed in another language, you might have seen something like maps, maybe called dictionaries, hashes, or associative arrays.
+Maps hold a set of keys and values associated with them. You can think of it like a dictionary: you look up things using a word (a key) and see the definition (its value). If you've programmed in another language, you might have seen something like maps--maybe called dictionaries, hashes, or associative arrays.
 
 We write maps by enclosing alternating keys and values in curly braces, like so:
 
