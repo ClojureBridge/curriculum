@@ -224,7 +224,7 @@ We will see many other functions that can be used with sequences as we move forw
 
 ## Collections of Collections
 
-Simple values such as numbers, keywords, and strings are not the only things you can put into a collection. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
+Simple values such as numbers, keywords, and strings are not the only types of things you can put into a collection. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
 
 
 ### EXERCISE: Modeling your classmates
