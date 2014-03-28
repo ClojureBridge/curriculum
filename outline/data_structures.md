@@ -16,6 +16,12 @@ So far, we've dealt with discrete pieces of data, one number, one string, one va
 
 Vectors are sequential collections of data. You could say they are lists of data, but we also have another collection called a list. If you have programmed in another language, these might have been called arrays in that language.
 
+To imagine a vector, imagine a box split into some number of equally-sized compartments. Each of those compartments has a number. You can put a piece of data inside each compartment and always know where to find it, as it has a number.
+
+![Vector](../img/vector.png)
+
+Note that the numbers start with 0. That may seem strange, but we often count from zero when programming.
+
 Vectors are written using square brackets with any number of pieces of data inside them, separated by spaces. Here are some examples of vectors:
 
 ```clj
@@ -28,12 +34,6 @@ What can you do with vectors? Vectors are easily to add more items to, delete it
 
 ```clj
 (vector? [:a :b :c])
-;=> true
-
-(sequential? [:a :b :c])
-;=> true
-
-(associative? [:a :b :c])
 ;=> true
 
 (vector :a :b :c)
@@ -52,13 +52,13 @@ What can you do with vectors? Vectors are easily to add more items to, delete it
 ;=> :a
 ```
 
-Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. `sequential?` and `associative?` also have question marks at the end of them. We often all functions like these _predicate functions_, and they answer some true-or-false question about the data we give them. `sequential?` lets us know if this collection lets us store and access things sequentially (it does.) `associative?` is a little harder. It lets us know whether we can look up values in this collection using keys. We can with a vector: each item in the vector has a key starting with zero and going up that points to it. In our vector `[:a :b :c]`, the key 0 points to `:a`, the key 1 points to `:b`, and the key 2 points to `:c`.
+Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer some true-or-false question about the data we give them.
 
 The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector. `conj` is an interesting function that you'll see used with all the data structures. With vectors, it takes a vector and an item and returns a new vector with that item added to the end of the vector. Why the name `conj`? The verb "conjugate" has an archaic meaning to join together, which is what we're doing: we're joining the new item to the vector.
 
 If you've programmed in another language before, you might be wondering if `conj` changes the vector. It's important to note that it does not. All collections in Clojure are _immutable_: that is, unchangable. When we say that a function "adds to" or "removes from" a collection, what we mean is that the function returns a new collection with an item added or removed.
 
-Take a look at the last three functions. `count` does what you'd expect: gives us a count of the number of items in a vector. `nth` gives us the nth item in the vector. Note that we start counting at 0, so in the example, calling `nth` with the number 1 gives us what we'd call the second element when we aren't programming. `first` returns the first item in the collection. Try not to think about that and `nth` at the same time or your brain will fry.
+Take a look at the last three functions. `count` does what you'd expect: gives us a count of the number of items in a vector. `nth` gives us the nth item in the vector. Remember that we start counting at 0, so in the example, calling `nth` with the number 1 gives us what we'd call the second element when we aren't programming. `first` returns the first item in the collection. Try not to think about that and `nth` at the same time or your brain will fry.
 
 
 ### EXERCISE: Make a vector
@@ -90,12 +90,6 @@ Here are some functions that operate on lists:
 (list? (list 1 2 3))
 ; => true
 
-(sequential? (list 1 2 3))
-; => true
-
-(associative? (list 1 2 3))
-; => false
-
 (list 1 2 3)
 ; => (1 2 3)
 
@@ -112,7 +106,7 @@ Here are some functions that operate on lists:
 ; => (2 3)
 ```
 
-A lot of these are the same as you saw with vectors. Let's talk about what's different. Look at the `associative?` function. This time it's false. Can you guess why? In a list, we don't have keys to look stuff up by. If you want an item from a list, you have to take items off the top until you get what you're looking for.
+A lot of these are the same as you saw with vectors.
 
 You can use `conj` with lists, too. What's different from when we use it with vectors? New items get added to the head of the list. `conj` works with all the data structure we're going to cover, but it doesn't promise where it will add the new item: that's specific to the type of data structure.
 
@@ -137,12 +131,6 @@ Let's look at some functions we can use with maps:
 
 ```clj
 (map? {:first "Sally" :last "Brown"})
-;=> true
-
-(sequential? {:first "Sally" :last "Brown"})
-;=> false
-
-(associative? {:first "Sally" :last "Brown"})
 ;=> true
 
 (get {:first "Sally" :last "Brown"} :first)
@@ -173,7 +161,7 @@ Let's look at some functions we can use with maps:
 ;=> {1 2, 3 4}
 ```
 
-We don't have nearly as many functions here in common as vectors and lists did. We still have `sequential?` and `associative?` to tell us what our collections are like. Note that `sequential?` is now false: maps don't hold things in a certain order.
+We don't have nearly as many functions here in common as vectors and lists did.
 
 `get` works a lot like `nth` did with vectors, but takes a key instead of a number. It uses the supplied key to look up a value in the map. What do you think is happening with the second example of `get`? We can supply a value for `get` to return if it can't find the key we asked for. In this case, we supplied the key `:MISS`.
 
