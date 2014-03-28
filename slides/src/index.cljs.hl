@@ -11,7 +11,7 @@
   (head)
   (body
     (slideshow
-     :theme "/mozilla-theme.css"
+     :theme "mozilla-theme.css"
      (intro
       :title "ClojureBridge"
       (p "Durham, NC")
