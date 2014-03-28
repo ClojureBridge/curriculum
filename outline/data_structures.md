@@ -9,7 +9,7 @@ Data Structures
 
 ## Collections
 
-So far, we've dealt with discrete pieces of data, one number, one string, one value. When programming, it is more often the case that you want to work with groups of data. Clojure has great facilities for working with these groups, or _collections_ of data. Not only does it provide four different types of collections, but it also provides a uniform way to use all of these collections together.
+So far, we've dealt with discrete pieces of data: one number, one string, one value. When programming, it is more often the case that you want to work with groups of data. Clojure has great facilities for working with these groups, or _collections_, of data. Not only does it provide four different types of collections, but it also provides a uniform way to use all of these collections together.
 
 
 ## Vectors
@@ -30,7 +30,7 @@ Vectors are written using square brackets with any number of pieces of data insi
 []
 ```
 
-What can you do with vectors? Vectors are easily to add more items to, delete items from, or pull arbitrary items out of. Here are some functions that operate on vectors.
+What can you do with vectors? Vectors are easy to add more items to, delete items from, or pull arbitrary items out of. Here are some functions that operate on vectors.
 
 ```clj
 (vector? [:a :b :c])
@@ -52,13 +52,13 @@ What can you do with vectors? Vectors are easily to add more items to, delete it
 ;=> :a
 ```
 
-Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer some true-or-false question about the data we give them.
+Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer true-or-false questions about the data we give them.
 
-The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector. `conj` is an interesting function that you'll see used with all the data structures. With vectors, it takes a vector and an item and returns a new vector with that item added to the end of the vector. Why the name `conj`? The verb "conjugate" has an archaic meaning to join together, which is what we're doing: we're joining the new item to the vector.
+The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector. `conj` is an interesting function that you'll see used with all the data structures. With vectors, it takes a vector and an item and returns a new vector with that item added to the end of the vector. Why the name `conj`? The verb "conjugate" has an archaic meaning "to join together," which is what we're doing: we're joining the new item to the vector.
 
-If you've programmed in another language before, you might be wondering if `conj` changes the vector. It's important to note that it does not. All collections in Clojure are _immutable_: that is, unchangable. When we say that a function "adds to" or "removes from" a collection, what we mean is that the function returns a new collection with an item added or removed.
+If you've programmed in another language before, you might be wondering if `conj` changes the vector. It's important to note that it does not. All collections in Clojure are _immutable_--that is, unchangeable. When we say that a function "adds to" or "removes from" a collection, what we mean is that the function returns a new collection with an item added or removed.
 
-Take a look at the last three functions. `count` does what you'd expect: gives us a count of the number of items in a vector. `nth` gives us the nth item in the vector. Remember that we start counting at 0, so in the example, calling `nth` with the number 1 gives us what we'd call the second element when we aren't programming. `first` returns the first item in the collection. Try not to think about that and `nth` at the same time or your brain will fry.
+Now, take a look at the last three functions. `count` does what you'd expect: it gives us a count of the number of items in a vector. `nth` gives us the nth item in the vector. Note that we start counting at 0, so in the example, calling `nth` with the number 1 gives us what we'd call the second element when we aren't programming. `first` returns the first item in the collection. Try not to think about that and `nth` at the same time or your brain will fry.
 
 
 ### EXERCISE: Make a vector
@@ -80,9 +80,9 @@ We write lists by calling the function `list` with the items we want in the list
 (list)
 ```
 
-Note that the last example there is an empty list.
+Note that the last example produces an empty list.
 
-What can you do with lists? You'll usually use a vector to store a collection of data (I want to say "list" here, but that's super-confusing.) Sometimes, though, you want a collection that you can quickly add and remove the head of. Think of a list like this as a stack of something -- coins, plates, books, whatever. It's easy to add to the top or take stuff off the top. Can you see why it'd be hard to remove things from the bottom of a list?
+What can you do with lists? You'll usually use a vector to store a collection of data (I want to say "list" here, but that's super-confusing). Sometimes, though, you want a collection that you can quickly add and remove the head of. Think of a list like this as a stack of something--coins, plates, books, whatever. It's easy to add to the top or take stuff off the top. Can you see why it'd be hard to remove things from the bottom of a list?
 
 Here are some functions that operate on lists:
 
@@ -115,7 +115,7 @@ Lastly, there's a function here we didn't see before: `rest`. `rest` removes the
 
 ## Maps
 
-Maps hold a set of keys and values associated with them. You can think of it like a dictionary: you look up things using a word (a key) and see the definition (that is, the value.) If you've programmed in another language, you might have seen something like maps, maybe called dictionaries, hashes, or associative arrays.
+Maps hold a set of keys and values associated with them. You can think of it like a dictionary: you look up things using a word (a key) and see the definition (its value). If you've programmed in another language, you might have seen something like maps--maybe called dictionaries, hashes, or associative arrays.
 
 We write maps by enclosing alternating keys and values in curly braces, like so:
 
@@ -194,9 +194,9 @@ Make a map representing yourself. Make sure it contains your first name and last
 
 ## Sequences
 
-The reason you see the same functions used on different types of collections is because they are all _sequences_. (Technically, they all provide access to their elements as a sequence. While this is an important distinction for advanced Clojure developers, the simpler way of talking about sequences is useful at this stage.) A sequence is a Clojure abstraction, a unified way to look at many different types of collections. The data structures you've seen so far -- vectors, lists, maps, and sets -- are not the only things to be represented as sequences. Many other things, such as lists of files, lines of text, or records in a database, can be represented as sequences, and so you can use all sequence functions with them.
+The reason you see the same functions used on different types of collections is because all of these collections are different kinds types of _sequences_. (Technically, they all provide access to their elements as a sequence. While this is an important distinction for advanced Clojure developers, the simpler way of talking about sequences is useful at this stage.) A sequence is a Clojure abstraction, a unified way to look at many different types of collections. The data structures you've seen so far--vectors, lists, and maps--are not the only things to be represented as sequences. Many other things, such as lists of files, lines of text, or records in a database, can be represented as sequences, and so you can use all sequence functions with them.
 
-Here is one example. The sequence function take makes a new sequence with the first so many items from a provided collection. 
+Here is one example. The sequence function `take` makes a new sequence with the first however-many items from a provided collection. 
 
 ```clj
 (take 3 [1 2 3 4 5 6 7 8])
@@ -208,7 +208,7 @@ We will see many other functions that can be used with sequences as we move forw
 
 ## Collections of Collections
 
-Simple values such as numbers, keywords, and strings are not the only things you can put into a collection. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
+Simple values such as numbers, keywords, and strings are not the only types of things you can put into collections. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
 
 
 ### EXERCISE: Modeling your classmates

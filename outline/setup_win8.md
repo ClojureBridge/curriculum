@@ -34,7 +34,7 @@ Click the button above "Java Platform (JDK)," as you can see in the above pictur
 
 Click the radio button to accept the license agreement, and then download one of the two Windows choices. If you are running 32-bit Windows, choose "Windows x86." If you are running 64-bit Windows, choose "Windows x64."
 
-If you do not know if you are running 32-bit or 64-bit Windows, go to the "Windows" screen (the "Start Screen") and type "system." Choose "System." You should see a window like the following:
+If you do not know if you are running 32-bit or 64-bit Windows, go to the "Windows" screen (the "Start Screen") and type "system." Choose "System." (If that does not work, type "Control Panel" and choose "System" from the Control Panel screen.) You should see a window like the following:
 
 ![Windows My Computer properties](img/win8/system-properties.png)
 
@@ -86,14 +86,15 @@ First, look up what your user directory is. You can find it by running `echo %US
 
 ```
 mkdir %USERPROFILE%\.ssh
+
 "C:\Program Files\Git\bin\ssh-keygen.exe"
 ```
 
-The quotes are necessary on the `ssh-keygen.exe` command. When you run `ssh-keygen.exe`, you will need to type the name of your user directory, plus `\.ssh\id_rsa` when it asks you where to save the key. Look at the following example:
+The quotes are necessary on the `ssh-keygen.exe` command. When you run `ssh-keygen.exe`, you will need to type the name of your user directory - everything from "C:\" onward - plus `\.ssh\id_rsa` when it asks you where to save the key. Be careful to type everything exactly. When it asks to 'Enter passphrase' just hit Enter, then Enter again. *Look at the following example:*
 
 ![ssh-keygen](img/win7/ssh-keygen.png)
 
-After that, run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+After that, close the command prompt, open it back up, and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
 ## Testing your setup
 
@@ -119,7 +120,7 @@ This could take a long time, and will download many other pieces of code it reli
 
 ![Testing lein repl](img/win7/testing-step2.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and hit enter. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
+This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+  1  1)` and hit enter. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
 
 Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
 
@@ -145,6 +146,7 @@ Next, run the following commands:
 
 ```
 git push heroku master
+
 heroku open
 ```
 
@@ -158,3 +160,5 @@ Congratulations! That website is running code you have on your computer that you
 
 
 
+### Troubleshooting
+* If you receive errors while running Light Table about Java or JDK, these may be resolved by finishing the installation of Leiningen first. If not, see a TA to look at your environment variables.

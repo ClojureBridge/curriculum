@@ -2,10 +2,10 @@ Making Your Own Web Application
 ===============================
 
 1. Open Light Table.
-2. Load the global-growth project. File -> Open folder -> find global-growth project.
-3. Evaluate the namespace: Go to the line "(ns global-growth.core" and do cmd-shift-enter.
-4. Open the instarepl (Ctrl-space, "instarepl") and choose the "global-growth-0.1.0-SNAPSHOT" client.
-5. Input the below statements, one-by-one, into the instarepl.
+2. Load the global-growth project. File -> Open folder -> find global-growth project. [This is the shell-project version of the project which should be provided to students during the Installfest.]
+3. Open global-growth - src - global_growth - core.clj by clicking on it.
+4. Evaluate the namespace: Go to the line "(ns global-growth.core" and do cmd-shift-enter.
+5. Input the below statements, one-by-one, into core.clj.
 
 World Bank API
 -------------
@@ -132,7 +132,7 @@ Turn it into a function called get-indicator-all. The indicator name needs to be
 
 Some supporting functions
 -------------------------
-Just copy/paste these into the REPL (they are in the provided source file). We aren't talking about these.
+These are in the provided source file. We aren't talking about these.
 
     (def list-size 10)
 
