@@ -1,0 +1,21 @@
+(page "module3.html"
+      (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
+                                       notes highlight column quicklist]]
+                [tailrecursion.hoplon.reload :refer [reload-all]]))
+
+(when (= (-> js/window .-location .-search) "?dev")
+  (print "Autoreloading")
+  (reload-all))
+
+(defelem hlclj
+  [attrs children]
+  (highlight (assoc attrs :class "clojure") children))
+
+(html
+  (head)
+  (body
+    (slideshow
+     :theme "mozilla-theme.css"
+     (intro
+      :title "Module 3")    
+     )))
