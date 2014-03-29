@@ -218,6 +218,34 @@ Here is one example. The sequence function take makes a new sequence with the fi
 We will see many other functions that can be used with sequences as we move forward.
 
 
+## List comprehensions
+
+The `for` function iterates over all the combinations of the sequences it's given and returns a sequence:
+
+```clojure
+(for [x [1 2 3]
+      y ["a" "b" "c"]]
+        (str x y))
+; => ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")
+```
+
+You can also specify what combinations are allowed with the `:when` keyword:
+
+```clojure
+(for [x [1 2 3]
+      y ["a" "b" "c"]
+            :when (> x 2)]
+              (str x y))
+("3a" "3b" "3c")
+
+(for [x [1 2 3]
+      y ["a" "b" "c"]
+            :when (and (> x 2) (not= y "a"))]
+              (str x y))
+; => ("3b" "3c")
+```
+
+
 ## Collections of Collections
 
 Simple values such as numbers, keywords, and strings are not the only things you can put into a collection. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
