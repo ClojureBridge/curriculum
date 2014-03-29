@@ -5,7 +5,7 @@ Introduction to Web Applications
     
 A web application is software that runs in a web browser (like Chrome, Firefox, Internet Explorer, Safari). It communicates with a server over the Internet that can do central processing and data storage. The browser is the client, or user interface, to the web app where users interact with it. The server does the heavy lifting.
 
-The way that the client and server communicate with each other is through a protocol called HTTP. A protocol is a set of rules for communication. Think of the airport ground crew who use wands to communicate with the pilots taxiing the planes around the tarmac. They have a limited set of signals that mean specific things which guide what the pilot does. There are a set of guidelines for when and how the pilot will receive and respond to those signals. HTTP is the protocol for sending requests to server and for the server to send responses to those requests. 
+The way that the client and server communicate with each other is through a protocol called HTTP. A protocol is a set of rules for communication. Think of the airport ground crew who use wands to communicate with the pilots taxiing the planes around the tarmac. They have a limited set of signals that mean specific things which guide what the pilot does. There are a set of guidelines for when and how the pilot will receive and respond to those signals. HTTP is the protocol for sending requests to a server and for the server to send responses to those requests. 
 
 A web app accepts an HTTP request from the client and gives it a response. Think of the server as just like the Clojure functions we have written. They take the input of a request and give the output of a response. In fact, we can write that function:
 
@@ -105,12 +105,12 @@ Now let's do the same thing but with HTML so that the text displays with formatt
 ````
 
 ##URLs and Routes
-The web browser gets to the right server with an address called a URL. Take a look at the following URLS:
+The web browser gets to the right server with an address called a URL. Take a look at the following URLs:
 
 + http://www.google.com/advanced_search 
 + http://www.amazon.com/Clojure-Programming-Chas-Emerick/dp/1449394701
 
-After the "http://", "www.google.com" identifies the server. Then the part after that, "/advanced_search" is the path to the resource (or program?) on that server that will handle this request. In a single web application, you will almost certainly have many actions. For example, you may want to order a book, look up all the books you ordered, or check the status of an order. If one web applications handles all of that, it needs to track who takes care of what.
+After the "http://", "www.google.com" identifies the server. Then the part after that, "/advanced_search" is the path to the resource (or program?) on that server that will handle this request. In a single web application, you will almost certainly have many actions. For example, you may want to order a book, look up all the books you ordered, or check the status of an order. If one web application handles all of that, it needs to track who takes care of what.
 
 The process of coordinating which path goes to what action is called routing. The Clojure library that does this is called Compojure. Here is an example of routing with Compojure.
 
