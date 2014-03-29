@@ -108,7 +108,7 @@
   (pre (code attrs children)))
 
 (defelem column
-  [{:keys [percent] :as attr} children]
+  [{:keys [percent] :as attrs} children]
   (let [attrs (dissoc attrs :percent)
         attrs (if percent
                 (assoc attrs :style (str "float: left; width: " percent "%;"))

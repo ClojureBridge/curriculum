@@ -1,5 +1,5 @@
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400i,700i);*/
-@import url(http://brick.a.ssl.fastly.net/Source+Sans+Pro:300,400,700,400i,700i/Inconsolata:500/);
+@import url(http://brick.a.ssl.fastly.net/Source+Sans+Pro:300,400,700,400i,700i/Inconsolata:400/);
 
 /**
  * One-Mozilla theme for Mozillians.
@@ -196,6 +196,6 @@ body {
 }
 
 .reveal pre code {
-  font-size: 130%;
-  line-height: 135%;
+  font-size: 120%;
+  line-height: 125%;
 }
