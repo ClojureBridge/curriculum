@@ -106,7 +106,7 @@ Now let's do the same thing but with HTML so that the text displays with formatt
 
 Requiring clojure.pprint, or "pretty printer" allows you to display text in a more readable format on the page.
 
-The change shown below tells the browser to display "Hello World" as a level one heading (big and bold), then calls the function with-out-str which means "capture" the "pretty printed" web request that was sent to the server, and display it within a <pre> (preformatted text) block in the browser.
+The change shown below tells the browser to display "Hello World" as a level one heading (big and bold), then calls the function with-out-str which means "capture" the "pretty printed" web request that was sent to the server, and display it within a ```<pre>``` (preformatted text) block in the browser.
 
 ```clj
 :body (str "<h1>Hello World</h1><pre>"
