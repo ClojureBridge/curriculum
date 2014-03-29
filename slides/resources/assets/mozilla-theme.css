@@ -1,4 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400i,700i);*/
+@import url(http://brick.a.ssl.fastly.net/Source+Sans+Pro:300,400,700,400i,700i/Inconsolata:500/);
+
 /**
  * One-Mozilla theme for Mozillians.
  * copyleft @pablocubico
@@ -56,9 +58,9 @@ body {
 }
 
 .reveal {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 36px;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: #333333;
 }
@@ -80,11 +82,11 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #333333;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   line-height: 0.9em;
   letter-spacing: 0;
   text-shadow: none;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 /*********************************************
@@ -188,6 +190,10 @@ body {
 }
 
 /* OTHER */
+
+.reveal code {
+  font-family: "Inconsolata", monospace;
+}
 
 .reveal pre code {
   font-size: 130%;

@@ -1,0 +1,58 @@
+(page "training.html"
+      (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
+                                       notes highlight column quicklist]]))
+
+(html
+  (head)
+  (body
+    (slideshow
+     :theme "mozilla-theme.css"
+     (intro
+      :title "ClojureBridge Teacher Training"
+      (p "Durham, NC")
+      (p "March 18, 2014"))
+     (slide
+      :title "Agenda"
+      (quicklist
+       "What is the goal of the curriculum?"
+       "Who is the curriculum aimed at?"
+       "What is in the curriculum?"
+       "What is the Global Growth app?"
+       "What do I need to do before April 4?"))
+     (slide
+      :title "Goal"
+      (p "To leave students with enough knowledge that they could go on to learn Clojure on their own."))
+     (slide
+      :title "Audience assumptions"
+      (quicklist
+       "Smart"
+       "Motivated"
+       "No development experience"))
+     (slide
+      :title "Curriculum contents"
+      (ul
+       (li "Numbers, strings, booleans")
+       (li "Vectors and maps")
+       (li "Functions")
+       (li (code "if") " and boolean logic")
+       (li "Setting up a Clojure project")
+       (li "Web development basics with Ring")
+       (li "Deploying to Heroku")))
+     (slide
+      :title "Is this ambitious?"
+      (p (b "YUP")))
+     (slide
+      :title "The Global Growth app"
+      (bullet "A web application that uses the World Bank API to show lists of countries by economic/development factor.")
+      (bullet "This application will be 80% baked, with 20% for students to fill in."))
+     (slide
+      (h2 "Global Growth demo"))
+     (slide
+      :title "How to prepare"
+      (ul
+       (li "Read the curriculum")
+       (li "Set up Light Table and get familiar with it")
+       (li "Try downloading and filling in the Global Growth app")
+       (li "Try deploying the app to Heroku")))
+
+     )))
