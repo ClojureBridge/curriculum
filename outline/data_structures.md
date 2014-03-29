@@ -215,7 +215,7 @@ The `for` function iterates over all the combinations of the sequences it's give
 ```clojure
 (for [x [1 2 3]
       y ["a" "b" "c"]]
-        (str x y))
+  (str x y))
 ; => ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")
 ```
 
@@ -224,14 +224,14 @@ You can also specify what combinations are allowed with the `:when` keyword:
 ```clojure
 (for [x [1 2 3]
       y ["a" "b" "c"]
-            :when (> x 2)]
-              (str x y))
-("3a" "3b" "3c")
+      :when (> x 2)]
+  (str x y))
+; => ("3a" "3b" "3c")
 
 (for [x [1 2 3]
       y ["a" "b" "c"]
-            :when (and (> x 2) (not= y "a"))]
-              (str x y))
+      :when (and (> x 2) (not= y "a"))]
+  (str x y))
 ; => ("3b" "3c")
 ```
 
