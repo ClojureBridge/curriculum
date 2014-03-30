@@ -19,10 +19,106 @@
      (intro
       :title "Module 3")
      (chapter
-      :title "Flow Control")
+      :title "Flow control"
+      (slide
+       :title "Example: validating data"
+       (p "If the user's input is valid, then save their data; otherwise, show an error message.")
+       (hlclj
+        ;;{{
+        (if (valid? data)
+          (save! data)
+          (error "Your data was invalid"))
+        ;;}}
+        ))
+      (slide
+       :title (h3 (code "if"))
+       (hlclj
+        ;;{{
+        (if conditional-expression
+          expression-to-evaluate-when-true
+          expression-to-evaluate-when-false)
+        ;;}}
+        ))
+      (slide
+       :title (h3 (code "if") " examples")
+       (hlclj
+        ;;{{
+        (if (> 3 1)
+          "3 is greater than 1"
+          "3 is not greater than 1")
+        ;;=> "3 is greater than 1"
+
+        (if (> 1 3)
+          "1 is greater than 3"
+          "1 is not greater than 3")
+        ;;=> "1 is not greater than 3"
+        ;;}}
+        ))
+      (slide
+       :title "What is truth?"
+       (p "Everything except"
+          (code "false") " or " (code "nil") "."))
+
+      (slide
+       :title "Truth examples"
+       (hlclj
+        ;;{{
+        (if "anything other than nil or false is considered true"
+          "A string is considered true"
+          "A string is not considered true")
+        ;;=> "A string is considered true"
+
+        (if nil
+          "nil is considered true"
+          "nil is not considered true")
+        ;;=> "nil is not considered true"
+
+        (if (get {:a 1} :b)
+          "expressions which evaluate to nil are considered true"
+          "expressions which evaluate to nil are not considered true")
+        ;;=> "expressions which evaluate to nil are not considered true"
+        ;;}}
+        ))
+
+      (slide
+       :title "Exercise: more name formatting"
+       (p "Write a function " (code "format-name") " that takes a map "
+          "representing a user, with keys " (code ":first") ", "
+          (code ":last") ", and possibly " (code ":middle")
+          ". It should return their name as a string, like so:")
+       (hlclj
+        ;;{{
+        (format-name {:first "Margaret" :last "Atwood"})
+        ;;=> "Margaret Atwood"
+        
+        (format-name {:first "Ursula" :last "Le Guin" :middle "K."})
+        ;;=> "Ursula K. Le Guin"
+        ;;}}
+        ))
+      (slide
+       :title "BONUS: Flexible name formatting"
+       (p "Change " (code "format-name") " to take a second argument, "
+          (code "order") ". If " (code "order") " equals " (code ":last")
+          ", then the format should be \"Last, First Middle\"; otherwise, "
+          "it should be \"First Middle Last.\"")))
 
      (chapter
-      :title "Boolean logic")
+      :title "Boolean logic"
+      (slide
+       :title (h3 (code "and") ", " (code "or") ", and " (code "not"))
+       (table
+        (tr
+          (th "x") (th "y") (th "(and x y)") (th "(or x y)") (th "(not x)") (th "(not y)")
+)
+        (tr
+          (td "false")(td "false")(td "false")(td "false")(td "true")(td "true"))
+        (tr
+          (td "true")(td "false")(td "false")(td "true")(td "false")(td "true"))
+        (tr
+          (td "true")(td "true")(td "true")(td "true")(td "false")(td "false"))
+        (tr
+          (td "false")(td "true")(td "false")(td "true")(td "true")(td "false"))
+        )))
      
      (chapter
       :title "Sequence comprehensions"

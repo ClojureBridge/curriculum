@@ -199,3 +199,19 @@ body {
   font-size: 120%;
   line-height: 125%;
 }
+
+.reveal table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.reveal th, .reveal td {
+  border: 1px solid black;
+  margin: 0;
+  padding: 10px 15px;
+}
+
+.reveal th {
+  text-align: center;
+  border-bottom: 3px solid black;
+}
