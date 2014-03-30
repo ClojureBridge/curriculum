@@ -97,4 +97,44 @@ Look at this truth table:
            (not (zero? (mod year 100))))))
 ```
 
+## List comprehensions with `for`
 
+In many programming languages, you do something to every member of a sequence by using a language construct called `for` (or some variant on that.) In those languages, `for` iterates over the sequence and has a body that does something with each value in the sequence. 
+
+Clojure also has a `for` statement, but it works a little differently. It also iterates over a sequence, but it also returns a new sequence based on the body of the for statement.
+
+With just one sequence given to the `for` statement, it works like `map`, which we saw previously.
+
+```clojure
+(for [x [1 2 3]]
+  (* x x))
+;;=> (1 4 9)
+
+(map (fn [x] (* x x)) [1 2 3])
+;;=> (1 4 9)
+```
+
+`for` can do even more, though! It takes any number of sequences, and iterates over all the combinations of the sequences it's given and returns a sequence:
+
+```clojure
+(for [x [1 2 3]
+      y ["a" "b" "c"]]
+  (str x y))
+; => ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")
+```
+
+You can also specify what combinations are allowed with the `:when` keyword. This uses boolean logic to decide which combinations are valid.
+
+```clojure
+(for [x [1 2 3]
+      y ["a" "b" "c"]
+      :when (> x 2)]
+  (str x y))
+; => ("3a" "3b" "3c")
+
+(for [x [1 2 3]
+      y ["a" "b" "c"]
+      :when (and (> x 2) (not= y "a"))]
+  (str x y))
+; => ("3b" "3c")
+```
