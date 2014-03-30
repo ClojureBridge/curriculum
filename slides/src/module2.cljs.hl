@@ -185,27 +185,6 @@
              (li "lines in a file")
              (li "files in a directory")
              (li "records in a database")))
-        ))
-      (slide
-       :title (h3 (code "for"))
-       (p (code "for") " iterates over the sequences it is given and returns a new sequence.")
-       (hlclj
-        ;;{{
-        (for [x [1 2 3]]
-          (* x x))
-        ;;=> (1 4 9)
-        ;;}}
-        ))
-      (slide
-       :title (h3 "Combining sequences with " (code "for"))
-       (p (code "for") " can take multiple sequences. In that case, it iterates over their combinations.")
-       (hlclj
-        ;;{{
-        (for [x [1 2 3]
-              y ["a" "b" "c"]]
-          (str x y))
-        ;;=> ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")
-        ;;}}
         ))      
       (slide
        :title "Collections of collections"
@@ -314,23 +293,6 @@
         (defn vegetarian?
           [person]
           (= :vegetarian (get person :dietary-restrictions)))
-        ;;}}
-        ))
-      (slide
-       :title (h3 (code "for") " and comparison functions")
-       (hlclj
-        ;;{{
-        (for [x [1 2 3]
-              y ["a" "b" "c"]
-              :when (> x 2)]
-            (str x y))
-        ;;=> ("3a" "3b" "3c")
-
-        (for [x [1 2 3]
-              y ["a" "b" "c"]
-              :when (and (> x 2) (not= y "a"))]
-          (str x y))
-        ;;=> ("3b" "3c")
         ;;}}
         ))      
       (slide
