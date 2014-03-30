@@ -11,7 +11,7 @@ Outline
 * [Making Your First Program](outline/first-program.md) *DONE*
 * [Introduction to Web Applications](outline/web.md) *DONE*
 * [Making Your Own Web Application](outline/app.md) *DONE*
-* [Putting Your Application Online](outline/deploy.md) **TODO**
+* [Putting Your Application Online](outline/deploy.md) *DONE*
 
 
 Ideas for introductory materials
