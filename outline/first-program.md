@@ -19,6 +19,7 @@ This should create a directory structure that looks like this:
 | .gitignore
 | doc
 | | intro.md
+| LICENSE
 | project.clj
 | resources
 | README.md
