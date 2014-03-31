@@ -17,5 +17,42 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 4")    
+      :title "Module 4")
+     (chapter
+      :title "Projects"
+      (slide
+       :title "Creating a project"
+       (p "Type the following in your terminal:")
+       (highlight
+        :class "bash"
+        "lein new app global-growth"))
+      (slide
+       :title "Leiningen"
+       (quicklist
+        "manages Clojure projects"
+        "tool you run in your terminal"
+        "silly name"))
+      (slide
+       :title "Project structure"
+       (quicklist
+        ".gitignore"
+        "doc/intro.md"
+        (b "project.clj")
+        "resources/"
+        "README.md"
+        (b "src/global_growth/core.clj")
+        "test/global_growth/core_test.clj"))
+      (slide
+       :title "project.clj"
+       (quicklist
+        "configuration file for Leiningen"
+        "lists dependencies"
+        "contains information about program author, description and more"))
+      (slide
+       :title "src/global_growth/core.clj"
+       (p "This is where we will be writing all our code.")
+       (p "Clojure programs can be made up of multiple files, but we are "
+          "going to use just this one today."))
+
+      )
      )))
