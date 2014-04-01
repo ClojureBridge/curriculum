@@ -1,2 +1,132 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"></head><body><script src="main.js" type="text/javascript"></script><script type="text/javascript">tailrecursion.hoplon.app_pages._module2_DOT_html.hoploninit();</script></body></html>
+<html><head><meta charset="utf-8"></head><body><div class="reveal"><link rel="stylesheet" href="reveal.js/css/reveal.css"><link id="theme" rel="stylesheet" href="mozilla-theme.css"><link rel="stylesheet" href="reveal.js/plugin/highlight/github.min.css"><div class="slides"><section><h1 class="slide-title intro">Module 2</h1></section><section><section><h2 class="slide-title chapter">Data Structures</h2></section><section><h3 class="slide-title slide">Data structures</h3><ul><li>Vectors</li><li>Maps</li><li>Lists</li><li>Sets</li><li>Sequences</li></ul></section><section><h3 class="slide-title slide">Vectors</h3><img src="img/vector.png" alt="vector"></section><section><h3 class="slide-title slide">Vectors</h3><pre><code class="clojure">[1 2 3 4 5]
+["a" 1 2 "b"]
+[]</code></pre></section><section><h3 class="slide-title slide">Vector functions</h3><pre><code class="clojure">(vector? [:a :b :c])
+;;=&gt; true
+
+(vector :a :b :c)
+;;=&gt; [:a :b :c]
+
+(conj [:a :b] :c)
+;;=&gt; [:a :b :c]</code></pre></section><section><h3 class="slide-title slide">Vector functions</h3><pre><code class="clojure">(count [:a :b :c])
+;;=&gt; 3
+
+(nth [:a :b :c] 1)
+;;=&gt; :b
+
+(first [:a :b :c])
+;;=&gt; :a</code></pre></section><section><h3 class="slide-title slide">Exercise: Make a vector</h3><p>Make a vector of all the places you've ever lived. Then use the <code>nth</code> function to get the current place you live from the vector.</p></section><section><h3 class="slide-title slide">Maps</h3><img src="img/map.png" alt="map"></section><section><h3 class="slide-title slide">Maps</h3><pre><code class="clojure">{:first "Sally", :last "Brown", :occupation "programmer"}
+{:a 1, :b "two"}
+{}</code></pre></section><section><h3 class="slide-title slide">Map functions</h3><pre><code class="clojure">(map? {:first "Sally" :last "Brown"})
+;;=&gt; true
+
+(get {:first "Sally" :last "Brown"} :first)
+;;=&gt; "Sally"
+
+(get {:first "Sally"} :last :MISS)
+;;=&gt; :MISS</code></pre></section><section><h3 class="slide-title slide">More map functions</h3><pre><code class="clojure">(assoc {:first "Sally"} :last "Brown")
+;;=&gt; {:first "Sally", :last "Brown"}
+
+(dissoc {:first "Sally" :last "Brown"} :last)
+;;=&gt; {:first "Sally"}
+
+(merge {:first "Sally"} {:last "Brown"})
+;;=&gt; {:first "Sally", :last "Brown"}
+
+(count {:first "Sally" :last "Brown"})
+;;=&gt; 2</code></pre></section><section><h3 class="slide-title slide">Even more map functions</h3><pre><code class="clojure">(keys {:first "Sally" :last "Brown"})
+;;=&gt; (:first :last)
+
+(vals {:first "Sally" :last "Brown"})
+;;=&gt; ("Sally" "Brown")
+
+(into {} [[1 2] [3 4]])
+;;=&gt; {1 2, 3 4}</code></pre></section><section><h3 class="slide-title slide">Maps and keywords</h3><pre><code class="clojure">(:first {:first "Sally" :last "Brown"})
+;;=&gt; "Sally"
+
+(:last {:first "Sally"})
+;;=&gt; nil
+
+(:last {:first "Sally"} :MISS)
+;;=&gt; :MISS</code></pre></section><section><h3 class="slide-title slide">Exercise: Modeling yourself</h3><p>Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using <code>assoc</code> or <code>merge</code>.</p></section><section><h3 class="slide-title slide">Other data structures</h3><div style="text-align: left">Lists</div><img src="img/list.png"><div style="text-align: left">Sets</div><img src="img/set.png"></section><section><h3 class="slide-title slide">Other data structures</h3><pre><code class="clojure">;; Lists
+(list 1 2 3)
+(list "Sally" "Brown" :programmer)
+
+;; Sets
+#{"red" "green" "blue" "yellow"}
+#{98 67 82 12 77}</code></pre></section><section><h3 class="slide-title slide">Sequences</h3><ul><li>Sequences are an <em>abstraction</em></li><li>All the data structures are sequences</li><li>Many functions work on all sequences</li><li><p>Other things that are sequences</p><ul><li>lines in a file</li><li>files in a directory</li><li>records in a database</li></ul></li></ul></section><section><h3 class="slide-title slide">Collections of collections</h3><pre><code class="clojure">[{:name "Mercury"}
+ {:name "Venus"}
+ {:name "Earth" :moons ["The Moon"]}
+ {:name "Mars" :moons ["Phobos" "Deimos"]}
+ {:name "Jupiter"
+  :moons ["Ganymede" "Callisto" "Io" "Europa"]}]</code></pre></section><section><h3 class="slide-title slide">Exercise: Modeling your classmates</h3><ol><li>Take the map from the last exercise -- the one about you.</li><li>Find two or three classmates. Ask their name and hometown.  Make a vector of maps with their information.</li><li>Then, add your information to their information using <code>conj</code>.</li></ol></section></section><section><section><h2 class="slide-title chapter">Functions</h2></section><section><h3 class="slide-title slide">What are functions?</h3><ul><li><code>count</code>, <code>conj</code>, <code>first</code></li><li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li><li>A piece of code that takes values and returns a value</li></ul></section><section><h3 class="slide-title slide">An example function</h3><pre><code class="clojure">(defn triple
+  "Given a number, return 3 times that number."
+  [x]
+  (+ x x x))
+
+(triple 2)    ;=&gt; 6
+(triple 3/2)  ;=&gt; 9/2
+(triple 30.3) ;=&gt; 90.9</code></pre></section><section><h3 class="slide-title slide">An example function</h3><pre><code class="clojure">(defn ; specifies that we are defining a function
+  triple ; the name of this function
+  
+  ;; documentation, optional
+  "Given a number, return 3 times that number."
+  
+  [x] ; list of arguments
+
+  ;; body of function
+  (+ x x x))</code></pre></section><section><h3 class="slide-title slide">A function with multiple arguments.</h3><pre><code class="clojure">(defn average
+  [x y] ; Functions can take multiple arguments.
+  (/ (+ x y) 2))
+
+(average 2 3) ;=&gt; 5/2</code></pre></section><section><h3 class="slide-title slide">Exercise: make a function to format names</h3><p>The <code>str</code> function can take any number of arguments, and it concatenates them together to make a string.</p><p>Write a function called <code>format-name</code> that takes two arguments, <code>first-name</code> and <code>last-name</code>. This function should output the name like so: Last, First.</p></section><section><h3 class="slide-title slide">Naming functions</h3><ul><li>Functions are named like any other value</li><li><p>Predicate functions usually end in <code>?</code></p><ul><li><code>zero?</code></li><li><code>vector?</code></li><li><code>empty?</code></li></ul></li></ul></section></section><section><section><h2 class="slide-title chapter">Function library</h2></section><section><h3 class="slide-title slide">Comparison functions</h3><pre><code class="clojure">(= 1 2)    ;=&gt; false
+(&gt; 4 3)    ;=&gt; true
+(&gt;= 4 5)   ;=&gt; false
+(&lt; -1 1)   ;=&gt; true
+(&lt;= -1 -2) ;=&gt; false</code></pre></section><section><h3 class="slide-title slide">Using comparison functions</h3><pre><code class="clojure">(defn vegetarian?
+  [person]
+  (= :vegetarian (get person :dietary-restrictions)))</code></pre></section><section><h3 class="slide-title slide">String functions</h3><pre><code class="clojure">(str "Chocolate" ", " "strawberry" ", and " "vanilla")
+;;=&gt; "Chocolate, strawberry, and vanilla"</code></pre></section><section><h3 class="slide-title slide">Map functions</h3><ul><li><code>assoc</code></li><li><code>dissoc</code></li><li><code>merge</code></li></ul></section><section><h3 class="slide-title slide">Sequence functions</h3><ul><li><code>count</code></li><li><code>conj</code></li><li><code>first</code></li><li><code>rest</code></li><li><code>get</code></li></ul></section></section><section><section><h2 class="slide-title chapter">Functions that take other functions</h2></section><section><h3><code>map</code></h3><pre><code class="clojure">(defn triple
+  [x]
+  (+ x x x))
+
+(map triple [1 2 3]) ;=&gt; [3 6 9]</code></pre></section><section><h3><code>reduce</code></h3><pre><code class="clojure">(defn add
+  [x y]
+  (+ x y))
+
+(reduce add [1 2 3]) ;=&gt; 6</code></pre></section><section><h3><code>reduce</code> in action</h3><pre><code class="clojure">(defn join-with-space
+  [string1 string2]
+  (str string1 " " string2))
+
+(reduce join-with-space
+        ["i" "like" "peanut" "butter" "and" "jelly"])
+;;=&gt; "i like peanut butter and jelly"</code></pre></section><section><h3><code>reduce</code> in action</h3><pre><code class="clojure">(reduce join-with-space
+        ["i" "like" "peanut" "butter" "and" "jelly"])
+;;=&gt; "i like peanut butter and jelly"
+
+(join-with-space "i" "like")
+(join-with-space "i like" "peanut")
+(join-with-space "i like peanut" "butter")
+(join-with-space "i like peanut butter" "and")
+(join-with-space "i like peanut butter and" "jelly")</code></pre></section><section><h3><code>sort-by</code></h3><pre><code class="clojure">(sort-by val &gt; {:amy 3, :renee 5, :isabella 4})
+;;=&gt; ([:renee 5] [:isabella 4] [:amy 3])</code></pre></section><section><h3 class="slide-title slide">Anonymous functions</h3><pre><code class="clojure">(map (fn [x] (+ x x x)) [1 2 3]) ;=&gt; [3 6 9]
+
+(reduce (fn [x y] (+ x y)) [1 2 3]) ;=&gt; 6
+
+(reduce
+  (fn [s1 s2] (str s1 " " s2))
+  ["i" "like" "peanut" "butter" "and" "jelly"])
+  ;=&gt; "i like peanut butter and jelly"</code></pre></section><section><h3 class="slide-title slide">Exercise: Find the average</h3><p>Create a function called <code>average</code> that takes a vector of numbers and returns the average of those numbers.</p><p>Hint: you will need to use <code>reduce</code> and <code>count</code>.</p></section><section><h3 class="slide-title slide">Exercise: Get the names of people</h3><div style="text-align: left">Create a function called <code>get-names</code> that takes a vector of maps of people and returns a vector of their names.</div><pre><code class="clojure">(get-names [{:first "Margaret" :last "Atwood"}
+            {:first "Doris" :last "Lessing"}
+            {:first "Ursula" :last "Le Guin"}
+            {:first "Alice" :last "Munro"}])
+
+;;=&gt; ["Margaret Atwood" "Doris Lessing"
+;;    "Ursula Le Guin" "Alice Munro"]</code></pre></section><section><h3><code>let</code></h3><pre><code class="clojure">(defn spread
+  "Given a collection of numbers, return the difference between the largest and smallest number."
+  [numbers]
+    (let [largest (reduce max numbers)
+          smallest (reduce min numbers)]
+      (- largest smallest)))
+
+(spread [10 7 3 -3 8]) ;=&gt; 13</code></pre></section><section><h3 class="slide-title slide">Exercise: Rewrite average</h3><p>Go back to the <code>average</code> function you created before and use <code>let</code> to make it easier to read.</p></section></section></div></div><script src="main.js" type="text/javascript"></script><script type="text/javascript">tailrecursion.hoplon.app_pages._module2_DOT_html.hoploninit();</script></body></html>
