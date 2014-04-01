@@ -48,7 +48,7 @@
           (li (b "P") "rint")
           (li (b "L") "oop")))
         (column
-         (img :src "/img/instarepl.png")))))
+         (img :src "img/instarepl.png")))))
      (chapter
       :title "Simple values"
       (slide
