@@ -53,6 +53,97 @@
        (p "This is where we will be writing all our code.")
        (p "Clojure programs can be made up of multiple files, but we are "
           "going to use just this one today."))
+      (slide
+       :title "Try it out"
+       (p "Go to the command line and enter:")
+       (highlight
+        :class "bash"
+        ;;{{
+        cd global_growth
+        lein run
+        ;;}}
+        )))
+     (chapter
+      :title "Modifying a project"
+      (slide
+       :title "What happens when I run my program?"
+       (p "Open " (code "src/global_growth/core.clj") ".")
+       (p "What is in the " (code "-main") " function?"))
+      (slide
+       :title "The -main function"
+       (quicklist
+        "Just an ordinary function with an odd name"
+        "The function called first when you run your program"
+        "Can call other functions"))
+      (slide
+       :title "Using other functions from -main"
+       (hlclj
+        ;;{{
+        (defn quotify
+          [quote author]
+          (str quote "\n\n-- " author))
+        
+        (defn -main
+          [& args]
+          (println
+           (quotify (str "A man who carries a cat by the tail learns "
+                         "something he can learn in no other way.")
+                    "Mark Twain")))
+        ;;}}
+        ))
+      (slide
+       :title "Namespaces and organization"
+       (p "Namespaces let you organize your code into logical sections.")
+       (hlclj
+        ;;{{
+        ;; in src/global_growth/core.clj
+        (ns global-growth.core)
+        ;;}}
+        ))
+      (slide
+       :title "Dependencies"
+       (p "Dependencies are code libraries others have written you can reuse in your project.")
+       (p "Open " (code "project.clj") " and look for the " (code ":dependencies") " key.")
+       (hlclj
+        ;;{{
+        :dependencies [[org.clojure/clojure "1.5.1"]
+                       [clj-http "0.9.0"]
+                       [cheshire "5.3.1"]]
+        ;;}}
+        ))
+      (slide
+       :title "Requiring dependencies"
+       (hlclj
+        ;;{{
+        ;; in src/global_growth/core.clj
+        (ns global-growth.core)
+        (require '[clj-http.client :as client])
+        ;;}}
+        ))
+      (slide
+       :title "Exercise: Add the following core to core.clj"
+       (hlclj
+        ;;{{
+        (ns global-growth.core)
+        (require '[clj-http.client :as client])
+        (require '[cheshire.core :as json])
+        
+        (def base-uri "http://api.worldbank.org")
+        (def default-query-params {:format "json" :per_page 10000})
 
-      )
+        (defn parse-json [str]
+          (json/parse-string str true))
+
+        (defn get-api
+          "Returns map representing API response."
+          [path params]
+          (let [base-path (str base-uri path)
+                query-params (merge default-query-params params)
+                response (parse-json (:body (client/get base-path {:query-params query-params})))
+                metadata (first response)
+                results (second response)]
+            {:metadata metadata
+             :results results}))
+        ;;}}
+        )))
      )))
