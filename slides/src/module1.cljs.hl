@@ -103,8 +103,8 @@
        :title "Exercise: Basic arithmetic"
        (ul
         (li "Take your height in feet and inches and convert it to inches using arithmetic in Clojure.")
-        (li "Then convert that to meters. There are 39.3701 inches in a meter.")
-        (li "Lastly, ask two people near you for their height in meters. Find the average of your heights.")
+        (li "Then convert that to centimeters. There are 2.54 centimeters in an inch.")
+        (li "Lastly, ask two people near you for their height in centimeters. Find the average of your heights.")
         (li (p "Bonus: convert that average back to feet and inches.")
             (p (code "(mod x y)")
                " will give you the remainder when dividing two numbers."))))
