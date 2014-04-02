@@ -199,24 +199,97 @@ You should be able to make some sense of that.
 
 ### Getting this data with Clojure
 
-We need to get this data within Clojure. In order to do that, we're going to use `clj-http`, one of the libraries we included. ... TODO
+We need to get this data within Clojure. In order to do that, we're going to use `clj-http`, one of the libraries we included.
+
+`clj-http` has a namespace, `clj-http.client`, which we've required in `global-growth.core`. In that namespace, there's a function `get` that will make a request to a web address and return the response from that web site or API. Let's try it out:
+
+```clj
+(client/get "http://api.worldbank.org/countries/all/indicators/EN.POP.DNST?format=json&date=2010")
+
+;; elided and formatted
+;;=> {:orig-content-encoding nil,
+;;    :request-time 109, :status 200,
+;;    :headers {"content-length" "10340", "content-type" "application/json;charset=utf-8"},
+;;    :body "[{\"page\":1,\"pages\":6}]"}
+```
+
+That worked! You can see JSON in the `:body` value. We need this as Clojure data, however.
 
 ### Converting JSON
 
-We need to convert this to Clojure data. This is where we'll use the other of our libraries, Cheshire. Cheshire reads JSON and gives us ... TODO
+We need to convert this to Clojure data. This is where we'll use the other of our libraries, Cheshire. Cheshire reads JSON and gives us back Clojure data.
+
+The `cheshire.core` namespace, which we've aliased to `json`, has a function called `parse-string` that can turn a string with JSON in it into Clojure data. Take the time to read the docs for `parse-string`. It has an optional second argument that turns the keys in JSON into keywords in Clojure, which we want. (Why do we want that?)
+
+Try running the following in the REPL:
 
 ```clj
-(defn parse-json [str]
-  (json/parse-string str true))
+(json/parse-string "[{\"page\":1,\"pages\":6}]" true)
+;;=> ({:page 1, :pages 6})
+```
 
+What happens when you leave out the `true`?
+
+### Exercise: Get the results from our API call
+
+Write a function called `get-population-density` that takes no arguments, and returns Clojure data from the World Bank API on population density.
+
+You will need to make the web request, pull the `:body` value out of the response, and then parse the JSON.
+
+```clj
+(get-population-density)
+;;=> ({:page 1, :pages 6, :per_page "50", :total 252}
+;;    [{:indicator {:id "EN.POP.DNST", :value "Population density (people per sq. km of land area)"},
+;;    :country {:id "1A", :value "Arab World"}, :value "25.5287276250072", :decimal "0", :date "2010"},
+;;    ...])
+
+
+## Making our code more generic
+
+Much of what we do when programming is taking specific examples we have practiced with and turning those into generic functions we can use over and over. The World Bank API has lots of good information we can get from it, and we don't want to be limited just to the population density data.
+
+If you look at the bottom of `core.clj`, you will see a lot of code commented out. You can comment or uncomment code by selecting it and choosing "Editor: toggle comment line(s)" from Light Table's command palette. Select the first function called `get-api` and uncomment it. It should look like this:
+
+```clj
 (defn get-api
   "Returns map representing API response."
   [path params]
-  (let [base-path (str "http://api.worldbank.org" path)
+  (let [url (str "http://api.worldbank.org" path)
         query-params (merge params {:format "json" :per_page 10000})
-        response (parse-json (:body (client/get base-path {:query-params query-params})))
+        response (json/parse-string
+                  (:body (client/get url {:query-params query-params})) true)
         metadata (first response)
         results (second response)]
     {:metadata metadata
      :results results}))
+```
+
+Let's walk through this together. This function accepts a path -- which is going to be part of the API URL we are retrieving -- and a map of parameters. These parameters are what comes after the `?` in the URL and are called "query parameters." In our previous code, this was equal to `format=json&date=2010`. Since we are going to be creating these dynamically, it's easier to pass them in as a map, which `client/get` can handle. (A fun bonus exercise is to turn a map into a string like this, though.)
+
+We use `let` to set up several values. We make a complete URL by adding the API's domain to the front of the path. Then we make our query parameters by combining whatever we sent into the function with parameters to specify JSON and to get back a lot of data. (This prevents us from having to make multiple requests for each thing we want.) After that, we parse the response and turn it into Clojure data. It returns a vector and we want a map with the metadata and the results, so we change that.
+
+To get the same information we had before, we use `get-api` like this:
+
+```clj
+(get-api "/countries/all/indicators/EN.POP.DNST" {:date 2010})
+;;=> {:metadata {:page 1, :pages 1, :per_page "10000", :total 252},
+;;    :results [{:indicator {:id "EN.POP.DNST",
+;;    :value "Population density (people per sq. km of land area)"},
+;;    :country {:id "1A", :value "Arab World"}, :value "25.5287276250072",
+;;    :decimal "0", :date "2010"} ...]}
+```
+
+That is fantastic, but what we really want is the country name and the value. Let's do that.
+
+### Exercise: extracting the data we want
+
+Write a function `get-country-and-value` that can take the return value of `get-api` and get the country names and values out of that value. `get-country-and-value` should return a vector of vectors.
+
+```clj
+(get-country-and-value
+  (get-api "/countries/all/indicators/EN.POP.DNST" {:date 2010}))
+;;=> [["Arab World" "25.5287276250072"]
+;;    ["Caribbean small states" "17.0236186241818"]
+;;    ...]
+
 ```
