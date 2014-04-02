@@ -38,11 +38,10 @@ There's nothing inherently special or Clojure-y about this project skeleton. It'
   project have?" and "When this Clojure program runs, what function
   should get executed first?"
 - `src/global_growth/core.clj` is where we'll be doing our
-  Clojure coding for awhile. In general, your source code will fall
-  under `src/{global_growth}`
-- The `test` directory obviously contains tests, which we won't be covering.
+  Clojure coding for awhile.
+- The `test` directory contains tests, which we won't be covering.
 - `resources` is a place for you to store assets like images; we won't
-  be using it for awhile.
+  be using it today.
 
 Now let's go ahead and actually run this project. Enter this at the command line:
 
@@ -91,19 +90,19 @@ A man who carries a cat by the tail learns something he can learn in no other wa
 
 So, you can write programs of arbitrary complexity. Just make sure to use `-main` to kick them off.
 
-## Organization 
+## Organization
 
 As your programs get more complex, you'll need to organize them. You organize your Clojure code by placing related functions and data in separate files. Clojure expects each file to correspond to a *namespace*, so you must *declare* a namespace at the top of each file.
 
 Until now, you haven't really had to care about namespaces. Namespaces allow you to define new functions and data structures without worrying about whether the name you'd like is already taken. For example, you could create a function named `println` within the custom namespace `my-special-namespace`, and it would not interfere with Clojure's built-in `println` function. You can use the *fully-qualified name* `my-special-namespace/println` to distinguish your function from the built-in `println`.
 
-A namespace exists in the file `src/global_growth/core.clj`. Open it, and find this line: 
+A namespace exists in the file `src/global_growth/core.clj`. Open it, and find this line:
 
 ```clojure
 (ns global-growth.core)
 ```
 
-This line establishes that everything you define in this file will be stored within the `global-growth.core` namespace. 
+This line establishes that everything you define in this file will be stored within the `global-growth.core` namespace.
 
 
 ## Dependencies
@@ -127,35 +126,97 @@ That's where you specify your dependencies. You can add a dependency by adding a
 Now you can require the namespaces defined in `clj-http` within your own project. Update `src/global_growth/core.clj` so that it looks like this:
 
 ```clojure
-(ns global-growth.core)
-(require '[clj-http.client :as client])
+(ns global-growth.core
+  (:require [clj-http.client :as client]))
 ```
 
-There are a couple of things going on here. First, you use `require` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `client/get` instead of `clj-http.client/get`.
+There are a couple of things going on here. First, we add `require` to `ns` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `client/get` instead of `clj-http.client/get`.
 
 Now add:
 
 ```clojure
-(ns global-growth.core)
-(require '[clj-http.client :as client])
-(require '[cheshire.core :as json])
+(ns global-growth.core
+  (:require [clj-http.client :as client]
+            [cheshire.core :as json]))
+```
 
-(def base-uri "http://api.worldbank.org")
-(def query-params {:format "json" :per_page 10000})
+This gives us access to these two libraries we will need to make our project.
 
+## Your first real program
+
+Our program is going to use the World Bank API to give us a list of the top ten countries by population density. Sounds easy, right?
+
+First, we need to be able to talk to the API. You might wonder what an API is. "API" stands for Application Programming Interface, which still doesn't mean a lot. You can think of an API as a web page for a computer. When you go to a web page, you get information from it in a format you can read as a human. An API returns information in a format that is easy for a computer to read. One popular format that we will be using today is called JSON.
+
+Let's look at what the API will return if we ask it for the population density of countries. The URL for this information is:
+
+```sh
+http://api.worldbank.org/countries/all/indicators/EN.POP.DNST?format=json&date=2010
+```
+
+If you go to that in a browser, you should see something like the following. I've added spaces to make it a little more readable.
+
+```json
+[
+  {
+    page: 1,
+    pages: 6,
+    per_page: "50",
+    total: 252
+  },
+  [
+    {
+      indicator: {
+        id: "EN.POP.DNST",
+        value: "Population density (people per sq. km of land area)"
+      },
+      country: {
+        id: "1A",
+        value: "Arab World"
+      },
+      value: "25.5287276250072",
+      decimal: "0",
+      date: "2010"
+    },
+    {
+      indicator: {
+        id: "EN.POP.DNST",
+        value: "Population density (people per sq. km of land area)"
+      },
+      country: {
+        id: "S3",
+        value: "Caribbean small states"
+      },
+      value: "17.0236186241818",
+      decimal: "0",
+      date: "2010"
+    }
+  ]
+]
+```
+
+You should be able to make some sense of that.
+
+### Getting this data with Clojure
+
+We need to get this data within Clojure. In order to do that, we're going to use `clj-http`, one of the libraries we included. ... TODO
+
+### Converting JSON
+
+We need to convert this to Clojure data. This is where we'll use the other of our libraries, Cheshire. Cheshire reads JSON and gives us ... TODO
+
+```clj
 (defn parse-json [str]
   (json/parse-string str true))
 
 (defn get-api
   "Returns map representing API response."
-  [path qp]
-    (let [base-path (str base-uri path)
-          query-params (merge qp {:format "json" :per_page 10000})
-          response (parse-json (:body (client/get base-path {:query-params query-params})))
-          metadata (first response)
-          results (second response)]
-      {:metadata metadata
-       :results results}))
+  [path params]
+  (let [base-path (str "http://api.worldbank.org" path)
+        query-params (merge params {:format "json" :per_page 10000})
+        response (parse-json (:body (client/get base-path {:query-params query-params})))
+        metadata (first response)
+        results (second response)]
+    {:metadata metadata
+     :results results}))
 ```
-
-Ta-da!
