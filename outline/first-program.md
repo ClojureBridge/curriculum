@@ -202,7 +202,7 @@ If you go to that in a browser, you should see something like the following. I'v
 ]
 ```
 
-You should be able to make some sense of that.
+The data is structured in a way that it should make sense just looking at it.
 
 ### Getting this data with Clojure
 
@@ -249,7 +249,7 @@ You will need to make the web request, pull the `:body` value out of the respons
 ;;    [{:indicator {:id "EN.POP.DNST", :value "Population density (people per sq. km of land area)"},
 ;;    :country {:id "1A", :value "Arab World"}, :value "25.5287276250072", :decimal "0", :date "2010"},
 ;;    ...])
-
+```
 
 ## Making our code more generic
 
