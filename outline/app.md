@@ -63,5 +63,46 @@ These are already required in `web.clj`. Look at the top of the file to see them
 
 Note that we also brought in the code we've been working on in `global-growth.core`.
 
+## Routing requests
 
-## MORE TODO
+Go ahead and uncomment everything under the `;;;; MODULE 5` line in `core.clj` and everything in `web.clj`. That's a lot of code: web development can get kind of wordy. For now, let's scroll down in `web.clj` to the bottom, where we'll find this:
+
+```clj
+(defroutes main-routes
+  (GET "/" [] (main-page))
+  (GET "/indicators" [indicator1 indicator2 year]
+        (view-indicators indicator1 indicator2 year)))
+```
+
+This sets up our application's _routes_. Routes are mappings between URLs and functions that are called when someone accesses those URLs. In this case, if someone goes to "/" -- the root URL for our application -- `main-page` is called. If someone goes to `/indicators`, we get the values `indicator1`, `indicator2`, and `year` from the query parameters, and then call the `view-indicators` function with those values.
+
+## Generating HTML
+
+Go to the `main-page` function in `web.clj`.
+
+... TODO: explain how Hiccup works. This can be done on the fly ...
+
+
+### Running a web application
+
+Go back to `project.clj`. Add a new key and value to the project:
+
+```clj
+:ring {:handler global-growth.web/handler}
+```
+
+This sets up the function `handler` in `global-growth.web` as the function that will take in web requests. Once you have added this, go to the command line. Within the `global-growth` directory, run the following:
+
+```sh
+lein ring server
+```
+
+After a few seconds, you should see something like this:
+
+```
+2014-04-02 21:30:06.303:INFO:oejs.Server:jetty-7.6.8.v20121106
+2014-04-02 21:30:06.378:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000
+```
+
+Your web browser should open a new tab pointing to your web application. If it does not, go to http://localhost:3000 in your web browser to see your application in action.
