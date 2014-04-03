@@ -109,21 +109,20 @@ This line establishes that everything you define in this file will be stored wit
 
 The final part of working with projects is managing their *dependencies*. Dependencies are just code libraries that others have written which you can incorporate in your own project.
 
-To add a dependency, open `project.clj`. You should see a line which reads
+To add a dependency, open `project.clj`. You should see a section which reads
 
-```
-:dependencies [[org.clojure/clojure "1.5.1"]]
-```
-
-That's where you specify your dependencies. You can add a dependency by adding another vector with the dependency's name and its version. Let's add the `clj-http` and `cheshire` projects. `clj-http` will let us make HTTP calls so that we can get data using the World Bank API. `cheshire` will let us decode the results. Update the dependencies line in your `project.clj` so that it looks like this:
-
-```
+```clj
 :dependencies [[org.clojure/clojure "1.5.1"]
-               [clj-http "0.9.0"]
-               [cheshire "5.3.1"]]
+               [clj-http "0.7.7"]
+               [cheshire "5.2.0"]
+               [ring "1.2.1"]
+               [compojure "1.1.6"]
+               [hiccup "1.0.4"]]
 ```
 
-Now you can require the namespaces defined in `clj-http` within your own project. Update `src/global_growth/core.clj` so that it looks like this:
+This is where our dependencies are listed. All the dependencies we need for this project are already included.
+
+In order to use these libraries, we have to _require_ them in our own project. Update `src/global_growth/core.clj` so that it looks like this:
 
 ```clojure
 (ns global-growth.core
@@ -144,7 +143,15 @@ This gives us access to these two libraries we will need to make our project.
 
 ## Your first real program
 
+### World Bank API
+
+The World Bank provides a collection of world development indicators data, showing the current state of global development. They provide an API to this data. A web API is a way to provide access for one program to call another program over HTTP. In this case, the World Bank Indicators API provides access to their set of data.
+
+We will use the World Bank Indicators API to explore some of the world development indicators for different countries. We will sort and compare certain indicators. This is a task that Clojure is well suited for.
+
 Our program is going to use the World Bank API to give us a list of the top ten countries by population density. Sounds easy, right?
+
+### What is an API?
 
 First, we need to be able to talk to the API. You might wonder what an API is. "API" stands for Application Programming Interface, which still doesn't mean a lot. You can think of an API as a web page for a computer. When you go to a web page, you get information from it in a format you can read as a human. An API returns information in a format that is easy for a computer to read. One popular format that we will be using today is called JSON.
 
