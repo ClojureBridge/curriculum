@@ -293,3 +293,44 @@ Write a function `get-country-and-value` that can take the return value of `get-
 ;;    ...]
 
 ```
+
+## Removing unwanted data
+
+We have a problem: the World Bank API includes regions in its data, not just countries. The code to remove these is commented out in core.clj, so let's uncomment it. Uncomment the definitions for `remove-aggregate-countries`, `countries`, and `get-indicator-values`. We do not have time to go through each one of these in depth, but let's look at `get-indicator-values`:
+
+```clj
+(defn get-indicator-values
+  "Returns indicator values for a specified year for all countries."
+  [indicator-code year]
+  (let [response (get-api (str "/countries/all/indicators/" indicator-code)
+                          {:date (str year)})
+        values (get-country-and-value response)]
+    (for [[country value] values
+          :when (and (not (nil? value))
+                     (contains? @countries country))]
+      [country (read-string value)])))
+```
+
+We give this function an indicator code -- we don't have a list yet, but "EN.POP.DNST" is the code for population density -- and a year for the data. We query the API to get a response and then remove the country and value using the code you wrote in the last exercise. (This is also provided in core.clj; uncomment it if you have not written it.) Once we do that, we have this gnarly `for` statement.
+
+**NOTE FOR TEACHERS:** This is some advanced stuff. It's great for classes that have people with previous programming experience. If they don't, feel free to skip.
+
+The first line of the `for` statement -- `[country value] values` -- works like other `for` statements we've seen, but with a twist. We take each item in the `values` sequence. We know each item is a vector with the country and value. Using this syntax lets us deconstruct that so we can break out that country and value for use later.
+
+The second and third lines should be familiar to you from before. The `:when` keyword in a `for` statement lets us conditionally decide what elements of the values sequence to use. The `@` sign in front of `countries` is unfamiliar. That is called a "dereference" and is being used for performance purposes. (Another note for teachers: if you have time, explain what is going on here. `countries` uses `delay` so we don't automatically make a call to the API on start-up and do it when necessary. The deref is used to get the value out of the `delay`.) We are not using any elements where there is no indicator value or where the country isn't in our list of countries. This eliminates the regions that we saw before.
+
+Try out `(get-indicator-values "EN.POP.DNST" 2010)` and see what you get.
+
+## Revisiting -main
+
+Let's make our program print out a list of all countries and their population density when we run it. To do that, we need to go back to our `-main` function. Make sure this is the last function in your file. Why? In Clojure, the order things are defined in matters. We will be using functions that we've written in our `-main` function, so we need to make sure those functions are defined first.
+
+In order to do this, we'll need one new function, `doseq`. `doseq` works like `for`, but instead of returning a new sequence, it just executes its body for side-effects. This is perfect when doing something like printing out data.
+
+### Exercise: Finish -main
+
+Using `doseq` and `println`, write a `-main` function that prints out all the countries and their population densities from the World Bank API. Use `(get-indicator-values "EN.POP.DNST" 2010)` to get the values you need.
+
+### Bonus exercise: Only show the top 10 countries
+
+Change your `-main` function to only print out the top 10 countries and their population densities. You will need the `sort-by` function to make this work.
