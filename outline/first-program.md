@@ -10,7 +10,7 @@ In order to do that, you'll first create a *project*. You'll learn how to organi
 Up until now you've been experimenting in a REPL. Unfortunately, all the work you do in a REPL is lost when you close the REPL. You can think of a project as a permanent home for your code. You'll be using a tool called "Leiningen" to help you create and manage your project. To create a new project, run this command:
 
 ```clojure
-lein new app global-growth
+lein new clojurebridge global-growth
 ```
 
 This should create a directory structure that looks like this:
