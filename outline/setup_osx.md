@@ -42,9 +42,9 @@ After that, run the following commands in your terminal. You will be prompted to
 
 ```
 sudo mkdir -p /usr/local/bin/
-sudo mv ~/Downloads/lein* /usr/local/bin/lein.sh
+sudo mv ~/Downloads/lein* /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
-export $PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin
 ```
 
 After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
