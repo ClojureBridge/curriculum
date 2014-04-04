@@ -166,37 +166,37 @@ If you go to that in a browser, you should see something like the following. I'v
 ```json
 [
   {
-    page: 1,
-    pages: 6,
-    per_page: "50",
-    total: 252
+    "page": 1,
+    "pages": 6,
+    "per_page": "50",
+    "total": 252
   },
   [
     {
-      indicator: {
-        id: "EN.POP.DNST",
-        value: "Population density (people per sq. km of land area)"
+      "indicator": {
+        id": "EN.POP.DNST",
+        "value": "Population density (people per sq. km of land area)"
       },
-      country: {
-        id: "1A",
-        value: "Arab World"
+      "country": {
+        id": "1A",
+        value": "Arab World"
       },
-      value: "25.5287276250072",
-      decimal: "0",
-      date: "2010"
+      "value": "25.5287276250072",
+      "decimal": "0",
+      "date": "2010"
     },
     {
-      indicator: {
-        id: "EN.POP.DNST",
-        value: "Population density (people per sq. km of land area)"
+      "indicator": {
+        id": "EN.POP.DNST",
+        value": "Population density (people per sq. km of land area)"
       },
-      country: {
-        id: "S3",
-        value: "Caribbean small states"
+      "country": {
+        id": "S3",
+        "value": "Caribbean small states"
       },
-      value: "17.0236186241818",
-      decimal: "0",
-      date: "2010"
+      "value": "17.0236186241818",
+      "decimal": "0",
+      "date": "2010"
     }
   ]
 ]
