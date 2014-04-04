@@ -68,7 +68,7 @@ Pretty cool! But also pretty useless. To change the behavior of this project, op
 
 If you run `lein run` again, you should see `Hello, ClojureBridge!` printed.
 
-The `-main` function is the *entry point* to your program. Other than that there's nothing special about it. It acts just like any other Clojure function. It just happens to be the function which gets called first when you run your program. For example, you can write your own functions have `-main` call them:
+The `-main` function is the *entry point* to your program. Other than that there's nothing special about it. It acts just like any other Clojure function. It just happens to be the function which gets called first when you run your program. For example, you can write your own functions and have `-main` call them:
 
 ```clojure
 (defn quotify
