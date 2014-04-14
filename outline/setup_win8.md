@@ -85,7 +85,7 @@ Before you can use Heroku, you will have to set up SSH, the way your computer co
 First, look up what your user directory is. You can find it by running `echo %USERPROFILE%`. Then, run these commands:
 
 ```
-mkdir %USERPROFILE%\.ssh
+mkdir "%USERPROFILE%\.ssh"
 
 "C:\Program Files\Git\bin\ssh-keygen.exe"
 ```
