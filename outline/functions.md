@@ -46,7 +46,7 @@ The `str` function can take any number of arguments, and it concatenates them to
 
 ## Naming functions
 
-Function names are symbols, just like the symbols we used with _def_ when assigning names to values.
+Function names are symbols, just like the symbols we used with `def` when assigning names to values.
 
 Symbols have to begin with a non-numeric character and can contain alphanumeric characters and *, +, !, -, _, and ?. This flexibility is important with functions, as we have certain idioms we use.
 
