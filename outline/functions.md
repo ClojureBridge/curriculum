@@ -81,7 +81,7 @@ The other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`, and all but
 
 ### String functions
 
-A large part of programming is manipulating strings. The most important string function in Clojure to remember is `str`, which concatenates all of its arguments into one string.
+A large part of programming is manipulating strings. The most important string function in Clojure to remember is `str`, which concatenates all of its arguments into one string:
 
 ```clj
 (str "Chocolate" ", " "strawberry" ", and " "vanilla")
