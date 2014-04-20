@@ -48,7 +48,7 @@ The `str` function can take any number of arguments, and it concatenates them to
 
 Function names are symbols, just like the symbols we used with `def` when assigning names to values.
 
-Symbols have to begin with a non-numeric character and can contain alphanumeric characters and *, +, !, -, _, and ?. This flexibility is important with functions, as we have certain idioms we use.
+Symbols have to begin with a non-numeric character, and they can contain alphanumeric characters, along with *, +, !, -, _, and ?. This flexibility is important with functions, as we have certain idioms we use.
 
 Functions that return true or false -- called _predicates_ -- usually end in `?`.
 
