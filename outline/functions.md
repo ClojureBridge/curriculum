@@ -20,7 +20,7 @@ In this code:
 * `triple` is the name of this function.
 * The string on the next line is the documentation for the function, which explains what the function does. This is optional.
 * `[x]` is the list of arguments. Here, we have one argument called `x`.
-* `(+ x x x)` is the _body_ of the function. This is what executes when we use this function.
+* `(+ x x x)` is the _body_ of the function. This is what executes when we use the function.
 
 To use `triple`, we _call the function_, just like we did with all the functions we've already used.
 
