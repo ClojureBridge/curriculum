@@ -30,7 +30,7 @@ To use `triple`, we _call_ the function, just like we've done with all the funct
 (triple 30.3) ;=> 90.9
 ```
 
-Functions can take more than one argument. Let's make an `average` function that takes two numbers and gives us the average of those two numbers:
+Functions can also take more than one argument. Let's make an `average` function that takes two numbers and gives us the average of those two numbers:
 
 ```clj
 (defn average
