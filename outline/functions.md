@@ -62,7 +62,7 @@ There are some functions that are essential when using Clojure. The arithmetic f
 
 ### Comparison functions
 
-You will often need to test the equality of two things. `=` is the function you use to do that. Imagine a function called `vegetarian?` that determines if a person is vegetarian or not:
+You can use the function `=` to test the equality of two things. For example, here is a function called `vegetarian?` that determines whether a person is vegetarian or not:
 
 ```clj
 (defn vegetarian?
@@ -70,7 +70,7 @@ You will often need to test the equality of two things. `=` is the function you 
   (= :vegetarian (get person :dietary-restrictions)))
 ```
 
-Other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`. All but the last of these are for use with numbers. Because they, like all Clojure functions, are used as prefixes, they can be a little tricky. Here's some examples:
+The other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`, and all but the last of these are used exclusively with numbers. Like all Clojure functions, the comparison functions are used as prefixes, so they can be a little tricky. Here's some examples:
 
 ```clj
 (> 4 3)    ;=> true
