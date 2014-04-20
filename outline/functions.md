@@ -90,7 +90,7 @@ A large part of programming is manipulating strings. The most important string f
 
 ### Collection functions
 
-When we learned about data structures, we saw many functions that operated on those data structures. Some of them were:
+When we learned about data structures, we saw many functions that operated on those data structures, including:
 
 * count
 * conj
