@@ -92,14 +92,14 @@ A large part of programming is manipulating strings. The most important string f
 
 When we learned about data structures, we saw many functions that operated on those data structures, including:
 
-* count
-* conj
-* first
-* rest
-* nth
-* assoc
-* dissoc
-* merge
+* `count`
+* `conj`
+* `first`
+* `rest`
+* `nth`
+* `assoc`
+* `dissoc`
+* `merge`
 
 Some of the most powerful functions you can use with collections can take other functions as arguments. That's a complicated idea, so we'll learn more about that next.
 
