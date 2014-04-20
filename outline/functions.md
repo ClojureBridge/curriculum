@@ -58,7 +58,7 @@ Functions that return true or false--called _predicates_--usually end in `?`:
 
 ## Important functions
 
-There are some functions that are essential when using Clojure. The arithmetic ones and `str` have already been covered, and you need to know them. Let's look at some others.
+There are some functions that are essential when using Clojure. The arithmetic functions and `str` have already been covered, and you need to know them. Let's look at some others.
 
 ### Comparison functions
 
