@@ -216,7 +216,7 @@ When you are creating functions, you may want to assign names to values in order
 
 This is the most complicated function we've seen so far, so let's go through each step. First, we have the name of the function, the documentation string, and the arguments, like in other functions.
 
-Next, we see `let`. `let` takes a vector of alternating names and values. `largest` is the first name, and we assign the result of `(reduce max numbers)` to it. We assign the result of `(reduce min numbers)` to `smallest`.
+Next, we see `let`. `let` takes a vector of alternating names and values. `largest` is the first name, and we assign the result of `(reduce max numbers)` to it. We also assign the result of `(reduce min numbers)` to `smallest`.
 
 After the vector of names and values, there is the body of the `let`. Just like a the body of a function, this executes and returns a value. Within the `let`, `largest` and `smallest` are defined.
 
