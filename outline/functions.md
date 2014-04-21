@@ -147,7 +147,7 @@ In the example above, `reduce` calls `join-with-space` with the parameters `"i"`
 * `(join-with-space "i like peanut butter" "and")`
 * `(join-with-space "i like peanut butter and" "jelly")`
 
-Another example of a function that uses a function, sort-by. It takes a function and sorts a sequence by applying that function to each element of the sequence. 
+Another example of a function that uses a function is `sort-by`. It takes a function and sorts a sequence by applying that function to each element of the sequence. 
 
 ```clj
 (sort-by val > {:amy 3, :renee 5, :lisa 4})
