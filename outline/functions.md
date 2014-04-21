@@ -165,7 +165,7 @@ An anonymous function is created with `fn`, like so:
 (fn [string1 string2] (str string1 " " string2))
 ```
 
-You might recognize that as the function we created before that we called `join-with-space`. `fn` works a lot like `defn`: we still have arguments listed as a vector and a function body. I didn't break the line in the anonymous function above, but you can, just like you can in a named function.
+You might notice that this function is the same as the function we called `join-with-space`. `fn` works a lot like `defn`: we still have arguments listed as a vector and a function body. I didn't break the line in the anonymous function above, but you can, just like you can in a named function.
 
 Why would you ever do this? Anonymous functions can be very useful when we have functions that take other functions. Let's take each of our examples above, but use anonymous functions instead of named functions.
 
