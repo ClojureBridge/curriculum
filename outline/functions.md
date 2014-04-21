@@ -115,7 +115,7 @@ One of the most magical things about Clojure--and many other programming languag
 (map triple [1 2 3]) ;=> [3 6 9]
 ```
 
-`map` is a function that takes another function and a collection. It then calls the function provided to it on each member of the collection and returns a new collection with the results of those function calls. This is a weird concept, but is at the core of Clojure and functional programming in general.
+`map` is a function that takes another function, along with a collection. It then calls the function provided to it on each member of the collection and returns a new collection with the results of those function calls. This is a weird concept, but is at the core of Clojure and functional programming in general.
 
 Let's look at another function that takes a function. This one is `reduce`, and it is used to turn collections into a single value.
 
