@@ -182,7 +182,7 @@ Why would you ever do this? Anonymous functions can be very useful when we have 
 
 Create a function called `average` that takes a vector of numbers and returns the average of those numbers.
 
-Hint: you will need to use `reduce` and `count`.
+Hint: You will need to use `reduce` and `count`.
 
 ### EXERCISE: Get the names of people
 
