@@ -214,7 +214,7 @@ When you are creating functions, you may want to assign names to values in order
 (spread [10 7 3 -3 8]) ;=> 13
 ```
 
-This is the most complicated function we've seen so far, so let's go through each step. First, we have the name of the function, the documentation string, and the arguments, like in other functions.
+This is the most complicated function we've seen so far, so let's go through each step. First, we have the name of the function, the documentation string, and the arguments, just as in other functions.
 
 Next, we see `let`. `let` takes a vector of alternating names and values. `largest` is the first name, and we assign the result of `(reduce max numbers)` to it. We also assign the result of `(reduce min numbers)` to `smallest`.
 
