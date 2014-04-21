@@ -127,7 +127,7 @@ Let's look at another function that takes a function. This one is `reduce`, and 
 (reduce add [1 2 3]) ;=> 6
 ```
 
-This is what `reduce` does: it takes the first two members of the collection provided and calls the provided function with those members. It then calls the function again, using the result of the previous function call and the next member of the collection. It does this over and over until it reaches the end of the collection.
+`reduce` takes the first two members of the provided collection and calls the provided function with those members. Next, it calls the provided function again--this time, using the result of the previous function call, along with the next member of the collection. `reduce` does this over and over again until it finally reaches the end of the collection.
 
 This is complicated, so let's illustrate it further.
 
