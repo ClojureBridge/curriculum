@@ -140,7 +140,7 @@ This process is complicated, so let's illustrate it further.
 ;=> "i like peanut butter and jelly"
 ```
 
-In the example above, `reduce` calls `join-with-space` with "i" and "like", returning "i like". Then, in order, it makes the following function calls:
+In the example above, `reduce` calls `join-with-space` with the parameters `"i"` and `"like"`, returning `"i like"`. Then, in order, it makes the following function calls:
 
 * `(join-with-space "i like" "peanut")`
 * `(join-with-space "i like peanut" "butter")`
