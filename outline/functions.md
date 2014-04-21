@@ -155,7 +155,7 @@ Another example of a function that uses a function is `sort-by`. It takes a func
 ```
 ### Anonymous functions
 
-So far, all the functions we've seen have had names, like `+` and `str` and `reduce`. Functions don't have to have names, though, just like values don't have to have names. We call functions without names _anonymous functions_.
+So far, all the functions we've seen have had names, like `+` and `str` and `reduce`. However, functions don't need to have names, just like values don't need to have names. We call functions without names _anonymous functions_.
 
 Before we go forward, you should understand that you can _always_ feel free to name all of your functions. There is nothing wrong at all with doing that. However, you will see Clojure code with anonymous functions, so you should be able to understand it.
 
