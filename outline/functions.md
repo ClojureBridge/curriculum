@@ -105,7 +105,7 @@ Some of the most powerful functions you can use with collections can take other 
 
 ## Functions that take other functions
 
-One of the most magical things about Clojure -- and many other programming languages -- is that it can have functions that take other functions as arguments. That may not make sense at first, so let's look at an example.
+One of the most magical things about Clojure--and many other programming languages--is that it can have functions that take other functions as arguments. That may not make sense at first, so let's look at an example.
 
 ```clj
 (defn triple
