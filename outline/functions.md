@@ -201,7 +201,7 @@ Here is an example of how it should work:
 
 ## `let`
 
-Sometimes when you are creating functions, you may want to assign names to values in order to reuse them or make your code more readable. Inside a function, however, you should _not_ use `def`, like you would outside a function. You use a special form called `let`. Let's look at an example:
+When you are creating functions, you may want to assign names to values in order to reuse those values or make your code more readable. Inside a function, however, you should _not_ use `def`, like you would outside a function. You use a special form called `let`. Let's look at an example:
 
 ```clj
 (defn spread
