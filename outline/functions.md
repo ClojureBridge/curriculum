@@ -117,7 +117,7 @@ One of the most magical things about Clojure--and many other programming languag
 
 `map` is a function that takes another function, along with a collection. It calls the function provided to it on each member of the collection, then returns a new collection with the results of those function calls. This is a weird concept, but it is at the core of Clojure and functional programming in general.
 
-Let's look at another function that takes a function. This one is `reduce`, and it is used to turn collections into a single value.
+Let's look at another function that takes a function. This one is `reduce`, and it is used to turn collections into a single value:
 
 ```clj
 (defn add
