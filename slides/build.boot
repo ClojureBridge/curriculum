@@ -1,12 +1,12 @@
 #!/usr/bin/env boot
 
-#tailrecursion.boot.core/version "2.2.1"
+#tailrecursion.boot.core/version "2.3.1"
 
 (set-env!
   :project      'clojurebridge.slides
   :version      "0.1.0-SNAPSHOT"
-  :dependencies '[[tailrecursion/boot.task   "2.1.1"]                  
-                  [tailrecursion/hoplon      "5.5.1"]
+  :dependencies '[[tailrecursion/boot.task   "2.1.2"]                  
+                  [tailrecursion/hoplon      "5.7.0"]
                   [tailrecursion/boot.ring   "0.1.0-SNAPSHOT"]
                   [org.clojure/clojurescript "0.0-2156"]]
   :out-path     "resources/public"
