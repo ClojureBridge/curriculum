@@ -34,16 +34,12 @@ The details of Java's version may differ from what you see above; that is perfec
 
 Leiningen is a tool used on the command line to manage Clojure projects.
 
-Go to the [Leiningen website](http://leiningen.org/). You will see a link to the `lein` script under the "Install" heading. Right-click that link and choose "Save Link As...". Save it in your Downloads directory.
-
-![Leiningen site](img/leiningen_site.png)
-![Leiningen site](img/lein_install.png)
-
-After that, run the following commands in your terminal. You will be prompted to enter your password.
+To install `lein`, execute the following commands in your terminal. You will be prompted to enter your password.
 
 ```
+curl https://raw.github.com/technomancy/leiningen/stable/bin/lein > lein
 sudo mkdir -p /usr/local/bin/
-sudo mv ~/Downloads/lein* /usr/local/bin/lein
+sudo mv lein /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
 export PATH=$PATH:/usr/local/bin
 ```
