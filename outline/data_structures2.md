@@ -84,11 +84,25 @@ You can use a keyword like you would use a function in order to look up values i
 
 Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using `assoc` or `merge`.
 
-
 ## Collections of Collections
 
 Simple values such as numbers, keywords, and strings are not the only types of things you can put into collections. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
 
+
+### EXERCISE: Get the names of people
+
+Create a function called `get-names` that takes a vector of maps of people and returns a vector of their names.
+
+Here is an example of how it should work:
+
+```clj
+(get-names [{:first "Margaret" :last "Atwood"}
+            {:first "Doris" :last "Lessing"}
+            {:first "Ursula" :last "Le Guin"}
+            {:first "Alice" :last "Munro"}])
+
+;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
+```
 
 ### EXERCISE: Modeling your classmates
 

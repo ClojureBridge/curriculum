@@ -23,30 +23,30 @@ Vectors are written using square brackets with any number of pieces of data insi
 
 ```clj
 [1 2 3 4 5]
-["a" 1 2 "b"]
+[56.9 60.2 61.8 63.1 54.3 66.4 66.5 68.1 70.2 69.2 63.1 57.1]
 []
 ```
 
 What can you do with vectors? Vectors are easy to add more items to, delete items from, or pull arbitrary items out of. Here are some functions that operate on vectors.
 
 ```clj
-(vector? [:a :b :c])
+(vector? [5 10 15])
 ;=> true
 
-(vector :a :b :c)
-;=> [:a :b :c]
+(vector 5 10 15)
+;=> [5 10 15]
 
-(conj [:a :b] :c)
-;=> [:a :b :c]
+(conj [5 10] 15)
+;=> [5 10 15]
 
-(count [:a :b :c])
+(count [5 10 15])
 ;=> 3
 
-(nth [:a :b :c] 1)
-;=> :b
+(nth [5 10 15] 1)
+;=> 10
 
-(first [:a :b :c])
-;=> :a
+(first [5 10 15])
+;=> 5
 ```
 
 Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer true-or-false questions about the data we give them.
@@ -60,4 +60,4 @@ Now, take a look at the last three functions. `count` does what you'd expect: it
 
 ### EXERCISE: Make a vector
 
-Make a vector of all the places you've ever lived. Then use the `nth` function to get the current place you live from the vector.
+Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the `nth` function to get the average high temperature for the current month from the vector.

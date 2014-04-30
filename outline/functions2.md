@@ -70,31 +70,10 @@ You might notice that this function is the same as the function we called `join-
 Why would you ever do this? Anonymous functions can be very useful when we have functions that take other functions. Let's take each of our examples above, but use anonymous functions instead of named functions.
 
 ```clj
-(map (fn [x] (+ x x x)) [1 2 3]) ;=> [3 6 9]
+(map (fn [x] (* 3 x)) [1 2 3]) ;=> [3 6 9]
 (reduce (fn [x y] (+ x y)) [1 2 3]) ;=> 6
 (reduce
   (fn [s1 s2] (str s1 " " s2))
   ["i" "like" "peanut" "butter" "and" "jelly"])
 ;=> "i like peanut butter and jelly"
-```
-
-### EXERCISE: Find the average
-
-Create a function called `average` that takes a vector of numbers and returns the average of those numbers.
-
-Hint: You will need to use `reduce` and `count`.
-
-### EXERCISE: Get the names of people
-
-Create a function called `get-names` that takes a vector of maps of people and returns a vector of their names.
-
-Here is an example of how it should work:
-
-```clj
-(get-names [{:first "Margaret" :last "Atwood"}
-            {:first "Doris" :last "Lessing"}
-            {:first "Ursula" :last "Le Guin"}
-            {:first "Alice" :last "Munro"}])
-
-;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```

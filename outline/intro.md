@@ -131,20 +131,39 @@ I used integers with all of the above, but they can use floats or ratios just fi
 (/ 27/2 1.5)  ;=> 3.0
 ```
 
+### Other simple value types
+
+Although we will look at these in more depth later, here are some examples of other types of simple values so that you may recognize them along the way in any code that you see.  The following are examples of Strings, keywords, and booleans:
+
+```clj
+;;Strings
+"Salut tout le monde"
+"Prost!"
+
+;;keywords
+:surname
+:birth-date
+:r2
+
+;;booleans
+true
+false
+```
+
 ## Assigning names to values
 
 If we had to type the same values over and over, it would be very hard to write a program. What we need are names for values, so we can refer to them in a way we can remember. We do that using `def`. Type the following into your instarepl:
 
 ```clj
-(def apples 3)
+(def mangoes 3)
 (def oranges 5)
-(+ apples oranges)
+(+ mangoes oranges)
 ```
 
 When you assign a name to a value, that name is called a _symbol_. You can assign more than simple values to symbols. Try the following:
 
 ```clj
-(def fruit (+ apples oranges))
+(def fruit (+ mangoes oranges))
 (def average-fruit-amount (/ fruit 2))
 average-fruit-amount
 ```

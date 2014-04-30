@@ -127,4 +127,28 @@ Type the `spread` function into your instarepl and see how it evaluates.
 
 ### EXERCISE: Rewrite average
 
-Go back to the `average` function you created before and use `let` to make it easier to read.
+Go back to the average bill amounts function you created before and use `let` to make it easier to read.
+
+### BONUS: Ordinal numbers
+
+Given a number (positive integer), return the string representing the ordinal number.  For many numbers, this is done by adding `"th"` to the end.  As part one, let us make an exception for numbers ending in a 1, 2, or 3, by adding `"st"`, `"nd"`, or `"rd"` respectively.  You will need the `rem` function, which takes 2 integers and returns the remainder from dividing the first by the second.  You will also find that nesting `if` forms (putting one inside another) to be useful.  Here is an example of how our function will behave:
+
+```clj
+(ordinal 1)  ;=> "1st"
+(ordinal 2)  ;=> "2nd"
+(ordinal 3)  ;=> "3rd"
+(ordinal 4)  ;=> "4th"
+(ordinal 5)  ;=> "5th"
+(ordinal 21) ;=> "21st"
+(ordinal 22) ;=> "22nd"
+```
+
+As part two, our exceptions above based on the last digit are superceded when the last 2 digits are 11, 12, or 13, in which case we add `"th"`.  Our updated function will behave as follows:
+
+```clj
+(ordinal 10) ;=> "10th"
+(ordinal 11) ;=> "11th"
+(ordinal 12) ;=> "12th"
+(ordinal 13) ;=> "13th"
+(ordinal 14) ;=> "14th"
+```

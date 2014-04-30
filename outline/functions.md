@@ -14,41 +14,42 @@ You have already seen some functions, such as `count`, `conj`, `first`, and `res
 A _function_ is an independent, discrete piece of code that takes in some values (called _arguments_) and returns other values. Let's see an example:
 
 ```clj
-(defn triple
-  "Given a number, return 3 times that number."
-  [x]
-  (+ x x x))
+(defn total-bill
+  "Given the subtotal of a bill, return the total after tax."
+  [subtotal]
+  (* 1.085 subtotal))
 ```
 
 In this code:
 
 * `defn` specifies that we are defining a function.
-* `triple` is the name of this function.
+* `total-bill` is the name of this function.
 * The string on the next line is the documentation for the function, which explains what the function does. This is optional.
-* `[x]` is the list of arguments. Here, we have one argument called `x`.
-* `(+ x x x)` is the _body_ of the function. This is what executes when we use the function.
+* `[subtotal]` is the list of arguments. Here, we have one argument called `subtotal`.
+* `(* 1.085 subtotal)` is the _body_ of the function. This is what executes when we use the function.
 
-To use `triple`, we _call_ the function, just like we've done with all the functions we've already used.
-
-```clj
-(triple 2)    ;=> 6
-(triple 3/2)  ;=> 9/2
-(triple 30.3) ;=> 90.9
-```
-
-Functions can also take more than one argument. Let's make an `average` function that takes two numbers and gives us the average of those two numbers:
+To use `total-bill`, we _call_ the function, just like we've done with all the functions we've already used.
 
 ```clj
-(defn average
-  [x y]
-  (/ (+ x y) 2))
-
-(average 2 3) ;=> 5/2
+(total-bill 8.90) ;=> 9.6565
+(total-bill 50)   ;=> 54.25
+(total-bill 50/7) ;=> 7.75
 ```
 
-### EXERCISE: Make a function to format names
+Functions can also take more than one argument. Let's make a `total-with-tip` function that additionally takes a tip percentage and calculates the total amount paid:
 
-The `str` function can take any number of arguments, and it concatenates them together to make a string. Write a function called `format-name` that takes two arguments, `first-name` and `last-name`. This function should output the name like so: `Last, First`.
+```clj
+(defn total-with-tip
+  [subtotal tip-pct]
+  (* 1.085 subtotal (+ 1 tip-pct)))
+
+(total-with-tip 8.90 0.18) ;=> 11.3946999
+(total-with-tip 50 0.18)   ;=> 64.015
+```
+
+### EXERCISE: Find per-person share of bill among a group
+
+Modify our `total-with-tip` function, and call the new function `share-per-person`, that additionally takes in as an argument the number of people in the group for a bill.  Have the function return the average bill amount per person.
 
 ## Naming functions
 
@@ -64,7 +65,7 @@ Functions that return true or false--called _predicates_--usually end in `?`:
 
 ## Important functions
 
-There are some functions that are essential when using Clojure. The arithmetic functions and `str` have already been covered, and you need to know them. Let's look at some others.
+There are some functions that are essential when using Clojure. The arithmetic functions have already been covered. Let's look at some others.
 
 
 ### Collection functions
@@ -87,11 +88,11 @@ Some of the most powerful functions you can use with collections can take other 
 One of the most magical things about Clojure--and many other programming languages--is that it can have functions that take other functions as arguments. That may not make sense at first, so let's look at an example:
 
 ```clj
-(defn triple
-  [x]
-  (+ x x x))
+(def dine-in-orders [12.40 18.95 23.81 19.95 12.40])
+(def take-out-orders[6.00 6.00 7.95 6.25])
 
-(map triple [1 2 3]) ;=> [3 6 9]
+(map total-bill dine-in-orders)  ;=> [13.454 20.56075 25.833849999999998 21.64575 13.454]
+(map total-bill take-out-orders) ;=> [6.51 6.51 8.62575 6.78125]
 ```
 
 `map` is a function that takes another function, along with a collection. It calls the function provided to it on each member of the collection, then returns a new collection with the results of those function calls. This is a weird concept, but it is at the core of Clojure and functional programming in general.
@@ -111,30 +112,18 @@ Let's look at another function that takes a function. This one is `reduce`, and 
 This process is complicated, so let's illustrate it further.
 
 ```clj
-(defn join-with-space
-  [string1 string2]
-  (str string1 " " string2))
+(def take-out-totals [6.51 6.51 8.62575 6.78125])
 
-(reduce join-with-space ["i" "like" "peanut" "butter" "and" "jelly"])
-;=> "i like peanut butter and jelly"
+(reduce add take-out-totals) ;=> 28.427
 ```
 
-In the example above, `reduce` calls `join-with-space` with the parameters `"i"` and `"like"`, returning `"i like"`. Then, in order, it makes the following function calls:
+In the example above, `reduce` calls `add` with the parameters `6.51` and `6.51`, returning `13.02`. Then, in order, it makes the following function calls:
 
-* `(join-with-space "i like" "peanut")`
-* `(join-with-space "i like peanut" "butter")`
-* `(join-with-space "i like peanut butter" "and")`
-* `(join-with-space "i like peanut butter and" "jelly")`
-
-Another example of a function that uses a function is `sort-by`. It takes a function and sorts a sequence by applying that function to each element of the sequence. 
-
-```clj
-(sort-by val > {:amy 3, :renee 5, :lisa 4})
-;=> ([:renee 5] [:lisa 4] [:amy 3])
-```
+* `(add 13.02    8.62575) ;=> 21.64575`
+* `(add 21.64575 6.78125) ;=> 28.427`
 
 ### EXERCISE: Find the average
 
-Create a function called `average` that takes a vector of numbers and returns the average of those numbers.
+Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
 
 Hint: You will need to use `reduce` and `count`.
