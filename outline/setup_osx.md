@@ -37,7 +37,7 @@ Leiningen is a tool used on the command line to manage Clojure projects.
 To install `lein`, execute the following commands in your terminal. You will be prompted to enter your password.
 
 ```
-curl https://raw.github.com/technomancy/leiningen/stable/bin/lein > lein
+curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > lein
 sudo mkdir -p /usr/local/bin/
 sudo mv lein /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
