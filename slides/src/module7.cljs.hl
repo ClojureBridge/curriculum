@@ -172,7 +172,7 @@
         (ordinal 14) ;=> "14th"
         ;;}}
         )
-       (p "Part three: rewrite the nested if statements using the " (code cond) " function."  ))
+       (p "Part three: rewrite the nested if statements using the " (code "cond") " function."  ))
       
       )
      
