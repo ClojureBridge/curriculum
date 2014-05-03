@@ -7,9 +7,6 @@ Introduction to Programming with Clojure
 * What is the REPL?
 * Simple values
     - Numbers
-    - Strings
-    - Booleans
-    - Keywords
 * Assigning names to values
 
 ## Why Clojure?
@@ -134,6 +131,45 @@ I used integers with all of the above, but they can use floats or ratios just fi
 (/ 27/2 1.5)  ;=> 3.0
 ```
 
+### Other simple value types
+
+Although we will look at these in more depth later, here are some examples of other types of simple values so that you may recognize them along the way in any code that you see.  The following are examples of Strings, keywords, and booleans:
+
+```clj
+;;Strings
+"Salut tout le monde"
+"Prost!"
+
+;;keywords
+:surname
+:birth-date
+:r2
+
+;;booleans
+true
+false
+```
+
+## Assigning names to values
+
+If we had to type the same values over and over, it would be very hard to write a program. What we need are names for values, so we can refer to them in a way we can remember. We do that using `def`. Type the following into your instarepl:
+
+```clj
+(def mangoes 3)
+(def oranges 5)
+(+ mangoes oranges)
+```
+
+When you assign a name to a value, that name is called a _symbol_. You can assign more than simple values to symbols. Try the following:
+
+```clj
+(def fruit (+ mangoes oranges))
+(def average-fruit-amount (/ fruit 2))
+average-fruit-amount
+```
+
+Look at the last line, and see how we can use symbols by themselves to refer to a value.
+
 ### EXERCISE: Basic arithmetic
 
 Take your height in feet and inches and convert it to inches using arithmetic in Clojure.
@@ -143,51 +179,3 @@ Then convert that to centimeters. There are 2.54 centimeters in an inch.
 Lastly, ask two people near you for their height in centimeters. Find the average of your heights.
 
 Bonus: Convert that average back to feet and inches. `(mod x y)` will give you the remainder when dividing two numbers.
-
-### Strings and characters
-
-What is a string? A string is just a piece of text. To make a string, you enclose it in quotation marks.
-
-```clj
-"Hello world"
-"This is a longer string that I wrote for purposes of an example."
-"Aubrey said, \"I think we should go to the Orange Julius.\""
-```
-
-Look at the last example. A backslash is how we put a quotation mark inside a string. Do not try using single quotes to make a string.
-
-Strings are made up of characters. You can make a single character by using a backslash, but we won't need to make individual characters for this course.
-
-### Booleans and nil
-
-A boolean is a true or false value, and you type them just like that, `true` and `false`. Often in programming, we need to ask a true or false question, like "Is this class in the current semester?" or "Is this person's birthday today?" When we ask those questions, we get a boolean back.
-
-There is another value like a boolean in some ways, but different. This value is `nil`, and it means no value at all. You will not often use this value yourself, but you may encounter it in other people's code.
-
-### Keywords
-
-Keywords are the strangest of the basic value types, because they don't have a real world analog like numbers, strings, and booleans do. You can think of them as a special type of string, one that's used for labels. They are easiest to understand when we cover maps later, as they are most commonly used as keys in maps.
-
-## Assigning names to values
-
-If we had to type the same values over and over, it would be very hard to write a program. What we need are names for values, so we can refer to them in a way we can remember. We do that using `def`. Type the following into your instarepl:
-
-```clj
-(def apples 3)
-(def oranges 5)
-(+ apples oranges)
-```
-
-When you assign a name to a value, that name is called a _symbol_. You can assign more than simple values to symbols. Try the following:
-
-```clj
-(def fruit (+ apples oranges))
-(def average-fruit-amount (/ fruit 2))
-average-fruit-amount
-```
-
-Look at the last line, and see how we can use symbols by themselves to refer to a value.
-
-## EXERCISE: Store the name of your hometown
-
-Write the name of your hometown as a string, and then assign that string to the symbol `my-hometown`.

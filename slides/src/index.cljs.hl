@@ -14,14 +14,18 @@
      :theme "mozilla-theme.css"
      (intro
       :title "ClojureBridge"
-      (p "Durham, NC")
-      (p "April 5, 2014"))
+      (p "San Francisco, CA")
+      (p "May 3, 2014"))
      (slide
       :title "Table of Contents"
       (ul
        (li (a :href "module1.html" "Introduction to Clojure"))
-       (li (a :href "module2.html" "Data Structures and Functions"))
-       (li (a :href "module3.html" "Flow Control and Logic"))
-       (li (a :href "module4.html" "Making a Program"))
-       (li (a :href "module5.html" "Making a Web Application"))       
+       (li (a :href "module2.html" "Data Structures"))
+       (li (a :href "module3.html" "Functions"))
+       (li (a :href "module4.html" "More Simple Values"))
+       (li (a :href "module5.html" "More Functions"))
+       (li (a :href "module6.html" "More Data Structures"))
+       (li (a :href "module7.html" "Flow Control and Logic"))
+       (li (a :href "module8.html" "Making a Program"))
+       (li (a :href "module9.html" "Making a Web Application"))       
        )))))
