@@ -119,9 +119,11 @@
         (tr
           (td "false")(td "true")(td "false")(td "true")(td "true")(td "false"))
         )))
-     
+
+
+
      (chapter
-      :title (h3 (code "let")) 
+      :title "Let"
       (slide
        :title (h3 (code "let"))
        (hlclj
@@ -141,5 +143,37 @@
        (p "Go back to the " (code "average") " function you created before and "
           "use " (code "let") " to make it easier to read."))
 
-      ))))
 
+      (slide
+       :title "Bonus: Ordinal numbers"
+       (p "Given a number (positive integer), return the string representing the ordinal number. For many numbers, this is done by adding " (code "\"th\"") " to the end.")
+       (p "Part one: return the ordinal number string, but for numbers ending in 1, 2, or 3, add " (code "\"st\"") ", " (code "\"2nd\"") ", and " (code "\"rd\"") " respectively. Ex:")
+       (hlclj
+        ;;{{
+        (ordinal 1)  ;=> "1st"
+        (ordinal 2)  ;=> "2nd"
+        (ordinal 3)  ;=> "3rd"
+        (ordinal 4)  ;=> "4th"
+        (ordinal 5)  ;=> "5th"
+        (ordinal 21) ;=> "21st"
+        (ordinal 22) ;=> "22nd"
+        ;;}}
+        )
+       (p "You will need the " (code "rem") " function, which takes 2 integers and returns the remainder from dividing the first by the second.  You will also find that nesting "  (code "if") " forms (putting one inside another) to be useful."))
+      (slide
+       :title "Bonus: Ordinal numbers"
+       (p "Part two: our exceptions for numbers ending in 1, 2, or 3 are superceded when the last 2 digits are 11, 12, or 13, in which case just add " (code "\"th\"") ". Ex:")
+       (hlclj
+        ;;{{
+        (ordinal 10) ;=> "10th"
+        (ordinal 11) ;=> "11th"
+        (ordinal 12) ;=> "12th"
+        (ordinal 13) ;=> "13th"
+        (ordinal 14) ;=> "14th"
+        ;;}}
+        )
+       (p "Part three: rewrite the nested if statements using the " (code cond) " function."  ))
+      
+      )
+     
+     )))
