@@ -7,6 +7,10 @@
   (print "Autoreloading")
   (reload-all))
 
+(defn code-list
+  [& lst]
+  (interpose ", " (map code lst)))
+
 (defelem hlclj
   [attrs children]
   (highlight (assoc attrs :class "clojure") children))
@@ -17,149 +21,118 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 3")
+      :title "Module 3") 
      (chapter
-      :title "Flow control"
+      :title "Functions"
       (slide
-       :title "Example: validating data"
-       (p "If the user's input is valid, then save their data; otherwise, show an error message.")
+       :title "What are functions?"
+       (ul
+        (li (code-list "count" "conj" "first"))
+        (li (code-list "+" "-" "*" "/"))
+        (li "A piece of code that takes values and returns a value")))
+      (slide
+       :title "An example function"
        (hlclj
-        ;;{{
-        (if (valid? data)
-          (save! data)
-          (error "Your data was invalid"))
-        ;;}}
+        ;;{{      
+        (defn total-bill
+          "Given the subtotal of a bill, return the total after tax."
+          [subtotal]
+          (* 1.085 subtotal)) 
+
+        (total-bill 8.90) ;=> 9.6565
+        (total-bill 50)   ;=> 54.25
+        (total-bill 50/7) ;=> 7.75
+        ;;}}       
         ))
       (slide
-       :title (h3 (code "if"))
+       :title "An example function"
        (hlclj
-        ;;{{
-        (if conditional-expression
-          expression-to-evaluate-when-true
-          expression-to-evaluate-when-false)
-        ;;}}
+        ;;{{      
+        (defn ; specifies that we are defining a function
+          total-bill ; the name of this function
+          
+          ;; documentation, optional
+          "Given the subtotal of a bill, return the total..."
+          
+          [x] ; list of arguments
+
+          ;; body of function
+          (* 1.085 subtotal))
+        ;;}}       
         ))
       (slide
-       :title (h3 (code "if") " examples")
+       :title "A function with multiple arguments."
        (hlclj
         ;;{{
-        (if (> 3 1)
-          "3 is greater than 1"
-          "3 is not greater than 1")
-        ;;=> "3 is greater than 1"
+        (defn total-with-tip
+          [subtotal tip-pct] ;; takes 2 arguments
+          (* 1.085 subtotal (+ 1 tip-pct)))
 
-        (if (> 1 3)
-          "1 is greater than 3"
-          "1 is not greater than 3")
-        ;;=> "1 is not greater than 3"
+        (total-with-tip 50 0.18) ;=> 64.015
         ;;}}
         ))
+    (slide
+     :title "Find per-person share of bill among a group"
+     (p "Modify our " (code "total-with-tip") " function, and call the new function " (code "share-per-person") ", that additionally takes in as an argument the number of people in the group for a bill.")
+     (p "Have the function return the average bill amount per person."))
+    (slide
+     :title "Naming functions"
+     (ul
+      (li "Functions are named like any other value")
+      (li (p "Predicate functions usually end in " (code "?"))
+          (ul
+           (li (code "zero?"))
+           (li (code "vector?"))
+           (li (code "empty?")))))))
+     (chapter
+      :title "Functions that take other functions"
       (slide
-       :title "What is truth?"
-       (p "Everything except"
-          (code "false") " or " (code "nil") "."))
-
-      (slide
-       :title "Truth examples"
+       :title (h3 (code "map"))
        (hlclj
-        ;;{{
-        (if "anything other than nil or false is considered true"
-          "A string is considered true"
-          "A string is not considered true")
-        ;;=> "A string is considered true"
-
-        (if nil
-          "nil is considered true"
-          "nil is not considered true")
-        ;;=> "nil is not considered true"
-
-        (if (get {:a 1} :b)
-          "expressions which evaluate to nil are considered true"
-          "expressions which evaluate to nil are not considered true")
-        ;;=> "expressions which evaluate to nil are not considered true"
-        ;;}}
-        ))
-
-      (slide
-       :title "Exercise: more name formatting"
-       (p "Write a function " (code "format-name") " that takes a map "
-          "representing a user, with keys " (code ":first") ", "
-          (code ":last") ", and possibly " (code ":middle")
-          ". It should return their name as a string, like so:")
-       (hlclj
-        ;;{{
-        (format-name {:first "Margaret" :last "Atwood"})
-        ;;=> "Margaret Atwood"
+        ;;{{       
+        (def dine-in-orders [12.40 18.95 23.81 19.95 12.40])
+        (def take-out-orders[6.00 6.00 7.95 6.25])
         
-        (format-name {:first "Ursula" :last "Le Guin" :middle "K."})
-        ;;=> "Ursula K. Le Guin"
+        (map total-bill dine-in-orders)  ;=> [13.454 20.56075 25.833849999999998 21.64575 13.454]
+        (map total-bill take-out-orders) ;=> [6.51 6.51 8.62575 6.78125]
+        ;;}}       
+        ))
+      (slide
+       :title (h3 (code "reduce"))
+       (hlclj
+        ;;{{
+        (defn add
+          [x y]
+          (+ x y))
+
+        (reduce add [1 2 3]) ;=> 6
         ;;}}
         ))
       (slide
-       :title "BONUS: Flexible name formatting"
-       (p "Change " (code "format-name") " to take a second argument, "
-          (code "order") ". If " (code "order") " equals " (code ":last")
-          ", then the format should be \"Last, First Middle\"; otherwise, "
-          "it should be \"First Middle Last.\"")))
-
-     (chapter
-      :title "Boolean logic"
-      (slide
-       :title (h3 (code "and") ", " (code "or") ", and " (code "not"))
-       (table
-        (tr
-          (th "x") (th "y") (th "(and x y)") (th "(or x y)") (th "(not x)") (th "(not y)")
-)
-        (tr
-          (td "false")(td "false")(td "false")(td "false")(td "true")(td "true"))
-        (tr
-          (td "true")(td "false")(td "false")(td "true")(td "false")(td "true"))
-        (tr
-          (td "true")(td "true")(td "true")(td "true")(td "false")(td "false"))
-        (tr
-          (td "false")(td "true")(td "false")(td "true")(td "true")(td "false"))
-        )))
-     
-     (chapter
-      :title "Sequence comprehensions"
-      
-      (slide
-       :title (h3 (code "for"))
-       (p (code "for") " iterates over the sequences it is given and returns a new sequence.")
+       :title (h3 (code "reduce") " in action")
        (hlclj
-        ;;{{
-        (for [x [1 2 3]]
-          (* x x))
-        ;;=> (1 4 9)
-        ;;}}
+        ;;{{       
+        (def take-out-totals [6.51 6.51 8.62575 6.78125])
+
+        (reduce add take-out-totals) ;=> 28.427
+        ;;}}       
         ))
       (slide
-       :title (h3 "Combining sequences with " (code "for"))
-       (p (code "for") " can take multiple sequences. In that case, it iterates over their combinations.")
+       :title (h3 (code "reduce") " in action")
        (hlclj
-        ;;{{
-        (for [x [1 2 3]
-              y ["a" "b" "c"]]
-          (str x y))
-        ;;=> ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")
-        ;;}}
+        ;;{{       
+        (def take-out-totals [6.51 6.51 8.62575 6.78125]) 
+        (reduce add take-out-totals) ;=> 28.427
+
+        (add 6.51 6.51)
+        (add 13.02 8.62575)
+        (add 21.64575 6.78125)
+        ;;}}       
         ))
-
-      (slide
-       :title (h3 (code "for") " and comparison functions")
-       (hlclj
-        ;;{{
-        (for [x [1 2 3]
-              y ["a" "b" "c"]
-              :when (> x 2)]
-          (str x y))
-        ;;=> ("3a" "3b" "3c")
-
-        (for [x [1 2 3]
-              y ["a" "b" "c"]
-              :when (and (> x 2) (not= y "a"))]
-          (str x y))
-        ;;=> ("3b" "3c")
-        ;;}}
-        ))))))
-
+    
+    (slide
+      :title "Exercise: Find the average"
+      (p "Create a function called " (code "average") " that takes a vector of "
+         "bill amounts and returns the average of those amounts.")
+      (p "Hint: you will need to use "
+         (code "reduce") " and " (code "count") "."))))))

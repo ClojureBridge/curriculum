@@ -1,0 +1,127 @@
+(page "module9.html"
+      (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
+                                       notes highlight column quicklist]]
+                [tailrecursion.hoplon.reload :refer [reload-all]]))
+
+(when (= (-> js/window .-location .-search) "?dev")
+  (print "Autoreloading")
+  (reload-all))
+
+(defelem hlclj
+  [attrs children]
+  (highlight (assoc attrs :class "clojure") children))
+
+(html
+  (head)
+  (body
+    (slideshow
+     :theme "mozilla-theme.css"
+     (intro
+      :title "Module 9")
+     (chapter
+      :title "Web Applications"
+      (slide
+       :title "How does the web work?"
+       (img :src "img/web1.png"))
+      (slide
+       :title "Requesting index.html"
+       (img :src "img/web2.png"))
+      (slide
+       :title "Web server = a function"
+       (img :src "img/web3.png"))
+      (slide
+       :title "A simple Clojure web application"
+       (hlclj
+        ;;{{
+        (defn app
+          [request]
+          {:status 200
+           :body "Hello world!"})
+        ;;}}
+        ))
+      (slide
+       :title "What is HTML?"
+       (p "Go to clojurebridge.org in your web browser and view the source."))
+      )
+     (chapter
+      :title "Clojure web applications"
+      (slide
+       :title "Libraries we are going to use"
+       (ul
+        (li (b "Ring:") " handles taking in web requests and returning responses")
+        (li (b "Compojure:") " reads URLs and decides how to handle them")
+        (li (b "Hiccup:") " takes Clojure data and turns it into HTML")))
+      (slide
+       :title "global-growth.web"
+       (hlclj
+        ;;{{
+        (ns global-growth.web
+          (:require [global-growth.core :as api]
+                    [compojure.core :refer [defroutes GET]]
+                    [compojure.handler :refer [site]]
+                    [hiccup.core :as hiccup]
+                    [hiccup.page :as page]
+                    [hiccup.form :as form]))
+        ;;}}
+        ))
+      (slide
+       :title "Getting set up for this module"
+       (p "Uncomment everything under the MODULE 5 line in core.clj and everything in web.clj."))     
+      (slide
+       :title "Routing requests"      
+       (hlclj
+        ;;{{
+        (defroutes main-routes
+          (GET "/" [] (main-page))
+          (GET "/indicators" [indicator1 indicator2 year]
+               (view-indicators indicator1 indicator2 year)))        
+        ;;}}
+        ))
+      (slide
+       :title "Generating HTML"
+       (hlclj
+        ;;{{
+        (hiccup/html [:header
+                      [:h1 "Hello world!"]
+                      [:h2 "I am an awesome subheader"]])
+        ;;=> "<header><h1>Hello world!</h1>
+        ;;    <h2>I am an awesome subheader</h2></header>"
+        ;;}}
+        ))
+      (slide
+       :title "HTML forms"
+       (p "Take a look at " (code "main-page") ".")
+       (hlclj
+        ;;{{
+        (form/form-to {:role "form"} [:get "/indicators"]
+                      [:div.row
+                       [:div.form-group.col-md-5
+                        (form/label "indicator1" "Indicator 1:  ")
+                        (form/drop-down {:class "form-control"}
+                                        "indicator1"
+                                        (api/get-indicators))]]
+                      ;; ...
+                      (form/submit-button "Submit"))
+        ;;}}
+        ))
+      (slide
+       :title "Running a web application"
+       (p "Open " (code "project.clj") ".")
+       (p "Make sure the following is in the project:")
+       (hlclj ":ring {:handler global-growth.web/handler}"))
+      (slide
+       :title "Starting the web server"
+       (highlight
+        :class "no-highlight"
+        ;;{{
+        > lein ring server
+        
+        2014-04-02 21:30:06.303:INFO:oejs.Server:jetty-7.6.8.v20121106
+        2014-04-02 21:30:06.378:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+        Started server on port 3000
+        ;;}}
+        )
+       (p "Go to http://localhost:3000/."))
+      
+      )
+     )))

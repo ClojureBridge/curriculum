@@ -98,6 +98,41 @@
         (* 8 1/4)      ;=> 2
         (/ 27/2 1.5)   ;=> 3.0
         ;;}}
+        )) 
+      (slide
+       :title "Sneak Peek at Strings, Booleans, and Keywords"
+       (p "String examples")
+       (highlight
+        ;;{{
+        "Salut tout le monde"
+        "Prost!"
+        ;;}}
+        )
+       (p "Keyword examples")
+       (highlight :class "language-clojure"
+        ;;{{
+        :surname
+        :birth-date
+        :r2
+        ;;}}
+        )        
+       (p "Boolean examples")
+       (highlight :class "language-clojure"
+        ;;{{
+        true
+        false
+        ;;}}
+        )))
+     (chapter
+      :title "Assigning names to values"
+      (slide
+       :title "def"
+       (highlight
+        ;;{{
+        (def mangoes 3)
+        (def oranges 5)
+        (+ mangoes oranges)
+        ;;}}
         ))
       (slide
        :title "Exercise: Basic arithmetic"
@@ -107,39 +142,4 @@
         (li "Lastly, ask two people near you for their height in centimeters. Find the average of your heights.")
         (li (p "Bonus: convert that average back to feet and inches.")
             (p (code "(mod x y)")
-               " will give you the remainder when dividing two numbers."))))
-      (slide
-       :title "Strings"
-       (highlight :class "language-clojure"
-        ;;{{
-        "Hello world"
-        "This is a longer string that I wrote for purposes of an example."
-        "Aubrey said, \"I think we should go to the Orange Julius.\""
-        ;;}}
-        ))
-      (slide
-       :title "Booleans and nil"
-       (p "Answers to questions")
-       (highlight
-        ;;{{
-        true
-        false
-        nil
-        ;;}}
-        )))
-     (chapter
-      :title "Assigning names to values"
-      (slide
-       :title "def"
-       (highlight
-        ;;{{
-        (def apples 3)
-        (def oranges 5)
-        (+ apples oranges)
-        ;;}}
-        ))
-      (slide
-       :title "Exercise: Store the name of your hometown"
-       (p "Write the name of your hometown as a string and then assign that string to the symbol "
-          (code "my-hometown")
-          "."))))))
+               " will give you the remainder when dividing two numbers."))))))))
