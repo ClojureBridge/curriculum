@@ -178,4 +178,4 @@ Then convert that to centimeters. There are 2.54 centimeters in an inch.
 
 Lastly, ask two people near you for their height in centimeters. Find the average of your heights.
 
-Bonus: Convert that average back to feet and inches. `(mod x y)` will give you the remainder when dividing two numbers.
+Bonus: Convert that average back to feet and inches. The feet and the inches will be separate numbers. `(quot x y)` will give you the whole number part when dividing two numbers. `(mod x y)` will give you the remainder when dividing two numbers.
