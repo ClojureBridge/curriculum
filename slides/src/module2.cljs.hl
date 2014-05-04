@@ -30,8 +30,7 @@
         (li "Vectors")
         (li "Maps")
         (li "Lists")        
-        (li "Sets")
-        (li "Sequences"))
+        (li "Sets"))
        (p "We will only look at vectors for now."))
       (slide
        :title "Vectors"
