@@ -141,5 +141,8 @@
         (li "Then convert that to centimeters. There are 2.54 centimeters in an inch.")
         (li "Lastly, ask two people near you for their height in centimeters. Find the average of your heights.")
         (li (p "Bonus: convert that average back to feet and inches.")
+            (p "This will be two separate numbers of whole feet and decimal inches.")
+            (p (code "(quot x y)")
+               " will give you the whole part of the quotient when dividing two numbers.")
             (p (code "(mod x y)")
                " will give you the remainder when dividing two numbers."))))))))
