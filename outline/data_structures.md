@@ -2,7 +2,7 @@ Data Structures
 ===============
 
 * Collections
-* Vectors
+    * Vectors
 
 ## Collections
 
