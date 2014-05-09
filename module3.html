@@ -1,46 +1,37 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><script src="main.js" type="text/javascript"></script><script type="text/javascript">tailrecursion.hoplon.app_pages._module3_DOT_html.hoploninit();</script></head><body><div class="reveal"><link rel="stylesheet" href="reveal.js/css/reveal.css"><link id="theme" rel="stylesheet" href="mozilla-theme.css"><link rel="stylesheet" href="reveal.js/plugin/highlight/github.min.css"><div class="slides"><section><h1 class="slide-title intro">Module 3</h1></section><section><section><h2 class="slide-title chapter">Flow control</h2></section><section><h3 class="slide-title slide">Example: validating data</h3><p>If the user's input is valid, then save their data; otherwise, show an error message.</p><pre><code class="clojure">(if (valid? data)
-  (save! data)
-  (error "Your data was invalid"))</code></pre></section><section><h3><code>if</code></h3><pre><code class="clojure">(if conditional-expression
-  expression-to-evaluate-when-true
-  expression-to-evaluate-when-false)</code></pre></section><section><h3><code>if</code> examples</h3><pre><code class="clojure">(if (&gt; 3 1)
-  "3 is greater than 1"
-  "3 is not greater than 1")
-;;=&gt; "3 is greater than 1"
+<html><head><meta charset="utf-8"><script src="main.js" type="text/javascript"></script><script type="text/javascript">tailrecursion.hoplon.app_pages._module3_DOT_html.hoploninit();</script></head><body><div class="reveal"><link rel="stylesheet" href="reveal.js/css/reveal.css"><link id="theme" rel="stylesheet" href="mozilla-theme.css"><link rel="stylesheet" href="reveal.js/plugin/highlight/github.min.css"><div class="slides"><section><h1 class="slide-title intro">Module 3</h1></section><section><section><h2 class="slide-title chapter">Functions</h2></section><section><h3 class="slide-title slide">What are functions?</h3><ul><li><code>count</code>, <code>conj</code>, <code>first</code></li><li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li><li>A piece of code that takes values and returns a value</li></ul></section><section><h3 class="slide-title slide">An example function</h3><pre><code class="clojure">(defn total-bill
+  "Given the subtotal of a bill, return the total after tax."
+  [subtotal]
+  (* 1.085 subtotal)) 
 
-(if (&gt; 1 3)
-  "1 is greater than 3"
-  "1 is not greater than 3")
-;;=&gt; "1 is not greater than 3"</code></pre></section><section><h3 class="slide-title slide">What is truth?</h3><p>Everything except<code>false</code> or <code>nil</code>.</p></section><section><h3 class="slide-title slide">Truth examples</h3><pre><code class="clojure">(if "anything other than nil or false is considered true"
-  "A string is considered true"
-  "A string is not considered true")
-;;=&gt; "A string is considered true"
+(total-bill 8.90) ;=&gt; 9.6565
+(total-bill 50)   ;=&gt; 54.25
+(total-bill 50/7) ;=&gt; 7.75</code></pre></section><section><h3 class="slide-title slide">An example function</h3><pre><code class="clojure">(defn ; specifies that we are defining a function
+  total-bill ; the name of this function
+  
+  ;; documentation, optional
+  "Given the subtotal of a bill, return the total..."
+  
+  [x] ; list of arguments
 
-(if nil
-  "nil is considered true"
-  "nil is not considered true")
-;;=&gt; "nil is not considered true"
+  ;; body of function
+  (* 1.085 subtotal))</code></pre></section><section><h3 class="slide-title slide">A function with multiple arguments.</h3><pre><code class="clojure">(defn total-with-tip
+  [subtotal tip-pct] ;; takes 2 arguments
+  (* 1.085 subtotal (+ 1 tip-pct)))
 
-(if (get {:a 1} :b)
-  "expressions which evaluate to nil are considered true"
-  "expressions which evaluate to nil are not considered true")
-;;=&gt; "expressions which evaluate to nil are not considered true"</code></pre></section><section><h3 class="slide-title slide">Exercise: more name formatting</h3><p>Write a function <code>format-name</code> that takes a map representing a user, with keys <code>:first</code>, <code>:last</code>, and possibly <code>:middle</code>. It should return their name as a string, like so:</p><pre><code class="clojure">(format-name {:first "Margaret" :last "Atwood"})
-;;=&gt; "Margaret Atwood"
+(total-with-tip 50 0.18) ;=&gt; 64.015</code></pre></section><section><h3 class="slide-title slide">Find per-person share of bill among a group</h3><p>Modify our <code>total-with-tip</code> function, and call the new function <code>share-per-person</code>, that additionally takes in as an argument the number of people in the group for a bill.</p><p>Have the function return the average bill amount per person.</p></section><section><h3 class="slide-title slide">Naming functions</h3><ul><li>Functions are named like any other value</li><li><p>Predicate functions usually end in <code>?</code></p><ul><li><code>zero?</code></li><li><code>vector?</code></li><li><code>empty?</code></li></ul></li></ul></section></section><section><section><h2 class="slide-title chapter">Functions that take other functions</h2></section><section><h3><code>map</code></h3><pre><code class="clojure">(def dine-in-orders [12.40 18.95 23.81 19.95 12.40])
+(def take-out-orders[6.00 6.00 7.95 6.25])
 
-(format-name {:first "Ursula" :last "Le Guin" :middle "K."})
-;;=&gt; "Ursula K. Le Guin"</code></pre></section><section><h3 class="slide-title slide">BONUS: Flexible name formatting</h3><p>Change <code>format-name</code> to take a second argument, <code>order</code>. If <code>order</code> equals <code>:last</code>, then the format should be "Last, First Middle"; otherwise, it should be "First Middle Last."</p></section></section><section><section><h2 class="slide-title chapter">Boolean logic</h2></section><section><h3><code>and</code>, <code>or</code>, and <code>not</code></h3><table><tr><th colspan="1" rowspan="1">x</th><th colspan="1" rowspan="1">y</th><th colspan="1" rowspan="1">(and x y)</th><th colspan="1" rowspan="1">(or x y)</th><th colspan="1" rowspan="1">(not x)</th><th colspan="1" rowspan="1">(not y)</th></tr><tr><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">true</td></tr><tr><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">true</td></tr><tr><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">false</td></tr><tr><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">false</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">true</td><td colspan="1" rowspan="1">false</td></tr></table></section></section><section><section><h2 class="slide-title chapter">Sequence comprehensions</h2></section><section><h3><code>for</code></h3><p><code>for</code> iterates over the sequences it is given and returns a new sequence.</p><pre><code class="clojure">(for [x [1 2 3]]
-  (* x x))
-;;=&gt; (1 4 9)</code></pre></section><section><h3>Combining sequences with <code>for</code></h3><p><code>for</code> can take multiple sequences. In that case, it iterates over their combinations.</p><pre><code class="clojure">(for [x [1 2 3]
-      y ["a" "b" "c"]]
-  (str x y))
-;;=&gt; ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")</code></pre></section><section><h3><code>for</code> and comparison functions</h3><pre><code class="clojure">(for [x [1 2 3]
-      y ["a" "b" "c"]
-      :when (&gt; x 2)]
-  (str x y))
-;;=&gt; ("3a" "3b" "3c")
+(map total-bill dine-in-orders)  ;=&gt; [13.454 20.56075 25.833849999999998 21.64575 13.454]
+(map total-bill take-out-orders) ;=&gt; [6.51 6.51 8.62575 6.78125]</code></pre></section><section><h3><code>reduce</code></h3><pre><code class="clojure">(defn add
+  [x y]
+  (+ x y))
 
-(for [x [1 2 3]
-      y ["a" "b" "c"]
-      :when (and (&gt; x 2) (not= y "a"))]
-  (str x y))
-;;=&gt; ("3b" "3c")</code></pre></section></section></div></div></body></html>
+(reduce add [1 2 3]) ;=&gt; 6</code></pre></section><section><h3><code>reduce</code> in action</h3><pre><code class="clojure">(def take-out-totals [6.51 6.51 8.62575 6.78125])
+
+(reduce add take-out-totals) ;=&gt; 28.427</code></pre></section><section><h3><code>reduce</code> in action</h3><pre><code class="clojure">(def take-out-totals [6.51 6.51 8.62575 6.78125]) 
+(reduce add take-out-totals) ;=&gt; 28.427
+
+(add 6.51 6.51)
+(add 13.02 8.62575)
+(add 21.64575 6.78125)</code></pre></section><section><h3 class="slide-title slide">Exercise: Find the average</h3><p>Create a function called <code>average</code> that takes a vector of bill amounts and returns the average of those amounts.</p><p>Hint: you will need to use <code>reduce</code> and <code>count</code>.</p></section></section></div></div></body></html>
