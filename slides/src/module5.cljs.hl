@@ -7,6 +7,10 @@
   (print "Autoreloading")
   (reload-all))
 
+(defn code-list
+  [& lst]
+  (interpose ", " (map code lst)))
+
 (defelem hlclj
   [attrs children]
   (highlight (assoc attrs :class "clojure") children))
@@ -17,111 +21,77 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 5")
+      :title "Module 5") 
      (chapter
-      :title "Web Applications"
+      :title "Function library"
       (slide
-       :title "How does the web work?"
-       (img :src "img/web1.png"))
-      (slide
-       :title "Requesting index.html"
-       (img :src "img/web2.png"))
-      (slide
-       :title "Web server = a function"
-       (img :src "img/web3.png"))
-      (slide
-       :title "A simple Clojure web application"
+       :title "Comparison functions"
        (hlclj
         ;;{{
-        (defn app
-          [request]
-          {:status 200
-           :body "Hello world!"})
+        (= 1 2)    ;=> false
+        (> 4 3)    ;=> true
+        (>= 4 5)   ;=> false
+        (< -1 1)   ;=> true
+        (<= -1 -2) ;=> false
         ;;}}
         ))
       (slide
-       :title "What is HTML?"
-       (p "Go to clojurebridge.org in your web browser and view the source."))
-      )
-     (chapter
-      :title "Clojure web applications"
-      (slide
-       :title "Libraries we are going to use"
-       (ul
-        (li (b "Ring:") " handles taking in web requests and returning responses")
-        (li (b "Compojure:") " reads URLs and decides how to handle them")
-        (li (b "Hiccup:") " takes Clojure data and turns it into HTML")))
-      (slide
-       :title "global-growth.web"
+       :title "Using comparison functions"
        (hlclj
         ;;{{
-        (ns global-growth.web
-          (:require [global-growth.core :as api]
-                    [compojure.core :refer [defroutes GET]]
-                    [compojure.handler :refer [site]]
-                    [hiccup.core :as hiccup]
-                    [hiccup.page :as page]
-                    [hiccup.form :as form]))
+        (defn vegetarian?
+          [person]
+          (= :vegetarian (get person :dietary-restrictions)))
         ;;}}
-        ))
+        ))      
       (slide
-       :title "Getting set up for this module"
-       (p "Uncomment everything under the MODULE 5 line in core.clj and everything in web.clj."))     
-      (slide
-       :title "Routing requests"      
+       :title "String functions"
        (hlclj
         ;;{{
-        (defroutes main-routes
-          (GET "/" [] (main-page))
-          (GET "/indicators" [indicator1 indicator2 year]
-               (view-indicators indicator1 indicator2 year)))        
-        ;;}}
+        (str "Chocolate" ", " "strawberry" ", and " "vanilla")
+        ;;=> "Chocolate, strawberry, and vanilla"
+        ;;}}       
         ))
       (slide
-       :title "Generating HTML"
+       :title (h3 "Using " (code "str") " with " (code "reduce"))
+       (hlclj
+        ;;{{       
+        (defn join-with-space
+          [string1 string2]
+          (str string1 " " string2))
+
+        (reduce join-with-space
+                ["i" "like" "peanut" "butter" "and" "jelly"])
+        ;;=> "i like peanut butter and jelly"
+        ;;}}       
+        ))
+      (slide
+       :title (h3 "Using " (code "str") " with " (code "reduce"))
        (hlclj
         ;;{{
-        (hiccup/html [:header
-                      [:h1 "Hello world!"]
-                      [:h2 "I am an awesome subheader"]])
-        ;;=> "<header><h1>Hello world!</h1>
-        ;;    <h2>I am an awesome subheader</h2></header>"
-        ;;}}
-        ))
-      (slide
-       :title "HTML forms"
-       (p "Take a look at " (code "main-page") ".")
-       (hlclj
-        ;;{{
-        (form/form-to {:role "form"} [:get "/indicators"]
-                      [:div.row
-                       [:div.form-group.col-md-5
-                        (form/label "indicator1" "Indicator 1:  ")
-                        (form/drop-down {:class "form-control"}
-                                        "indicator1"
-                                        (api/get-indicators))]]
-                      ;; ...
-                      (form/submit-button "Submit"))
-        ;;}}
-        ))
-      (slide
-       :title "Running a web application"
-       (p "Open " (code "project.clj") ".")
-       (p "Make sure the following is in the project:")
-       (hlclj ":ring {:handler global-growth.web/handler}"))
-      (slide
-       :title "Starting the web server"
-       (highlight
-        :class "no-highlight"
-        ;;{{
-        > lein ring server
+        (reduce join-with-space
+                ["i" "like" "peanut" "butter" "and" "jelly"])
+        ;;=> "i like peanut butter and jelly"
         
-        2014-04-02 21:30:06.303:INFO:oejs.Server:jetty-7.6.8.v20121106
-        2014-04-02 21:30:06.378:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
-        Started server on port 3000
+        (join-with-space "i" "like")
+        (join-with-space "i like" "peanut")
+        (join-with-space "i like peanut" "butter")
+        (join-with-space "i like peanut butter" "and")
+        (join-with-space "i like peanut butter and" "jelly")
         ;;}}
-        )
-       (p "Go to http://localhost:3000/."))
+        ))
+      (slide
+     :title "Anonymous functions"
+     (hlclj
+      ;;{{      
+      (map (fn [x] (* 3 x)) [1 2 3]) ;=> [3 6 9]
       
-      )
+      (reduce (fn [x y] (+ x y)) [1 2 3]) ;=> 6
+      
+      (reduce
+        (fn [s1 s2] (str s1 " " s2))
+        ["i" "like" "peanut" "butter" "and" "jelly"])
+        ;=> "i like peanut butter and jelly"
+      ;;}}     
+      )))
      )))

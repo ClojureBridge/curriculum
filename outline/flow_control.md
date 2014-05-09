@@ -1,6 +1,10 @@
 Flow Control
 ============
 
+* `if`
+* Boolean logic
+* `let`
+
 "Flow control" is the programming term for deciding how to react to a given circumstance. We make decisions like this all the time. *If* it's a nice day out, *then* we should visit the park; *otherwise* we should stay inside and play board games. *If* your car's tank is empty, *then* you should visit a gas station; *otherwise* you should continue to your destination.
 
 Software is also full of these decisions. *If* the user's input is valid, *then* we should save her data; *otherwise* we show an error message. The common pattern here is that you test some condition and react differently based on whether the condition is *true* or *false*.
@@ -97,44 +101,54 @@ Look at this truth table:
            (not (zero? (mod year 100))))))
 ```
 
-## List comprehensions with `for`
 
-In many programming languages, you do something to every member of a sequence by using a language construct called `for` (or some variant on that.) In those languages, `for` iterates over the sequence and has a body that does something with each value in the sequence. 
+## `let`
 
-Clojure also has a `for` statement, but it works a little differently. It also iterates over a sequence, but it also returns a new sequence based on the body of the for statement.
+When you are creating functions, you may want to assign names to values in order to reuse those values or make your code more readable. Inside of a function, however, you should _not_ use `def`, like you would outside of a function. Instead, you should use a special form called `let`. Let's look at an example:
 
-With just one sequence given to the `for` statement, it works like `map`, which we saw previously.
+```clj
+(defn spread
+  "Given a collection of numbers, return the difference between the largest and smallest number."
+  [numbers]
+  (let [largest (reduce max numbers)
+        smallest (reduce min numbers)]
+    (- largest smallest)))
 
-```clojure
-(for [x [1 2 3]]
-  (* x x))
-;;=> (1 4 9)
-
-(map (fn [x] (* x x)) [1 2 3])
-;;=> (1 4 9)
+(spread [10 7 3 -3 8]) ;=> 13
 ```
 
-`for` can do even more, though! It takes any number of sequences, and iterates over all the combinations of the sequences it's given and returns a sequence:
+This is the most complicated function we've seen so far, so let's go through each step. First, we have the name of the function, the documentation string, and the arguments, just as in other functions.
 
-```clojure
-(for [x [1 2 3]
-      y ["a" "b" "c"]]
-  (str x y))
-; => ("1a" "1b" "1c" "2a" "2b" "2c" "3a" "3b" "3c")
+Next, we see `let`. `let` takes a vector of alternating names and values. `largest` is the first name, and we assign the result of `(reduce max numbers)` to it. We also assign the result of `(reduce min numbers)` to `smallest`.
+
+After the vector of names and values, there is the body of the `let`. Just like a the body of a function, this executes and returns a value. Within the `let`, `largest` and `smallest` are defined.
+
+Type the `spread` function into your instarepl and see how it evaluates.
+
+### EXERCISE: Rewrite average
+
+Go back to the average bill amounts function you created before and use `let` to make it easier to read.
+
+### BONUS: Ordinal numbers
+
+Given a number (positive integer), return the string representing the ordinal number.  For many numbers, this is done by adding `"th"` to the end.  As part one, let us make an exception for numbers ending in a 1, 2, or 3, by adding `"st"`, `"nd"`, or `"rd"` respectively.  You will need the `rem` function, which takes 2 integers and returns the remainder from dividing the first by the second.  You will also find that nesting `if` forms (putting one inside another) to be useful.  Here is an example of how our function will behave:
+
+```clj
+(ordinal 1)  ;=> "1st"
+(ordinal 2)  ;=> "2nd"
+(ordinal 3)  ;=> "3rd"
+(ordinal 4)  ;=> "4th"
+(ordinal 5)  ;=> "5th"
+(ordinal 21) ;=> "21st"
+(ordinal 22) ;=> "22nd"
 ```
 
-You can also specify what combinations are allowed with the `:when` keyword. This uses boolean logic to decide which combinations are valid.
+As part two, our exceptions above based on the last digit are superceded when the last 2 digits are 11, 12, or 13, in which case we add `"th"`.  Our updated function will behave as follows:
 
-```clojure
-(for [x [1 2 3]
-      y ["a" "b" "c"]
-      :when (> x 2)]
-  (str x y))
-; => ("3a" "3b" "3c")
-
-(for [x [1 2 3]
-      y ["a" "b" "c"]
-      :when (and (> x 2) (not= y "a"))]
-  (str x y))
-; => ("3b" "3c")
+```clj
+(ordinal 10) ;=> "10th"
+(ordinal 11) ;=> "11th"
+(ordinal 12) ;=> "12th"
+(ordinal 13) ;=> "13th"
+(ordinal 14) ;=> "14th"
 ```

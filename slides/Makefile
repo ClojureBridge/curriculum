@@ -13,7 +13,7 @@ boot: target/boot
 target/boot:
 	mkdir -p target
 	rm -rf target/boot
-	git clone git@github.com:tailrecursion/boot.git target/boot/
+	git clone https://github.com/tailrecursion/boot.git target/boot/
 
 clean:
 	rm -rf resources/public target boot

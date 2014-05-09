@@ -30,8 +30,8 @@
         (li "Vectors")
         (li "Maps")
         (li "Lists")        
-        (li "Sets")
-        (li "Sequences")))
+        (li "Sets"))
+       (p "We will only look at vectors for now."))
       (slide
        :title "Vectors"
        (img :src "img/vector.png"
@@ -41,7 +41,7 @@
        (hlclj
         ;;{{
         [1 2 3 4 5]
-        ["a" 1 2 "b"]
+        [56.9 60.2 61.8 63.1 64.3 66.4 66.5 68.1 70.2 69.2 63.1 57.1]
         []
         ;;}}
         ))
@@ -49,379 +49,30 @@
        :title "Vector functions"
        (hlclj
         ;;{{
-        (vector? [:a :b :c])
+        (vector? [5 10 15])
         ;;=> true
       
-        (vector :a :b :c)
-        ;;=> [:a :b :c]
+        (vector 5 10 15)
+        ;;=> [5 10 15]
 
-        (conj [:a :b] :c)
-        ;;=> [:a :b :c]
+        (conj [5 10] 15)
+        ;;=> [5 10 15]
         ;;}}       
         ))
       (slide
        :title "Vector functions"
        (hlclj
         ;;{{
-        (count [:a :b :c])
+        (count [5 10 15])
         ;;=> 3
       
-        (nth [:a :b :c] 1)
-        ;;=> :b
+        (nth [5 10 15] 1)
+        ;;=> 10
       
-        (first [:a :b :c])
-        ;;=> :a
+        (first [5 10 15])
+        ;;=> 5
         ;;}}       
         ))
       (slide
        :title "Exercise: Make a vector"
-       (p "Make a vector of all the places you've ever lived. Then use the "
-          (code "nth")
-          " function to get the current place you live from the vector."))      
-      (slide
-       :title "Maps"
-       (img :src "img/map.png"
-            :alt "map"))
-      (slide
-       :title "Maps"
-       (hlclj
-        ;;{{
-        {:first "Sally", :last "Brown", :occupation "programmer"}
-        {:a 1, :b "two"}
-        {}
-        ;;}}
-        ))
-      (slide
-       :title "Map functions"
-       (hlclj
-        ;;{{
-        (map? {:first "Sally" :last "Brown"})
-        ;;=> true
-      
-        (get {:first "Sally" :last "Brown"} :first)
-        ;;=> "Sally"
-       
-        (get {:first "Sally"} :last :MISS)
-        ;;=> :MISS
-        ;;}}
-        ))
-      (slide
-       :title "More map functions"
-       (hlclj
-        ;;{{
-        (assoc {:first "Sally"} :last "Brown")
-        ;;=> {:first "Sally", :last "Brown"}
-       
-        (dissoc {:first "Sally" :last "Brown"} :last)
-        ;;=> {:first "Sally"}
-       
-        (merge {:first "Sally"} {:last "Brown"})
-        ;;=> {:first "Sally", :last "Brown"}
-       
-        (count {:first "Sally" :last "Brown"})
-        ;;=> 2
-        ;;}}
-        ))
-      (slide
-       :title "Even more map functions"
-       (hlclj
-        ;;{{
-        (keys {:first "Sally" :last "Brown"})
-        ;;=> (:first :last)
-       
-        (vals {:first "Sally" :last "Brown"})
-        ;;=> ("Sally" "Brown")
-       
-        (into {} [[1 2] [3 4]])
-       ;;=> {1 2, 3 4}
-        ;;}}
-        ))
-      (slide
-       :title "Maps and keywords"
-       (hlclj
-        ;;{{
-        (:first {:first "Sally" :last "Brown"})
-        ;;=> "Sally"
-        
-        (:last {:first "Sally"})
-        ;;=> nil
-
-        (:last {:first "Sally"} :MISS)
-        ;;=> :MISS
-        ;;}}
-        ))
-      (slide
-       :title "Exercise: Modeling yourself"
-       (p "Make a map representing yourself. Make sure it contains your first"
-          " name and last name. Then, add your hometown to the map using "
-          (code "assoc") " or " (code "merge") "."))
-      (slide
-       :title "Other data structures"
-       (bullet "Lists")
-       (img :src "img/list.png")
-       (bullet "Sets")
-       (img :src "img/set.png"))
-      (slide
-       :title "Other data structures"
-       (hlclj
-        ;;{{
-        ;; Lists
-        (list 1 2 3)
-        (list "Sally" "Brown" :programmer)
-
-        ;; Sets
-        #{"red" "green" "blue" "yellow"}
-        #{98 67 82 12 77}
-        ;;}}
-        ))
-      (slide
-       :title "Sequences"
-       (ul
-        (li "Sequences are an " (em "abstraction"))
-        (li "All the data structures are sequences")
-        (li "Many functions work on all sequences")
-        (li (p "Other things that are sequences")
-            (ul
-             (li "lines in a file")
-             (li "files in a directory")
-             (li "records in a database")))
-        ))      
-      (slide
-       :title "Collections of collections"
-       (hlclj
-        ;;{{
-        [{:name "Mercury"}
-         {:name "Venus"}
-         {:name "Earth" :moons ["The Moon"]}
-         {:name "Mars" :moons ["Phobos" "Deimos"]}
-         {:name "Jupiter"
-          :moons ["Ganymede" "Callisto" "Io" "Europa"]}]
-        ;;}}
-        ))
-      (slide
-       :title "Exercise: Modeling your classmates"
-       (ol
-        (li "Take the map from the last exercise -- the one about you.")
-        (li "Find two or three classmates. Ask their name and hometown. "
-            " Make a vector of maps with their information.")
-        (li "Then, add your information to their information using "
-            (code "conj") ".")))
-      )
-     (chapter
-      :title "Functions"
-      (slide
-       :title "What are functions?"
-       (ul
-        (li (code-list "count" "conj" "first"))
-        (li (code-list "+" "-" "*" "/"))
-        (li "A piece of code that takes values and returns a value")))
-      (slide
-       :title "An example function"
-       (hlclj
-        ;;{{      
-        (defn triple
-          "Given a number, return 3 times that number."
-          [x]
-          (+ x x x))
-
-        (triple 2)    ;=> 6
-        (triple 3/2)  ;=> 9/2
-        (triple 30.3) ;=> 90.9
-        ;;}}       
-        ))
-      (slide
-       :title "An example function"
-       (hlclj
-        ;;{{      
-        (defn ; specifies that we are defining a function
-          triple ; the name of this function
-          
-          ;; documentation, optional
-          "Given a number, return 3 times that number."
-          
-          [x] ; list of arguments
-
-          ;; body of function
-          (+ x x x))
-        ;;}}       
-        ))
-      (slide
-       :title "A function with multiple arguments."
-       (hlclj
-        ;;{{
-        (defn average
-          [x y] ; Functions can take multiple arguments.
-          (/ (+ x y) 2))
-
-        (average 2 3) ;=> 5/2
-        ;;}}
-        ))
-    (slide
-     :title "Exercise: make a function to format names"
-     (p "The " (code "str") " function can take any number of arguments, and it "
-        "concatenates them together to make a string.")
-     (p "Write a function called "
-        (code "format-name") " that takes two arguments, " (code "first-name")
-        " and " (code "last-name") ". This function should output the name "
-        "like so: Last, First."))
-    (slide
-     :title "Naming functions"
-     (ul
-      (li "Functions are named like any other value")
-      (li (p "Predicate functions usually end in " (code "?"))
-          (ul
-           (li (code "zero?"))
-           (li (code "vector?"))
-           (li (code "empty?")))))))
-     (chapter
-      :title "Function library"
-      (slide
-       :title "Comparison functions"
-       (hlclj
-        ;;{{
-        (= 1 2)    ;=> false
-        (> 4 3)    ;=> true
-        (>= 4 5)   ;=> false
-        (< -1 1)   ;=> true
-        (<= -1 -2) ;=> false
-        ;;}}
-        ))
-      (slide
-       :title "Using comparison functions"
-       (hlclj
-        ;;{{
-        (defn vegetarian?
-          [person]
-          (= :vegetarian (get person :dietary-restrictions)))
-        ;;}}
-        ))      
-      (slide
-       :title "String functions"
-       (hlclj
-        ;;{{
-        (str "Chocolate" ", " "strawberry" ", and " "vanilla")
-        ;;=> "Chocolate, strawberry, and vanilla"
-        ;;}}       
-        ))
-      (slide
-       :title "Map functions"
-       (ul
-        (map (comp li code) ["assoc" "dissoc" "merge"])))      
-      (slide
-       :title "Sequence functions"
-       (ul
-        (map (comp li code) ["count" "conj" "first" "rest" "get"]))))
-     (chapter
-      :title "Functions that take other functions"
-      (slide
-       :title (h3 (code "map"))
-       (hlclj
-        ;;{{       
-        (defn triple
-          [x]
-          (+ x x x))
-
-        (map triple [1 2 3]) ;=> [3 6 9]
-        ;;}}       
-        ))
-      (slide
-       :title (h3 (code "reduce"))
-       (hlclj
-        ;;{{
-        (defn add
-          [x y]
-          (+ x y))
-
-        (reduce add [1 2 3]) ;=> 6
-        ;;}}
-        ))
-      (slide
-       :title (h3 (code "reduce") " in action")
-       (hlclj
-        ;;{{       
-        (defn join-with-space
-          [string1 string2]
-          (str string1 " " string2))
-
-        (reduce join-with-space
-                ["i" "like" "peanut" "butter" "and" "jelly"])
-        ;;=> "i like peanut butter and jelly"
-        ;;}}       
-        ))
-      (slide
-       :title (h3 (code "reduce") " in action")
-       (hlclj
-        ;;{{
-        (reduce join-with-space
-                ["i" "like" "peanut" "butter" "and" "jelly"])
-        ;;=> "i like peanut butter and jelly"
-        
-        (join-with-space "i" "like")
-        (join-with-space "i like" "peanut")
-        (join-with-space "i like peanut" "butter")
-        (join-with-space "i like peanut butter" "and")
-        (join-with-space "i like peanut butter and" "jelly")
-        ;;}}       
-        ))      
-
-    (slide
-     :title (h3 (code "sort-by"))
-     (hlclj
-      ;;{{      
-      (sort-by val > {:amy 3, :renee 5, :isabella 4})
-      ;;=> ([:renee 5] [:isabella 4] [:amy 3])
-      ;;}}     
-      ))
-    (slide
-     :title "Anonymous functions"
-     (hlclj
-      ;;{{      
-      (map (fn [x] (+ x x x)) [1 2 3]) ;=> [3 6 9]
-      
-      (reduce (fn [x y] (+ x y)) [1 2 3]) ;=> 6
-      
-      (reduce
-        (fn [s1 s2] (str s1 " " s2))
-        ["i" "like" "peanut" "butter" "and" "jelly"])
-        ;=> "i like peanut butter and jelly"
-      ;;}}     
-      ))
-    (slide
-      :title "Exercise: Find the average"
-      (p "Create a function called " (code "average") " that takes a vector of "
-         "numbers and returns the average of those numbers.")
-      (p "Hint: you will need to use "
-         (code "reduce") " and " (code "count") "."))
-    (slide
-     :title "Exercise: Get the names of people"
-     (bullet "Create a function called " (code "get-names") " that takes a "
-             "vector of maps of people and returns a vector of their names.")
-     (hlclj
-      ;;{{
-      (get-names [{:first "Margaret" :last "Atwood"}
-                  {:first "Doris" :last "Lessing"}
-                  {:first "Ursula" :last "Le Guin"}
-                  {:first "Alice" :last "Munro"}])
-      
-      ;;=> ["Margaret Atwood" "Doris Lessing"
-      ;;    "Ursula Le Guin" "Alice Munro"]
-      ;;}}
-      ))
-    (slide
-     :title (h3 (code "let"))
-     (hlclj
-      ;;{{
-      (defn spread
-        "Given a collection of numbers, return the difference between the largest and smallest number."
-        [numbers]
-          (let [largest (reduce max numbers)
-                smallest (reduce min numbers)]
-            (- largest smallest)))
-
-      (spread [10 7 3 -3 8]) ;=> 13
-      ;;}}
-      ))
-    (slide
-     :title "Exercise: Rewrite average"
-     (p "Go back to the " (code "average") " function you created before and "
-        "use " (code "let") " to make it easier to read."))))))
+       (p "Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the " (code "nth") " function to get the average high temperature for the current month from the vector."))))))
