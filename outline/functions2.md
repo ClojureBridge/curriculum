@@ -27,6 +27,8 @@ The other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`, and all but
 (>= 4 5)   ;=> false
 (< -1 1)   ;=> true
 (<= -1 -2) ;=> false
+(< 1 5 9)  ;=> true
+(< 1 5 3)  ;=> false
 ```
 
 ### String functions
