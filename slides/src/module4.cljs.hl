@@ -32,6 +32,10 @@
         ;;{{
         true
         false
+        ;;}}
+        )
+       (highlight :class "language-clojure"
+        ;;{{
         nil
         ;;}}
         ))
