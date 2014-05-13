@@ -130,7 +130,7 @@
       (slide
        :title "Exercise: Modeling your classmates"
        (ol
-        (li "Take the map from the last exercise -- the one about you.")
+        (li "Take the map from a recent exercise -- the one about you.")
         (li "Find two or three classmates. Ask their name and hometown. "
             " Make a vector of maps with their information.")
         (li "Then, add your information to their information using "
