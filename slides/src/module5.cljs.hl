@@ -23,7 +23,7 @@
      (intro
       :title "Module 5") 
      (chapter
-      :title "Function library"
+      :title "Common, core functions"
       (slide
        :title "Comparison functions"
        (hlclj
