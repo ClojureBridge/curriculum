@@ -103,6 +103,8 @@ Here is an example of how it should work:
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
 
+Hint: First, create a function that returns the name when given a single person's map.
+
 ### EXERCISE: Modeling your classmates
 
 First, take the map you made about yourself.

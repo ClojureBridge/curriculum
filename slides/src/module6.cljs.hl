@@ -125,7 +125,8 @@
       ;;=> ["Margaret Atwood" "Doris Lessing"
       ;;    "Ursula Le Guin" "Alice Munro"]
       ;;}}
-      ))
+      )
+     (bullet "Hint: First, create a function that returns the name when given a single person's map."))
       (slide
        :title "Exercise: Modeling your classmates"
        (ol
