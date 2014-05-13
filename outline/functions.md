@@ -15,7 +15,7 @@ A _function_ is an independent, discrete piece of code that takes in some values
 
 ```clj
 (defn total-bill
-  "Given the subtotal of a bill, return the total after tax."
+  "Given subtotal of bill, return total after tax."
   [subtotal]
   (* 1.08 subtotal))
 ```
@@ -40,7 +40,7 @@ Functions can also take more than one argument. Let's make a `total-with-tip` fu
 
 ```clj
 (defn total-with-tip
-  "Given the subtotal, return the total after tax and tip."
+  "Given subtotal, return total after tax and tip."
   [subtotal tip-pct]
   (* 1.08 subtotal (+ 1 tip-pct)))
 

@@ -35,7 +35,7 @@
        (hlclj
         ;;{{      
         (defn total-bill
-          "Given the subtotal of a bill, return the total after tax."
+          "Given subtotal of bill, return total after tax."
           [subtotal]
           (* 1.08 subtotal)) 
 
@@ -52,7 +52,7 @@
           total-bill ; the name of this function
           
           ;; documentation, optional
-          "Given the subtotal of a bill, return the total..."
+          "Given subtotal of bill, return total..."
           
           [x] ; list of arguments
 
@@ -65,7 +65,7 @@
        (hlclj
         ;;{{
         (defn total-with-tip
-          "Given the subtotal, return the total after tax and tip."
+          "Given subtotal, return total after tax and tip."
           [subtotal tip-pct] ;; takes 2 arguments
           (* 1.08 subtotal (+ 1 tip-pct)))
 
