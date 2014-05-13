@@ -36,7 +36,7 @@ Keywords are the strangest of the basic value types, because they don't have a r
 
 ### EXERCISE: Store the name of your hometown
 
-Write the name of your hometown as a string, and then assign that string to the symbol `my-hometown`.
+Write the name of your hometown as a string, and then assign that string to the name `my-hometown`.
 
 ### EXERCISE: Make a function to format names
 

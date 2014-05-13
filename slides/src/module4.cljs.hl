@@ -47,7 +47,7 @@
         ))
       (slide
        :title "Exercise: Store the name of your hometown"
-       (p "Write the name of your hometown as a string and then assign that string to the symbol "
+       (p "Write the name of your hometown as a string and then assign that string to the name "
           (code "my-hometown")
           "."))
       (slide
