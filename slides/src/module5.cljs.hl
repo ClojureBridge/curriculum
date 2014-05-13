@@ -41,9 +41,9 @@
        :title "Using comparison functions"
        (hlclj
         ;;{{
-        (defn vegetarian?
-          [person]
-          (= :vegetarian (get person :dietary-restrictions)))
+        (defn meaning-of-life?
+          [x]
+          (= x 42))
         ;;}}
         ))      
       (slide
