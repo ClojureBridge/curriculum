@@ -18,6 +18,8 @@ We write maps by enclosing alternating keys and values in curly braces, like so:
 {}
 ```
 
+As you may have noticed by now, in Clojure, commas are optional.  Similar to comments, commas are ignored by the REPL.  If you see commas in Clojure code, they often occur between key-value pairs in a map definition.
+
 Maps are useful because they can hold data in a way we normally think about it. Take our made up example, Sally Brown. A map can hold her first name and last name, her address, her favorite food, or anything else. It's a simple way to collect that data and make it easy to look up. That last example? It is an empty map. It is a map that is ready to hold some things, but doesn't have anything in it yet.
 
 Let's look at some functions we can use with maps:
@@ -49,9 +51,6 @@ Let's look at some functions we can use with maps:
 
 (vals {:first "Sally" :last "Brown"})
 ;=> ("Sally" "Brown")
-
-(into {} [[1 2] [3 4]])
-;=> {1 2, 3 4}
 ```
 
 We don't have nearly as many functions here in common as vectors and lists did.
@@ -103,6 +102,8 @@ Here is an example of how it should work:
 
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
+
+Hint: First, create a function that returns the name when given a single person's map.
 
 ### EXERCISE: Modeling your classmates
 

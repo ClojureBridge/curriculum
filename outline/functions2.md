@@ -12,12 +12,12 @@ There are some functions that are essential when using Clojure. The arithmetic f
 
 ### Comparison (boolean) functions
 
-You can use the function `=` to test the equality of two things. For example, here is a function called `vegetarian?` that determines whether a person is vegetarian or not:
+You can use the function `=` to test the equality of two things. For example, here is a function called `meaning-of-life?` that determines whether the input is `42` or not:
 
 ```clj
-(defn vegetarian?
-  [person]
-  (= :vegetarian (get person :dietary-restrictions)))
+(defn meaning-of-life?
+  [x]
+  (= x 42))
 ```
 
 The other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`, and all but the last of these are used exclusively with numbers. Like all Clojure functions, the comparison functions are used as prefixes, so they can be a little tricky. Here's some examples:
@@ -27,6 +27,8 @@ The other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`, and all but
 (>= 4 5)   ;=> false
 (< -1 1)   ;=> true
 (<= -1 -2) ;=> false
+(< 1 5 9)  ;=> true
+(< 1 5 3)  ;=> false
 ```
 
 ### String functions

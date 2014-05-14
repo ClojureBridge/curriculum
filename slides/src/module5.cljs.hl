@@ -23,7 +23,7 @@
      (intro
       :title "Module 5") 
      (chapter
-      :title "Function library"
+      :title "Common, core functions"
       (slide
        :title "Comparison functions"
        (hlclj
@@ -33,15 +33,17 @@
         (>= 4 5)   ;=> false
         (< -1 1)   ;=> true
         (<= -1 -2) ;=> false
+        (< 1 5 9)  ;=> true
+        (< 1 5 3)  ;=> false
         ;;}}
         ))
       (slide
        :title "Using comparison functions"
        (hlclj
         ;;{{
-        (defn vegetarian?
-          [person]
-          (= :vegetarian (get person :dietary-restrictions)))
+        (defn meaning-of-life?
+          [x]
+          (= x 42))
         ;;}}
         ))      
       (slide

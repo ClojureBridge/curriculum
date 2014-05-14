@@ -38,6 +38,15 @@
         ;;}}
         ))
       (slide
+       :title "Comments"
+       (highlight
+        ;;{{
+        ;; more food code
+        (eat "cookie") ; nom nom nom
+        (eat "donut") ; mmm donuts
+        ;;}}
+        ))
+      (slide
        :title "What is a REPL?"
        (div
         (column
