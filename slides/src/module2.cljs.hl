@@ -75,4 +75,4 @@
         ))
       (slide
        :title "Exercise: Make a vector"
-       (p "Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the " (code "nth") " function to get the average high temperature for the current month from the vector."))))))
+       (p "Make a vector of the high temperatues for the next 7 days in the town where you live. Then use the " (code "nth") " function to get the high temperature for next Tuesday."))))))

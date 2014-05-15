@@ -32,11 +32,12 @@
        :title "Maps"
        (hlclj
         ;;{{
-        {:first "Sally", :last "Brown", :occupation "programmer"}
+        {:first "Sally", :last "Brown", :job "programmer"}
         {:a 1, :b "two"}
         {}
         ;;}}
-        ))
+        )
+       (ul (li "Similar to comments, commas are ignored by REPL")))
       (slide
        :title "Map functions"
        (hlclj
@@ -77,9 +78,6 @@
        
         (vals {:first "Sally" :last "Brown"})
         ;;=> ("Sally" "Brown")
-       
-        (into {} [[1 2] [3 4]])
-       ;;=> {1 2, 3 4}
         ;;}}
         ))
       (slide
@@ -127,11 +125,12 @@
       ;;=> ["Margaret Atwood" "Doris Lessing"
       ;;    "Ursula Le Guin" "Alice Munro"]
       ;;}}
-      ))
+      )
+     (bullet "Hint: First, create a function that returns the name when given a single person's map."))
       (slide
        :title "Exercise: Modeling your classmates"
        (ol
-        (li "Take the map from the last exercise -- the one about you.")
+        (li "Take the map from a recent exercise -- the one about you.")
         (li "Find two or three classmates. Ask their name and hometown. "
             " Make a vector of maps with their information.")
         (li "Then, add your information to their information using "

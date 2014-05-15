@@ -35,13 +35,13 @@
        (hlclj
         ;;{{      
         (defn total-bill
-          "Given the subtotal of a bill, return the total after tax."
+          "Given subtotal of bill, return total after tax."
           [subtotal]
-          (* 1.085 subtotal)) 
+          (* 1.08 subtotal)) 
 
-        (total-bill 8.90) ;=> 9.6565
-        (total-bill 50)   ;=> 54.25
-        (total-bill 50/7) ;=> 7.75
+        (total-bill 8.5)  ;=> 9.18
+        (total-bill 50)   ;=> 54.0
+        (total-bill 50/6) ;=> 9.0
         ;;}}       
         ))
       (slide
@@ -52,12 +52,12 @@
           total-bill ; the name of this function
           
           ;; documentation, optional
-          "Given the subtotal of a bill, return the total..."
+          "Given subtotal of bill, return total..."
           
           [x] ; list of arguments
 
           ;; body of function
-          (* 1.085 subtotal))
+          (* 1.08 subtotal))
         ;;}}       
         ))
       (slide
@@ -65,10 +65,11 @@
        (hlclj
         ;;{{
         (defn total-with-tip
+          "Given subtotal, return total after tax and tip."
           [subtotal tip-pct] ;; takes 2 arguments
-          (* 1.085 subtotal (+ 1 tip-pct)))
+          (* 1.08 subtotal (+ 1 tip-pct)))
 
-        (total-with-tip 50 0.18) ;=> 64.015
+        (total-with-tip 12 0.18) ;=> 15.93
         ;;}}
         ))
     (slide
@@ -90,11 +91,13 @@
        :title (h3 (code "map"))
        (hlclj
         ;;{{       
-        (def dine-in-orders [12.40 18.95 23.81 19.95 12.40])
+        (def dine-in-orders [12.50 20 21 16 18.40])
         (def take-out-orders[6.00 6.00 7.95 6.25])
         
-        (map total-bill dine-in-orders)  ;=> [13.454 20.56075 25.833849999999998 21.64575 13.454]
-        (map total-bill take-out-orders) ;=> [6.51 6.51 8.62575 6.78125]
+        (map total-bill dine-in-orders)
+          ;=> [13.5 21.6 22.68 17.28 19.872]
+        (map total-bill take-out-orders)
+          ;=> [6.48 6.48 8.586 6.75]
         ;;}}       
         ))
       (slide
@@ -112,21 +115,21 @@
        :title (h3 (code "reduce") " in action")
        (hlclj
         ;;{{       
-        (def take-out-totals [6.51 6.51 8.62575 6.78125])
-
-        (reduce add take-out-totals) ;=> 28.427
+        (def take-out-totals [6.48 6.48 8.586 6.75])
+        
+        (reduce add take-out-totals) ;=> 28.296 
         ;;}}       
         ))
       (slide
        :title (h3 (code "reduce") " in action")
        (hlclj
-        ;;{{       
-        (def take-out-totals [6.51 6.51 8.62575 6.78125]) 
-        (reduce add take-out-totals) ;=> 28.427
+        ;;{{
+        (def take-out-totals [6.48 6.48 8.586 6.75])
+        (reduce add take-out-totals) ;=> 28.296 
 
-        (add 6.51 6.51)
-        (add 13.02 8.62575)
-        (add 21.64575 6.78125)
+        (add 6.48    6.48)  ;=> 12.96
+        (add 12.96   8.586) ;=> 21.546
+        (add 21.546  6.75)  ;=> 28.296
         ;;}}       
         ))
     
