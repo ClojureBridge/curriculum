@@ -38,7 +38,7 @@ There's nothing inherently special or Clojure-y about this project skeleton. It'
   project have?" and "When this Clojure program runs, what function
   should get executed first?"
 - `src/global_growth/core.clj` is where we'll be doing our
-  Clojure coding for awhile.
+  Clojure coding for a while.
 - The `test` directory contains tests, which we won't be covering.
 - `resources` is a place for you to store assets like images; we won't
   be using it today.
@@ -157,7 +157,7 @@ First, we need to be able to talk to the API. You might wonder what an API is. "
 
 Let's look at what the API will return if we ask it for the population density of countries. The URL for this information is:
 
-```sh
+```
 http://api.worldbank.org/countries/all/indicators/EN.POP.DNST?format=json&date=2010
 ```
 
@@ -174,12 +174,12 @@ If you go to that in a browser, you should see something like the following. I'v
   [
     {
       "indicator": {
-        id": "EN.POP.DNST",
+        "id": "EN.POP.DNST",
         "value": "Population density (people per sq. km of land area)"
       },
       "country": {
-        id": "1A",
-        value": "Arab World"
+        "id": "1A",
+        "value": "Arab World"
       },
       "value": "25.5287276250072",
       "decimal": "0",
@@ -187,11 +187,11 @@ If you go to that in a browser, you should see something like the following. I'v
     },
     {
       "indicator": {
-        id": "EN.POP.DNST",
-        value": "Population density (people per sq. km of land area)"
+        "id": "EN.POP.DNST",
+        "value": "Population density (people per sq. km of land area)"
       },
       "country": {
-        id": "S3",
+        "id": "S3",
         "value": "Caribbean small states"
       },
       "value": "17.0236186241818",
