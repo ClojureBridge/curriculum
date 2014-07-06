@@ -54,6 +54,11 @@ Go to the [Light Table site](http://www.lighttable.com/). On the page there, you
 
 There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
 
+The first time you launch Light Table you will be presented with a confirmation
+prompt. Click "Open".
+
+<img alt="Light Table first-run dialog" src="img/os_x/light-table-first-run-dialog@2x.png" width="595" height="290">
+
 ## Getting setup with Heroku
 
 Heroku is the tool we will use in order to put your application online where others can see it.
