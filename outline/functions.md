@@ -90,7 +90,7 @@ One of the most magical things about Clojure--and many other programming languag
 
 ```clj
 (def dine-in-orders [12.50 20 21 16 18.40])
-(def take-out-orders[6.00 6.00 7.95 6.25])
+(def take-out-orders [6.00 6.00 7.95 6.25])
 
 (map total-bill dine-in-orders)  ;=> [13.5 21.6 22.68 17.28 19.872]
 (map total-bill take-out-orders) ;=> [6.48 6.48 8.586 6.75]
