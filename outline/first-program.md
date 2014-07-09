@@ -46,7 +46,7 @@ There's nothing inherently special or Clojure-y about this project skeleton. It'
 Now let's go ahead and actually run this project. Enter this at the command line:
 
 ```
-cd global_growth
+cd global-growth
 lein run
 ```
 
