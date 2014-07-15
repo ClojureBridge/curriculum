@@ -26,6 +26,7 @@ Also feel free to make forks of the curriculum and not contribute back. Make dif
 * Wait, why does the curriculum team get to say which PRs get accepted?? I'm glad you asked! If you contribute more than two patches, you, too, will become part of the curriculum team. 
 * Curriculum team members are given commit rights to the curriculum.
 * Commit rights are meant for approving PRs, not for making direct commits.
+* There is also a [ClojureBridge curriculum group](https://groups.google.com/forum/#!forum/clojurebridge-curriculum) for discussing curriculum direction. 
 
 
 # Workshop/Chapter curriculum forks
