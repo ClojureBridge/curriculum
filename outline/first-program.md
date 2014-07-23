@@ -122,16 +122,7 @@ To add a dependency, open `project.clj`. You should see a section which reads
 
 This is where our dependencies are listed. All the dependencies we need for this project are already included.
 
-In order to use these libraries, we have to _require_ them in our own project. Update `src/global_growth/core.clj` so that it looks like this:
-
-```clojure
-(ns global-growth.core
-  (:require [clj-http.client :as client]))
-```
-
-There are a couple of things going on here. First, we add `require` to `ns` to tell Clojure to load another namespace. The `:as` part of `require` allows you to *alias* the namespace, letting you refer to its definitions without having to type out the entire namespace. In this case, you can use `client/get` instead of `clj-http.client/get`.
-
-Now add:
+In order to use these libraries, we have to _require_ them in our own project. See `src/global_growth/core.clj`, for example:
 
 ```clojure
 (ns global-growth.core
@@ -139,7 +130,9 @@ Now add:
             [cheshire.core :as json]))
 ```
 
-This gives us access to these two libraries we will need to make our project.
+This gives us access to the two libraries we will need to make our project.
+
+There are a couple of things going on here. First, the `:require` in `ns` tells Clojure to load other namespaces. The `:as` part of `:require` creates an *alias* for a namespace, letting you refer to its definitions without having to type out the entire namespace. For example, you can use `client/get` instead of `clj-http.client/get`.
 
 ## Your first real program
 
