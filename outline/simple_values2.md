@@ -30,9 +30,6 @@ A boolean is a true or false value, and you type them just like that, `true` and
 
 There is another value like a boolean in some ways, but different. This value is `nil`, and it means no value at all. You will not often use this value yourself, but you may encounter it in other people's code.
 
-### Keywords
-
-Keywords are the strangest of the basic value types, because they don't have a real world analog like numbers, strings, and booleans do. You can think of them as a special type of string, one that's used for labels. They are easiest to understand when we cover maps later, as they are most commonly used as keys in maps.
 
 ### EXERCISE: Store the name of your hometown
 
