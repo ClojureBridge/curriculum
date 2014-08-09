@@ -23,7 +23,7 @@ Maps hold a set of keys and values associated with them. You can think of it lik
 We write maps by enclosing alternating keys and values in curly braces, like so:
 
 ```clj
-{:first "Sally", :last "Brown"}
+{:first "Sally" :last "Brown"}
 {:a 1 :b "two"}
 {}
 ```
