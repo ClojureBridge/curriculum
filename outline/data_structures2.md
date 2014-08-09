@@ -97,14 +97,46 @@ Let's look at one more thing about maps before we move on. You can always use `g
 
 You can use a keyword like you would use a function in order to look up values in a map. Feel free to use `get` in your own code: it can be more clear and less confusing as you're learning Clojure.
 
+## Collections of Collections
+
+Simple values such as numbers, keywords, and strings are not the only types of things you can put into collections. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
+
+Vector of Maps
+
+```clj
+(def friends [ {:first "Bob"} {:first "Jane"} ])
+
+(first friends)
+```
+
+List of Maps
+
+```clj
+(def parents '( {:mom "Ruth"} {:dad "Dave"} ))
+
+(first parents)  => {:mom "Ruth"}
+
+```
+
+Map of Maps
+
+```clj
+(def family {:brother {:first "Matt" :state "TX"}
+             :sister1  {:first "Susan" :state "TN"}
+             :sister2  {:first "Hannah" :state "IL"}
+            } )
+
+(:brother family)      => {:first "Matt" :state "TX"}
+(get family :brother)  => {:first "Matt" :state "TX"}
+
+(:sister1 family)      => {:first "Susan" :state "TN"}
+(get family :sister1)  => {:first "Susan" :state "TN"}
+```
+
 
 ### EXERCISE 1: Modeling Yourself
 
 Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using `assoc` or `merge`.
-
-## Collections of Collections
-
-Simple values such as numbers, keywords, and strings are not the only types of things you can put into collections. You can also put other collections into collections, so you can have a vector of maps, or a list of vectors, or whatever combination fits your data.
 
 
 ### EXERCISE 2: Get the names of people
@@ -123,6 +155,7 @@ Here is an example of how it should work:
 ```
 
 Hint: First, create a function that returns the name when given a single person's map.
+
 
 ### EXERCISE 3: Modeling your classmates
 
