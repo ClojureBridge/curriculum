@@ -105,6 +105,7 @@ Vector of Maps
 (def friends [{:first "Bob"}{:first "Jane"}])
 
 (first friends)
+=> {:first "Bob"}
 ```
 
 Map of Maps
