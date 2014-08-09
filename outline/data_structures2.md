@@ -125,7 +125,7 @@ Map of Maps
 
 ### EXERCISE 1: Modeling Yourself
 
-Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using `assoc` or `merge`.
+Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using [assoc](http://clojuredocs.org/clojure_core/clojure.core/assoc) or [merge](http://clojuredocs.org/clojure_core/clojure.core/merge).
 
 
 ### EXERCISE 2: Get the names of people
@@ -150,7 +150,7 @@ Hint: First, create a function that returns the name when given a single person'
 
 First, take the map you made about yourself.
 
-Then, create a vector of maps containing the first name, last nane and hometown of two or three other classmates around you. 
+Then, create a vector of maps containing the first name, last name and hometown of two or three other classmates around you. 
 
 Lastly, add your map to their information using [conj](http://clojuredocs.org/clojure_core/clojure.core/conj).
 
