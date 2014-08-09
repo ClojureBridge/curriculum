@@ -132,4 +132,4 @@ Then, find two or three other classmates around you. Ask them their first and la
 
 Lastly, add your information to their information using `conj`.
 
-Use the get-names function from Exercise 2 to output a list of the names.
+Use the `get-names` function from Exercise 2 to output a list of the names.
