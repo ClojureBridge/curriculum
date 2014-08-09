@@ -28,8 +28,6 @@ We write maps by enclosing alternating keys and values in curly braces, like so:
 {}
 ```
 
-You might have noticed by now, in Clojure, commas are optional. They are there to only provide readability. If you see commas in Clojure code, they often occur between key-value pairs in a map definition.
-
 Maps are useful because they can hold data in a way we normally think about it. Take our made up example, Sally Brown. A map can hold her first name and last name, her address, her favorite food, or anything else. It's a simple way to collect that data and make it easy to look up. The last example is an empty map. It is a map that is ready to hold some things, but doesn't have anything in it yet.
 
 Let's look at some functions we can use with maps. We don't have nearly as many functions here in common as vectors and lists did.
@@ -58,7 +56,7 @@ Let's look at some functions we can use with maps. We don't have nearly as many 
 ;=> {:first "Sally"}
 
 (merge {:first "Sally"} {:last "Brown"})
-;=> {:first "Sally", :last "Brown"}
+;=> {:first "Sally" :last "Brown"}
 ```
 
 `assoc` and `dissoc` are paired functions: they associate and disassociate items from a map. See how we add the last name "Brown" to the map with `assoc`, and then we remove it with `dissoc`. 
@@ -104,27 +102,17 @@ Simple values such as numbers, keywords, and strings are not the only types of t
 Vector of Maps
 
 ```clj
-(def friends [ {:first "Bob"} {:first "Jane"} ])
+(def friends [{:first "Bob"}{:first "Jane"}])
 
 (first friends)
-```
-
-List of Maps
-
-```clj
-(def parents '( {:mom "Ruth"} {:dad "Dave"} ))
-
-(first parents)  => {:mom "Ruth"}
-
 ```
 
 Map of Maps
 
 ```clj
 (def family {:brother {:first "Matt" :state "TX"}
-             :sister1  {:first "Susan" :state "TN"}
-             :sister2  {:first "Hannah" :state "IL"}
-            } )
+             :sister1 {:first "Susan" :state "TN"}
+             :sister2 {:first "Hannah" :state "IL"}})
 
 (:brother family)      => {:first "Matt" :state "TX"}
 (get family :brother)  => {:first "Matt" :state "TX"}
@@ -154,7 +142,7 @@ Here is an example of how it should work:
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
 
-Hint: First, create a function that returns the name when given a single person's map.
+Hint: First, create a function that returns the name when given a single person's map. Consider using the function [Map](http://clojuredocs.org/clojure_core/clojure.core/map) to apply that function to each element in your list of maps.
 
 
 ### EXERCISE 3: Modeling your classmates
