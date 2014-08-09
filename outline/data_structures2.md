@@ -115,11 +115,11 @@ Map of Maps
              :sister1 {:first "Susan" :state "TN"}
              :sister2 {:first "Hannah" :state "IL"}})
 
-(:brother family)      => {:first "Matt" :state "TX"}
 (get family :brother)  => {:first "Matt" :state "TX"}
+(:brother family)      => {:first "Matt" :state "TX"}
 
-(:sister1 family)      => {:first "Susan" :state "TN"}
 (get family :sister1)  => {:first "Susan" :state "TN"}
+(:sister1 family)      => {:first "Susan" :state "TN"}
 ```
 
 
@@ -150,8 +150,8 @@ Hint: First, create a function that returns the name when given a single person'
 
 First, take the map you made about yourself.
 
-Then, find two or three other classmates around you. Ask them their first and last name and their hometown. Make a vector of maps with their information.
+Then, create a vector of maps containing the first name, last nane and hometown of two or three other classmates around you. 
 
-Lastly, add your information to their information using `conj`.
+Lastly, add your map to their information using [conj](http://clojuredocs.org/clojure_core/clojure.core/conj).
 
 Use the `get-names` function from Exercise 2 to output a list of the names.
