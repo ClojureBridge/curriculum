@@ -125,7 +125,7 @@ Map of Maps
 
 ### EXERCISE 1: Modeling Yourself
 
-Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using [assoc](http://clojuredocs.org/clojure_core/clojure.core/assoc) or [merge](http://clojuredocs.org/clojure_core/clojure.core/merge).
+Make a map representing yourself. Make sure it contains your first name and last name. Then, add your hometown to the map using [assoc](http://grimoire.arrdem.com/1.6.0/clojure.core/assoc/) or [merge](http://grimoire.arrdem.com/1.6.0/clojure.core/merge/).
 
 
 ### EXERCISE 2: Get the names of people
@@ -143,7 +143,7 @@ Here is an example of how it should work:
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
 
-Hint: First, create a function that returns the name when given a single person's map. Consider using the function [Map](http://clojuredocs.org/clojure_core/clojure.core/map) to apply that function to each element in your list of maps.
+Hint: First, create a function that returns the name when given a single person's map. Consider using the function [Map](http://grimoire.arrdem.com/1.6.0/clojure.core/map/) to apply that function to each element in your list of maps.
 
 
 ### EXERCISE 3: Modeling your classmates
@@ -152,6 +152,6 @@ First, take the map you made about yourself.
 
 Then, create a vector of maps containing the first name, last name and hometown of two or three other classmates around you. 
 
-Lastly, add your map to their information using [conj](http://clojuredocs.org/clojure_core/clojure.core/conj).
+Lastly, add your map to their information using [conj](http://grimoire.arrdem.com/1.6.0/clojure.core/conj/).
 
 Use the `get-names` function from Exercise 2 to output a list of the names.
