@@ -2,10 +2,11 @@ OS X Setup
 ==========
 
 * Start a terminal
+* Install Git
 * Make sure Java is installed
 * Get Leiningen installed
 * Get Light Table installed
-* Get Heroku installed (includes Git)
+* Get Heroku installed
 * Test installation
 
 ## Starting a terminal
@@ -19,6 +20,10 @@ Go ahead and open your terminal now. It should look something like this:
 The prompt (where you will type your commands) may look different: it usually shows the computer name and user name, as well as the folder or directory you are currently in.
 
 For the rest of this setup, I will tell you to run commands in your terminal. When I say that, I mean "type the command into the terminal and press the Return key."
+
+## Install Git
+
+Visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The Git installer may begin downloading automatically. If it does not, click the manual download link. Once the download has finished, open __~/Downloads__ in Finder and double-click the downloaded file (named something like __git-2.0.1-intel-universal-snow-leopard.dmg__). This will mount the disk image and open a new Finder window. Double-click the installer package (named something like __git-2.0.1-intel-universal-snow-leopard.pkg__). You may be told that the installer can't be opened because it is from an unidentified developer. If so, click "OK", then right-click (or control-click) the file and select "Open" from the contextual menu. You may be warned again that the installer is from an unidentified developer, but this time you'll have the option to click "Open". Do so. This will launch the installer. Follow its directions, and enter your password when prompted to do so. Once you have finished this process it's safe to unmount the disk image (by clicking the eject button in the Finder sidebar) and delete the file from the Downloads folder.
 
 ## Making sure Java is installed
 
