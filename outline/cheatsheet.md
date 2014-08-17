@@ -1,6 +1,6 @@
-== Data Structures - Vector
+## Data Structures - Vector
 
-===Creating a vector
+### Creating a vector
 
 ```clj
 (vector 5 10 15)
@@ -9,7 +9,7 @@
 []
 ```
 
-====Functions for vectors
+#### Functions for vectors
 
 ```clj
 (vector? [5 10 15])
@@ -31,9 +31,9 @@
 ;=> 5
 ```
 
-== Data Structures2 - Keyword, Maps
+## Data Structures2 - Keyword, Maps
 
-==== Creating a map
+#### Creating a map
 
 ```clj
 {:first "Sally" :last "Brown"}
@@ -42,7 +42,7 @@
 ```
 
 
-==== Functions for Maps
+#### Functions for Maps
 
 ```clj
 ; determine if value is a map
@@ -82,7 +82,7 @@
 ;=> ("Sally" "Brown")
 ```
 
-== Functions
+## Functions
 
 ```clj
 (defn function-name
@@ -94,7 +94,7 @@
 * Functions that return true or false--called predicates--usually end in ?
 * map and reduce - Functions that take other functions
 
-== Flow Control
+## Flow Control
 
 ```clj
 (if conditional-expression
@@ -102,7 +102,7 @@
   expression-to-evaluate-when-false)
 ```
 
-== Boolean logic with and, or and not
+## Boolean logic with and, or and not
 
 | x     | y     | (and x y) | (or x y) | (not x) | (not y) |
 | ----- | ----- | --------- | -------- | ------- | ------- |
@@ -111,7 +111,7 @@
 | true  | true  | true  | true  | false | false |
 | false | true  | false | true  | true  | false |
 
-== let 
+## let 
 Assigning names to values inside of functions
 
 
