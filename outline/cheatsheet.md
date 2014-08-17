@@ -82,7 +82,7 @@
 ;=> ("Sally" "Brown")
 ```
 
-## Functions
+## Defining Functions
 
 ```clj
 (defn function-name
@@ -113,5 +113,11 @@
 
 ## let 
 Assigning names to values inside of functions
+
+```clj
+(let [first-name (:first-name user)            ; assign to `first-name`
+      message (str "Hello, " first-name "!")]  ; assign to `message`
+  (println message))                           ; do something with `message`
+```
 
 
