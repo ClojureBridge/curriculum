@@ -11,9 +11,6 @@ Outline
 * [More Functions](outline/functions2.md)
 * [More Data Structures](outline/data_structures2.md)
 * [Flow Control](outline/flow_control.md)
-* [Making Your First Program](outline/first-program.md)
-* [Making Your Own Web Application](outline/app.md)
-* [Putting Your Application Online](outline/deploy.md)
 
 
 License
