@@ -146,7 +146,7 @@ This could take a long time, and will download many other pieces of code it reli
 
 ![Testing lein repl](img/os_x/testing-step2.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
+This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. `sample.app=> Bye for now!`
 
 Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
 
@@ -156,7 +156,7 @@ At the bottom of the screen, you will see a cube moving and some text about conn
 
 ![Testing Light Table - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! Close Light Table. `sample.app=> Bye for now!`
+If that worked, great! Close Light Table. 
 
 We only have one more thing to test, Heroku.
 
