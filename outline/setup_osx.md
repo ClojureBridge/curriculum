@@ -100,11 +100,9 @@ After clicking on the link, you will be taken to another form where you will nee
 
 ![Heroku step 3](img/heroku-step3.png)
 
-After all that, you should be at your Heroku dashboard. There will be a link on the dashboard to download the Heroku Toolbelt. Download it now.
+After all that, you should be at your Heroku dashboard. 
 
-![Heroku dashboard](img/heroku-dashboard.png)
-
-If you do not see this link on your dashboard, you can download the toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com/).
+Next, you will need to download the Heroku Toolbelt. Download it from [toolbelt.heroku.com](https://toolbelt.heroku.com/).
 
 This will download a .pkg file. Double-click it to install the Heroku Toolbelt and follow all prompts from the installation wizard. You will need your OS X account password to complete installation. If you are prompted to create an SSH key, say yes. It may also prompt you to install git. Once the Heroku Toolbelt is installed, go to your terminal and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
