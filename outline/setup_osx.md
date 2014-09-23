@@ -3,9 +3,10 @@ OS X Setup
 
 * Start a terminal
 * Install Git
+* Configure Git
 * Make sure Java is installed
 * Get Leiningen installed
-* Get Light Table installed
+* Get LightTable installed
 * Get Heroku installed
 * Test installation
 
