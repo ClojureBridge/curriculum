@@ -156,7 +156,9 @@ At the bottom of the screen, you will see a cube moving and some text about conn
 
 ![Testing Light Table - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! Close Light Table. We only have one more thing to test, Heroku.
+If that worked, great! Close Light Table. `sample.app=> Bye for now!`
+
+We only have one more thing to test, Heroku.
 
 Go back to your terminal. You should still be in the `clojure-sample` directory.
 
