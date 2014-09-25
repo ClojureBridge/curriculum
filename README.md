@@ -11,9 +11,9 @@ Outline
 * [More Functions](outline/functions2.md)
 * [More Data Structures](outline/data_structures2.md)
 * [Flow Control](outline/flow_control.md)
-* [Making Your First Program](outline/first-program.md)
-* [Making Your Own Web Application](outline/app.md)
-* [Putting Your Application Online](outline/deploy.md)
+
+* [Capstone App #1](https://github.com/ClojureBridge/drawing/blob/master/README.md)
+* [Capstone App #2](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
 
 
 License
