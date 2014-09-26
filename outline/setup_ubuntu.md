@@ -65,7 +65,8 @@ Alternatively, open your terminal and type `uname -m` if the output says "x86_64
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table.
 Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file". 
 
-![Light Table downloads](img/ubuntu/lighttable.png)
+![Light Table downloads](img/light-table-download.png)
+![Light Table downloads Ubuntu](img/ubuntu/light-table-download.png)
 
 Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`. 
 Check to see that your file is there. `ls`

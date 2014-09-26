@@ -55,8 +55,8 @@ After you run the above commands, run the `lein version` command. It should take
 
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "OS X 10.7+" button and you will download a .zip file.
 
-![Light Table downloads](img/os_x/light-table-download.png)
-![Light Table downloads Mac](img/os_x/light-table-download-mac.png)
+![Light Table downloads](img/light-table-download.png)
+![Light Table downloads Mac](img/os_x/light-table-download.png)
 
 There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
 
