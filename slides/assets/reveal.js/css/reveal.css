@@ -81,7 +81,7 @@ body {
 	line-height: 1;
 }
 
-.reveal h1 { font-size: 3.77em; }
+.reveal h1 { font-size: 2.11em; }
 .reveal h2 { font-size: 2.11em;	}
 .reveal h3 { font-size: 1.55em;	}
 .reveal h4 { font-size: 1em;	}
@@ -1876,5 +1876,3 @@ body {
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
-
-

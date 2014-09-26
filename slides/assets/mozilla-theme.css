@@ -31,6 +31,7 @@
   background: #424f5a;
   background: -moz-radial-gradient(center, circle cover, #697a85 0%, #424f5a 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #697a85), color-stop(100%, #424f5a));
+
   background: -webkit-radial-gradient(center, circle cover, #697a85 0%, #424f5a 100%);
   background: -o-radial-gradient(center, circle cover, #697a85 0%, #424f5a 100%);
   background: -ms-radial-gradient(center, circle cover, #697a85 0%, #424f5a 100%);
