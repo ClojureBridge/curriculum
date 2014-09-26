@@ -30,8 +30,9 @@ If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The
 
 ## Configure Git
 
-If you've used Git then you should already have user.name and user.email configured.
-Type this in the terminal:
+If you've used Git before then you should already have user.name and user.email configured.
+Otherwise, type this in the terminal:
+
 ```
 git config --global user.name "Your Actual Name"
 git config --global user.email "Your Actual Email"
