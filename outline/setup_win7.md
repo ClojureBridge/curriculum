@@ -107,6 +107,27 @@ The quotes are necessary on the `ssh-keygen.exe` command. When you run `ssh-keyg
 
 After that, close the command prompt, open it again, and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
 
+## Configure Git
+
+If you've used Git before then you should already have user.name and user.email configured.
+Otherwise, type this in the command prompt:
+
+```
+git config --global user.name "Your Actual Name"
+git config --global user.email "Your Actual Email"
+```
+TIP: Use the same email address for heroku, git, github, and ssh.
+
+Verify by typing this in the command prompt:
+
+`git config --get user.name`
+Expected result:
+`your name`
+
+`git config --get user.email`
+Expected result:
+`your email address`
+
 ## Testing your setup
 
 You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer, all the tools you will need for this program. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.

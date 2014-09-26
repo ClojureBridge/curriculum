@@ -108,6 +108,27 @@ If you do not see this link on your dashboard, you can download the toolbelt fro
 
 This will take you too a page with a terminal command. Copy this command and paste it into your terminal. Once the Heroku Toolbelt is installed, run the command `heroku login`. You will be prompted for your email and password on Heroku. If you are prompted to create an SSH key, say yes. If you enter them and the command ends successfully, congratulations!
 
+## Configuring Git
+
+If you've used Git before then you should already have user.name and user.email configured.
+Otherwise, type this in the terminal:
+
+```
+git config --global user.name "Your Actual Name"
+git config --global user.email "Your Actual Email"
+```
+TIP: Use the same email address for heroku, git, github, and ssh.
+
+Verify by typing this in the terminal:
+
+`git config --get user.name`
+Expected result:
+`your name`
+
+`git config --get user.email`
+Expected result:
+`your email address`
+
 ## Testing your setup
 
 You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer--all the tools you will need for this course. Before starting, we need to test them out.
