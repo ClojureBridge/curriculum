@@ -65,7 +65,8 @@ Alternatively, open your terminal and type `uname -m` if the output says "x86_64
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table.
 Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file". 
 
-![Light Table downloads](img/ubuntu/lighttable.png)
+![Light Table downloads](img/light-table-download.png)
+![Light Table downloads Ubuntu](img/ubuntu/light-table-download.png)
 
 Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`. 
 Check to see that your file is there. `ls`
@@ -106,6 +107,27 @@ After all that, you should be at your Heroku dashboard. There will be a link on 
 If you do not see this link on your dashboard, you can download the toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com/).
 
 This will take you too a page with a terminal command. Copy this command and paste it into your terminal. Once the Heroku Toolbelt is installed, run the command `heroku login`. You will be prompted for your email and password on Heroku. If you are prompted to create an SSH key, say yes. If you enter them and the command ends successfully, congratulations!
+
+## Configuring Git
+
+If you've used Git before then you should already have user.name and user.email configured.
+Otherwise, type this in the terminal:
+
+```
+git config --global user.name "Your Actual Name"
+git config --global user.email "Your Actual Email"
+```
+TIP: Use the same email address for heroku, git, github, and ssh.
+
+Verify by typing this in the terminal:
+
+`git config --get user.name`
+Expected result:
+`your name`
+
+`git config --get user.email`
+Expected result:
+`your email address`
 
 ## Testing your setup
 

@@ -52,7 +52,8 @@ Next, go back to [the Leiningen Windows installer site](http://leiningen-win-ins
 
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "Win" button and you will download a .zip file.
 
-![Light Table downloads](img/win/light-table-download.png)
+![Light Table downloads](img/light-table-download.png)
+![Light Table downloads Windows](img/win/light-table-download.png)
 
 Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
 
@@ -105,6 +106,27 @@ The quotes are necessary on the `ssh-keygen.exe` command. When you run `ssh-keyg
 ![ssh-keygen](img/win7/ssh-keygen.png)
 
 After that, close the command prompt, open it again, and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
+
+## Configure Git
+
+If you've used Git before then you should already have user.name and user.email configured.
+Otherwise, type this in the command prompt:
+
+```
+git config --global user.name "Your Actual Name"
+git config --global user.email "Your Actual Email"
+```
+TIP: Use the same email address for heroku, git, github, and ssh.
+
+Verify by typing this in the command prompt:
+
+`git config --get user.name`
+Expected result:
+`your name`
+
+`git config --get user.email`
+Expected result:
+`your email address`
 
 ## Testing your setup
 
