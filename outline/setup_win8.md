@@ -52,7 +52,8 @@ Next, go back to [the Leiningen Windows installer site](http://leiningen-win-ins
 
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "Win" button and you will download a .zip file.
 
-![Light Table downloads](img/win/light-table-download.png)
+![Light Table downloads](img/light-table-download.png)
+![Light Table downloads Windows](img/win/light-table-download.png)
 
 Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
 
