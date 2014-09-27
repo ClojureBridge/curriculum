@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -41,8 +42,7 @@
 
         <section>
           <h3 class="slide-title slide">An example function</h3>
-          <pre>
-<code class="clojure">(defn total-bill
+          <pre><code class="language-clojure">(defn total-bill
   "Given subtotal of bill, return total after tax."
   [subtotal]
   (* 1.08 subtotal)) 
@@ -54,9 +54,7 @@
 
         <section>
           <h3 class="slide-title slide">An example function</h3>
-          <pre>
-<code class=
-"clojure">(defn ; specifies that we are defining a function
+          <pre><code class="language-clojure">(defn ; specifies that we are defining a function
   total-bill ; the name of this function
   
   ;; documentation, optional
@@ -71,8 +69,7 @@
         <section>
           <h3 class="slide-title slide">A function with multiple
           arguments.</h3>
-          <pre>
-<code class="clojure">(defn total-with-tip
+          <pre><code class="language-clojure">(defn total-with-tip
   "Given subtotal, return total after tax and tip."
   [subtotal tip-pct] ;; takes 2 arguments
   (* 1.08 subtotal (+ 1 tip-pct)))
@@ -120,9 +117,8 @@
 
         <section>
           <h3><code>map</code></h3>
-          <pre>
-<code class="clojure">(def dine-in-orders [12.50 20 21 16 18.40])
-(def take-out-orders[6.00 6.00 7.95 6.25])
+          <pre><code class="language-clojure">(def dine-in-orders [12.50 20 21 16 18.40])
+(def take-out-orders [6.00 6.00 7.95 6.25])
 
 (map total-bill dine-in-orders)
   ;=&gt; [13.5 21.6 22.68 17.28 19.872]
@@ -132,8 +128,7 @@
 
         <section>
           <h3><code>reduce</code></h3>
-          <pre>
-<code class="clojure">(defn add
+          <pre><code class="language-clojure">(defn add
   [x y]
   (+ x y))
 
@@ -142,16 +137,14 @@
 
         <section>
           <h3><code>reduce</code> in action</h3>
-          <pre>
-<code class="clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
+          <pre><code class="language-clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
 
 (reduce add take-out-totals) ;=&gt; 28.296</code></pre>
         </section>
 
         <section>
           <h3><code>reduce</code> in action</h3>
-          <pre>
-<code class="clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
+          <pre><code class="language-clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
 (reduce add take-out-totals) ;=&gt; 28.296 
 
 (add 6.48    6.48)  ;=&gt; 12.96
@@ -172,17 +165,15 @@
           </p>
         </section>
     </div>
-  </div><script src="assets/reveal.js/lib/js/head.min.js">
-</script> <script src="assets/reveal.js/js/reveal.js">
-</script> <script>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
 Reveal.initialize({
     history: true,
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad()}},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>

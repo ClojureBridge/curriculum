@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -30,24 +31,21 @@
 
           <p>If the user's input is valid, then save their data;
           otherwise, show an error message.</p>
-          <pre>
-<code class="clojure">(if (valid? data)
+          <pre><code class="language-clojure">(if (valid? data)
   (save! data)
   (error "Your data was invalid"))</code></pre>
         </section>
 
         <section>
           <h3><code>if</code></h3>
-          <pre>
-<code class="clojure">(if conditional-expression
+          <pre><code class="language-clojure">(if conditional-expression
   expression-to-evaluate-when-true
   expression-to-evaluate-when-false)</code></pre>
         </section>
 
         <section>
           <h3><code>if</code> examples</h3>
-          <pre>
-<code class="clojure">(if (&gt; 3 1)
+          <pre><code class="language-clojure">(if (&gt; 3 1)
   "3 is greater than 1"
   "3 is not greater than 1")
 ;;=&gt; "3 is greater than 1"
@@ -67,9 +65,7 @@
 
         <section>
           <h3 class="slide-title slide">Truthy examples</h3>
-          <pre>
-<code class=
-"clojure">(if "anything other than nil or false is considered true"
+          <pre><code class="language-clojure">(if "anything other than nil or false is considered true"
   "A string is considered true"
   "A string is not considered true")
 ;;=&gt; "A string is considered true"
@@ -93,9 +89,7 @@
           map representing a user, with keys <code>:first</code>,
           <code>:last</code>, and possibly <code>:middle</code>. It
           should return their name as a string, like so:</p>
-          <pre>
-<code class=
-"clojure">(format-name {:first "Margaret" :last "Atwood"})
+          <pre><code class="language-clojure">(format-name {:first "Margaret" :last "Atwood"})
 ;;=&gt; "Margaret Atwood"
 
 (format-name {:first "Ursula" :last "Le Guin" :middle "K."})
@@ -200,9 +194,9 @@
 
         <section>
           <h3><code>let</code></h3>
-          <pre>
-<code class="clojure">(defn spread
-  "Given a collection of numbers, return the difference between the largest and smallest number."
+          <pre><code class="language-clojure">(defn spread
+  "Given a collection of numbers, return the difference
+  between the largest and smallest number."
   [numbers]
   (let [largest (reduce max numbers)
         smallest (reduce min numbers)]
@@ -231,8 +225,7 @@
           numbers ending in 1, 2, or 3, add <code>"st"</code>,
           <code>"2nd"</code>, and <code>"rd"</code> respectively.
           Ex:</p>
-          <pre>
-<code class="clojure">(ordinal 1)  ;=&gt; "1st"
+          <pre><code class="language-clojure">(ordinal 1)  ;=&gt; "1st"
 (ordinal 2)  ;=&gt; "2nd"
 (ordinal 3)  ;=&gt; "3rd"
 (ordinal 4)  ;=&gt; "4th"
@@ -253,8 +246,7 @@
           <p>Part two: our exceptions for numbers ending in 1, 2,
           or 3 are superceded when the last 2 digits are 11, 12, or
           13, in which case just add <code>"th"</code>. Ex:</p>
-          <pre>
-<code class="clojure">(ordinal 10) ;=&gt; "10th"
+          <pre><code class="language-clojure">(ordinal 10) ;=&gt; "10th"
 (ordinal 11) ;=&gt; "11th"
 (ordinal 12) ;=&gt; "12th"
 (ordinal 13) ;=&gt; "13th"
@@ -264,17 +256,15 @@
           <code>cond</code> function.</p>
         </section>
     </div>
-  </div><script src="assets/reveal.js/lib/js/head.min.js">
-</script> <script src="assets/reveal.js/js/reveal.js">
-</script> <script>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
 Reveal.initialize({
     history: true,
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad()}},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>

@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -27,8 +28,7 @@
 
         <section>
           <h3 class="slide-title slide">Strings</h3>
-          <pre>
-<code class="language-clojure">"Hello world"
+          <pre><code class="language-clojure">"Hello world"
 "This is a longer string that I wrote for purposes of an example."
 "Aubrey said, \"I think we should go to the Orange Julius.\""</code></pre>
         </section>
@@ -37,11 +37,9 @@
           <h3 class="slide-title slide">Booleans and nil</h3>
 
           <p>Answers to questions</p>
-          <pre>
-<code class="language-clojure">true
+          <pre><code class="language-clojure">true
 false</code></pre>
-          <pre>
-<code class="language-clojure">nil</code></pre>
+          <pre><code class="language-clojure">nil</code></pre>
         </section>
 
         <section>
@@ -52,8 +50,7 @@ false</code></pre>
 
           <p>Think of keywords as a special kind of string, one
           used for labels.</p>
-          <pre>
-<code class="language-clojure">:name
+          <pre><code class="language-clojure">:name
 :input</code></pre>
         </section>
 
@@ -80,17 +77,15 @@ false</code></pre>
           name like so: Last, First.</p>
         </section>
     </div>
-  </div><script src="assets/reveal.js/lib/js/head.min.js">
-</script> <script src="assets/reveal.js/js/reveal.js">
-</script> <script>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
 Reveal.initialize({
     history: true,
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad()}},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>

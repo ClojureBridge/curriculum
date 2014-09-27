@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -31,9 +32,7 @@
 
         <section>
           <h3 class="slide-title slide">Maps</h3>
-          <pre>
-<code class=
-"clojure">{:first "Sally", :last "Brown", :job "programmer"}
+          <pre><code class="language-clojure">{:first "Sally", :last "Brown", :job "programmer"}
 {:a 1, :b "two"}
 {}</code></pre>
 
@@ -45,8 +44,7 @@
 
         <section>
           <h3 class="slide-title slide">Map functions</h3>
-          <pre>
-<code class="clojure">(map? {:first "Sally" :last "Brown"})
+          <pre><code class="language-clojure">(map? {:first "Sally" :last "Brown"})
 ;;=&gt; true
 
 (get {:first "Sally" :last "Brown"} :first)
@@ -58,8 +56,7 @@
 
         <section>
           <h3 class="slide-title slide">More map functions</h3>
-          <pre>
-<code class="clojure">(assoc {:first "Sally"} :last "Brown")
+          <pre><code class="language-clojure">(assoc {:first "Sally"} :last "Brown")
 ;;=&gt; {:first "Sally", :last "Brown"}
 
 (dissoc {:first "Sally" :last "Brown"} :last)
@@ -75,8 +72,7 @@
         <section>
           <h3 class="slide-title slide">Even more map
           functions</h3>
-          <pre>
-<code class="clojure">(keys {:first "Sally" :last "Brown"})
+          <pre><code class="language-clojure">(keys {:first "Sally" :last "Brown"})
 ;;=&gt; (:first :last)
 
 (vals {:first "Sally" :last "Brown"})
@@ -85,8 +81,7 @@
 
         <section>
           <h3 class="slide-title slide">Maps and keywords</h3>
-          <pre>
-<code class="clojure">(:first {:first "Sally" :last "Brown"})
+          <pre><code class="language-clojure">(:first {:first "Sally" :last "Brown"})
 ;;=&gt; "Sally"
 
 (:last {:first "Sally"})
@@ -109,8 +104,7 @@
         <section>
           <h3 class="slide-title slide">Collections of
           collections</h3>
-          <pre>
-<code class="clojure">[{:name "Mercury"}
+          <pre><code class="language-clojure">[{:name "Mercury"}
  {:name "Venus"}
  {:name "Earth" :moons ["The Moon"]}
  {:name "Mars" :moons ["Phobos" "Deimos"]}
@@ -127,9 +121,7 @@
             takes a vector of maps of people and returns a vector
             of their names.
           </div>
-          <pre>
-<code class=
-"clojure">(get-names [{:first "Margaret" :last "Atwood"}
+          <pre><code class="language-clojure">(get-names [{:first "Margaret" :last "Atwood"}
             {:first "Doris" :last "Lessing"}
             {:first "Ursula" :last "Le Guin"}
             {:first "Alice" :last "Munro"}])
@@ -160,17 +152,15 @@
           </ol>
         </section>
     </div>
-  </div><script src="assets/reveal.js/lib/js/head.min.js">
-</script> <script src="assets/reveal.js/js/reveal.js">
-</script> <script>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
 Reveal.initialize({
     history: true,
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad()}},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>
