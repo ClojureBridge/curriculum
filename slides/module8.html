@@ -30,8 +30,7 @@
 
           <p>Type the following in your terminal:</p>
           <pre>
-<code class="bash">lein new clojurebridge global-growth </code>
-</pre>
+<code class="bash">lein new clojurebridge global-growth </code></pre>
         </section>
 
         <section>
@@ -95,8 +94,7 @@
           <p>Go to the command line and enter:</p>
           <pre>
 <code class="bash">cd global-growth
-lein run</code>
-</pre>
+lein run</code></pre>
         </section>
       </section>
 
@@ -140,8 +138,7 @@ lein run</code>
   (println
    (quotify (str "A man who carries a cat by the tail learns "
                  "something he can learn in no other way.")
-            "Mark Twain")))</code>
-</pre>
+            "Mark Twain")))</code></pre>
         </section>
 
         <section>
@@ -152,8 +149,7 @@ lein run</code>
           sections.</p>
           <pre>
 <code class="clojure">;; in src/global_growth/core.clj
-(ns global-growth.core)</code>
-</pre>
+(ns global-growth.core)</code></pre>
         </section>
 
         <section>
@@ -167,8 +163,7 @@ lein run</code>
           <pre>
 <code class="clojure">:dependencies [[org.clojure/clojure "1.5.1"]
                [clj-http "0.9.0"]
-               [cheshire "5.3.1"]]</code>
-</pre>
+               [cheshire "5.3.1"]]</code></pre>
         </section>
 
         <section>
@@ -177,8 +172,7 @@ lein run</code>
 <code class="clojure">;; in src/global_growth/core.clj
 (ns global-growth.core
   (:require [clj-http.client :as client]
-            [cheshire.core :as json]))</code>
-</pre>
+            [cheshire.core :as json]))</code></pre>
         </section>
       </section>
 
@@ -256,8 +250,7 @@ lein run</code>
       "date": "2010"
     }
   ]
-]</code>
-</pre>
+]</code></pre>
         </section>
 
         <section>
@@ -272,8 +265,7 @@ lein run</code>
 ;;    :request-time 109, :status 200,
 ;;    :headers {"content-length" "10340",
 ;;              "content-type" "application/json;charset=utf-8"},
-;;    :body "[{\"page\":1,\"pages\":6}]"}</code>
-</pre>
+;;    :body "[{\"page\":1,\"pages\":6}]"}</code></pre>
         </section>
 
         <section>
@@ -281,8 +273,7 @@ lein run</code>
           <pre>
 <code class=
 "clojure">(json/parse-string "[{\"page\":1,\"pages\":6}]" true)
-;;=&gt; ({:page 1, :pages 6})</code>
-</pre>
+;;=&gt; ({:page 1, :pages 6})</code></pre>
         </section>
 
         <section>
@@ -302,8 +293,7 @@ lein run</code>
 ;;=&gt; ({:page 1, :pages 6, :per_page "50", :total 252}
 ;;    [{:indicator {:id "EN.POP.DNST", :value "Population density (people per sq. km of land area)"},
 ;;    :country {:id "1A", :value "Arab World"}, :value "25.5287276250072", :decimal "0", :date "2010"},
-;;    ...])</code>
-</pre>
+;;    ...])</code></pre>
         </section>
 
         <section>
@@ -321,8 +311,7 @@ lein run</code>
         metadata (first response)
         results (second response)]
     {:metadata metadata
-     :results results}))</code>
-</pre>
+     :results results}))</code></pre>
         </section>
 
         <section>
@@ -334,8 +323,7 @@ lein run</code>
 ;;    :results [{:indicator {:id "EN.POP.DNST",
 ;;    :value "Population density (people per sq. km of land area)"},
 ;;    :country {:id "1A", :value "Arab World"}, :value "25.5287276250072",
-;;    :decimal "0", :date "2010"} ...]}</code>
-</pre>
+;;    :decimal "0", :date "2010"} ...]}</code></pre>
         </section>
 
         <section>
@@ -352,8 +340,7 @@ lein run</code>
   (get-api "/countries/all/indicators/EN.POP.DNST" {:date 2010}))
 ;;=&gt; [["Arab World" "25.5287276250072"]
 ;;    ["Caribbean small states" "17.0236186241818"]
-;;    ...]</code>
-</pre>
+;;    ...]</code></pre>
         </section>
 
         <section>
@@ -378,8 +365,7 @@ lein run</code>
     (for [[country value] values
           :when (and (not (nil? value))
                      (contains? @countries country))]
-      [country (read-string value)])))</code>
-</pre>
+      [country (read-string value)])))</code></pre>
         </section>
 
         <section>
@@ -387,8 +373,7 @@ lein run</code>
           population density</h3>
           <pre>
 <code class=
-"clojure">(get-indicator-values "EN.POP.DNST" 2010)</code>
-</pre>
+"clojure">(get-indicator-values "EN.POP.DNST" 2010)</code></pre>
 
           <p>What do you get?</p>
         </section>
@@ -422,8 +407,7 @@ lein run</code>
           executes its body and returns nothing.</p>
           <pre>
 <code class="clojure">(doseq [name ["Akeelah" "Bhamini" "Cierra"]]
-  (println name))</code>
-</pre>
+  (println name))</code></pre>
         </section>
 
         <section>

@@ -50,8 +50,7 @@
 
 (total-bill 8.5)  ;=&gt; 9.18
 (total-bill 50)   ;=&gt; 54.0
-(total-bill 50/6) ;=&gt; 9.0</code>
-</pre>
+(total-bill 50/6) ;=&gt; 9.0</code></pre>
         </section>
 
         <section>
@@ -67,8 +66,7 @@
   [x] ; list of arguments
 
   ;; body of function
-  (* 1.08 subtotal))</code>
-</pre>
+  (* 1.08 subtotal))</code></pre>
         </section>
 
         <section>
@@ -80,8 +78,7 @@
   [subtotal tip-pct] ;; takes 2 arguments
   (* 1.08 subtotal (+ 1 tip-pct)))
 
-(total-with-tip 12 0.18) ;=&gt; 15.93</code>
-</pre>
+(total-with-tip 12 0.18) ;=&gt; 15.93</code></pre>
         </section>
 
         <section>
@@ -134,8 +131,7 @@
 (map total-bill dine-in-orders)
   ;=&gt; [13.5 21.6 22.68 17.28 19.872]
 (map total-bill take-out-orders)
-  ;=&gt; [6.48 6.48 8.586 6.75]</code>
-</pre>
+  ;=&gt; [6.48 6.48 8.586 6.75]</code></pre>
         </section>
 
         <section>
@@ -145,8 +141,7 @@
   [x y]
   (+ x y))
 
-(reduce add [1 2 3]) ;=&gt; 6</code>
-</pre>
+(reduce add [1 2 3]) ;=&gt; 6</code></pre>
         </section>
 
         <section>
@@ -154,8 +149,7 @@
           <pre>
 <code class="clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
 
-(reduce add take-out-totals) ;=&gt; 28.296</code>
-</pre>
+(reduce add take-out-totals) ;=&gt; 28.296</code></pre>
         </section>
 
         <section>
@@ -166,8 +160,7 @@
 
 (add 6.48    6.48)  ;=&gt; 12.96
 (add 12.96   8.586) ;=&gt; 21.546
-(add 21.546  6.75)  ;=&gt; 28.296</code>
-</pre>
+(add 21.546  6.75)  ;=&gt; 28.296</code></pre>
         </section>
 
         <section>

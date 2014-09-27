@@ -47,8 +47,7 @@
 <code class="clojure">(defn app
   [request]
   {:status 200
-   :body "Hello world!"})</code>
-</pre>
+   :body "Hello world!"})</code></pre>
         </section>
 
         <section>
@@ -90,8 +89,7 @@
             [compojure.handler :refer [site]]
             [hiccup.core :as hiccup]
             [hiccup.page :as page]
-            [hiccup.form :as form]))</code>
-</pre>
+            [hiccup.form :as form]))</code></pre>
         </section>
 
         <section>
@@ -108,8 +106,7 @@
 <code class="clojure">(defroutes main-routes
   (GET "/" [] (main-page))
   (GET "/indicators" [indicator1 indicator2 year]
-       (view-indicators indicator1 indicator2 year)))</code>
-</pre>
+       (view-indicators indicator1 indicator2 year)))</code></pre>
         </section>
 
         <section>
@@ -119,8 +116,7 @@
               [:h1 "Hello world!"]
               [:h2 "I am an awesome subheader"]])
 ;;=&gt; "&lt;header&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;
-;;    &lt;h2&gt;I am an awesome subheader&lt;/h2&gt;&lt;/header&gt;"</code>
-</pre>
+;;    &lt;h2&gt;I am an awesome subheader&lt;/h2&gt;&lt;/header&gt;"</code></pre>
         </section>
 
         <section>
@@ -137,8 +133,7 @@
                                 "indicator1"
                                 (api/get-indicators))]]
               ;; ...
-              (form/submit-button "Submit"))</code>
-</pre>
+              (form/submit-button "Submit"))</code></pre>
         </section>
 
         <section>
@@ -150,8 +145,7 @@
           <p>Make sure the following is in the project:</p>
           <pre>
 <code class=
-"clojure">:ring {:handler global-growth.web/handler}</code>
-</pre>
+"clojure">:ring {:handler global-growth.web/handler}</code></pre>
         </section>
 
         <section>
@@ -162,8 +156,7 @@
 
 2014-04-02 21:30:06.303:INFO:oejs.Server:jetty-7.6.8.v20121106
 2014-04-02 21:30:06.378:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
-Started server on port 3000</code>
-</pre>
+Started server on port 3000</code></pre>
 
           <p>Go to http://localhost:3000/.</p>
         </section>
