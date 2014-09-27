@@ -24,7 +24,7 @@ For the rest of this setup, I will tell you to run commands in your terminal. Wh
 
 ## Install Git
 
-To see if you have git installed type in: `git --version` If you have `git version 1.9.3 (Apple Git-50)` or above you should be fine. 
+To see if you have git installed type in: `git --version` If you have `git version 1.9.3 (Apple Git-50)` or above you should be fine.
 
 If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The Git installer may begin downloading automatically. If it does not, click the manual download link. Once the download has finished, open __~/Downloads__ in Finder and double-click the downloaded file (named something like __git-2.0.1-intel-universal-snow-leopard.dmg__). This will mount the disk image and open a new Finder window. Double-click the installer package (named something like __git-2.0.1-intel-universal-snow-leopard.pkg__). You may be told that the installer can't be opened because it is from an unidentified developer. If so, click "OK", then right-click (or control-click) the file and select "Open" from the contextual menu. You may be warned again that the installer is from an unidentified developer, but this time you'll have the option to click "Open". Do so. This will launch the installer. Follow its directions, and enter your password when prompted to do so. Once you have finished this process it's safe to unmount the disk image (by clicking the eject button in the Finder sidebar) and delete the file from the Downloads folder.
 
@@ -63,17 +63,26 @@ The details of Java's version may differ from what you see above; that is perfec
 
 Leiningen is a tool used on the command line to manage Clojure projects.
 
-To install `lein`, execute the following commands in your terminal. You will be prompted to enter your password.
+To install `lein`, execute the following commands in your terminal; you will be prompted to enter your password for at least the first command starting with `sudo` (The `%` character is a typical commandline prompt, don't type it):
 
+```bash
+% curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > lein
+% sudo mkdir -p /usr/local/bin/
+% sudo mv lein /usr/local/bin/lein
+% sudo chmod a+x /usr/local/bin/lein
 ```
-curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > lein
-sudo mkdir -p /usr/local/bin/
-sudo mv lein /usr/local/bin/lein
-sudo chmod a+x /usr/local/bin/lein
-export PATH=$PATH:/usr/local/bin
+Check that you can now see the command:
+```bash
+% which lein
+/usr/local/bin/lein
 ```
+If you don't see `/usr/local/bin/lein` as above, do this next:
+```bash
+% export PATH=$PATH:/usr/local/bin
+```
+Now run `which lein` and you should see the `lein` command.
 
-After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
+After you set up Leiningen as above, run the `lein version` command. This should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
 ## Installing Light Table
 
@@ -159,7 +168,7 @@ At the bottom left of the screen, you will see a cube moving and some text about
 
 ![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! Close LightTable. 
+If that worked, great! Close LightTable.
 
 We only have one more thing to test, Heroku.
 
