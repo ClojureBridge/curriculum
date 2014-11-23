@@ -47,6 +47,9 @@ What can you do with vectors? Vectors are easy to add more items to, delete item
 
 (first [5 10 15])
 ;=> 5
+
+(rest [5 10 15])
+;=> (10 15)
 ```
 
 Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer true-or-false questions about the data we give them.
