@@ -131,7 +131,7 @@ At the bottom left of the screen, you will see a cube moving and some text about
 
 If that worked, great! Close LightTable. 
 
-Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all it's humble glory.  Let's start with
+Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
 
 ```
 lein run
@@ -141,15 +141,14 @@ This tells Leiningen to run your application.  Different applications run in dif
 
 ![Testing lein run](img/os_x/testing-lein-run.png)
 
-You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on port 8080 on your computer.  The the following URL to access your application:
+You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
 
 ```
 http://localhost:8080/
 ```
 
-See below for what your browser should look like if everything has been successful.
+This is what your browser should look like if everything has been successful.
 
 ![Testing in browser](img/os_x/testing-browser.png)
-
 
 Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
