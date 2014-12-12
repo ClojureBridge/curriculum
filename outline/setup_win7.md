@@ -5,7 +5,6 @@ Windows 7 Setup
 * Get Java installed
 * Get Leiningen installed
 * Get Light Table installed
-* Get Heroku installed (includes Git)
 * Test installation
 
 ## Starting a command prompt
@@ -59,54 +58,6 @@ Unzip this file (either by finding it in your Downloads folder and double-clicki
 
 Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
 
-## Get setup with Heroku
-
-Heroku is the tool we will use in order to put your application online where others can see it.
-
-First, we need to create an account. Go to [Heroku](http://heroku.com) and click the "Sign up" link.
-
-![Heroku step 1](img/heroku-step1.png)
-
-You will be taken to a form where you need to enter your email address in order to sign up. Fill out that form, and you will be sent an email with a link to click to continue the signup process.
-
-![Heroku step 2](img/heroku-step2.png)
-
-After clicking on the link, you will be taken to another form where you will need to choose a password. Choose one and enter it twice.
-
-![Heroku step 3](img/heroku-step3.png)
-
-After all that, you should be at your Heroku dashboard. There will be a link on the dashboard to download the Heroku Toolbelt. Download it now.
-
-![Heroku dashboard](img/heroku-dashboard.png)
-
-You will download an .exe file. Run this executable to install the Heroku Toolbelt and follow all prompts from the installation wizard.
-
-Before you can use Heroku, you will have to set up SSH, the way your computer communicates with Heroku.
-
-First, look up what your user directory is. You can find it by running `echo %USERPROFILE%`. Create a place for your SSH keys by running this command:
-
-```
-mkdir "%USERPROFILE%\.ssh"
-```
-
-Then, if you have 32-bit Windows, run this command:
-
-```
-"C:\Program Files\Git\bin\ssh-keygen.exe"
-```
-
-If you have 64-bit Windows, run this command instead:
-
-```
-"C:\Program Files (x86)\Git\bin\ssh-keygen.exe"
-```
-
-The quotes are necessary on the `ssh-keygen.exe` command. When you run `ssh-keygen.exe`, you will need to type the name of your user directory - everything from "C:\" onward - plus `\.ssh\id_rsa` when it asks you where to save the key. Be careful to type everything exactly. When it asks to 'Enter passphrase' just hit Enter, then Enter again. *Look at the following example:*
-
-![ssh-keygen](img/win7/ssh-keygen.png)
-
-After that, close the command prompt, open it again, and run the command `heroku login`. You will be prompted for your email and password on Heroku. If you enter them and the command ends successfully, congratulations!
-
 ## Configure Git
 
 If you've used Git before then you should already have user.name and user.email configured.
@@ -116,7 +67,7 @@ Otherwise, type this in the command prompt:
 git config --global user.name "Your Actual Name"
 git config --global user.email "Your Actual Email"
 ```
-TIP: Use the same email address for heroku, git, github, and ssh.
+TIP: Use the same email address for git, github, and ssh.
 
 Verify by typing this in the command prompt:
 
@@ -130,7 +81,7 @@ Expected result:
 
 ## Testing your setup
 
-You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer, all the tools you will need for this program. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.
+You have set up Java, Leiningen, Light Table, and Git on your computer, all the tools you will need for this program. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.
 
 Go to your terminal and run the following command:
 
@@ -162,33 +113,29 @@ At the bottom of the screen, you will see a cube moving and some text about conn
 
 ![Testing Light Table - running in the instarepl](img/win7/testing-step4.png)
 
-If that worked, great! Close Light Table. We only have one more thing to test, Heroku.
+If that worked, great! Close Light Table. 
 
-Go back to your terminal. You should still be in the `clojure-sample` directory.
-
-Run this command:
-
-`heroku create`
-
-There should be output about something being created. A URL will be displayed. Look at the following example:
-
-![Testing heroku create](img/win7/testing-step5.png)
-
-Next, run the following commands:
+Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
 
 ```
-git push heroku master
-
-heroku open
+lein run
 ```
 
-Enter "yes" if you are asked if you are sure you want to connect.
+This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
 
-Your browser should open (and take a long time to load) and you should see a website like the following:
+![Testing lein run](img/win7/testing-lein-run.png)
 
-![Testing heroku working](img/win7/testing-step6.png)
+You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
 
-Congratulations! That website is running code you have on your computer that you have uploaded. You have actually made a very simple Clojure app, and your computer is all set up to make more.
+```
+http://localhost:8080/
+```
+
+This is what your browser should look like if everything has been successful.
+
+![Testing in browser](img/win7/testing-browser.png)
+
+Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
 
 
 
