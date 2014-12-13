@@ -26,7 +26,7 @@ Run `java -version` in your terminal. If you do not have Java installed, Ubuntu 
 
 ![no java](img/ubuntu/no_java.png)
 
-Follow all of the directions Ubuntu gives you, selecting the package "openjdk-7-jre-headless" then return to this part of the tutorial and run `java -version` again.
+Follow all of the directions Ubuntu gives you, selecting the package "openjdk-7-jre" then return to this part of the tutorial and run `java -version` again.
 
 If Java is installed, you will see something like this in your terminal:
 
