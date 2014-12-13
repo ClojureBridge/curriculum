@@ -73,7 +73,7 @@ Check to see that your file is there. `ls`
 Extract the compressed file `tar -xzf LightTableLinux64.tar.gz`
 Check to see that there is now a directory called LightTable `ls`
 Move the LightTable directory to "/usr/local/bin" `sudo mv LightTable /usr/local/bin`
-Set your path so you can launch LightTable from the command line `export PATH=$PATH:/usr/local/bin/`
+Set your path so you can launch LightTable from the command line `export PATH=$PATH:/usr/local/bin/LightTable`
 Launch LightTable `LightTable`
 
 If you want, you can create a launcher for LightTable. `sudo gnome-desktop-item-edit /usr/share/applications/ --create-new`
