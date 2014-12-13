@@ -15,6 +15,13 @@ Outline
 * [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)  -- [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
 * [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
 
+
+
+
+Supporting Materials
+--------------------
+* [Student Cheatsheet](outline/cheatsheet.md)
+* [Slides](http://clojurebridge.github.io/curriculum)
 * [Old global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
 
 License
