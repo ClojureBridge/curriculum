@@ -1878,3 +1878,11 @@ body {
 }
 
 
+/*********************************************
+ * HIDE UP AND DOWN NAVIGATION ELEMENTS
+ *********************************************/
+
+.navigate-up,
+.navigate-down {
+	visibility: hidden;
+}
