@@ -2,8 +2,6 @@ Ubuntu Setup
 ==========
 
 * Start a terminal
-
-
 * Make sure Java is installed
 * Get Leiningen installed
 * Get Light Table installed
