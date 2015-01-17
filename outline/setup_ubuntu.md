@@ -7,6 +7,7 @@ Ubuntu Setup
 * Make sure Java is installed
 * Get Leiningen installed
 * Get Light Table installed
+* Get Git installed
 * Test installation
 
 ## Starting a terminal
@@ -85,7 +86,12 @@ You should see a window like this:
 Name the launcher LightTable. Type the path to the command `/usr/local/bin/LightTable/LightTable`. Click the icon. The LightTable icon can be found at `/usr/local/bin/LightTable/core/img/lticon.png`.
 
 
-## Configuring Git
+## Installing Git
+
+See if you already have Git installed with `git version`.
+If the `git` command is not found, install it with this command in the terminal:
+
+`sudo apt-get install git`
 
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the terminal:

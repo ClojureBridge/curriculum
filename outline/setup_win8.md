@@ -5,6 +5,7 @@ Windows 8 Setup
 * Get Java installed
 * Get Leiningen installed
 * Get Light Table installed
+* Get Git installed
 * Test installation
 
 ## Starting a command prompt
@@ -58,7 +59,10 @@ Unzip this file (either by finding it in your Downloads folder and double-clicki
 
 Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
 
-## Configure Git
+## Installing Git
+
+See if you already have Git installed at the command prompt with the command `git --version`.
+If not, download it from the [git-scm.com Windows download page](http://git-scm.com/download/win) and run the executable to install.
 
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the command prompt:
