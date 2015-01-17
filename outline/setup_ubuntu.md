@@ -2,10 +2,11 @@ Ubuntu Setup
 ==========
 
 * Start a terminal
+
+
 * Make sure Java is installed
 * Get Leiningen installed
 * Get Light Table installed
-* Get Heroku installed (includes Git)
 * Test installation
 
 ## Starting a terminal
@@ -84,30 +85,6 @@ You should see a window like this:
 Name the launcher LightTable. Type the path to the command `/usr/local/bin/LightTable/LightTable`. Click the icon. The LightTable icon can be found at `/usr/local/bin/LightTable/core/img/lticon.png`.
 
 
-## Getting setup with Heroku
-
-Heroku is the tool we will use in order to put your application online where others can see it.
-
-First, we need to create an account. Go to [Heroku](http://heroku.com) and click the "Sign up" link.
-
-![Heroku step 1](img/heroku-step1.png)
-
-You will be taken to a form where you need to enter your email address in order to sign up. Fill out that form, and you will be sent an email with a link to click to continue the signup process.
-
-![Heroku step 2](img/heroku-step2.png)
-
-After clicking on the link, you will be taken to another form where you will need to choose a password. Choose one and enter it twice.
-
-![Heroku step 3](img/heroku-step3.png)
-
-After all that, you should be at your Heroku dashboard. There will be a link on the dashboard to download the Heroku Toolbelt. Download it now.
-
-![Heroku dashboard](img/ubuntu/heroku_dashboard_ubuntu.png)
-
-If you do not see this link on your dashboard, you can download the toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com/).
-
-This will take you too a page with a terminal command. Copy this command and paste it into your terminal. Once the Heroku Toolbelt is installed, run the command `heroku login`. You will be prompted for your email and password on Heroku. If you are prompted to create an SSH key, say yes. If you enter them and the command ends successfully, congratulations!
-
 ## Configuring Git
 
 If you've used Git before then you should already have user.name and user.email configured.
@@ -117,7 +94,7 @@ Otherwise, type this in the terminal:
 git config --global user.name "Your Actual Name"
 git config --global user.email "Your Actual Email"
 ```
-TIP: Use the same email address for heroku, git, github, and ssh.
+TIP: Use the same email address for git, github, and ssh.
 
 Verify by typing this in the terminal:
 
@@ -131,7 +108,7 @@ Expected result:
 
 ## Testing your setup
 
-You have set up Java, Leiningen, Light Table, Git, and Heroku on your computer--all the tools you will need for this course. Before starting, we need to test them out.
+You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out.
 
 Go to your terminal and run the following command:
 
@@ -169,33 +146,26 @@ At the bottom of the screen, you will see a cube moving and some text about conn
 
 ![Testing Light Table - running in the instarepl](img/ubuntu/testing-step4.png)
 
-If that worked, great! Close Light Table. We only have one more thing to test, Heroku.
+If that worked, great! Close Light Table. 
 
-Go back to your terminal. You should still be in the `clojure-sample` directory.
-
-Run this command:
-
-`heroku create`
-
-There should be output about something being created. A URL will be displayed. Look at the following example:
-
-![Testing heroku create](img/ubuntu/testing-step5.png)
-
-Next, run the following commands:
+Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
 
 ```
-git push heroku master
-heroku open
+lein run
 ```
 
-Enter "yes" if you are asked if you are sure you want to connect, like in the following image:
+This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
 
-![Connecting via SSH](img/ubuntu/testing-step6.png)
+![Testing lein run](img/ubuntu/testing-lein-run.png)
 
-Your browser should open (and take a long time to load), and you should see a website like the following:
+You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
 
-![Testing heroku working](img/ubuntu/testing-step7.png)
+```
+http://localhost:8080/
+```
 
-If your browser does not open after running `heroku open`, start a browser and go to the URL displayed after you ran `heroku create`.
+This is what your browser should look like if everything has been successful.
 
-Congratulations! That website is running code you have on your computer that you have uploaded. You have actually made a very simple Clojure app, and your computer is all set up to make more.
+![Testing in browser](img/ubuntu/testing-browser.png)
+
+Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
