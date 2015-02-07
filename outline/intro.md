@@ -75,7 +75,7 @@ Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what h
 
 ## Simple values
 
-In order to do anything in a programming language, you need have values to do stuff with. Simple values are numbers, strings, booleans, and keywords. The first of those, numbers, you can probably guess what it is, but the rest will need some more explanation.
+In order to do anything in a programming language, you need have values to do stuff with. Simple values are numbers, strings, booleans, and keywords. You can probably guess what numbers are, but the rest will need some more explanation.
 
 ### Numbers
 
