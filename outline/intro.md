@@ -89,12 +89,12 @@ First up are integers. Integers include zero, the positive whole numbers, and th
 -42
 ```
 
-Then we have decimals, also called floats, which are exactly what you think they are. Examples:
+Then we have decimal numbers, which are also called floats. They include any numbers that have a decimal point in them. Examples:
 
 ```clj
+0.0000072725
 10.5
 -99.9
-0.0000072725
 ```
 
 We also have fractions, also called ratios. Computers cannot perfectly represent all floats, but ratios are always exact. We write them with a slash, like so:
