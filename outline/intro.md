@@ -149,7 +149,7 @@ I used integers with all of the above, but we can use floats or ratios just fine
 
 ### Other simple value types
 
-Although we will look at these in more depth later, here are some examples of other types of simple values so that you may recognize them along the way in any code that you see.  The following are examples of strings, keywords, and booleans:
+Although we will look at these in more depth later, here are some examples of other types of simple values so that you may recognize them along the way in any code that you see. The following are examples of strings, keywords, and booleans:
 
 ```clj
 ;;Strings
