@@ -52,7 +52,7 @@ What can you do with vectors? Vectors are easy to add more items to, delete item
 ;=> (10 15)
 ```
 
-Let's look at these functions together. First, you see a function called `vector?`. You can probably guess what that does: it tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer true-or-false questions about the data we give them.
+Let's look at these functions together. First, you see a function called `vector?`; this tells us whether the argument is a vector. Notice that it has a question mark at the end of it. We often call functions like these _predicate functions_, and they answer true-or-false questions about the data we give them.
 
 The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector. `conj` is an interesting function that you'll see used with all the data structures. With vectors, it takes a vector and an item and returns a new vector with that item added to the end of the vector. Why the name `conj`? The verb "conjugate" has an archaic meaning "to join together," which is what we're doing: we're joining the new item to the vector.
 
