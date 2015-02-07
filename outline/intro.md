@@ -4,7 +4,7 @@ Introduction to Programming with Clojure
 * Why Clojure?
 * What is Clojure good at?
 * What does Clojure look like?
-* What is the REPL?
+* What is a REPL?
 * Simple values
     - Numbers
 * Assigning names to values
@@ -61,7 +61,7 @@ In Clojure, comments can be started with a semicolon. Everything after a semicol
 (eat "donut") ; mmm donuts
 ```
 
-## What is the REPL?
+## What is a REPL?
 
 "REPL" stands for "Read-Eval-Print-Loop," which still doesn't make a ton of sense without context. Many programming languages, including Clojure, have a way to execute code interactively so you get instant feedback. In other words, the code is read, then it is evaluated, then the result is printed, and you begin again--thus, a loop.
 
