@@ -11,7 +11,7 @@ Introduction to Programming with Clojure
 
 ## Why Clojure?
 
-If you've never programmed before, you may not know that there are many languages to choose from. Some of the other languages you might have heard of or will hear of are C, JavaScript, Python, and Java.
+If you've never programmed before, you may not know that there are many languages to choose from. Some of the other languages you might have heard of (or will hear of!) are C, JavaScript, Python, and Java.
 
 So why are we teaching Clojure? Although it's not as popular as any of those languages, we're using Clojure because of three qualities it has that make it an ideal first language to learn--or a great language to learn in addition to others you might already know:
 
