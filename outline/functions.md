@@ -9,7 +9,7 @@ Functions
 
 ## What are functions?
 
-You have already seen some functions, such as `count`, `conj`, `first`, and `rest`. All the arithmetic we did had functions, as well: `+`, `-`, `*`, and `/`. What does it mean to be a function, though?
+You have already seen some functions, such as `count`, `conj`, `first`, and `rest`. All the arithmetic we did used functions, as well: `+`, `-`, `*`, and `/`. What does it mean to be a function, though?
 
 A _function_ is an independent, discrete piece of code that takes in some values (called _arguments_) and returns other values. Let's see an example:
 
