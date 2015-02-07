@@ -36,7 +36,7 @@ To use `total-bill`, we _call_ the function, just like we've done with all the f
 (total-bill 50/6) ;=> 9.0
 ```
 
-Functions can also take more than one argument. Let's make a `total-with-tip` function that additionally takes a tip percentage and calculates the total amount paid:
+Functions can also take more than one argument. Let's make a `total-with-tip` function that takes a tip percentage, in addition to the subtotal, and calculates the total amount paid:
 
 ```clj
 (defn total-with-tip
