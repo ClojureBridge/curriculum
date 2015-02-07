@@ -138,7 +138,7 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 
 With prefix notation, if we plan to use the same operator on many operands, we do not have to repeat the operator between them.
 
-I used integers with all of the above, but they can use floats or ratios just fine. See these examples:
+I used integers with all of the above, but we can use floats or ratios just fine, as well. See these examples:
 
 ```clj
 (+ 4/3 7/8)   ;=> 53/24
