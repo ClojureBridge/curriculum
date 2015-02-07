@@ -17,7 +17,7 @@ So why are we teaching Clojure? Although it's not as popular as any of those lan
 
 * Clojure is _simple_. That's not to say it's not powerful; it is. The number of concepts you have to know to program in Clojure is very small, however, and easy to grasp. Clojure grows with you as you learn it, and you can be very productive with a small subset of the language.
 
-* Clojure is _all-purpose_. Some languages have a specific focus. JavaScript, for example, was traditionally used only in web pages (although that's changed somewhat). Objective-C is used mainly for iPhone apps. We're going to make a web application today, but you can use Clojure for any sort of application easily.
+* Clojure is _all-purpose_. Some languages have a specific focus. JavaScript, for example, was traditionally used only in web pages (although that's changed somewhat). Objective-C is used mainly for iPhone apps. We're going to make a drawing application today, but you can use Clojure for any sort of application easily.
 
 * Clojure is _fun_. That's a matter of opinion, of course, but we think it holds true. I hope that during this course you experience the joy of seeing a Clojure program come together and do something powerful and surprising.
 
