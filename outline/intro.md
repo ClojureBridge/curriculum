@@ -51,7 +51,7 @@ How about the last line? That has a thing called a string in it, which we'll lea
 
 ### Comments
 
-When we write code, we try to make it as clear as possible.  Doing so is a huge advantage because our code gets read by others (oftentimes more so than by us!), or we come back to our own code to read it later by which point we may have forgotten each exact detail of the code.  One way that we can clarify our code is annotating it with comments.  Comments are notes that we add to code, for our own sake, that the computer ignores.
+When we write code, we try to make it as clear as possible.  Doing so is a huge advantage because our code gets read by others (oftentimes more so than by us!), or we come back to our own code to read it later, by which point we may have forgotten each exact detail of the code.  One way that we can clarify our code is annotating it with comments.  Comments are notes that we add to code, for our own sake, that the computer ignores.
 
 In Clojure, comments can be started with a semicolon.  Everything after the semicolon until the end of a line is a comment and gets ignored by the computer.  Only one semicolon is necessary, but sometimes you see two semicolons in a row depending on stylistic tastes.
 
