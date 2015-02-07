@@ -41,7 +41,7 @@ Here's an example of a few lines of Clojure:
 (eat "sandwich")
 ```
 
-The first thing you notice are parentheses, probably. Parentheses enclose instructions to the computer in Clojure. Every time you see a left parenthesis, the next thing you see will be an instruction of some sort. That instruction is normally what we call a _function_. Functions do all the hard work in Clojure. They take in _arguments_--which is everything else inside the parentheses after the function--and return a new value.
+The first thing you notice are parentheses, probably. Parentheses enclose instructions to the computer in Clojure. Every time you see a left parenthesis, the next thing you see will be an instruction of some sort. That instruction is normally what we call a _function_. Functions do all the hard work in Clojure. They take in _arguments_--which are everything else inside the parentheses after the function--and return a new value.
 
 Take a look at the first line. The plus sign that you see is a function. It takes all its arguments and adds them together, returning the sum. This might look confusing if you try to think of it like writing out math, because you'd put the plus sign in a different place that way. Just think of the plus as a function. If you've used Excel, imagine the `SUM()` function in there; it works like that.
 
