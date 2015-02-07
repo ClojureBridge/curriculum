@@ -71,7 +71,7 @@ Go ahead and start Light Table, if you haven't already. Once it's started, go to
 
 After you hit enter, a blank new page will open. At the bottom of Light Table, you should see a message about "connecting" or "retrieving deps." Wait for the instarepl to finish connecting before typing anything. 
 
-Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what happens. Did you see the result appearing beside what you were typing? Once you'd done that, hit enter and type `(max 8 17 2)`. You might see an error in red while typing. This happens because Light Table is continually evaluating what you are typing, and before you finish, the code might not be valid.
+Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what happens. Did you see the result appearing beside what you were typing? Once you've done that, hit enter and type `(max 8 17 2)`. You might see an error in red while typing. This happens because Light Table is continually evaluating what you are typing, and before you finish, the code might not be valid.
 
 ## Simple values
 
