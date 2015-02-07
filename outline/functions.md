@@ -50,7 +50,9 @@ Functions can also take more than one argument. Let's make a `total-with-tip` fu
 
 ### EXERCISE: Find per-person share of bill among a group
 
-Modify our `total-with-tip` function, and call the new function `share-per-person`, that additionally takes in as an argument the number of people in the group for a bill.  Have the function return the average bill amount per person.
+Create a new function called `share-per-person`.
+
+Modify our `total-with-tip` function, and call the new function `share-per-person`, that additionally takes in as an argument the number of people in the group for a bill. Have the function return the average bill amount per person.
 
 ## Naming functions
 
