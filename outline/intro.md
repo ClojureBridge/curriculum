@@ -97,12 +97,14 @@ Then we have decimal numbers, which are also called floats. They include any num
 -99.9
 ```
 
-We also have fractions, also called ratios. Computers cannot perfectly represent all floats, but ratios are always exact. We write them with a slash, like so:
+Finally, we have fractions, which are also called ratios. Computers cannot perfectly represent all floats, but ratios are always exact. We write them with a slash, like so:
 
 ```
 1/2
 -7/3
 ```
+
+Note that, just like with pen-and-paper math, the [denominator](http://en.wikipedia.org/wiki/Fraction_%28mathematics%29) of your ratio cannot be equal to `0`.
 
 ### Arithmetic
 
