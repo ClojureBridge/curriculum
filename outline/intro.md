@@ -108,7 +108,7 @@ Note that, just like with pen-and-paper math, the [denominator](http://en.wikipe
 
 ### Arithmetic
 
-You can add, subtract, multiply, and divide numbers. In Clojure, arithmetic looks a little different than it does when you write out. Look at these examples:
+You can add, subtract, multiply, and divide numbers. In Clojure, arithmetic looks a little different than it does when you write it out with pen and paper. Look at these examples:
 
 ```clj
 (+ 1 1)  ;=> 1 + 1 = 2
