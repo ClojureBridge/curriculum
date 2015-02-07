@@ -81,7 +81,7 @@ In order to do anything in a programming language, you need have values to do st
 
 Actually, let's start with numbers. Clojure has several different types of numbers.
 
-First up are integers. Integers are zero and the positive and negative whole numbers, and you write them just like we write them normally. Examples:
+First up are integers. Integers include zero, the positive whole numbers, and the negative whole numbers, and you write them just like we write them normally. Examples:
 
 ```clj
 0
