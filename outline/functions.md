@@ -129,4 +129,4 @@ In the example above, `reduce` calls `add` with the parameters `6.48` and `6.48`
 
 Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
 
-Hint: You will need to use `reduce` and `count`.
+Hint: You will need to use the functions `reduce` and `count`.
