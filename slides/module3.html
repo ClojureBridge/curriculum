@@ -62,7 +62,7 @@
   ;; documentation, optional
   "Given subtotal of bill, return total..."
   
-  [x] ; list of arguments
+  [subtotal] ; list of arguments
 
   ;; body of function
   (* 1.08 subtotal))</code></pre>
@@ -81,16 +81,15 @@
         </section>
 
         <section>
-          <h3 class="slide-title slide">Find per-person share of
-          bill among a group</h3>
+          <h3 class="slide-title slide">Exercise: Find per-person share of bill among a group</h3>
 
-          <p>Modify our <code>total-with-tip</code> function, and
-          call the new function <code>share-per-person</code>, that
-          additionally takes in as an argument the number of people
-          in the group for a bill.</p>
+          <p>
+            Modify our <code>total-with-tip</code> function, and call the new function <code>share-per-person</code>, that additionally takes in as an argument the number of people in the group for a bill.
+          </p>
 
-          <p>Have the function return the average bill amount per
-          person.</p>
+          <p>
+            Have the function return the average bill amount per person.
+          </p>
         </section>
 
         <section>
@@ -164,12 +163,13 @@
           <h3 class="slide-title slide">Exercise: Find the
           average</h3>
 
-          <p>Create a function called <code>average</code> that
-          takes a vector of bill amounts and returns the average of
-          those amounts.</p>
+          <p>
+            Create a function called <code>average</code> that takes a vector of bill amounts and returns the average of those amounts.
+          </p>
 
-          <p>Hint: you will need to use <code>reduce</code> and
-          <code>count</code>.</p>
+          <p>
+            Hint: you will need to use the functions <code>reduce</code> and <code>count</code>.
+          </p>
         </section>
     </div>
   </div><script src="assets/reveal.js/lib/js/head.min.js">

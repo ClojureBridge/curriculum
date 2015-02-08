@@ -9,9 +9,9 @@ Functions
 
 ## What are functions?
 
-You have already seen some functions, such as `count`, `conj`, `first`, and `rest`. All the arithmetic we did had functions, as well: `+`, `-`, `*`, and `/`. What does it mean to be a function, though?
+You have already seen some functions, such as `count`, `conj`, `first`, and `rest`. All the arithmetic we did used functions, as well: `+`, `-`, `*`, and `/`. What does it mean to be a function, though?
 
-A _function_ is an independent, discrete piece of code that takes in some values (called _arguments_) and returns other values. Let's see an example:
+A _function_ is an independent, discrete piece of code that takes in some values (called _arguments_) and returns a value. Let's see an example:
 
 ```clj
 (defn total-bill
@@ -36,7 +36,7 @@ To use `total-bill`, we _call_ the function, just like we've done with all the f
 (total-bill 50/6) ;=> 9.0
 ```
 
-Functions can also take more than one argument. Let's make a `total-with-tip` function that additionally takes a tip percentage and calculates the total amount paid:
+Functions can also take more than one argument. Let's make a `total-with-tip` function that takes a tip percentage, in addition to the subtotal, and calculates the total amount paid:
 
 ```clj
 (defn total-with-tip
@@ -50,7 +50,9 @@ Functions can also take more than one argument. Let's make a `total-with-tip` fu
 
 ### EXERCISE: Find per-person share of bill among a group
 
-Modify our `total-with-tip` function, and call the new function `share-per-person`, that additionally takes in as an argument the number of people in the group for a bill.  Have the function return the average bill amount per person.
+Create a new function called `share-per-person`.
+
+Modify our `total-with-tip` function, and call the new function `share-per-person`, that additionally takes in as an argument the number of people in the group for a bill. Have the function return the average bill amount per person.
 
 ## Naming functions
 
@@ -127,4 +129,4 @@ In the example above, `reduce` calls `add` with the parameters `6.48` and `6.48`
 
 Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
 
-Hint: You will need to use `reduce` and `count`.
+Hint: You will need to use the functions `reduce` and `count`.
