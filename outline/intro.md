@@ -75,11 +75,11 @@ Once that's done, let's try out the REPL together! Type `(+ 2 3)` and see what h
 
 ## Simple values
 
-In order to do anything in a programming language, you need have values to do stuff with. Simple values are numbers, strings, booleans, and keywords. You can probably guess what numbers are, but the rest will need some more explanation.
+In order to do anything in a programming language, you need to have values to do stuff with. In Clojure, simple values are numbers, strings, booleans, and keywords.
 
 ### Numbers
 
-Actually, let's start with numbers. Clojure has several different types of numbers.
+Clojure has several different types of numbers.
 
 First up are integers. Integers include zero, the positive whole numbers, and the negative whole numbers, and you write them just like we write them normally. Examples:
 
