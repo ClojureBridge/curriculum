@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.bash.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -28,8 +30,7 @@
           <h3 class="slide-title slide">Creating a project</h3>
 
           <p>Type the following in your terminal:</p>
-          <pre>
-<code class="bash">lein new clojurebridge global-growth </code></pre>
+          <pre><code class="language-bash">$ lein new clojurebridge global-growth </code></pre>
         </section>
 
         <section>
@@ -91,9 +92,8 @@
           <h3 class="slide-title slide">Try it out</h3>
 
           <p>Go to the command line and enter:</p>
-          <pre>
-<code class="bash">cd global-growth
-lein run</code></pre>
+          <pre><code class="language-bash">$ cd global-growth
+$ lein run</code></pre>
         </section>
 
         <section>
@@ -125,8 +125,7 @@ lein run</code></pre>
         <section>
           <h3 class="slide-title slide">Using other functions from
           -main</h3>
-          <pre>
-<code class="clojure">(defn quotify
+          <pre><code class="language-clojure">(defn quotify
   [quote author]
   (str quote "\n\n-- " author))
 
@@ -144,8 +143,7 @@ lein run</code></pre>
 
           <p>Namespaces let you organize your code into logical
           sections.</p>
-          <pre>
-<code class="clojure">;; in src/global_growth/core.clj
+          <pre><code class="language-clojure">;; in src/global_growth/core.clj
 (ns global-growth.core)</code></pre>
         </section>
 
@@ -157,16 +155,14 @@ lein run</code></pre>
 
           <p>Open <code>project.clj</code> and look for the
           <code>:dependencies</code> key.</p>
-          <pre>
-<code class="clojure">:dependencies [[org.clojure/clojure "1.5.1"]
+          <pre><code class="language-clojure">:dependencies [[org.clojure/clojure "1.5.1"]
                [clj-http "0.9.0"]
                [cheshire "5.3.1"]]</code></pre>
         </section>
 
         <section>
           <h3 class="slide-title slide">Requiring dependencies</h3>
-          <pre>
-<code class="clojure">;; in src/global_growth/core.clj
+          <pre><code class="language-clojure">;; in src/global_growth/core.clj
 (ns global-growth.core
   (:require [clj-http.client :as client]
             [cheshire.core :as json]))</code></pre>
@@ -209,8 +205,7 @@ lein run</code></pre>
 
         <section>
           <h3 class="slide-title slide">Sample API response</h3>
-          <pre>
-<code class="json">[
+          <pre class="language-json"><code class="language-json">[
   {
     "page": 1,
     "pages": 6,
@@ -251,9 +246,7 @@ lein run</code></pre>
         <section>
           <h3 class="slide-title slide">Accessing APIs with
           Clojure</h3>
-          <pre>
-<code class=
-"clojure">(client/get "http://api.worldbank.org/countries/all/indicators/EN.POP.DNST?format=json&amp;date=2010")
+          <pre><code class="language-clojure">(client/get "http://api.worldbank.org/countries/all/indicators/EN.POP.DNST?format=json&amp;date=2010")
 
 ;; elided and formatted
 ;;=&gt; {:orig-content-encoding nil,
@@ -265,9 +258,7 @@ lein run</code></pre>
 
         <section>
           <h3 class="slide-title slide">Converting JSON</h3>
-          <pre>
-<code class=
-"clojure">(json/parse-string "[{\"page\":1,\"pages\":6}]" true)
+          <pre><code class="language-clojure">(json/parse-string "[{\"page\":1,\"pages\":6}]" true)
 ;;=&gt; ({:page 1, :pages 6})</code></pre>
         </section>
 
@@ -283,8 +274,7 @@ lein run</code></pre>
           <p>You will need to make the web request, pull the
           <code>:body</code> value out of the response, and then
           parse the JSON.</p>
-          <pre>
-<code class="clojure">(get-population-density)
+          <pre><code class="language-clojure">(get-population-density)
 ;;=&gt; ({:page 1, :pages 6, :per_page "50", :total 252}
 ;;    [{:indicator {:id "EN.POP.DNST", :value "Population density (people per sq. km of land area)"},
 ;;    :country {:id "1A", :value "Arab World"}, :value "25.5287276250072", :decimal "0", :date "2010"},
@@ -294,8 +284,7 @@ lein run</code></pre>
         <section>
           <h3 class="slide-title slide">Getting more information
           from the API</h3>
-          <pre>
-<code class="clojure">(defn get-api
+          <pre><code class="language-clojure">(defn get-api
   "Returns map representing API response."
   [path params]
   (let [url (str "http://api.worldbank.org" path)
@@ -311,9 +300,7 @@ lein run</code></pre>
 
         <section>
           <h3 class="slide-title slide">get-api</h3>
-          <pre>
-<code class=
-"clojure">(get-api "/countries/all/indicators/EN.POP.DNST" {:date 2010})
+          <pre><code class="language-clojure">(get-api "/countries/all/indicators/EN.POP.DNST" {:date 2010})
 ;;=&gt; {:metadata {:page 1, :pages 1, :per_page "10000", :total 252},
 ;;    :results [{:indicator {:id "EN.POP.DNST",
 ;;    :value "Population density (people per sq. km of land area)"},
@@ -330,8 +317,7 @@ lein run</code></pre>
           and get the country names and values out of that value.
           <code>get-country-and-value</code> should return a vector
           of vectors.</p>
-          <pre>
-<code class="clojure">(get-country-and-value
+          <pre><code class="language-clojure">(get-country-and-value
   (get-api "/countries/all/indicators/EN.POP.DNST" {:date 2010}))
 ;;=&gt; [["Arab World" "25.5287276250072"]
 ;;    ["Caribbean small states" "17.0236186241818"]
@@ -349,8 +335,7 @@ lein run</code></pre>
 
         <section>
           <h3 class="slide-title slide">get-indicator-values</h3>
-          <pre>
-<code class="clojure">(defn get-indicator-values
+          <pre><code class="language-clojure">(defn get-indicator-values
   "Returns indicator values for a specified year for all countries."
   [indicator-code year]
   (let [response (get-api (str "/countries/all/indicators/"
@@ -366,9 +351,7 @@ lein run</code></pre>
         <section>
           <h3 class="slide-title slide">Get a list of countries and
           population density</h3>
-          <pre>
-<code class=
-"clojure">(get-indicator-values "EN.POP.DNST" 2010)</code></pre>
+          <pre><code class="language-clojure">(get-indicator-values "EN.POP.DNST" 2010)</code></pre>
 
           <p>What do you get?</p>
         </section>
@@ -398,8 +381,7 @@ lein run</code></pre>
 
           <p><code>doseq</code> works like <code>for</code> but
           executes its body and returns nothing.</p>
-          <pre>
-<code class="clojure">(doseq [name ["Akeelah" "Bhamini" "Cierra"]]
+          <pre><code class="language-clojure">(doseq [name ["Akeelah" "Bhamini" "Cierra"]]
   (println name))</code></pre>
         </section>
 
@@ -425,17 +407,15 @@ lein run</code></pre>
           this work.</p>
         </section>
     </div>
-  </div><script src="assets/reveal.js/lib/js/head.min.js">
-</script> <script src="assets/reveal.js/js/reveal.js">
-</script> <script>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
 Reveal.initialize({
     history: true,
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad()}},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>

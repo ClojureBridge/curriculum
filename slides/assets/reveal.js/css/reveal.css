@@ -1886,3 +1886,29 @@ body {
 .navigate-down {
 	visibility: hidden;
 }
+
+
+/*********************************************
+ * CODE BLOCKS
+ *********************************************/
+
+pre[class*="language-"] {
+	width: auto;
+	padding: 0 !important;
+}
+
+code[class*="language-"] {
+	display: block;
+	padding: 0.5em !important;
+	font-size: 24px !important;
+	line-height: 1.4 !important;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+}
+
+.token.operator {
+	background: none !important;
+}
+
+pre.language-bash .input {
+	font-weight: bold;
+}

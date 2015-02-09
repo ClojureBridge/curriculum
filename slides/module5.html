@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -27,8 +28,7 @@
 
         <section>
           <h3 class="slide-title slide">Comparison functions</h3>
-          <pre>
-<code class="clojure">(= 1 2)    ;=&gt; false
+          <pre><code class="language-clojure">(= 1 2)    ;=&gt; false
 (&gt; 4 3)    ;=&gt; true
 (&gt;= 4 5)   ;=&gt; false
 (&lt; -1 1)   ;=&gt; true
@@ -40,24 +40,20 @@
         <section>
           <h3 class="slide-title slide">Using comparison
           functions</h3>
-          <pre>
-<code class="clojure">(defn meaning-of-life?
+          <pre><code class="language-clojure">(defn meaning-of-life?
   [x]
   (= x 42))</code></pre>
         </section>
 
         <section>
           <h3 class="slide-title slide">String functions</h3>
-          <pre>
-<code class=
-"clojure">(str "Chocolate" ", " "strawberry" ", and " "vanilla")
+          <pre><code class="language-clojure">(str "Chocolate" ", " "strawberry" ", and " "vanilla")
 ;;=&gt; "Chocolate, strawberry, and vanilla"</code></pre>
         </section>
 
         <section>
           <h3>Using <code>str</code> with <code>reduce</code></h3>
-          <pre>
-<code class="clojure">(defn join-with-space
+          <pre><code class="language-clojure">(defn join-with-space
   [string1 string2]
   (str string1 " " string2))
 
@@ -68,8 +64,7 @@
 
         <section>
           <h3>Using <code>str</code> with <code>reduce</code></h3>
-          <pre>
-<code class="clojure">(reduce join-with-space
+          <pre><code class="language-clojure">(reduce join-with-space
         ["i" "like" "peanut" "butter" "and" "jelly"])
 ;;=&gt; "i like peanut butter and jelly"
 
@@ -82,8 +77,7 @@
 
         <section>
           <h3 class="slide-title slide">Anonymous functions</h3>
-          <pre>
-<code class="clojure">(map (fn [x] (* 3 x)) [1 2 3]) ;=&gt; [3 6 9]
+          <pre><code class="language-clojure">(map (fn [x] (* 3 x)) [1 2 3]) ;=&gt; [3 6 9]
 
 (reduce (fn [x y] (+ x y)) [1 2 3]) ;=&gt; 6
 
@@ -93,17 +87,15 @@
   ;=&gt; "i like peanut butter and jelly"</code></pre>
         </section>
     </div>
-  </div><script src="assets/reveal.js/lib/js/head.min.js">
-</script> <script src="assets/reveal.js/js/reveal.js">
-</script> <script>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
 Reveal.initialize({
     history: true,
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad()}},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>
