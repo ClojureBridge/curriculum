@@ -127,7 +127,7 @@ lein run
 
 This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
 
-![Testing lein run](img/win7/testing-lein-run.png)
+![Testing lein run](img/win/testing-lein-run.png)
 
 You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
 
@@ -137,7 +137,7 @@ http://localhost:8080/
 
 This is what your browser should look like if everything has been successful.
 
-![Testing in browser](img/win7/testing-browser.png)
+![Testing in browser](img/win/testing-browser.png)
 
 Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
 
