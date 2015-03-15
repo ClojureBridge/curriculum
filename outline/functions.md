@@ -103,7 +103,8 @@ One of the most magical things about Clojure--and many other programming languag
 Let's look at another function that takes a function. This one is `reduce`, and it is used to turn collections into a single value:
 
 ```clj
-(reduce + [1 2 3]) ;=> 6
+(reduce + [1 2 3])   ;=> 6
+(reduce max [1 2 3]) ;=> 3
 ```
 
 `reduce` takes the first two members of the provided collection and calls the provided function with those members. Next, it calls the provided function again--this time, using the result of the previous function call, along with the next member of the collection. `reduce` does this over and over again until it finally reaches the end of the collection.
