@@ -103,11 +103,7 @@ One of the most magical things about Clojure--and many other programming languag
 Let's look at another function that takes a function. This one is `reduce`, and it is used to turn collections into a single value:
 
 ```clj
-(defn add
-  [x y]
-  (+ x y))
-
-(reduce add [1 2 3]) ;=> 6
+(reduce + [1 2 3]) ;=> 6
 ```
 
 `reduce` takes the first two members of the provided collection and calls the provided function with those members. Next, it calls the provided function again--this time, using the result of the previous function call, along with the next member of the collection. `reduce` does this over and over again until it finally reaches the end of the collection.
@@ -117,13 +113,13 @@ This process is complicated, so let's illustrate it further.
 ```clj
 (def take-out-totals [6.48 6.48 8.586 6.75])
 
-(reduce add take-out-totals) ;=> 28.296
+(reduce + take-out-totals) ;=> 28.296
 ```
 
-In the example above, `reduce` calls `add` with the parameters `6.48` and `6.48`, returning `12.96`. Then, in order, it makes the following function calls:
+In the example above, `reduce` calls `+` with the parameters `6.48` and `6.48`, returning `12.96`. Then, in order, it makes the following function calls:
 
-* `(add 12.96    8.586)   ;=> 21.546`
-* `(add 21.546   6.75)    ;=> 28.296`
+* `(+ 12.96  8.586) ;=> 21.546`
+* `(+ 21.546 6.75)  ;=> 28.296`
 
 ### EXERCISE: Find the average
 
