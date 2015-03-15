@@ -3,31 +3,56 @@ ClojureBridge Teacher's Guide
 
 There are many ways to teach the ClojureBridge material, and none of them are \"right.\" The following is a guide to working though the curriculum with students based on the experience of some workshop organizers and teachers.
 
-There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app [pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md). The slides are supposed to be in sync with the curriculum narrative. The slides are what you show on the projector in front of the room. The narrative is a more detailed explanation of what is introduced in the slides. Students may follow along with the narrative on their own computers or may even use it to work on their own. 
+There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app [pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md). The slides are supposed to be in sync with the curriculum narrative. The slides are what you show on the projector in front of the room. The narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own. 
 
 Schedule
 --------
+Friday evening: Installfest - [Getting Set Up](outline/setup.md) in the outline.
+
+Saturday: The rest of the [curriculum](README.md#outline). 
+
+Preparation
+-----------
+Print the [student cheatsheet](outline/cheatsheet.md) and hand out to students at the beginning of the day on Saturday.
+
+Room Setup
+----------
+It works best to have attendees sit around tables facing each other. That encourages attendees to help each other and make it easier for TAs to get to them to help out.
 
 Presentation of the Material
 ----------------------------
+Most workshops have both teachers and TAs. Teachers present the material at the front of the room, and TAs and teachers help students as they work through the exercises on their own and with their tablemates. This is different from how RailsBridge usually works, where students generally work through the material in groups with the help of TAs.
+
+This is not the only way to present the material. It is just the way we have seen it done at most of the workshops so far. Please feel free to experiment.
 
 Light Table
 -----------
+Make sure to spend some time during the Installfest or at the beginning of Saturday showing a few key things to do in Light Table:
+
+- Open the command pane with `Ctrl-Space`
+- Start an Instarepl in the command pane by typing `Insta`
+- Set the font size or line numbers in `Settings: User behaviors` 
+- Evaluate a file with `Cmd-Shift-Enter` or, on Windows, `Ctrl-Shift-Enter`
+
+Students who want to do more can take a look at the [Light Table tutorial](http://docs.lighttable.com/tutorials/full/)
 
 Beginner and Advanced Tracks
 ----------------------------
+You can survey the attendees ahead of time or during the Installfest to find out their level of programming experience. If you have multiple teachers available, you could present the material in separate rooms at a different pace, or you could present separate material. Or you could split attendees up to sit together according to level in one room. 
 
 Exercises
 ---------
+Provide plenty of time for exercises. That is where the real fun happens. TAs should sit with attendees or circulate around the tables as they work on exercises.
 
 Capstone App
 ------------
+Budget your time so that you have enough time for the final quil project at the end fo the day.
 
 Outline
 -------
+TODO: add tips under each heading.
+
 * [Getting Set Up](outline/setup.md)
-   * Tip 1
-   * Tip 2
 * [Introduction to Programming with Clojure](outline/intro.md)
 * [Data Structures](outline/data_structures.md)
 * [Functions](outline/functions.md)
@@ -40,10 +65,17 @@ Outline
 * [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
 
 
-
-
 Supporting Materials
 --------------------
-* [Student Cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
+* [Student cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
 * [Slides](http://clojurebridge.github.io/curriculum)
 * [Old global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
+
+Other Curricula
+---------------
+The main [curriculum](#) is well-tested, but there are a number of other curricula available. Feel free to try them out.
+
+* [Minneapolis chatter](https://github.com/clojurebridge-minneapolis/track1-chatter)
+* [Minneapolis threading](https://github.com/clojurebridge-minneapolis/track2-threading)
+* [Minneapolis surviving](https://github.com/clojurebridge-minneapolis/track2-surviving)
+* More to come! Add yours here.
