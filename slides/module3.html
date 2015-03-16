@@ -128,28 +128,25 @@
 
         <section>
           <h3><code>reduce</code></h3>
-          <pre><code class="language-clojure">(defn add
-  [x y]
-  (+ x y))
-
-(reduce add [1 2 3]) ;=&gt; 6</code></pre>
+          <pre><code class="language-clojure">(reduce + [1 2 3]) ;=&gt; 6
+(reduce max [1 2 3]) ;=&gt; 3</code></pre>
         </section>
 
         <section>
           <h3><code>reduce</code> in action</h3>
           <pre><code class="language-clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
 
-(reduce add take-out-totals) ;=&gt; 28.296</code></pre>
+(reduce + take-out-totals) ;=&gt; 28.296</code></pre>
         </section>
 
         <section>
           <h3><code>reduce</code> in action</h3>
           <pre><code class="language-clojure">(def take-out-totals [6.48 6.48 8.586 6.75])
-(reduce add take-out-totals) ;=&gt; 28.296 
+(reduce + take-out-totals) ;=&gt; 28.296
 
-(add 6.48    6.48)  ;=&gt; 12.96
-(add 12.96   8.586) ;=&gt; 21.546
-(add 21.546  6.75)  ;=&gt; 28.296</code></pre>
+(+ 6.48   6.48)  ;=&gt; 12.96
+(+ 12.96  8.586) ;=&gt; 21.546
+(+ 21.546 6.75)  ;=&gt; 28.296</code></pre>
         </section>
 
         <section>
