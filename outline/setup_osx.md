@@ -105,17 +105,17 @@ You have set up Java, Leiningen, LightTable, and Git on your computer--all the t
 Go to your terminal and run the following command:
 
 ```
-git clone https://github.com/heroku/clojure-sample.git
+git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
+This will check out a sample Clojure application. 
 
 ![Testing git clone](img/os_x/testing-step1.png)
 
 Then run the command:
 
 ```
-cd clojure-sample
+cd welcometoclojurebridge
 ```
 
 This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
@@ -138,26 +138,12 @@ At the bottom left of the screen, you will see a cube moving and some text about
 
 ![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! Close LightTable.
+If that worked, great! 
 
-Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
+Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
 
-```
-lein run
-```
+`Ctrl + Shift + Enter` (or `Cmd + Shift + Enter`)
 
-This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
-
-![Testing lein run](img/os_x/testing-lein-run.png)
-
-You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
-
-```
-http://localhost:8080/
-```
-
-This is what your browser should look like if everything has been successful.
-
-![Testing in browser](img/os_x/testing-browser.png)
+You should see a fun welcome message.
 
 Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
