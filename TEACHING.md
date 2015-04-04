@@ -5,6 +5,10 @@ There are many ways to teach the ClojureBridge material, and none of them are \"
 
 There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app [pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md). The slides are supposed to be in sync with the curriculum narrative. The slides are what you show on the projector in front of the room. The narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own. 
 
+Curriculum
+----------
+Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) under your chapters's github (or your own personal github). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
+
 Schedule
 --------
 Friday evening: Installfest - [Getting Set Up](outline/setup.md) in the outline.
