@@ -35,7 +35,7 @@ Make sure to spend some time during the Installfest or at the beginning of Satur
 
 - Open the command pane with `Ctrl-Space`
 - Start an Instarepl in the command pane by typing `Insta`
-- Set the font size or line numbers in `Settings: User behaviors` 
+- Set the font size, enable auto-closing parentheses, or add line numbers in `Settings: User behaviors`
 - Evaluate a file with `Cmd-Shift-Enter` or, on Windows, `Ctrl-Shift-Enter`
 
 Students who want to do more can take a look at the [Light Table tutorial](http://docs.lighttable.com/tutorials/full/)
