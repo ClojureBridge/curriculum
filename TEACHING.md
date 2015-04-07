@@ -42,7 +42,7 @@ Students who want to do more can take a look at the [Light Table tutorial](http:
 
 Beginner and Advanced Tracks
 ----------------------------
-You can survey the attendees ahead of time or during the Installfest to find out their level of programming experience. If you have multiple teachers available, you could present the material in separate rooms at a different pace, or you could present separate material. Or you could split attendees up to sit together according to level in one room. 
+You can survey the attendees ahead of time or during the Installfest to find out their levels of programming experience. If you have multiple teachers available, you could present the material in separate rooms at a different pace, or you could present separate material. Alternatively, you could keep all attendees in the same room but seat them in different tables according to ability.
 
 Exercises
 ---------
