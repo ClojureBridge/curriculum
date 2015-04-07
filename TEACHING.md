@@ -3,7 +3,7 @@ ClojureBridge Teacher's Guide
 
 There are many ways to teach the ClojureBridge material, and none of them are \"right.\" The following is a guide to working though the curriculum with students based on the experience of some workshop organizers and teachers.
 
-There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app [pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md). The slides are supposed to be in sync with the curriculum narrative. The slides are what you show on the projector in front of the room. The narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own. 
+There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app ([part 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [part 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)). The slides are intended to be in sync with the curriculum narrative; the slides are what you show on the projector in front of the room, while the narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own.
 
 Curriculum
 ----------
