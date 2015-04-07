@@ -46,7 +46,7 @@ You can survey the attendees ahead of time or during the Installfest to find out
 
 Exercises
 ---------
-Provide plenty of time for exercises. That is where the real fun happens. TAs should sit with attendees or circulate around the tables as they work on exercises.
+Provide plenty of time for exercises. That is where the real fun happens. TAs should sit with attendees or circulate around the tables as the attendees work on exercises.
 
 Capstone App
 ------------
