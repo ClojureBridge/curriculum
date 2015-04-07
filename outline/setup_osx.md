@@ -108,7 +108,7 @@ Go to your terminal and run the following command:
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will check out a sample Clojure application. 
+This will clone a sample Clojure application. 
 
 ![Testing git clone](img/os_x/testing-step1.png)
 
@@ -142,8 +142,8 @@ If that worked, great!
 
 Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
 
-`Ctrl + Shift + Enter` (or `Cmd + Shift + Enter`)
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
 
 You should see a fun welcome message.
 
-Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
+Congratulations! You have opened and ran your first clojure app, and your install and setup are complete!
