@@ -21,7 +21,7 @@ Print the ([markdown](outline/cheatsheet.md) or [pdf](https://github.com/Clojure
 
 Room Setup
 ----------
-It works best to have attendees sit around tables facing each other. That encourages attendees to help each other and make it easier for TAs to get to them to help out.
+It works best to have attendees sit around tables, facing one another. This encourages attendees to help one another and makes it easier for TAs to walk around the room, answering questions.
 
 Presentation of the Material
 ----------------------------
