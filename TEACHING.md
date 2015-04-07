@@ -17,7 +17,7 @@ Saturday: The rest of the [curriculum](README.md#outline).
 
 Preparation
 -----------
-Print the [student cheatsheet](outline/cheatsheet.md) and hand out to students at the beginning of the day on Saturday.
+Print the ([markdown](outline/cheatsheet.md) or [pdf](https://github.com/ClojureBridge/curriculum/blob/master/ClojureBridgeCheatsheet-v1.pdf)) and hand it out to students at the beginning of the day on Saturday.
 
 Room Setup
 ----------
