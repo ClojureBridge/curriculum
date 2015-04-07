@@ -7,7 +7,7 @@ There are three pieces to the curriculum: the curriculum [narrative](README.md),
 
 Curriculum
 ----------
-Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) under your chapters's github (or your own personal github). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
+Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) using your chapters's GitHub account (or your own personal GitHub account). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
 
 Schedule
 --------
