@@ -50,7 +50,7 @@ Provide plenty of time for exercises. That is where the real fun happens. TAs sh
 
 Capstone App
 ------------
-Budget your time so that you have enough time for the final quil project at the end fo the day.
+Budget your time so that you have enough time for the final Quil project at the end of the day.
 
 Outline
 -------
