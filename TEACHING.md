@@ -3,11 +3,11 @@ ClojureBridge Teacher's Guide
 
 There are many ways to teach the ClojureBridge material, and none of them are \"right.\" The following is a guide to working though the curriculum with students based on the experience of some workshop organizers and teachers.
 
-There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app [pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md). The slides are supposed to be in sync with the curriculum narrative. The slides are what you show on the projector in front of the room. The narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own. 
+There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app ([part 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [part 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)). The slides are intended to be in sync with the curriculum narrative; the slides are what you show on the projector in front of the room, while the narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own.
 
 Curriculum
 ----------
-Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) under your chapters's github (or your own personal github). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
+Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) using your chapters's GitHub account (or your own personal GitHub account). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
 
 Schedule
 --------
@@ -17,11 +17,11 @@ Saturday: The rest of the [curriculum](README.md#outline).
 
 Preparation
 -----------
-Print the [student cheatsheet](outline/cheatsheet.md) and hand out to students at the beginning of the day on Saturday.
+Print the ([markdown](outline/cheatsheet.md) or [pdf](https://github.com/ClojureBridge/curriculum/blob/master/ClojureBridgeCheatsheet-v1.pdf)) and hand it out to students at the beginning of the day on Saturday.
 
 Room Setup
 ----------
-It works best to have attendees sit around tables facing each other. That encourages attendees to help each other and make it easier for TAs to get to them to help out.
+It works best to have attendees sit around tables, facing one another. This encourages attendees to help one another and makes it easier for TAs to walk around the room, answering questions.
 
 Presentation of the Material
 ----------------------------
@@ -35,22 +35,22 @@ Make sure to spend some time during the Installfest or at the beginning of Satur
 
 - Open the command pane with `Ctrl-Space`
 - Start an Instarepl in the command pane by typing `Insta`
-- Set the font size or line numbers in `Settings: User behaviors` 
+- Set the font size, enable auto-closing parentheses, or add line numbers in `Settings: User behaviors`
 - Evaluate a file with `Cmd-Shift-Enter` or, on Windows, `Ctrl-Shift-Enter`
 
 Students who want to do more can take a look at the [Light Table tutorial](http://docs.lighttable.com/tutorials/full/)
 
 Beginner and Advanced Tracks
 ----------------------------
-You can survey the attendees ahead of time or during the Installfest to find out their level of programming experience. If you have multiple teachers available, you could present the material in separate rooms at a different pace, or you could present separate material. Or you could split attendees up to sit together according to level in one room. 
+You can survey the attendees ahead of time or during the Installfest to find out their levels of programming experience. If you have multiple teachers available, you could present the material in separate rooms at a different pace, or you could present separate material. Alternatively, you could keep all attendees in the same room but seat them in different tables according to ability.
 
 Exercises
 ---------
-Provide plenty of time for exercises. That is where the real fun happens. TAs should sit with attendees or circulate around the tables as they work on exercises.
+Provide plenty of time for exercises. That is where the real fun happens. TAs should sit with attendees or circulate around the tables as the attendees work on exercises.
 
 Capstone App
 ------------
-Budget your time so that you have enough time for the final quil project at the end fo the day.
+Budget your time so that you have enough time for the final Quil project at the end of the day.
 
 Outline
 -------
