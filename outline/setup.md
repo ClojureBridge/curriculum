@@ -11,7 +11,7 @@ If anyone attending does not have access to a laptop running one of the above ch
 
 By the end of these instructions, you will have the following installed:
 
-* **Java development kit (JDK)** - Clojure compiles to Java bytecode using the JDK and runs in the Java virtual machine (JVM)
+* **Java standard edition (SE)** - Clojure runs on top of Java.  The Java Runtime Enviromment (JRE) is needed to run Clojure. 
 * **Leiningen** - a tool for running Clojure programs, also creating & managing Clojure projects
 * **LightTable** - an easy to use development tool for Clojure and other programming languages
 * **Git** - versioning your Clojure code (so you can go back to earlier versions if you make a mistake)
