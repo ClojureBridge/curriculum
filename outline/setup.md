@@ -11,10 +11,10 @@ If anyone attending does not have access to a laptop running one of the above ch
 
 By the end of these instructions, you will have the following installed:
 
-* Java, a "virtual machine" that Clojure runs atop of
-* Leiningen, a tool for running Clojure programs
-* Light Table, an editor for Clojure and other programming languages
-* Git, a program for managing your program's code
+* **Java development kit (JDK)** - Clojure compiles to Java bytecode using the JDK and runs in the Java virtual machine (JVM)
+* **Leiningen** - a tool for running Clojure programs, also creating & managing Clojure projects
+* **LightTable** - an easy to use development tool for Clojure and other programming languages
+* **Git** - versioning your Clojure code (so you can go back to earlier versions if you make a mistake)
 
 ## Instructions by operating system
 
