@@ -53,6 +53,7 @@ Next Steps after ClojureBridge
 * [Clojars](https://clojars.org/) - a dead easy community repository for open source Clojure libraries
 * [Clojure for the Brave & the True](http://www.braveclojure.com/) - a comprehensive Clojure tutorial, using Emacs
 * [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook) - annotated code examples with detailed analysis and explanation (availalbe in an Open source repo or as a commercial book)
+* [Functional Programming for the Object-Oriented Programmer](https://leanpub.com/fp-oo) - Good for people who have used OO languages. Comes with exercises to complete at the end of each chapter.
 
 Clojure Community
 ---------
