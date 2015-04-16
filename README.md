@@ -49,6 +49,8 @@ Next Steps after ClojureBridge
 * [Clojure koans](http://clojurekoans.com/) or [Lighttable Koans](https://github.com/practicalli/lighttable-koans) - complete the Clojure code to make the tests pass, organised by Clojure topics.
 * [4 Clojure](http://www.4clojure.com/) - 160+ exercises online, again completing the Clojure code to make tests pass
 * [Codewars](http://www.codewars.com/) - improve your skills by training with others on real challenges (you need to solve 2 coding questions to join in the fun)
+* [CrossClj](http://crossclj.info/) - explore the interconnected Clojure universe
+* [Clojars](https://clojars.org/) - a dead easy community repository for open source Clojure libraries
 * [Clojure for the Brave & the True](http://www.braveclojure.com/) - a comprehensive Clojure tutorial, using Emacs
 * [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook) - annotated code examples with detailed analysis and explanation (availalbe in an Open source repo or as a commercial book)
 
