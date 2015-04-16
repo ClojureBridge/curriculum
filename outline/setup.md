@@ -16,6 +16,8 @@ By the end of these instructions, you will have the following installed:
 * **LightTable** - an easy to use development tool for Clojure and other programming languages
 * **Git** - versioning your Clojure code (so you can go back to earlier versions if you make a mistake)
 
+> Java version 1.8 (Java 8) is the latest version.  Java 1.7 (Java 7) & 1.6 (Java 6) will also work.
+
 ## Instructions by operating system
 
 Choose your operating system to get setup instructions:
