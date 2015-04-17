@@ -27,7 +27,7 @@ Choose your operating system to get setup instructions:
 * [Windows 8](setup_win8.md)
 * [Ubuntu Linux](setup_ubuntu.md)
 
-### Make Light Table more convenient
+## Make Light Table more convenient
 
 All of the following is optional add and remove what you like.
 
