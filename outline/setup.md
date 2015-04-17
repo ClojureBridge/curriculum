@@ -55,7 +55,7 @@ To show line numbers:
 * Type `user behaviors` and click the proposed command
 * This open a file that you can edit to add `[:editor :lt.objs.editor/line-numbers]`
 
-**down wrap lines around**
+**don't wrap lines around**
 
 To not have lines wrap around if they are to long for the screen:
 * `Ctrl-Space` to open Commands
