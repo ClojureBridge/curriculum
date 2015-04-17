@@ -26,3 +26,38 @@ Choose your operating system to get setup instructions:
 * [Windows 7](setup_win7.md)
 * [Windows 8](setup_win8.md)
 * [Ubuntu Linux](setup_ubuntu.md)
+
+### Make Light Table more convenient
+
+All of the following is optional add and remove what you like.
+
+**automatic closing of parentesses**
+
+[Enabling auto-closing parens.](http://stackoverflow.com/questions/27818505/light-table-parentheses-are-not-auto-closing)
+*This has been disabled, because it tends to break with none english kayboard layouts!*
+But if you use the EN layout you should be fine.
+
+Quote from the link:
+> What I needed to do was add this form to the User behaviors configuration:
+
+> To do so, I followed these steps:
+
+> * `Ctrl-Space` to open Commands
+> * Type `user behaviors` and click the proposed command
+> This open a file that you can edit to add
+> `[:app :lt.objs.settings/pair-keymap-diffs]`
+
+
+**show line numbers**
+
+To show line numbers:
+* `Ctrl-Space` to open Commands
+* Type `user behaviors` and click the proposed command
+* This open a file that you can edit to add `[:editor :lt.objs.editor/line-numbers]`
+
+**down wrap lines around**
+
+To not have lines wrap around if they are to long for the screen:
+* `Ctrl-Space` to open Commands
+* Type `user behaviors` and click the proposed command
+* This open a file that you can edit to add `[:editor :lt.objs.editor/no-wrap]`
