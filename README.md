@@ -57,6 +57,11 @@ Next Steps after ClojureBridge
 * [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook) - annotated code examples with detailed analysis and explanation (availalbe in an Open source repo or as a commercial book)
 * [Functional Programming for the Object-Oriented Programmer](https://leanpub.com/fp-oo) - Good for people who have used OO languages. Comes with exercises to complete at the end of each chapter.
 
+Interesting Clojure coding videos
+---------------------------------
+* [List Comprehension](https://www.youtube.com/watch?v=5lvV9ICwaMo)
+* [Understanding Thread Macros](https://www.youtube.com/watch?v=qxE5wDbt964) - find the most used words in a book (Hitchhikers Guide)
+
 Clojure Community
 ---------
 * [Clojure community discussions](https://groups.google.com/forum/#!forum/clojure)
