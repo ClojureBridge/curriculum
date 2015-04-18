@@ -40,7 +40,7 @@ This opens the User Behaviours file for editing.  When you save the file, `Ctrl-
 
 **Open Workspace on startup**
 Show the workspace browser when you run LightTable, so you can see all the projects you have added and open files easily.
-> `[:app :lt.objs.settings/pair-keymap-diffs]`
+> `[:app :lt.objs.sidebar.workspace/workspace.open-on-start]`
 
 
 **automatic closing of parentesses**
