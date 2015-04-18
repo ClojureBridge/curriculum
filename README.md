@@ -1,6 +1,8 @@
 ClojureBridge Curriculum
 ========================
 
+[![Join the chat at https://gitter.im/ClojureBridgeLondon/curriculum](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ClojureBridgeLondon/curriculum?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Teaching guide
 -------------
 * [ClojureBridge Teacher's Guide](TEACHING.md)
