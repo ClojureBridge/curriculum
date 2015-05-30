@@ -9,6 +9,7 @@ permalink: /data_structures.html
 Data Structures
 ----------------------------------------
 {: .slide-title .chapter}
+
 * Collections
     * Vectors
 </section>
@@ -62,9 +63,6 @@ called arrays in that language.
 </section>
 
 <section>
-## Clojure's Vector
-{: .slide_title .slide}
-
 #### Syntax <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
 
 >Vectors are written using square brackets with any number of pieces
@@ -80,7 +78,7 @@ called arrays in that language.
 </section>
 
 <section>
-## Usage examples
+### Usage examples
 {: .slide_title .slide}
 
 #### <button class="link" ng-model="block41" ng-click="block41=!block41">Intro</button>
@@ -92,9 +90,6 @@ called arrays in that language.
 </section>
 
 <section>
-## Usage examples 1
-{: .slide_title .slide}
-
 #### Type test <button class="link" ng-model="block51" ng-click="block51=!block51">Details</button>
 
 > First, you see a function called `vector?`; this tells us whether
@@ -110,9 +105,6 @@ called arrays in that language.
 </section>
 
 <section>
-## Usage examples 2
-{: .slide_title .slide}
-
 #### Creation <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
 
 > The next two functions are used to make new vectors. The `vector`
@@ -135,9 +127,6 @@ called arrays in that language.
 </section>
 
 <section>
-## Usage examples 3
-{: .slide_title .slide}
-
 #### Creation and Immutability <button class="link" ng-model="block71" ng-click="block71=!block71">Details</button>
 
 > If you've programmed in another language before, you might be
@@ -160,9 +149,6 @@ v
 </section>
 
 <section>
-## Usage examples 4
-{: .slide_title .slide}
-
 #### Extraction <button class="link" ng-model="block81" ng-click="block81=!block81">Details</button>
 
 > Now, take a look at these four functions. `count` gives us a
@@ -191,7 +177,9 @@ be confusing.
 ### EXERCISE: Make a vector
 {: .slide_title .slide}
 
-Make a vector of the high temperatues for the next 7 days in the town
-where you live. Then use the `nth` function to get the high
-temperature for next Tuesday.
+* Make a vector of the high temperatues for the next 7 days in the
+  town where you live.
+* Then use the `nth` function to get the high temperature for next
+  Tuesday.
+
 </section>
