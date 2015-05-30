@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 
+title: Introduction
 permalink: /intro.html
 ---
 
