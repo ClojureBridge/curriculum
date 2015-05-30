@@ -1,5 +1,4 @@
-resources/public/
-.boot/
-/boot
-target
-.lein-*
+.ruby-version
+.ruby-gemset
+_site
+.sass-cache

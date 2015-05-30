@@ -1,0 +1,13 @@
+button.link {
+    background:none;
+    border:none;
+    font-size:18px;
+    cursor:pointer;
+    color:#3b759e;
+    text-decoration: underline;
+}
+
+.description {
+    text-align:left;
+    color:#555555;
+}
