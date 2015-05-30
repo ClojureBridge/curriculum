@@ -174,11 +174,11 @@ More Data Structures
 
 ```clojure
 (:first {:first "Sally" :last "Brown"})
-=> "Sally"
+;=> "Sally"
 (:last {:first "Sally"})
-=> nil
+;=> nil
 (:last {:first "Sally"} :MISS)
-=> :MISS
+;=> :MISS
 ```
 </section>
 
@@ -201,7 +201,7 @@ More Data Structures
 (def friends [{:first "Bob"}{:first "Jane"}])
 
 (first friends)
-=> {:first "Bob"}
+;=> {:first "Bob"}
 ```
 </section>
 
