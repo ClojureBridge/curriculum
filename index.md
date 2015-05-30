@@ -24,7 +24,7 @@ ClojureBridge
 * [More Functions](functions2.html)
 * [More Data Structures](data_structures2.html)
 * [Flow Control and Logic](flow_control.html)
-* [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.html)
+* [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
     * [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
 * [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
 </section>
