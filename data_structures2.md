@@ -247,7 +247,7 @@ More Data Structures
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
 
-Hint: First, create a function that returns the name when given a single person's map. Consider using the function [Map](http://grimoire.arrdem.com/1.6.0/clojure.core/map/) (covered on [Functions](functions.md) to apply that function to each element in your list of maps).
+* Hint: First, create a function that returns the name when given a single person's map. Consider using the function [Map](http://grimoire.arrdem.com/1.6.0/clojure.core/map/) (covered on [Functions](functions.md) to apply that function to each element in your list of maps).
 </section>
 
 <section>

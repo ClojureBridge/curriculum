@@ -194,10 +194,6 @@ body {
   font-family: "Anonymous Pro", monospace;
 }
 
-.reveal blockquote p code {
-  color: #4488cc
-}
-
 .reveal pre code {
   font-size: 140%;
   line-height: 120%;
