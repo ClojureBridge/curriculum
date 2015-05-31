@@ -20,6 +20,10 @@
     display: inline-block;
 }
 
+.reveal .exercise {
+    font-size: 80%;
+}
+
 .reveal blockquote ul li {
     font-size: 25px;
 }
