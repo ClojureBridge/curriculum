@@ -13,11 +13,11 @@ Schedule
 --------
 Friday evening: Installfest - [Getting Set Up](outline/setup.md) in the outline.
 
-Saturday: The rest of the [curriculum](README.md#outline). 
+Saturday: Workshop -  [curriculum](README.md#curriculum).
 
 Preparation
 -----------
-Print the ([markdown](outline/cheatsheet.md) or [pdf](https://github.com/ClojureBridge/curriculum/blob/master/ClojureBridgeCheatsheet-v1.pdf)) and hand it out to students at the beginning of the day on Saturday.
+Print the ([markdown](outline/cheatsheet.md) or [pdf](ClojureBridgeCheatsheet-v1.pdf)) and hand it out to students at the beginning of the day on Saturday.
 
 Room Setup
 ----------
@@ -81,7 +81,7 @@ Supporting Materials
 --------------------
 * [Student cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
 * [Slides](http://clojurebridge.github.io/curriculum)
-* [Old global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
+* [Old capstone app: global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
 
 Other Curricula
 ---------------
