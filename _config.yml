@@ -19,6 +19,11 @@ encoding: UTF-8
 exclude:
 - Gemfile
 - Gemfile.lock
+- CONTRIBUTING.md
+- ClojureBridgeCheatsheet-v1.pdf
+- TEACHING.md
+- background-reading.md
+- outline
 - tmp
 
 # Port number
