@@ -13,8 +13,9 @@ Functions
 * What are functions?
 * Naming functions
 * Important functions
-    * Collection functions
-* `map` and `reduce` - Functions that take other functions
+    - Collection functions
+* Functions that take other functions
+    - `map` and `reduce`
 </section>
 
 <section>
