@@ -50,8 +50,8 @@ to know them. Let's look at some others.
 
 #### Number comparison <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
 
-> The other comparison functions are `>`, `>=`, `<` and `<=`.
-> All of these are used exclusively with numbers.
+> The other comparison functions are `>`, `>=`, `<`, `<=` and `not=`.
+> All but the last of these are used exclusively with numbers.
 > Like all Clojure functions, the comparison functions are used as
 > prefixes, so they can be a little tricky. Here's some examples:
 {: ng-show="block21" .description}
@@ -63,6 +63,7 @@ to know them. Let's look at some others.
 (<= -1 -2) ;=> false
 (< 1 5 9)  ;=> true
 (< 1 5 3)  ;=> false
+(not= 4 3) ;=> true
 ```
 </section>
 
