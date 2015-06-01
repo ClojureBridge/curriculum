@@ -17,6 +17,15 @@ ClojureBridge
 ## Table of Contents
 {: .slide_title .slide}
 
+{% comment %}
+_Note_
+
+This index.md is for http://clojurebridge.github.io/curriculum/
+and rendered by jekyll framework.
+
+Links below won't work if you see this file on the github repository.
+{% endcomment %}
+
 * [Introduction to Programming with Clojure](outline/intro.html)
 * [Data Structures](outline/data_structures.html)
 * [Functions](outline/functions.html)
