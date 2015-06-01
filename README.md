@@ -1,28 +1,12 @@
 ClojureBridge Curriculum
 ========================
 
-Outline
--------
-* [Getting Set Up](outline/setup.md)
-* [Introduction to Programming with Clojure](outline/intro.md)
-* [Data Structures](outline/data_structures.md)
-* [Functions](outline/functions.md)
-* [More Simple Values](outline/simple_values2.md)
-* [More Functions](outline/functions2.md)
-* [More Data Structures](outline/data_structures2.md)
-* [Flow Control](outline/flow_control.md)
+All files have been moved to gh-pages branch.
+Please switch the branch to gh-pages.
 
-* [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)  -- [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
-* [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+Temporarily, files are saved in `backup` directory for a reference.
+Those will be deleted at some point.
 
-
-
-
-Supporting Materials
---------------------
-* [Student Cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
-* [Slides](http://clojurebridge.github.io/curriculum)
-* [Old global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
 
 License
 -------
