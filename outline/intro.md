@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction
-permalink: /intro.html
+permalink: /outline/intro.html
 ---
 
 {::options parse_block_html="true" /}

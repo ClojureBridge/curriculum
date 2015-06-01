@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Keywords and Maps
-permalink: /data_structures2.html
+permalink: /outline/data_structures2.html
 ---
 
 {::options parse_block_html="true" /}

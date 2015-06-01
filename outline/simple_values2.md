@@ -1,7 +1,7 @@
 ---
 layout: default
 title: String, Boolean, nil and Keyword
-permalink: /simple_values2.html
+permalink: /outline/simple_values2.html
 ---
 
 {::options parse_block_html="true" /}

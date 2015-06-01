@@ -1,21 +1,21 @@
 ClojureBridge Curriculum
 ========================
 
-Outline
+Set up guide
 -------
 * [Getting Set Up](outline/setup.md)
 
-Slides
+Curriculum
 ------
 <http://clojurebridge.github.io/curriculum/>
 
-* [Introduction to Programming with Clojure](intro.md)
-* [Data Structures](data_structures.md)
-* [Functions](functions.md)
-* [More Simple Values](simple_values2.md)
-* [More Functions](functions2.md)
-* [More Data Structures](data_structures2.md)
-* [Flow Control](flow_control.md)
+* [Introduction to Programming with Clojure](outline/intro.md)
+* [Data Structures](outline/data_structures.md)
+* [Functions](outline/functions.md)
+* [More Simple Values](outline/simple_values2.md)
+* [More Functions](outline/functions2.md)
+* [More Data Structures](outline/data_structures2.md)
+* [Flow Control](outline/flow_control.md)
 
 Capstone Apps
 -------------

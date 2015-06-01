@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Functions
-permalink: /functions.html
+permalink: /outline/functions.html
 ---
 
 {::options parse_block_html="true" /}

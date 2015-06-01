@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Flow Control
-permalink: /flow_control.html
+permalink: /outline/flow_control.html
 ---
 
 {::options parse_block_html="true" /}

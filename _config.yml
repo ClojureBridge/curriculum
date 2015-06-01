@@ -23,7 +23,6 @@ exclude:
 - ClojureBridgeCheatsheet-v1.pdf
 - TEACHING.md
 - background-reading.md
-- outline
 - tmp
 
 # Port number

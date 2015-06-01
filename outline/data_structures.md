@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Vectors
-permalink: /data_structures.html
+permalink: /outline/data_structures.html
 ---
 
 {::options parse_block_html="true" /}

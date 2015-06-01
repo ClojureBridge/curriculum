@@ -17,13 +17,13 @@ ClojureBridge
 ## Table of Contents
 {: .slide_title .slide}
 
-* [Introduction to Programming with Clojure](intro.html)
-* [Data Structures](data_structures.html)
-* [Functions](functions.html)
-* [More Simple Values](simple_values2.html)
-* [More Functions](functions2.html)
-* [More Data Structures](data_structures2.html)
-* [Flow Control and Logic](flow_control.html)
+* [Introduction to Programming with Clojure](outline/intro.html)
+* [Data Structures](outline/data_structures.html)
+* [Functions](outline/functions.html)
+* [More Simple Values](outline/simple_values2.html)
+* [More Functions](outline/functions2.html)
+* [More Data Structures](outline/data_structures2.html)
+* [Flow Control and Logic](outline/flow_control.html)
 * [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
     * [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
 * [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
