@@ -1,8 +1,29 @@
-gh-pages
-========
+ClojureBridge Curriculum
+========================
 
-Files in this gh-pages branch will appear at [http://clojurebridge.github.io/curriculum](http://clojurebridge.github.io/curriculum).
+Outline
+-------
+* [Getting Set Up](outline/setup.md)
+* [Introduction to Programming with Clojure](outline/intro.md)
+* [Data Structures](outline/data_structures.md)
+* [Functions](outline/functions.md)
+* [More Simple Values](outline/simple_values2.md)
+* [More Functions](outline/functions2.md)
+* [More Data Structures](outline/data_structures2.md)
+* [Flow Control](outline/flow_control.md)
 
-If you fork the curriculum repo, update the files in the gh-pages branch, and they will appear at your-repo-name.github.io/curriculum.
+* [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)  -- [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
+* [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
 
-More on github pages: [https://help.github.com/articles/creating-project-pages-manually/](https://help.github.com/articles/creating-project-pages-manually/)
+
+
+
+Supporting Materials
+--------------------
+* [Student Cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
+* [Slides](http://clojurebridge.github.io/curriculum)
+* [Old global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
+
+License
+-------
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">ClojureBridge Curriculum</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">ClojureBridge</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US">Creative Commons Attribution 4.0 International License</a>.
