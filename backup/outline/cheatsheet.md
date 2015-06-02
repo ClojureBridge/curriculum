@@ -88,11 +88,33 @@
 (defn function-name
   "description of function, optional"
   [param1 param2]
-  ((function-body)))
+  (function-body))
 ```
 
 * Functions that return true or false--called predicates--usually end in ?
 * map and reduce - Functions that take other functions
+
+## Map and Reduce
+
+```clj
+; apply a function to every element in a collection
+(map inc [1 2 3 4])
+;=> (2 3 4 5)
+; Similar to [(inc 1) (inc 2) (inc 3) (inc 4)]
+```
+**`map`** takes a function and a collection, then applies the function to each element in the collection in order. It returns the new collection.
+
+```clj
+; reduce a collection to one value using a function
+(reduce + [1 3 5 7])
+;=> 16
+; Similar to (+ 1 3) ;=> 4
+;            (+ 4 5) ;=> 9
+;            (+ 9 7) ;=> 16
+```
+
+**`reduce`** takes a function and a collection. First, it applies the function to the first element and the second element, then it applies the function to the *result* of that, plus the third element. It continues rolling up the results until it gets to the last thing in the collection.
+
 
 ## Flow Control
 
