@@ -1,4 +1,4 @@
-# How to change curriculum markdown files
+# Editing curriculum markdown files
 
 ### Jekyll framework with kramdown
 
