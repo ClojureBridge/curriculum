@@ -10,6 +10,8 @@ Also feel free to make forks of the curriculum and not contribute back. Make dif
 * Fork the repository on GitHub
 
 ## Making Changes
+* If you are about to make changes on curriculum markdown files,
+  read <EDITING-CURRICULUM.md> as well.
 * (Probably need some stuff in here about keeping slides in sync with narrative, etc)
 * Commit changes
 * (Add more git guidance?)
