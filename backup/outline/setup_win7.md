@@ -75,14 +75,11 @@ try these steps to update your PATH variable properly:
 * Scroll to the end of this value and check for a file path at the end that includes "...\Git...".
 * If that path existed:
   * Click "Okay" until the "My Computer" dialog box is closed.
-  * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and
-    try again.
+  * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and try again.
 * If that path did not exist:
-  * If you did not change the install location of git during installation, add ";C:\Program Files (x86)\Git\cmd" to the
-    end of the line. Make sure you add the semi-colon between file paths and the line includes no spaces between paths.
+  * If you did not change the install location of git during installation, add ";C:\Program Files (x86)\Git\cmd" to the end of the line. Make sure you add the semi-colon between file paths and the line includes no spaces between paths.
   * Click "Okay" until the "My Computer" dialog box is closed.
-  * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and
-    try again.
+  * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and try again.
 
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the command prompt:
