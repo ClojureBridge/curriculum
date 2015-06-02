@@ -8,6 +8,9 @@ OS X Setup
 * Get Leiningen installed
 * Get LightTable installed
 * Test installation
+* Troubleshooting
+    - OS X 10.6.8
+    - Yosemite
 
 ## Starting a terminal
 
@@ -147,3 +150,23 @@ Now we will open and run the sample Clojure app in LightTable. In LightTable, cl
 You should see a fun welcome message.
 
 Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!
+
+
+## Troubleshooting
+
+### OS X 10.6.8
+
+Light Table actually does work on OS X 10.6.8. It thinks it does not. To convince it otherwise, do this:
+
+  1. Use a text editor to open /Applications/LightTable.app/Contents/Info.plist
+  2. Search for the key LSMinimumSystemVersion
+  3. Remove that key from the file. Delete this entire text: LSMinimumSystemVersion 10.7.5
+  4. Save the file, and you should be able to start Light Table.
+
+### Yosemite
+
+Yosemite was released after Light Table development was stalled.
+Because of this historical reason, students may encounter troubles to start or use Light Table on Yosemite.
+In such a case, [Nightcode](https://sekao.net/nightcode/) is another option.
+See the instruction,
+[Getting Started with Clojure using Nightcode](https://github.com/ClojureBridge/getting-started/blob/master/nightcode.md).

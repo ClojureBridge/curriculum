@@ -7,6 +7,7 @@ Windows 7 Setup
 * Get Light Table installed
 * Get Git installed
 * Test installation
+* Troubleshooting
 
 ## Starting a command prompt
 
@@ -159,4 +160,20 @@ This is what your browser should look like if everything has been successful.
 Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
 
 
+## Troubleshooting
 
+  Students with Windows 7 may get the error below when they run `lein repl` for the first time.
+
+  ```
+  Address family not supported by protocol family: connect
+  ```
+
+  If the error message is this, look at <http://stackoverflow.com/a/21383865>.
+
+
+  This error happens because `lein` command couldn't download necessary stuffs
+  because a program called Relevant Knowledge, some sort of spyware, blocks the traffic.
+  To solve this problem, uninstall Relevant Knowledge.
+  This requires users' (owner's or administrator's) password.
+  Sometimes, attendees haven't heard of such permission stuff.
+  Be ready for that.
