@@ -20,6 +20,7 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - CONTRIBUTING.md
+- EDITING-CURRICULUM.md
 - ClojureBridgeCheatsheet-v1.pdf
 - TEACHING.md
 - background-reading.md
