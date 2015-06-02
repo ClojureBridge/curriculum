@@ -5,6 +5,13 @@ permalink: /outline/intro.html
 ---
 
 {::options parse_block_html="true" /}
+
+{% comment %}
+
+http://clojurebridge.github.io/curriculum/outline/intro.html
+
+{% endcomment %}
+
 <section>
 Introduction to Programming with Clojure
 ----------------------------------------

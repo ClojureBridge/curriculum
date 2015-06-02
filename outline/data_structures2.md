@@ -5,6 +5,13 @@ permalink: /outline/data_structures2.html
 ---
 
 {::options parse_block_html="true" /}
+
+{% comment %}
+
+http://clojurebridge.github.io/curriculum/outline/data_structures2.html
+
+{% endcomment %}
+
 <section>
 More Data Structures
 ----------------------------------------

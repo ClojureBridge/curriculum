@@ -5,6 +5,13 @@ permalink: /outline/flow_control.html
 ---
 
 {::options parse_block_html="true" /}
+
+{% comment %}
+
+http://clojurebridge.github.io/curriculum/outline/flow_control.html
+
+{% endcomment %}
+
 <section>
 Flow Control
 -------------------------

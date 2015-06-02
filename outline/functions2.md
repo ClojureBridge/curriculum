@@ -5,6 +5,13 @@ permalink: /outline/functions2.html
 ---
 
 {::options parse_block_html="true" /}
+
+{% comment %}
+
+http://clojurebridge.github.io/curriculum/outline/functions2.html
+
+{% endcomment %}
+
 <section>
 More Functions
 ----------------------

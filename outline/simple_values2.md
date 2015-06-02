@@ -5,6 +5,13 @@ permalink: /outline/simple_values2.html
 ---
 
 {::options parse_block_html="true" /}
+
+{% comment %}
+
+http://clojurebridge.github.io/curriculum/outline/simple_values2.html
+
+{% endcomment %}
+
 <section>
 More Simple Values
 ------------------------------
