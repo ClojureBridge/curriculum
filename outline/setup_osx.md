@@ -8,6 +8,9 @@ OS X Setup
 * Get Leiningen installed
 * Get LightTable installed
 * Test installation
+* Troubleshooting
+    - OS X 10.6.8
+    - Yosemite
 
 ## Starting a terminal
 
@@ -97,6 +100,14 @@ prompt. Click "Open".
 
 <img alt="Light Table first-run dialog" src="img/os_x/light-table-first-run-dialog@2x.png" width="595" height="290">
 
+### Opening files in LightTable from the command line *(optional)*
+
+Run the following commands to create a "shortcut command" called `light-table`:
+
+    echo "export light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
+    source ~/.bash_profile
+
+You can now open files and folders in LightTable from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
 
 ## Testing your setup
 
@@ -108,7 +119,7 @@ Go to your terminal and run the following command:
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will clone a sample Clojure application. 
+This will clone a sample Clojure application.
 
 ![Testing git clone](img/os_x/testing-step1.png)
 
@@ -138,7 +149,7 @@ At the bottom left of the screen, you will see a cube moving and some text about
 
 ![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! 
+If that worked, great!
 
 Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
 
@@ -147,3 +158,23 @@ Now we will open and run the sample Clojure app in LightTable. In LightTable, cl
 You should see a fun welcome message.
 
 Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!
+
+
+## Troubleshooting
+
+### OS X 10.6.8
+
+Light Table actually does work on OS X 10.6.8. It thinks it does not. To convince it otherwise, do this:
+
+  1. Use a text editor to open /Applications/LightTable.app/Contents/Info.plist
+  2. Search for the key LSMinimumSystemVersion
+  3. Remove that key from the file. Delete this entire text: LSMinimumSystemVersion 10.7.5
+  4. Save the file, and you should be able to start Light Table.
+
+### Yosemite
+
+Yosemite was released after Light Table development was stalled.
+Because of this historical reason, students may encounter troubles to start or use Light Table on Yosemite.
+In such a case, [Nightcode](https://sekao.net/nightcode/) is another option.
+See the instruction,
+[Getting Started with Clojure using Nightcode](https://github.com/ClojureBridge/getting-started/blob/master/nightcode.md).

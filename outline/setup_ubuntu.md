@@ -22,7 +22,7 @@ For the rest of this setup, I will tell you to run commands in your terminal. Wh
 
 ## Making sure Java is installed
 
-Run `java -version` in your terminal. If you do not have Java installed, Ubuntu will prompt you to install it. It should look something like this: 
+Run `java -version` in your terminal. If you do not have Java installed, Ubuntu will prompt you to install it. It should look something like this:
 
 ![no java](img/ubuntu/no_java.png)
 
@@ -56,19 +56,19 @@ After you run the above commands, run the `lein version` command. It should take
 
 ## Installing Light Table
 
-You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this: 
+You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this:
 
-![Ubuntu Version](img/ubuntu/ubuntu-version.png) 
+![Ubuntu Version](img/ubuntu/ubuntu-version.png)
 
 Alternatively, open your terminal and type `uname -m` if the output says "x86_64" you have a 64-bit OS, if it says "i686" you have a 32-bit OS.
 
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table.
-Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file". 
+Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file".
 
 ![Light Table downloads](img/light-table-download.png)
 ![Light Table downloads Ubuntu](img/ubuntu/light-table-download.png)
 
-Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`. 
+Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`.
 Check to see that your file is there. `ls`
 Extract the compressed file `tar -xzf LightTableLinux64.tar.gz`
 Check to see that there is now a directory called LightTable `ls`
@@ -77,12 +77,15 @@ Set your path so you can launch LightTable from the command line `export PATH=$P
 Launch LightTable `LightTable`
 
 If you want, you can create a launcher for LightTable. `sudo gnome-desktop-item-edit /usr/share/applications/ --create-new`
-You should see a window like this: 
+You should see a window like this:
 
 ![Create Icon](img/ubuntu/create_icon.png)
 
 Name the launcher LightTable. Type the path to the command `/usr/local/bin/LightTable/LightTable`. Click the icon. The LightTable icon can be found at `/usr/local/bin/LightTable/core/img/lticon.png`.
 
+### Opening files in LightTable from the command line *(optional)*
+
+If you'd prefer, you can open files/folders in LightTable from the command line by typing `light-table /path/to/the/file/you/want/to/open.clj`.
 
 ## Installing Git
 
@@ -150,7 +153,7 @@ At the bottom of the screen, you will see a cube moving and some text about conn
 
 ![Testing Light Table - running in the instarepl](img/ubuntu/testing-step4.png)
 
-If that worked, great! Close Light Table. 
+If that worked, great! Close Light Table.
 
 Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
 
@@ -160,7 +163,7 @@ lein run
 
 This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
 
-![Testing lein run](img/ubuntu/testing-step6.png)
+![Testing lein run](img/ubuntu/testing-lein-run.png)
 
 You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
 
@@ -170,6 +173,6 @@ http://localhost:8080/
 
 This is what your browser should look like if everything has been successful.
 
-![Testing in browser](img/ubuntu/testing-step7.png)
+![Testing in browser](img/ubuntu/testing-browser.png)
 
 Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.

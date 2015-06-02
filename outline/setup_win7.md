@@ -7,6 +7,7 @@ Windows 7 Setup
 * Get Light Table installed
 * Get Git installed
 * Test installation
+* Troubleshooting
 
 ## Starting a command prompt
 
@@ -63,6 +64,23 @@ Inside the Light Table directory, there is an application called Light Table. Ri
 
 See if you already have Git installed at the command prompt with the command `git --version`.
 If not, download it from the [git-scm.com Windows download page](http://git-scm.com/download/win) and run the executable to install.
+
+After installation, try the `git --version` command in a new command prompt window. If you see a version number, git
+was installed correctly.
+
+If you see a message that says, `'git' is not recognized as an internal or external command`,
+try these steps to update your PATH variable properly:
+* Right-click "My Computer" and select "Properties".
+* Click the "Advanced Tab" and then the "Environment Variables" button.
+* Highlight the PATH entry and click "Edit".
+* Scroll to the end of this value and check for a file path at the end that includes "...\Git...".
+* If that path existed:
+  * Click "Okay" until the "My Computer" dialog box is closed.
+  * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and try again.
+* If that path did not exist:
+  * If you did not change the install location of git during installation, add ";C:\Program Files (x86)\Git\cmd" to the end of the line. Make sure you add the semi-colon between file paths and the line includes no spaces between paths.
+  * Click "Okay" until the "My Computer" dialog box is closed.
+  * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and try again.
 
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the command prompt:
@@ -142,4 +160,20 @@ This is what your browser should look like if everything has been successful.
 Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
 
 
+## Troubleshooting
 
+  Students with Windows 7 may get the error below when they run `lein repl` for the first time.
+
+  ```
+  Address family not supported by protocol family: connect
+  ```
+
+  If the error message is this, look at <http://stackoverflow.com/a/21383865>.
+
+
+  This error happens because `lein` command couldn't download necessary stuffs
+  because a program called Relevant Knowledge, some sort of spyware, blocks the traffic.
+  To solve this problem, uninstall Relevant Knowledge.
+  This requires users' (owner's or administrator's) password.
+  Sometimes, attendees haven't heard of such permission stuff.
+  Be ready for that.
