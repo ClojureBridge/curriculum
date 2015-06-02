@@ -100,6 +100,14 @@ prompt. Click "Open".
 
 <img alt="Light Table first-run dialog" src="img/os_x/light-table-first-run-dialog@2x.png" width="595" height="290">
 
+### Opening files in LightTable from the command line *(optional)*
+
+Run the following commands to create a "shortcut command" called `light-table`:
+
+    echo "export light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
+    source ~/.bash_profile
+
+You can now open files and folders in LightTable from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
 
 ## Testing your setup
 
@@ -111,7 +119,7 @@ Go to your terminal and run the following command:
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will clone a sample Clojure application. 
+This will clone a sample Clojure application.
 
 ![Testing git clone](img/os_x/testing-step1.png)
 
@@ -141,7 +149,7 @@ At the bottom left of the screen, you will see a cube moving and some text about
 
 ![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
 
-If that worked, great! 
+If that worked, great!
 
 Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
 
