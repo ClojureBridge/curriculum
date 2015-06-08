@@ -9,18 +9,75 @@ Also feel free to make forks of the curriculum and not contribute back. Make dif
 * Make sure you have a [GitHub account](https://github.com/signup/free)
 * Fork the repository on GitHub
 
+## Keeping Forked Repository Up-to-date
+* Setup your forked repository to keep up-to-date with the original
+  (upstream) repository.
+* Fetch latest upstream and merge it to your repository
+
+```bash
+# Only once, at the very beginning, add upstream
+git remote add upstream https://github.com/ClojureBridge/curriculum.git
+git remote -v                      # origin and upstream should show up
+
+# Fetch upstream every time before making changes
+git fetch upstream                 # fetches branches and commits from upstream
+git fetch rebase upstream/master
+git merge upstream/master          # if you've done some work on master
+git checkout --track upstream/gh-pages  # your gh-pages branch tracks upstream
+git pull --rebase                  # pull and merge commits
+```
+
 ## Making Changes
 * If you are about to make changes on curriculum markdown files,
   read [EDITING-CURRICULUM.md](EDITING-CURRICULUM.md) as well.
+
+* Create your topic branch, make changes, and commit
+
+```bash
+git checkout gh-pages              # your topic branch base should be gh-pages
+git checkout -b your-topic-branch
+
+# make some changes, hack, hack, hack,,,
+
+git add -p                         # add your changes
+git commit -m"commit message"      # commit changes with a message
+```
+
 * (Probably need some stuff in here about keeping slides in sync with narrative, etc)
-* Commit changes
 * (Add more git guidance?)
 
 ## Submitting Changes
 * Push your committed changes to your local fork of the repository
-* Create a pull request 
-* Submit a pull request (PR) to the ClojureBridge/curriculum repository
-* The ClojureBridge curriculum team will review and discuss the pull requestin comments on the PR.
+
+```bash
+git push origin your-topic-branch  # origin is your forked repository
+```
+
+* Create a pull request
+
+  1. Go to your forked repository on github.com
+
+  2. Click "Compare & pull request" button
+
+    ![click compare & pull request button](img/compare-and-pull-request-button-1.png)
+
+  3. [Another button] Or, change branch to your topic branch and click a
+    button on the left
+
+    ![another button to make pull request](img/compare-and-pull-request-button-2.png)
+
+  4. Change _base_ to gh-pages
+
+    ![change base](img/open-a-pull-request.png)
+
+  5. Write title and comment, then click "Create pull request"
+    button
+
+    ![create pull request](img/create-pull-request.png)
+
+
+* The ClojureBridge curriculum team will review and discuss the pull
+  request in comments on the PR.
 * Two curriculum team members must give a thumbs up, then the PR will be accepted.
 
 
