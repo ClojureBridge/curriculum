@@ -12,6 +12,7 @@ Also feel free to make forks of the curriculum and not contribute back. Make dif
 ## Keeping Forked Repository Up-to-date
 * Setup your forked repository to keep up-to-date with the original
   (upstream) repository.
+* Fetch latest upstream and merge it to your repository
 
 ```bash
 # Only once, at the very beginning, add upstream
