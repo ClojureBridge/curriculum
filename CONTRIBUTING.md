@@ -52,6 +52,7 @@ git push origin your-topic-branch  # origin is your forked repository
 ```
 
 * Create a pull request
+    - change _base_ to gh-pages
 
 ![change base](img/open-a-pull-request.png)
 
