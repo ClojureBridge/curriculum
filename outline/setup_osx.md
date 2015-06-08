@@ -104,7 +104,7 @@ prompt. Click "Open".
 
 Run the following commands to create a "shortcut command" called `light-table`:
 
-    echo "export light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
+    echo "alias light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
     source ~/.bash_profile
 
 You can now open files and folders in LightTable from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
