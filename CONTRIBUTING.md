@@ -31,15 +31,16 @@ git pull --rebase                  # pull and merge commits
 * If you are about to make changes on curriculum markdown files,
   read [EDITING-CURRICULUM.md](EDITING-CURRICULUM.md) as well.
 
+* Create your topic branch, make changes, and commit
+
 ```bash
 git checkout gh-pages              # your topic branch base should be gh-pages
 git checkout -b your-topic-branch
 
-# make some changes
+# make some changes, hack, hack, hack,,,
 
 git add -p                         # add your changes
 git commit -m"commit message"      # commit changes with a message
-git push origin your-topic-branch  # origin is your forked repository
 ```
 
 * (Probably need some stuff in here about keeping slides in sync with narrative, etc)
@@ -60,7 +61,7 @@ git push origin your-topic-branch  # origin is your forked repository
 
     ![click compare & pull request button](img/compare-and-pull-request-button-1.png)
 
-  3. [Another button] Or, change branch to your topic branch and click the
+  3. [Another button] Or, change branch to your topic branch and click a
     button on the left
 
     ![another button to make pull request](img/compare-and-pull-request-button-2.png)
