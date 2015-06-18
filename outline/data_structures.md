@@ -163,7 +163,7 @@ count of the number of items in a vector. `nth` gives us the nth
 item in the vector. Note that we start counting at 0, so in the
 example, calling `nth` with the number 1 gives us what we'd call the
 second element when we aren't programming. `first` returns the first
-item in the collection. `rest` returns all except the frist item.
+item in the collection. `rest` returns all except the first item.
 Try not to think about that and `nth` at the same time, as they can
 be confusing.
 {: ng-show="block81" .description}
