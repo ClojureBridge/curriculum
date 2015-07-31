@@ -117,7 +117,7 @@ This will put you in the directory with the source code for this sample bit of C
 lein repl
 ```
 
-This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
+This could take a long time, and will download many other pieces of code it relies on. You might see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
 ![Testing lein repl](img/testing-step2.png)
 
