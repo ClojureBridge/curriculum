@@ -120,11 +120,18 @@ This could take a long time, and will download many other pieces of code it reli
 
 This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
-Now we will open and run the sample Clojure app in Nightcode. Start Nightcode, and once it is started, click the "Import" button. Find the directory you created earlier, `welcometoclojurebridge` and click "Open." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program.
+Now we will open and run the sample Clojure app in Nightcode. Start Nightcode, and once it is started, click the "Import" button. Find the directory you created earlier, `welcometoclojurebridge` and click "Open."
 
-![Opening core.clj](img/nightcode-welcome-to-clojurebridge.png)
-Click on the file contents and press the following key combination:
+![Importing welcometoclojurebridge](img/nightcode/nightcode-step2.png)
 
-You should see a fun welcome message.
+In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program.
+
+![Opening core.clj](img/nightcode/nightcode-step3.png)
+
+Click on the file contents and press the "Run with REPL" button. It should look something like this:
+
+![Starting a REPL](img/nightcode/nightcode-step4.png)
+
+Once the REPL is loaded, press the "Reload" button to run the code. Nightcode will load the program and you should see a fun welcome message.
 
 Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!
