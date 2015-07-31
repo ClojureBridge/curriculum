@@ -54,7 +54,7 @@ Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, cli
 
 The first time you launch Nightcode it will look like this:
 
-![Nightcode startup](img/nightcode-startup.png)
+![Nightcode startup](img/nightcode/nightcode-step1.png)
 
 ## Installing Git
 
