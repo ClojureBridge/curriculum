@@ -56,7 +56,7 @@ After you run the above commands, run the `lein version` command. It should take
 
 ## Installing Nightcode
 
-Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, click the "Free Download" link and you will download a .jar file. There should now be a file named `nightcode-0.4.7-standalone.jar` in your Downloads folder. If Java is installed, you can double click the JAR file to run it. Depending on your Mac's security settings, you may see an error message that says the author of the file can't be verified. You'll be able to run Nightcode if you relax the security settings.
+Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, click the "Free Download" link and you will download a .jar file. There should now be a file named `nightcode-0.4.7-standalone.jar` in your Downloads folder. If Java is installed, you can double click the JAR file to run it.
 
 The first time you launch Nightcode it will look like this:
 
