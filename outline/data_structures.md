@@ -184,7 +184,7 @@ be confusing.
 ### EXERCISE: Make a vector
 {: .slide_title .slide}
 
-* Make a vector of the high temperatues for the next 7 days in the
+* Make a vector of the high temperatures for the next 7 days in the
   town where you live.
 * Then use the `nth` function to get the high temperature for next
   Tuesday.
