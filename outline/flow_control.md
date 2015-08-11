@@ -236,7 +236,7 @@ with keys `:first`, `:last`, and possibly `:middle`.
 > a value. Within the `let`, `largest` and `smallest` are defined.
 {: ng-show="block123" .description}
 
-> Type the `spread` function into your instarepl and see how it
+> Type the `spread` function into your REPL and see how it
 > evaluates.
 {: ng-show="block124" .description}
 
