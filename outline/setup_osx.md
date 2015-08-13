@@ -85,11 +85,47 @@ After you set up Leiningen as above, run the `lein version` command. This should
 
 ## Installing Nightcode
 
+If you have a promo code from Zach Oakes, skip down to "Using a Mac
+App Store promo code".
+
+### From the Nightcode Web Site
+
 Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, click the "Free Download" link and you will download a .jar file. There should now be a file named `nightcode-0.4.7-standalone.jar` in your Downloads folder. If Java is installed, you can double click the JAR file to run it. Depending on your Mac's security settings, you may see an error message that says the author of the file can't be verified. You'll be able to run Nightcode if you relax the security settings.
 
 The first time you launch Nightcode it will look like this:
 
 ![Nightcode startup](img/nightcode/nightcode-step1.png)
+
+### Using a Mac App Store promo code
+
+If you have a promo code to install Nightcode for free (many thanks to
+[Zach Oakes](https://sekao.net/) for kindly donating these to
+students!), you can install it from the Mac App Store.
+
+Open the App Store:
+
+![Open the App Store](img/osx_app_store_nightcode/app-store-nightcode-1.png)
+
+Click "Redeem" on the right-hand side.
+
+![App Store: Redeem](img/osx_app_store_nightcode/app-store-nightcode-2.png)
+
+You may be asked to enter your Apple password at this point.
+
+Type the promo code into the box at the bottom of the page:
+
+![Enter promo code](img/osx_app_store_nightcode/app-store-nightcode-3.png)
+
+The code will get verified, and you should see a success message:
+
+![Promo code was valid!](img/osx_app_store_nightcode/app-store-nightcode-4.png)
+
+Nightcode will then start downloading. It's about 100MB, so it could take a while:
+
+![Nightcode installed](img/osx_app_store_nightcode/app-store-nightcode-5.png)
+
+Once it has fully downloaded, you can run Nightcode just like any
+other app on your Mac.
 
 ## Testing your setup
 
