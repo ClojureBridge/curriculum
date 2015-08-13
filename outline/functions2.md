@@ -142,3 +142,8 @@ to know them. Let's look at some others.
 ;=> "i like peanut butter and jelly"
 ```
 </section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
+</section>
