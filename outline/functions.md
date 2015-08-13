@@ -254,3 +254,8 @@ to return the average amount each person should pay.
 
 * Hint: You will need to use the functions `reduce` and `count`.
 </section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
+</section>

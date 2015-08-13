@@ -480,3 +480,8 @@ average-fruit-amount
 numbers.
 * `(mod x y)` will give you the remainder when dividing two numbers.
 </section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
+</section>
