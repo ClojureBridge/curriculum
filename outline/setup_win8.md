@@ -4,7 +4,7 @@ Windows 8 Setup
 * Start a command prompt
 * Get Java installed
 * Get Leiningen installed
-* Get Light Table installed
+* Get Nightcode installed
 * Get Git installed
 * Test installation
 
@@ -48,16 +48,13 @@ Leiningen is a tool used on the command line to manage Clojure projects.
 
 Next, go back to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/) and download the file linked as "leiningen-win-installer." Run this executable and follow the "Detailed installation" section at the Leiningen Windows Installer site. At the end of the installation, leave "Run a Clojure REPL" checked before you click "Finish." If a terminal window opens that looks like the one on the Leiningen Windows installer site, then you are good to go.
 
-## Installing Light Table
+## Installing Nightcode
 
-Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "Win" button and you will download a .zip file.
+Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, click the "Free Download" link and you will download a .jar file. There should now be a file named `nightcode-0.4.7-standalone.jar` in your Downloads folder. If Java is installed, you can double click the JAR file to run it.
 
-![Light Table downloads](img/light-table-download.png)
-![Light Table downloads Windows](img/win/light-table-download.png)
+The first time you launch Nightcode it will look like this:
 
-Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
-
-Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
+![Nightcode startup](img/nightcode/nightcode-step1.png)
 
 ## Installing Git
 
@@ -105,63 +102,48 @@ Expected result:
 
 ## Testing your setup
 
-You have set up Java, Leiningen, Light Table, and Git on your computer, all the tools you will need for this program. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.
+You have set up Java, Leiningen, Nightcode, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.
 
 Go to your terminal and run the following command:
 
-`git clone https://github.com/heroku/clojure-sample.git`
+```
+git clone https://github.com/ClojureBridge/welcometoclojurebridge
+```
 
-This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
+This will clone a sample Clojure application.
 
-![Testing git clone](img/win7/testing-step1.png)
+![Testing git clone](img/testing-step1.png)
 
 Then run the command:
 
-`cd clojure-sample`
+```
+cd welcometoclojurebridge
+```
 
 This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
 
-`lein repl`
-
-This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
-
-![Testing lein repl](img/win7/testing-step2.png)
-
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+  1  1)` and hit enter. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
-
-Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
-
-![Testing Light Table - starting instarepl](img/win7/testing-step3.png)
-
-At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
-
-![Testing Light Table - running in the instarepl](img/win7/testing-step4.png)
-
-If that worked, great! Close Light Table. 
-
-Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
-
 ```
-lein run
+lein repl
 ```
 
-This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
+This could take a long time, and will download many other pieces of code it relies on. You might see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein run](img/win/testing-lein-run.png)
+![Testing lein repl](img/testing-step2.png)
 
-You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
+This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and d button on your keyboard together (abbreviated as Ctrl-d). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
-```
-http://localhost:8080/
-```
+Now we will open and run the sample Clojure app in Nightcode. Start Nightcode, and once it is started, click the "Import" button. Find the directory you created earlier, `welcometoclojurebridge` and click "Open."
 
-This is what your browser should look like if everything has been successful.
+![Importing welcometoclojurebridge](img/nightcode/nightcode-step2.png)
 
-![Testing in browser](img/win/testing-browser.png)
+In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program.
 
-Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
+![Opening core.clj](img/nightcode/nightcode-step3.png)
 
+Click on the file contents and press the "Run with REPL" button. It should look something like this:
 
+![Starting a REPL](img/nightcode/nightcode-step4.png)
 
-### Troubleshooting
-* If you receive errors while running Light Table about Java or JDK, these may be resolved by finishing the installation of Leiningen first. If not, see a TA to look at your environment variables.
+Once the REPL is loaded, press the "Reload" button to run the code. Nightcode will load the program and you should see a fun welcome message.
+
+Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!

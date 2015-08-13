@@ -7,7 +7,7 @@ Set up guide
 
 Curriculum
 ------
-<http://clojurebridge.github.io/curriculum/>
+<http://denver-clojurebridge.github.io/curriculum/>
 
 * [Introduction to Programming with Clojure](outline/intro.md)
 * [Data Structures](outline/data_structures.md)

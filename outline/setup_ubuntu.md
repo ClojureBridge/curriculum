@@ -4,13 +4,13 @@ Ubuntu Setup
 * Start a terminal
 * Make sure Java is installed
 * Get Leiningen installed
-* Get Light Table installed
+* Get Nightcode installed
 * Get Git installed
 * Test installation
 
 ## Starting a terminal
 
-For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer, and you can open it by clicking "Dash Home" and typing `Terminal`. You can also open a terminal at any time by pressing `CTRL-ALT-T`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
+For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer, and you can open it by clicking "Dash Home" and typing `Terminal`. You can also open a terminal at any time by pressing `Ctrl-Alt-t`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
 
 Go ahead and open your terminal now. It should look something like this:
 
@@ -54,38 +54,13 @@ export PATH=$PATH:/usr/local/bin
 
 After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
-## Installing Light Table
+## Installing Nightcode
 
-You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this:
+Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, click the "Free Download" link and you will download a .jar file. There should now be a file named `nightcode-0.4.7-standalone.jar` in your Downloads folder. If Java is installed, you can double click the JAR file to run it.
 
-![Ubuntu Version](img/ubuntu/ubuntu-version.png)
+The first time you launch Nightcode it will look like this:
 
-Alternatively, open your terminal and type `uname -m` if the output says "x86_64" you have a 64-bit OS, if it says "i686" you have a 32-bit OS.
-
-Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table.
-Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file".
-
-![Light Table downloads](img/light-table-download.png)
-![Light Table downloads Ubuntu](img/ubuntu/light-table-download.png)
-
-Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`.
-Check to see that your file is there. `ls`
-Extract the compressed file `tar -xzf LightTableLinux64.tar.gz`
-Check to see that there is now a directory called LightTable `ls`
-Move the LightTable directory to "/usr/local/bin" `sudo mv LightTable /usr/local/bin`
-Set your path so you can launch LightTable from the command line `export PATH=$PATH:/usr/local/bin/LightTable`
-Launch LightTable `LightTable`
-
-If you want, you can create a launcher for LightTable. `sudo gnome-desktop-item-edit /usr/share/applications/ --create-new`
-You should see a window like this:
-
-![Create Icon](img/ubuntu/create_icon.png)
-
-Name the launcher LightTable. Type the path to the command `/usr/local/bin/LightTable/LightTable`. Click the icon. The LightTable icon can be found at `/usr/local/bin/LightTable/core/img/lticon.png`.
-
-### Opening files in LightTable from the command line *(optional)*
-
-If you'd prefer, you can open files/folders in LightTable from the command line by typing `light-table /path/to/the/file/you/want/to/open.clj`.
+![Nightcode startup](img/nightcode/nightcode-step1.png)
 
 ## Installing Git
 
@@ -115,22 +90,22 @@ Expected result:
 
 ## Testing your setup
 
-You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out.
+You have set up Java, Leiningen, Nightcode, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out.
 
 Go to your terminal and run the following command:
 
 ```
-git clone https://github.com/heroku/clojure-sample.git
+git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
+This will clone a sample Clojure application.
 
-![Testing git clone](img/ubuntu/testing-step1.png)
+![Testing git clone](img/testing-step1.png)
 
 Then run the command:
 
 ```
-cd clojure-sample
+cd welcometoclojurebridge
 ```
 
 This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
@@ -141,38 +116,22 @@ lein repl
 
 This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein repl](img/ubuntu/testing-step2.png)
+![Testing lein repl](img/testing-step2.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
+This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and d button on your keyboard together (abbreviated as Ctrl-d). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
-Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+Now we will open and run the sample Clojure app in Nightcode. Start Nightcode, and once it is started, click the "Import" button. Find the directory you created earlier, `welcometoclojurebridge` and click "Open."
 
-![Testing Light Table - starting instarepl](img/ubuntu/testing-step3.png)
+![Importing welcometoclojurebridge](img/nightcode/nightcode-step2.png)
 
-At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
+In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program.
 
-![Testing Light Table - running in the instarepl](img/ubuntu/testing-step4.png)
+![Opening core.clj](img/nightcode/nightcode-step3.png)
 
-If that worked, great! Close Light Table.
+Click on the file contents and press the "Run with REPL" button. It should look something like this:
 
-Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
+![Starting a REPL](img/nightcode/nightcode-step4.png)
 
-```
-lein run
-```
+Once the REPL is loaded, press the "Reload" button to run the code. Nightcode will load the program and you should see a fun welcome message.
 
-This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
-
-![Testing lein run](img/ubuntu/testing-lein-run.png)
-
-You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
-
-```
-http://localhost:8080/
-```
-
-This is what your browser should look like if everything has been successful.
-
-![Testing in browser](img/ubuntu/testing-browser.png)
-
-Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
+Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!

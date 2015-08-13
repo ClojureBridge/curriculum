@@ -6,11 +6,8 @@ OS X Setup
 * Configure Git
 * Make sure Java is installed
 * Get Leiningen installed
-* Get LightTable installed
+* Get Nightcode installed
 * Test installation
-* Troubleshooting
-    - OS X 10.6.8
-    - Yosemite
 
 ## Starting a terminal
 
@@ -28,7 +25,7 @@ For the rest of this setup, I will tell you to run commands in your terminal. Wh
 
 To see if you have git installed type in: `git --version` If you have `git version 1.9.3 (Apple Git-50)` or above you should be fine.
 
-If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The Git installer may begin downloading automatically. If it does not, click the manual download link. Once the download has finished, open __~/Downloads__ in Finder and double-click the downloaded file (named something like __git-2.0.1-intel-universal-snow-leopard.dmg__). This will mount the disk image and open a new Finder window. Double-click the installer package (named something like __git-2.0.1-intel-universal-snow-leopard.pkg__). You may be told that the installer can't be opened because it is from an unidentified developer. If so, click "OK", then right-click (or control-click) the file and select "Open" from the contextual menu. You may be warned again that the installer is from an unidentified developer, but this time you'll have the option to click "Open". Do so. This will launch the installer. Follow its directions, and enter your password when prompted to do so. Once you have finished this process it's safe to unmount the disk image (by clicking the eject button in the Finder sidebar) and delete the file from the Downloads folder.
+If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The Git installer may begin downloading automatically. If it does not, click the manual download link. Once the download has finished, open __~/Downloads__ in Finder and double-click the downloaded file (named something like __git-2.4.3-intel-universal-mavericks.dmg__). This will mount the disk image and open a new Finder window. Double-click the installer package (named something like __git-2.4.3-intel-universal-mavericks.pkg__). You may be told that the installer can't be opened because it is from an unidentified developer. If so, click "OK", then right-click (or control-click) the file and select "Open" from the contextual menu. You may be warned again that the installer is from an unidentified developer, but this time you'll have the option to click "Open". Do so. This will launch the installer. Follow its directions, and enter your password when prompted to do so. Once you have finished this process it's safe to unmount the disk image (by clicking the eject button in the Finder sidebar) and delete the file from the Downloads folder.
 
 ## Configure Git
 
@@ -86,32 +83,53 @@ Now run `which lein` and you should see the `lein` command.
 
 After you set up Leiningen as above, run the `lein version` command. This should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
-## Installing Light Table
+## Installing Nightcode
 
-Go to the [LightTable site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "OS X 10.7+" button and you will download a .zip file.
+If you have a promo code from Zach Oakes, skip down to "Using a Mac
+App Store promo code".
 
-![Light Table downloads](img/light-table-download.png)
-![Light Table downloads Mac](img/os_x/light-table-download.png)
+### From the Nightcode Web Site
 
-There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
+Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, click the "Free Download" link and you will download a .jar file. There should now be a file named `nightcode-0.4.7-standalone.jar` in your Downloads folder. If Java is installed, you can double click the JAR file to run it. Depending on your Mac's security settings, you may see an error message that says the author of the file can't be verified. You'll be able to run Nightcode if you relax the security settings.
 
-The first time you launch LightTable you will be presented with a confirmation
-prompt. Click "Open".
+The first time you launch Nightcode it will look like this:
 
-<img alt="Light Table first-run dialog" src="img/os_x/light-table-first-run-dialog@2x.png" width="595" height="290">
+![Nightcode startup](img/nightcode/nightcode-step1.png)
 
-### Opening files in LightTable from the command line *(optional)*
+### Using a Mac App Store promo code
 
-Run the following commands to create a "shortcut command" called `light-table`:
+If you have a promo code to install Nightcode for free (many thanks to
+[Zach Oakes](https://sekao.net/) for kindly donating these to
+students!), you can install it from the Mac App Store.
 
-    echo "alias light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
-    source ~/.bash_profile
+Open the App Store:
 
-You can now open files and folders in LightTable from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
+![Open the App Store](img/osx_app_store_nightcode/app-store-nightcode-1.png)
+
+Click "Redeem" on the right-hand side.
+
+![App Store: Redeem](img/osx_app_store_nightcode/app-store-nightcode-2.png)
+
+You may be asked to enter your Apple password at this point.
+
+Type the promo code into the box at the bottom of the page:
+
+![Enter promo code](img/osx_app_store_nightcode/app-store-nightcode-3.png)
+
+The code will get verified, and you should see a success message:
+
+![Promo code was valid!](img/osx_app_store_nightcode/app-store-nightcode-4.png)
+
+Nightcode will then start downloading. It's about 100MB, so it could take a while:
+
+![Nightcode installed](img/osx_app_store_nightcode/app-store-nightcode-5.png)
+
+Once it has fully downloaded, you can run Nightcode just like any
+other app on your Mac.
 
 ## Testing your setup
 
-You have set up Java, Leiningen, LightTable, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out.
+You have set up Java, Leiningen, Nightcode, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.
 
 Go to your terminal and run the following command:
 
@@ -121,7 +139,7 @@ git clone https://github.com/ClojureBridge/welcometoclojurebridge
 
 This will clone a sample Clojure application.
 
-![Testing git clone](img/os_x/testing-step1.png)
+![Testing git clone](img/testing-step1.png)
 
 Then run the command:
 
@@ -135,46 +153,24 @@ This will put you in the directory with the source code for this sample bit of C
 lein repl
 ```
 
-This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
+This could take a long time, and will download many other pieces of code it relies on. You might see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein repl](img/os_x/testing-step2.png)
+![Testing lein repl](img/testing-step2.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `sample.app=> Bye for now!`
+This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and d button on your keyboard together (abbreviated as Ctrl-d). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
-Now, start Applications > LightTable. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving LightTable a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+Now we will open and run the sample Clojure app in Nightcode. Start Nightcode, and once it is started, click the "Import" button. Find the directory you created earlier, `welcometoclojurebridge` and click "Open."
 
-![Testing LightTable - starting instarepl](img/os_x/testing-step3.png)
+![Importing welcometoclojurebridge](img/nightcode/nightcode-step2.png)
 
-At the bottom left of the screen, you will see a cube moving and some text about connecting, retrieving and installing dependencies. Wait until that stops moving, then type `(+ 1 1)` into the window. It should look like the following image:
+In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program.
 
-![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
+![Opening core.clj](img/nightcode/nightcode-step3.png)
 
-If that worked, great!
+Click on the file contents and press the "Run with REPL" button. It should look something like this:
 
-Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
+![Starting a REPL](img/nightcode/nightcode-step4.png)
 
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
-
-You should see a fun welcome message.
+Once the REPL is loaded, press the "Reload" button to run the code. Nightcode will load the program and you should see a fun welcome message.
 
 Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!
-
-
-## Troubleshooting
-
-### OS X 10.6.8
-
-Light Table actually does work on OS X 10.6.8. It thinks it does not. To convince it otherwise, do this:
-
-  1. Use a text editor to open /Applications/LightTable.app/Contents/Info.plist
-  2. Search for the key LSMinimumSystemVersion
-  3. Remove that key from the file. Delete this entire text: LSMinimumSystemVersion 10.7.5
-  4. Save the file, and you should be able to start Light Table.
-
-### Yosemite
-
-Yosemite was released after Light Table development was stalled.
-Because of this historical reason, students may encounter troubles to start or use Light Table on Yosemite.
-In such a case, [Nightcode](https://sekao.net/nightcode/) is another option.
-See the instruction,
-[Getting Started with Clojure using Nightcode](https://github.com/ClojureBridge/getting-started/blob/master/nightcode.md).

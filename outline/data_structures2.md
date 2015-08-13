@@ -254,7 +254,7 @@ More Data Structures
 ;=> ["Margaret Atwood" "Doris Lessing" "Ursula Le Guin" "Alice Munro"]
 ```
 
-* Hint: First, create a function that returns the name when given a single person's map. Consider using the function [Map](http://grimoire.arrdem.com/1.6.0/clojure.core/map/) (covered on [Functions](functions.md) to apply that function to each element in your list of maps).
+* Hint: First, create a function that returns the name when given a single person's map. Consider using the [map](http://grimoire.arrdem.com/1.6.0/clojure.core/map/) function (covered in [Functions](functions) to apply that function to each element in your list of maps).
 </section>
 
 <section>
@@ -268,4 +268,9 @@ More Data Structures
 * Lastly, add your map to their information using [conj](http://grimoire.arrdem.com/1.6.0/clojure.core/conj/).
 
 * Use the `get-names` function from Exercise 2 to output a list of the names.
+</section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
 </section>

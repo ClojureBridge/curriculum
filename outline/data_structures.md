@@ -53,7 +53,7 @@ you have programmed in another language, these might have been
 called arrays in that language.
 {: ng-show="block21" .description}
 
-#### Compartments like structure <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
+#### Compartment-like structure <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
 
 > To imagine a vector, imagine a box split into some number of
 > equally-sized compartments. Each of those compartments has a number.
@@ -164,8 +164,7 @@ item in the vector. Note that we start counting at 0, so in the
 example, calling `nth` with the number 1 gives us what we'd call the
 second element when we aren't programming. `first` returns the first
 item in the collection. `rest` returns all except the first item.
-Try not to think about that and `nth` at the same time, as they can
-be confusing.
+
 {: ng-show="block81" .description}
 
 ```clojure
@@ -184,9 +183,14 @@ be confusing.
 ### EXERCISE: Make a vector
 {: .slide_title .slide}
 
-* Make a vector of the high temperatues for the next 7 days in the
+* Make a vector of the high temperatures for the next 7 days in the
   town where you live.
 * Then use the `nth` function to get the high temperature for next
   Tuesday.
 
+</section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
 </section>
