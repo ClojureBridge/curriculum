@@ -53,7 +53,7 @@ you have programmed in another language, these might have been
 called arrays in that language.
 {: ng-show="block21" .description}
 
-#### Compartments like structure <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
+#### Compartment-like structure <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
 
 > To imagine a vector, imagine a box split into some number of
 > equally-sized compartments. Each of those compartments has a number.
@@ -184,7 +184,7 @@ be confusing.
 ### EXERCISE: Make a vector
 {: .slide_title .slide}
 
-* Make a vector of the high temperatues for the next 7 days in the
+* Make a vector of the high temperatures for the next 7 days in the
   town where you live.
 * Then use the `nth` function to get the high temperature for next
   Tuesday.
