@@ -60,7 +60,7 @@ to know them. Let's look at some others.
 > The other comparison functions are `>`, `>=`, `<`, `<=` and `not=`.
 > All but the last of these are used exclusively with numbers.
 > Like all Clojure functions, the comparison functions are used as
-> prefixes, so they can be a little tricky. Here's some examples:
+> prefixes, so they can be a little tricky. Here are some examples:
 {: ng-show="block21" .description}
 
 ```clojure
