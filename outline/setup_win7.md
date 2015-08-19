@@ -56,7 +56,7 @@ Go to the [Light Table site](http://www.lighttable.com/). On the page there, you
 ![Light Table downloads](img/light-table-download.png)
 ![Light Table downloads Windows](img/win/light-table-download.png)
 
-Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
+Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop, or another location of your choosing. Be sure the location you choose does not have spaces anywhere in the file path.
 
 Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
 
