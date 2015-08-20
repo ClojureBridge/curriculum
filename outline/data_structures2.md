@@ -269,3 +269,8 @@ More Data Structures
 
 * Use the `get-names` function from Exercise 2 to output a list of the names.
 </section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
+</section>

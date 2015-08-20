@@ -479,3 +479,8 @@ average-fruit-amount
 * `(quot x y)` will give you the whole number part of x divided by y.
 * `(rem x y)` will give you the remainder of x divided by y.
 </section>
+
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
+</section>
