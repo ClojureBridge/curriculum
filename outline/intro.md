@@ -120,8 +120,8 @@ Introduction to Programming with Clojure
 
 #### Parentheses <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
 
-> The first thing you notice are parentheses, probably. Parentheses
-> enclose instructions to the computer in Clojure. A left parenthesis
+> Notice the parentheses. Parentheses enclose instructions to the
+> computer in Clojure. A left parenthesis
 > is the start of the instruction, and a matching right parenthesis is
 > the end of enclosing instruction. Normally, Clojure code has a lot
 > of nested parentheses, on other words, nested enclosing instructions.
