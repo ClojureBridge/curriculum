@@ -21,7 +21,7 @@ ClojureBridge
 
 :exclamation: _Note_ :exclamation:
 
-This index.md is for http://clojurebridge.github.io/curriculum/
+This index.md is for http://clojurebridge.github.io/curriculum/index.v0.html
 and rendered by jekyll framework.
 Links below won't work if you are reading this comment :smile:
 Please look at [README.md](README.md) instead. :green_heart: :blue_heart:

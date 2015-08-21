@@ -17,24 +17,25 @@ Curriculum
 * [Simple Values](outline/simple_values.md)
 * [Data Structures](outline/data_structures.md)
 * [Functions](outline/functions.md)
-* [Capstone App: Drawing Lines](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
+* [Capstone App: Drawing Lines](http://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
 * [Flow Control and Logic](outline/flow_control.md)
 * [[bonus module] Sequences](outline/sequences.md)
 
 Choices of Capstone App - Part. 2
 ----------------
-* [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
-* [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+* [Turtles Walk](http://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
+* [Snowflakes](http://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
   (another drawing app)
-* [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
-* [Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api)
+* [Twinkle Little Star](http://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+* [Global Growth](http://github.com/ClojureBridge/global-growth)  (web app with REST api)
 * [Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
   (mini exercise of Strings and Characters)
 
 Supporting Materials
 --------------------
 * [Student Cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
-* [Old Capstone App: global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
+* [Old Curriculum](http://clojurebridge.github.io/curriculum/index.v0.html)
+* [Old Capstone App: global-growth web app](http://github.com/ClojureBridge/global-growth/blob/master/README.md)
 
 License
 -------
