@@ -20,10 +20,9 @@ Introduction to Programming with Clojure
 * Why Clojure?
 * What is Clojure good at?
 * What does Clojure look like?
+    - Comments
 * What is a REPL?
-* Simple values
-    - Numbers
-* Assigning names to values
+* REPL in action
 </section>
 
 <section>
