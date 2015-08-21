@@ -1,8 +1,12 @@
 ClojureBridge Curriculum
 ========================
 
+Teaching guide
+-------------
+* [ClojureBridge Teacher's Guide](TEACHING.md)
+
 Set up guide
--------
+------------
 * [Getting Set Up](outline/setup.md)
 
 Curriculum
@@ -10,18 +14,22 @@ Curriculum
 <http://clojurebridge.github.io/curriculum/>
 
 * [Introduction to Programming with Clojure](outline/intro.md)
+* [Simple Values](outline/simple_values.md)
 * [Data Structures](outline/data_structures.md)
 * [Functions](outline/functions.md)
-* [More Simple Values](outline/simple_values2.md)
-* [More Functions](outline/functions2.md)
-* [More Data Structures](outline/data_structures2.md)
-* [Flow Control](outline/flow_control.md)
+* [Capstone App: Drawing Lines](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
+* [Flow Control and Logic](outline/flow_control.md)
+* [[bonus module] Sequences](outline/sequences.md)
 
-Capstone Apps
--------------
-* [Part. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)  -- [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
-* [Part. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
-
+Choices of Capstone App - Part. 2
+----------------
+* [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
+* [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+  (another drawing app)
+* [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+* [Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api)
+* [Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
+  (mini exercise of Strings and Characters)
 
 Supporting Materials
 --------------------

@@ -3,7 +3,34 @@ ClojureBridge Teacher's Guide
 
 There are many ways to teach the ClojureBridge material, and none of them are "right." The following is a guide to working though the curriculum with students based on the experience of some workshop organizers and teachers.
 
-There are three pieces to the curriculum: the curriculum [narrative](README.md), the [slides](http://clojurebridge.github.io/curriculum), and the capstone app ([part 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md) and [part 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)). The slides are intended to be in sync with the curriculum narrative; the slides are what you show on the projector in front of the room, while the narrative is a more detailed explanation of what is introduced in the slides. Students follow along with the narrative on their own computers or use it to work on their own.
+There are six pieces to the curriculum: the curriculum
+[slides and narrative](http://clojurebridge.github.io/curriculum),
+and the capstone app part.1:
+[Drawing Lines](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md).
+For capstone app part. 2,
+[Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md)
+(for function study),
+[Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+(another drawing app),
+[Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds),
+[Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api),
+[Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
+(mini exercise of Strings and Characters).
+
+You may skip bonus sections and a module to fit with a workshop
+progress. However, to go over part. 2 capstone apps, some bonuses should
+be covered. For example, Turtle and Twinkle use sequences and let
+binding. Snowflakes app is the easiest to try out. It just needs a flow
+control in addition to the part. 1 app. Global Growth is quite a high
+level app and only for very advanced students. Copy&pasting code only
+won't take so long, but it requires REST API and ring/compojure knowledge.
+
+The slides and the narrative curriculum are the exactly the same
+files. The slide forms are what you show on the projector in front of
+the room, while the narrative forms are easy to read detailed
+explanation of what is introduced in the slides. Students follow along
+with the narrative on their own computers or use it to work on their
+own.
 
 Curriculum
 ----------
@@ -37,6 +64,7 @@ Make sure to spend some time during the Installfest or at the beginning of Satur
 - Start an Instarepl in the command pane by typing `Insta`
 - Set the font size, enable auto-closing parentheses, or add line numbers in `Settings: User behaviors`
 - Evaluate a file with `Cmd-Shift-Enter` or, on Windows, `Ctrl-Shift-Enter`
+- Evaluate a form with `Cmd-Enter` or, on Windows, `Ctrl-Enter`
 
 Students who want to do more can take a look at the [Light Table tutorial](http://docs.lighttable.com/tutorials/full/)
 
@@ -50,7 +78,7 @@ Provide plenty of time for exercises. That is where the real fun happens. TAs sh
 
 Capstone App
 ------------
-Budget your time so that you have enough time for the final Quil project at the end of the day.
+Budget your time so that you have enough time for the part. 2 project at the end of the day.
 
 Outline
 -------
@@ -58,30 +86,29 @@ TODO: add tips under each heading.
 
 * [Getting Set Up](outline/setup.md)
 * [Introduction to Programming with Clojure](outline/intro.md)
-  - 45 min
+  - 20 min
+* [Simple Values](outline/simple_values.md)
+  - 30 min
 * [Data Structures](outline/data_structures.md)
   - 60 min
 * [Functions](outline/functions.md)
+  - 45-60 min
+* [Capstone App 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
   - 60 min
-* [More Simple Values](outline/simple_values2.md)
-  - 20 min
-* [More Functions](outline/functions2.md)
-  - 30 min
-* [More Data Structures](outline/data_structures2.md)
-  - 30 min
 * [Flow Control](outline/flow_control.md)
   - 20 min
+* [[bonus] Sequences](outline/sequences.md)
+  - 10 min
 
-* [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)  -- [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
-  - 60 min
-* [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+* [Capstone App Pt. 2]
+  - 60 - 90 min
 
 
 Supporting Materials
 --------------------
 * [Student cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
 * [Slides](http://clojurebridge.github.io/curriculum)
-* [Old capstone app: global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
+
 
 Other Curricula
 ---------------
