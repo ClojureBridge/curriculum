@@ -29,13 +29,22 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 {% endcomment %}
 
 * [Introduction to Programming with Clojure](outline/intro.html)
+* [Simple Values](outline/simple_values.html)
 * [Data Structures](outline/data_structures.html)
 * [Functions](outline/functions.html)
-* [More Simple Values](outline/simple_values2.html)
-* [More Functions](outline/functions2.html)
-* [More Data Structures](outline/data_structures2.html)
+* [Capstone App: Drawing Lines](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
 * [Flow Control and Logic](outline/flow_control.html)
-* [Capstone App Pt. 1](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
-    * [Repository](https://github.com/ClojureBridge/drawing/blob/master/README.md)
-* [Capstone App Pt. 2](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+* [[bonus module] Sequences](outline/sequences.html)
+
+* Choices of Capstone App - Part. 2
+
+    - [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
+
+    - [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
+          (another drawing app)
+
+    - [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+    - [Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api)
+    - [Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
+          (mini exercise of Strings and Characters)
 </section>

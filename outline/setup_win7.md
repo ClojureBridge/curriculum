@@ -2,11 +2,12 @@ Windows 7 Setup
 ===============
 
 * Start a command prompt
-* Get Java installed
-* Get Leiningen installed
-* Get Light Table installed
-* Get Git installed
-* Test installation
+* Install Git
+* Configure Git
+* Install Java
+* Install Leiningen
+* Install Light Table
+* Test your setup
 * Troubleshooting
 
 ## Starting a command prompt
@@ -23,44 +24,7 @@ If you have never used the command prompt before, you may want to spend some tim
 
 On other operating systems, the command prompt is called the terminal. We will use the terms terminal, command prompt, and command line interchangably.
 
-## Installing Java
-
-Go to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/). You should see two links, one for installing Java and another for "leiningen-win-installer." Click the Java link. Then, you should see a screen like the following:
-
-![First page of Java download](img/win/java-download1.png)
-
-Click the button above "Java Platform (JDK)," as you can see in the above picture. Then you will come to a page that will have the following table on it:
-
-![Second page of Java download](img/win/java-download2.png)
-
-Click the radio button to accept the license agreement, and then download one of the two Windows choices. If you are running 32-bit Windows, choose "Windows x86." If you are running 64-bit Windows, choose "Windows x64."
-
-If you do not know if you are running 32-bit or 64-bit Windows, go to the Control Panel (Start Menu - Control Panel) and choose "System and Security" and then "System." You should see a window like the following:
-
-![Windows My Computer properties](img/win7/system-properties.png)
-
-You should see if you are running 32- or 64-bit Windows beside "System Type."
-
-Once you have downloaded the right Java version, run the executable you downloaded to install Java. Follow the installation wizard.
-
-## Installing Leiningen
-
-Leiningen is a tool used on the command line to manage Clojure projects.
-
-Next, go back to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/) and download the file linked as "leiningen-win-installer." Run this executable and follow the "Detailed installation" section at the Leiningen Windows Installer site. At the end of the installation, leave "Run a Clojure REPL" checked before you click "Finish." If a terminal window opens that looks like the one on the Leiningen Windows installer site, then you are good to go.
-
-## Installing Light Table
-
-Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "Win" button and you will download a .zip file.
-
-![Light Table downloads](img/light-table-download.png)
-![Light Table downloads Windows](img/win/light-table-download.png)
-
-Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop, or another location of your choosing. Be sure the location you choose does not have spaces anywhere in the file path.
-
-Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
-
-## Installing Git
+## Install Git
 
 See if you already have Git installed at the command prompt with the command `git --version`.
 If not, download it from the [git-scm.com Windows download page](http://git-scm.com/download/win) and run the executable to install.
@@ -82,6 +46,8 @@ try these steps to update your PATH variable properly:
   * Click "Okay" until the "My Computer" dialog box is closed.
   * Open a new command prompt window and try `git --version` again. If that does not succeed, restart your computer and try again.
 
+## Configure Git
+
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the command prompt:
 
@@ -101,63 +67,147 @@ Expected result:
 Expected result:
 `your email address`
 
-## Testing your setup
 
-You have set up Java, Leiningen, Light Table, and Git on your computer, all the tools you will need for this program. Before starting, we need to test them out. Make sure you have a terminal (OS X) or command prompt (Windows) open for testing. We will just call this a terminal from now on.
+## Install Java
 
-Go to your terminal and run the following command:
+Go to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/). You should see two links, one for installing Java and another for "leiningen-win-installer." Click the Java link. Then, you should see a screen like the following:
 
-`git clone https://github.com/heroku/clojure-sample.git`
+![First page of Java download](img/win/java-download1.png)
 
-This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
+Click the button above "Java Platform (JDK)," as you can see in the above picture. Then you will come to a page that will have the following table on it:
 
-![Testing git clone](img/win7/testing-step1.png)
+![Second page of Java download](img/win/java-download2.png)
+
+Click the radio button to accept the license agreement, and then download one of the two Windows choices. If you are running 32-bit Windows, choose "Windows x86." If you are running 64-bit Windows, choose "Windows x64."
+
+If you do not know if you are running 32-bit or 64-bit Windows, go to the Control Panel (Start Menu - Control Panel) and choose "System and Security" and then "System." You should see a window like the following:
+
+![Windows My Computer properties](img/win7/system-properties.png)
+
+You should see if you are running 32- or 64-bit Windows beside "System Type."
+
+Once you have downloaded the right Java version, run the executable you downloaded to install Java. Follow the installation wizard.
+
+## Install Leiningen
+
+Leiningen is a tool used on the command line to manage Clojure projects.
+
+Next, go back to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/) and download the file linked as "leiningen-win-installer." Run this executable and follow the "Detailed installation" section at the Leiningen Windows Installer site. At the end of the installation, leave "Run a Clojure REPL" checked before you click "Finish." If a terminal window opens that looks like the one on the Leiningen Windows installer site, then you are good to go.
+
+## Install Light Table
+
+Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "Win" button and you will download a .zip file.
+
+![Light Table downloads](img/light-table-download.png)
+![Light Table downloads Windows](img/win/light-table-download.png)
+
+Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
+
+Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
+
+## Test your setup
+
+You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out.
+
+#### Cloning out github repository
+
+Go to your command prompt windoe and run the following command:
+
+```bash
+git clone https://github.com/ClojureBridge/welcometoclojurebridge
+```
+
+This will clone `welcometoclojurebridge` repository which includes sample Clojure apps.
+Your command prompt should look similar to this picture:
+
+![Testing git clone](img/win/testing-git-clone.png)
 
 Then run the command:
 
-`cd clojure-sample`
+```bash
+cd welcometoclojurebridge
+```
 
-This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
+This will take you to the folder with the source code. After that completes, run:
 
-`lein repl`
+```bash
+lein repl
+```
 
 This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein repl](img/win7/testing-step2.png)
+![Testing lein repl](img/win/testing-lein-repl.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+  1  1)` and hit enter. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
+This is starting a REPL, which we will learn about soon. It's a
+special command prompt for Clojure. At the REPL prompt, type `(+  1
+1)` and hit enter. Did you get the answer `2` back? You will learn
+more about that in the course. For now, press the Control button and D
+button on your keyboard together (abbreviated as Ctrl+D). This should
+take you out of the Clojure REPL and back to your normal command
+prompt. Then, the command prompt will show you the following message: `user=> Bye for now!`
+
+#### Testing Light Table
 
 Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
 
-![Testing Light Table - starting instarepl](img/win7/testing-step3.png)
+![Testing Light Table - starting instarepl](img/win/testing-start-instarepl.png)
 
 At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
 
-![Testing Light Table - running in the instarepl](img/win7/testing-step4.png)
+![Testing Light Table - running in the instarepl](img/win/testing-use-instarepl.png)
 
-If that worked, great! Close Light Table. 
+If that worked, great!
 
-Finally, let's make sure the application you downloaded will run properly.  To test this, you will use Leiningen to run the application on your computer.  As this is a (very simple) web application, you should be able to use a web browser to see it runnning in all its humble glory.  Let's start with
+#### Testing apps
 
-```
-lein run
-```
+Now we will open and run the sample Clojure apps in Light Table. In
+Light Table, click on the menu "File" then choose "Open Folder." Find the
+directory, `welcometoclojurebridge`, which was created when you ran
+`git clone` command. Click "Upload." In the workspace menu on the
+left, click on `welcometoclojurebridge` - `src` -
+`welcometoclojurebridge` - `core.clj`. Double-click the `core.clj` file
+to open it. This is a Clojure program.
 
-This tells Leiningen to run your application.  Different applications run in different ways - this one starts up it's own little webserver on your computer.  If this is the first time you've run a web application, the output in the Terminal window (see below) may not make much sense, so let's test the application in a browser.
+![Testing apps - welcome code](img/testing-welcome-app-code.png)
 
-![Testing lein run](img/win/testing-lein-run.png)
+Click on the file contents and
+press the following key combination:
 
-You now need to open a web browser (Chrome, Firefox, Safari, etc) and point it towards the application running on your computer.  Enter the following URL to access your application:
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
 
-```
-http://localhost:8080/
-```
+You should see a fun welcome message.
 
-This is what your browser should look like if everything has been successful.
+![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
 
-![Testing in browser](img/win/testing-browser.png)
 
-Congratulations! You have actually made a very simple Clojure app, and your computer is all set up to make more.
+Next, in the workspace menu on the left, click on
+`welcometoclojurebridge` - `src` - `clojurebridge-turtle` -
+`walk.clj`. Double-click the core.clj file to open it.
+
+![Testing apps - walk code](img/testing-turtle-walk-code.png)
+
+press the following key combination:
+
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+
+An initial image of the turtles app will pop up.
+
+Type `(forward 40)` at the end of the `walk.clj` and press the
+following combination:
+
+<kbd>Ctrl</kbd> + <kbd>Enter</kbd>
+
+You should see this on the Light Table:
+
+![Testing apps - forward](img/testing-turtle-forward.png)
+
+also, your turtle should move.
+
+
+#### Success!
+
+Congratulations! You have opened and run your first Clojure apps, and
+your install and setup are all completed!
 
 
 ## Troubleshooting

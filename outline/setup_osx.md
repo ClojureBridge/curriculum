@@ -5,9 +5,9 @@ OS X Setup
 * Install Git
 * Configure Git
 * Make sure Java is installed
-* Get Leiningen installed
-* Get LightTable installed
-* Test installation
+* Install Leiningen
+* Install Light Table
+* Test your setup
 * Troubleshooting
     - OS X 10.6.8
     - Yosemite
@@ -35,7 +35,7 @@ If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the terminal:
 
-```
+```bash
 git config --global user.name "Your Actual Name"
 git config --global user.email "Your Actual Email"
 ```
@@ -61,7 +61,7 @@ If Java is installed, you will see something like this in your terminal:
 
 The details of Java's version may differ from what you see above; that is perfectly fine.
 
-## Installing Leiningen
+## Install Leiningen
 
 Leiningen is a tool used on the command line to manage Clojure projects.
 
@@ -86,78 +86,132 @@ Now run `which lein` and you should see the `lein` command.
 
 After you set up Leiningen as above, run the `lein version` command. This should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
-## Installing Light Table
+## Install Light Table
 
-Go to the [LightTable site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "OS X 10.7+" button and you will download a .zip file.
+Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "OS X 10.7+" button and you will download a .zip file.
 
 ![Light Table downloads](img/light-table-download.png)
 ![Light Table downloads Mac](img/os_x/light-table-download.png)
 
 There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
 
-The first time you launch LightTable you will be presented with a confirmation
+The first time you launch Light Table you will be presented with a confirmation
 prompt. Click "Open".
 
 <img alt="Light Table first-run dialog" src="img/os_x/light-table-first-run-dialog@2x.png" width="595" height="290">
 
-### Opening files in LightTable from the command line *(optional)*
+### Opening files in Light Table from the command line *(optional)*
 
 Run the following commands to create a "shortcut command" called `light-table`:
 
     echo "alias light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
     source ~/.bash_profile
 
-You can now open files and folders in LightTable from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
+You can now open files and folders in Light Table from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
 
-## Testing your setup
+## Test your setup
 
-You have set up Java, Leiningen, LightTable, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out.
+You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out.
+
+#### Cloning out github repository
 
 Go to your terminal and run the following command:
 
-```
+```bash
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will clone a sample Clojure application.
+This will clone `welcometoclojurebridge` repository which includes
+sample Clojure apps.
+Your terminal should look similar to this picture:
 
-![Testing git clone](img/os_x/testing-step1.png)
+![Testing git clone](img/os_x/testing-git-clone.png)
+
+#### Testing `lein repl`
 
 Then run the command:
 
-```
+```bash
 cd welcometoclojurebridge
 ```
 
-This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
+This will take you to the directory with the source code. After that completes, run:
 
-```
+```bash
 lein repl
 ```
 
-This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
+This could take a long time, and will download many other pieces of code apps rely on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein repl](img/os_x/testing-step2.png)
+![Testing lein repl](img/os_x/testing-lein-repl.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `sample.app=> Bye for now!`
+This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
-Now, start Applications > LightTable. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving LightTable a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
 
-![Testing LightTable - starting instarepl](img/os_x/testing-step3.png)
+#### Testing Light Table
+
+Now, start Applications > LightTable. Once it is started, press the
+Control button and Space Bar together (abbreviated Ctrl+Space). This
+is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+
+![Testing Light Table - starting instarepl](img/os_x/testing-start-instarepl.png)
 
 At the bottom left of the screen, you will see a cube moving and some text about connecting, retrieving and installing dependencies. Wait until that stops moving, then type `(+ 1 1)` into the window. It should look like the following image:
 
-![Testing LightTable - running in the instarepl](img/os_x/testing-step4.png)
+![Testing Light Table - running in the instarepl](img/os_x/testing-use-instarepl.png)
 
 If that worked, great!
 
-Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
+#### Testing apps
+
+Now we will open and run the sample Clojure apps in Light Table. In
+Light Table, click on the menu "File" then choose "Open Folder." Find the
+directory, `welcometoclojurebridge`, which was created when you ran
+`git clone` command. Click "Upload." In the workspace menu on the
+left, click on `welcometoclojurebridge` - `src` -
+`welcometoclojurebridge` - `core.clj`. Double-click the `core.clj` file
+to open it. This is a Clojure program.
+
+![Testing apps - welcome code](img/testing-welcome-app-code.png)
+
+Click on the file contents and
+press the following key combination:
 
 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
 
 You should see a fun welcome message.
 
-Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!
+![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
+
+
+Next, in the workspace menu on the left, click on
+`welcometoclojurebridge` - `src` - `clojurebridge-turtle` -
+`walk.clj`. Double-click the core.clj file to open it.
+
+![Testing apps - walk code](img/testing-turtle-walk-code.png)
+
+press the following key combination:
+
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+
+An initial image of the turtles app will pop up.
+
+Type `(forward 40)` at the end of the `walk.clj` and press the
+following combination:
+
+<kbd>Cmd</kbd> + <kbd>Enter</kbd>
+
+You should see this on the Light Table:
+
+![Testing apps - forward](img/testing-turtle-forward.png)
+
+also, your turtle should move.
+
+
+#### Success!
+
+Congratulations! You have opened and run your first Clojure apps, and
+your install and setup are all completed!
 
 
 ## Troubleshooting
