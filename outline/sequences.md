@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sequences and Loops
+title: Sequences
 permalink: /outline/sequences.html
 ---
 
@@ -15,7 +15,7 @@ http://clojurebridge.github.io/curriculum/outline/sequences.html
 <section>
 [BONUS]
 
-Sequences and Loops
+Sequences
 -------------------------
 {: .slide-title .chapter}
 
