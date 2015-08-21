@@ -45,10 +45,11 @@ collections together.
 
 #### Sequential collection <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
 
-> Vectors are sequential collections of data. You could say they are
-lists of data, but we also have another collection called a list. If
-you have programmed in another language, these might have been
-called arrays in that language.
+> A vector is a sequential collection of values. A vector may be
+> empty. A vector may contain values of different types.
+> Each value in a vector is numbered starting at 0, that number is
+> called its index. The index is used to refer to each value when
+> looking them up.
 {: ng-show="block21" .description}
 
 #### Compartment-like structure <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
