@@ -113,45 +113,39 @@ Introduction to Programming with Clojure
 ## What does Clojure look like?
 {: .slide_title .slide}
 
-#### Example
-
 ```clojure
+(str "Hello, World!")
 (+ 3 4)
-(max 8 17 2)
-(eat "sandwich")
+(forward :trinity 40)
 ```
 
 #### Parentheses <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
 
 > The first thing you notice are parentheses, probably. Parentheses
-> enclose instructions to the computer in Clojure. Every time you see
-> a left parenthesis, the next thing you see will be an instruction of
-> some sort. That instruction is normally what we call a _function_.
-> Functions do all the hard work in Clojure. They take in
-> _arguments_--which are everything else inside the parentheses after
-> the function--and return a new value.
+> enclose instructions to the computer in Clojure. A left parenthesis
+> is the start of the instruction, and a matching right parenthesis is
+> the end of enclosing instruction. Normally, Clojure code has a lot
+> of nested parentheses, on other words, nested enclosing instructions.
 {: ng-show="block31" .description}
 
-#### Plus sign <button class="link" ng-model="block32" ng-click="block32=!block32">Details</button>
+#### Functions <button class="link" ng-model="block32" ng-click="block32=!block32">Details</button>
 
-> Take a look at the first line. The plus sign that you see is a
-> function. It takes all its arguments and adds them together,
-> returning the sum. This might look confusing if you try to think of
-> it like writing out math, because you'd put the plus sign in a
-> different place that way. Just think of the plus as a function. If
-> you've used Excel, imagine the `SUM()` function in there; it works
-> like that.
+> Next to the parentheses, we see the instructions to the
+> computer. That instruction is normally what we call a _function_.
+> The functions do all the hard work in Clojure.
+> `str`, `+` and `forward` are all functions.
+> When these functions get run, they return a some type of value.
+> Clojure functions always return a value.
 {: ng-show="block32" .description}
 
-#### Functions <button class="link" ng-model="block33" ng-click="block33=!block33">Details</button>
+#### Arguments <button class="link" ng-model="block33" ng-click="block33=!block33">Details</button>
 
-> What is the function on the next line? What are its arguments? What
-> do you think it returns? It returns the number 17, which is the
-> largest of the three numbers.
-{: ng-show="block33" .description}
-
-> How about the last line? That has a thing called a string in it,
-> which we'll learn more about later. Looks like someone is hungry.
+> Many functions take in _arguments_--which are everything else inside
+> the enclosing parentheses after the function--.
+> `str` takes "Hello, World!" and returns a string.
+> `+` takes 3 and 4, adds them, and returns 7.
+> `forward` takes :trinity and 40, moves a turtle by 40 and returns
+> the result.
 {: ng-show="block33" .description}
 </section>
 
@@ -177,10 +171,13 @@ Introduction to Programming with Clojure
 > tastes.
 {: ng-show="block42" .description}
 
+> Reference: [Comment](http://clojurebridge.github.io/community-docs/docs/clojure/comment/)
+{: ng-show="block42" .description}
+
 ```clojure
-;; more food code
-(eat "cookie") ; nom nom nom
-(eat "donut") ; mmm donuts
+;; example functions from a previous slide
+(str "Hello, World!")  ; a well-known hello world
+(+ 3 4)                ; why not 3 + 4? figure out later
 ```
 </section>
 
@@ -207,277 +204,86 @@ Introduction to Programming with Clojure
 ## REPL in action
 {: .slide_title .slide}
 
-#### Light Table's "insta-REPL" <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
+#### Light Table's REPL <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
 
 > Clojure has a REPL that you can run from the terminal easily, and
 > we'll talk more about that later, but for now, let's use Light
-> Table's "insta-REPL," a nice way to interact with Clojure from
+> Table's REPL. It is a nice way to interact with Clojure from
 > within Light Table.
 {: ng-show="block61" .description}
 
 
-#### Start REPL <button class="link" ng-model="block62" ng-click="block62=!block62">Details</button>
+#### insta-REPL <button class="link" ng-model="block62" ng-click="block62=!block62">Details</button>
 
-> Go ahead and start Light Table, if you haven't already. Once it's
-> started, go to the "View" menu and click "Commands." Notice that you
-> can get to the command by typing ctrl+space from now on, if that's
-> faster for you. Type "insta" and press enter when the "Instarepl:
+> Let's begin with "insta-REPL."
+> Start Light Table, go to the "View" menu and click "Commands."
+> Notice that typing ctrl+space is another handy way.
+> Type "insta" and press enter when the "Instarepl:
 > Open a Clojure instarepl" choice is highlighted.
 {: ng-show="block62" .description}
 
-> After you hit enter, a blank new page will open. At the bottom of
-> Light Table, you should see a message about "connecting" or
+> When you hit enter, you should see a message about "connecting" or
 > "retrieving deps." Wait for the instarepl to finish connecting
 > before typing anything.
 {: ng-show="block62" .description}
 
-#### Try it out <button class="link" ng-model="block63" ng-click="block63=!block63">Details</button>
 
-> Once that's done, let's try out the REPL together! Type `(+ 2 3)`
-> and see what happens. Did you see the result appearing beside what
-> you were typing? Once you've done that, hit enter and type `(max 8
-> 17 2)`. You might see an error in red while typing. This happens
-> because Light Table is continually evaluating what you are typing,
-> and before you finish, the code might not be valid.
+#### Evaluate file and line <button class="link" ng-model="block63" ng-click="block63=!block63">Details</button>
+
+> Also, Light Table give us a way to evaluate Clojure program file and a
+> single line of Clojure program.
+> Open the file
+> `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`.
+> Hit <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> or
+> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> to evaluate the
+> file. Hit <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or <kbd>Cmd</kbd> +
+> <kbd>Enter</kbd> to evaluate each line.
 {: ng-show="block63" .description}
 </section>
 
 <section>
-## Simple values
+#### EXERCISE 1: Try insta-REPL
 
-#### <button class="link" ng-model="block71" ng-click="block71=!block71">Intro</button>
-
-> In order to do anything in a programming language, you need to have
-> values to do stuff with. In Clojure, simple values are numbers,
-> strings, booleans, and keywords.
-{: ng-show="block71" .description}
-</section>
-
-<section>
-### Numbers
-
-#### Integers <button class="link" ng-model="block81" ng-click="block81=!block81">Details</button>
-
-> Clojure has several different types of numbers.
-{: ng-show="block81" .description}
-
-> First up are integers. Integers include zero, the positive whole
-> numbers, and the negative whole numbers, and you write them just
-> like we write them normally.
-{: ng-show="block81" .description}
+* Start Light Table
+* Open instarepl
+* Type Clojure functions below and see what happens
 
 ```clojure
-0
-12
--42
+(str "Hello, World!")
+(str "Hello, World!" " " "from Clojure")
+(+ 3 4)
+(- 3 4)
+(* 3 4)
 ```
+> You might see an error in red while typing. This happens
+> because Light Table is continually evaluating what you are typing,
+> and before you finish, the code might not be valid.
 </section>
 
 <section>
-#### Decimal numbers <button class="link" ng-model="block91" ng-click="block91=!block91">Details</button>
+#### EXERCISE 2: Evaluate file and line
 
-> Then we have decimal numbers, which are also called floats. They
-> include any numbers that have a decimal point in them.
-{: ng-show="block91" .description}
-
-```clojure
-0.0000072725
-10.5
--99.9
-```
+* Open the file `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`
+* Evaluate the file and see what happens
+* Type `(forward 40)` and evaluate this line
+* See what happens
+* Type `(right 90)` or other commands and evaluate the lines one by one
+* Take a look [Turtles App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
+[How To Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md)
+[section 1 and 2], and try more commands to walk your turtle
 </section>
 
 <section>
-#### Ratios <button class="link" ng-model="block101" ng-click="block101=!block101">Details</button>
+#### EXERCISE 3: Look at Clojure docs
 
-> Finally, we have fractions, which are also called ratios. Computers
-> cannot perfectly represent all floats, but ratios are always exact.
-> We write them with a slash, like so:
-{: ng-show="block101" .description}
-
-> Note that, just like with pen-and-paper math, the [denominator](http://en.wikipedia.org/wiki/Fraction_%28mathematics%29) of your ratio cannot be equal to `0`.
-{: ng-show="block101" .description}
-
-```clojure
-1/2
--7/3
-```
-</section>
-
-<section>
-### Arithmetic
-{: .slide_title .slide}
-
-#### <button class="link" ng-model="block111" ng-click="block111=!block111">Intro</button>
-
-> You can add, subtract, multiply, and divide numbers. In Clojure,
-> arithmetic looks a little different than it does when you write it
-> out with pen and paper. Look at these examples:
-{: ng-show="block111" .description}
-
-```clojure
-(+ 1 1)  ;=> 1 + 1 = 2
-(- 12 4) ;=> 12 - 4 = 8
-(* 13 2) ;=> 13 * 2 = 26
-(/ 27 9) ;=> 27 / 9 = 3
-```
-</section>
-
-<section>
-### Infix vs. prefix notation
-{: .slide-title .slide}
-
-#### <button class="link" ng-model="block121" ng-click="block121=!block121">Details</button>
-
-> In Clojure, `+`, `-`, `*` and `/` appear before two numbers. This is
-> called _prefix notation_. What you're used to seeing is called
-> _infix notation_, as the arithmetic operator is in-between the two
-> operands.
-{: ng-show="block121" .description}
-
-> Prefix notation is useful for many reasons. Look at this example of
-> an infix expression and the prefix equivalent:
-{: ng-show="block121" .description}
-
-```clojure
-Infix:  1 + 2 * 3 / 4 + 5 - 6 * 7 / 8 + 9
-
-Prefix: (+ (- (+ (+ 1 (/ (* 2 3) 4)) 5) (/ (* 6 7) 8)) 9)
-```
-</section>
-
-<section>
-### Why prefix is better?
-
-#### Explicit precedence <button class="link" ng-model="block131" ng-click="block131=!block131">Details</button>
-
-> I imagine both are unclear, but notice that in the prefix version,
-> you do not have to ever think about the precedence of operators.
-> Because each expression has the operator before all the operands and
-> the entire expression is wrapped in parentheses, all precendence is
-> explicit.
-{: ng-show="block131" .description}
-
-```clojure
-Infix:  1 + 2 / 3
-Prefix: (+ 1 (/ 2 3))
-```
-
-#### Less repetitive <button class="link" ng-model="block132" ng-click="block132=!block132">Details</button>
-
-> Another reason prefix notation can be nice is that it can make long
-> expressions less repetitive.
-> With prefix notation, if we plan to use the same operator on many
-> operands, we do not have to repeat the operator between them.
-{: ng-show="block132" .description}
-
-```clojure
-Infix:  1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9
-Prefix: (+ 1 2 3 4 5 6 7 8 9)
-```
-</section>
-
-<section>
-### Arithmetic with all number types
-
-<button class="link" ng-model="block141" ng-click="block141=!block141">Details</button>
-
-> I used integers with all of the above, but we can use floats or
-> ratios just fine, as well. See these examples:
-{: ng-show="block141" .description}
-
-```clojure
-(+ 4/3 7/8)   ;=> 53/24
-(- 9 4.2 1/2) ;=> 4.3
-(/ 27/2 1.5)  ;=> 9.0
-```
-</section>
-
-<section>
-### Other simple value types
-
-<button class="link" ng-model="block151" ng-click="block151=!block151">Details</button>
-
-> Although we will look at these in more depth later, here are some
-> examples of other types of simple values so that you may recognize
-> them along the way in any code that you see. The following are
-> examples of strings, keywords, and booleans:
-{: ng-show="block151" .description}
-
-```clojure
-;; strings
-"Salut tout le monde"
-"Prost!"
-
-;; keywords
-:surname
-:birth-date
-:r2
-
-;; booleans
-true
-false
-```
-</section>
-
-<section>
-## Assigning names to values
-
-#### <button class="link" ng-model="block161" ng-click="block161=!block161">Intro</button>
-
-> If we had to type the same values over and over, it would be very
-> hard to write a program. What we need are names for values, so we
-> can refer to them in a way we can remember. We do that using `def`.
-{: ng-show="block161" .description}
-</section>
-
-<section>
-### `def`
-
-#### <button class="link" ng-model="block171" ng-click="block171=!block171">Details</button>
-
-> Type the following into your instarepl.
-> When you assign a name to a value, that name is called a _symbol_.
-{: ng-show="block171" .description}
-
-```clojure
-(def mangoes 3)
-(def oranges 5)
-(+ mangoes oranges)
-;=> 8
-```
-</section>
-
-<section>
-#### Assign results to symbols <button class="link" ng-model="block181" ng-click="block181=!block181">Details</button>
-
-> You can assign more than simple values to symbols. Try the following.
-> Look at the last line, and see how we can use symbols by themselves to refer to a value.
-{: ng-show="block181" .description}
-
-```clojure
-(def fruit (+ mangoes oranges))
-(def average-fruit-amount (/ fruit 2))
-average-fruit-amount
-;=> 4
-```
-</section>
-
-<section>
-### EXERCISE: Basic arithmetic
-
-* Take your height in feet and inches and convert it to inches using arithmetic in Clojure.
-* Then convert that to centimeters. There are 2.54 centimeters in an inch.
-* Lastly, ask two people near you for their height in centimeters. Find the average of your heights.
-</section>
-
-<section>
-### BONUS: Convert back to feet and inches
-
-* Convert that average back to feet and inches.
-* The feet and the inches will be separate numbers.
-* `(quot x y)` will give you the whole number part of x divided by y.
-* `(rem x y)` will give you the remainder of x divided by y.
+* Go to either of `insta-REPL` or `walk.clj` file
+* Move your cursor to the end of any function name, for example `+`
+or `forward`
+* Right click and select "Show docs"
+* See the document appears on the Light Table
+* Check your cursor is still at the end of the function name
+* Right click and select "Show docs"
+* See the document disappears
 </section>
 
 <section>
