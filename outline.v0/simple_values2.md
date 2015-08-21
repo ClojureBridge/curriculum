@@ -1,7 +1,7 @@
 ---
 layout: default
 title: String, Boolean, nil and Keyword
-permalink: /outline/simple_values2.html
+permalink: /outline.v0/simple_values2.html
 ---
 
 {::options parse_block_html="true" /}
@@ -108,5 +108,5 @@ concatenates them together to make a string.
 
 <section>
 Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
-or go to the [curriculum outline](/curriculum/#/1).
+or go to the [curriculum outline](/curriculum/index.v0.html).
 </section>

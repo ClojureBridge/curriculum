@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Keywords and Maps
-permalink: /outline/data_structures2.html
+permalink: /outline.v0/data_structures2.html
 ---
 
 {::options parse_block_html="true" /}
@@ -272,5 +272,5 @@ More Data Structures
 
 <section>
 Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
-or go to the [curriculum outline](/curriculum/#/1).
+or go to the [curriculum outline](/curriculum/index.v0.html).
 </section>

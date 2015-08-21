@@ -1,7 +1,7 @@
 ---
 layout: default
 title: More Functions
-permalink: /outline/functions2.html
+permalink: /outline.v0/functions2.html
 ---
 
 {::options parse_block_html="true" /}
@@ -145,5 +145,5 @@ to know them. Let's look at some others.
 
 <section>
 Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
-or go to the [curriculum outline](/curriculum/#/1).
+or go to the [curriculum outline](/curriculum/index.v0.html).
 </section>

@@ -2,11 +2,12 @@ Ubuntu Setup
 ==========
 
 * Start a terminal
+* Install Git
+* Configure Git
 * Make sure Java is installed
-* Get Leiningen installed
-* Get Light Table installed
-* Get Git installed
-* Test installation
+* Install Leiningen
+* Install Light Table
+* Test your setup
 
 ## Starting a terminal
 
@@ -19,6 +20,38 @@ Go ahead and open your terminal now. It should look something like this:
 The prompt (where you will type your commands) may look different: it usually shows the computer name and user name, as well as the folder or directory you are currently in.
 
 For the rest of this setup, I will tell you to run commands in your terminal. When I say that, I mean "type the command into the terminal and press the Return key."
+
+## Installing Git
+
+See if you already have Git installed with `git version`.
+If the `git` command is not found, install it with this command in the terminal:
+
+```bash
+sudo apt-get install git`
+```
+
+## Configure Git
+
+If you've used Git before then you should already have user.name and user.email configured.
+Otherwise, type this in the terminal:
+
+```bash
+git config --global user.name "Your Actual Name"
+git config --global user.email "Your Actual Email"
+```
+
+TIP: Use the same email address for git, github, and ssh.
+
+Verify by typing this in the terminal:
+
+`git config --get user.name`
+Expected result:
+`your name`
+
+`git config --get user.email`
+Expected result:
+`your email address`
+
 
 ## Making sure Java is installed
 
@@ -34,7 +67,7 @@ If Java is installed, you will see something like this in your terminal:
 
 The details of Java's version may differ from what you see above; that is perfectly fine.
 
-## Installing Leiningen
+## Install Leiningen
 
 Leiningen is a tool used on the command line to manage Clojure projects.
 
@@ -54,7 +87,7 @@ export PATH=$PATH:/usr/local/bin
 
 After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
-## Installing Light Table
+## Install Light Table
 
 You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this:
 
@@ -76,91 +109,121 @@ Move the LightTable directory to "/usr/local/bin" `sudo mv LightTable /usr/local
 Set your path so you can launch LightTable from the command line `export PATH=$PATH:/usr/local/bin/LightTable`
 Launch LightTable `LightTable`
 
-If you want, you can create a launcher for LightTable. `sudo gnome-desktop-item-edit /usr/share/applications/ --create-new`
+If you want, you can create a launcher for Light Table. `sudo gnome-desktop-item-edit /usr/share/applications/ --create-new`
 You should see a window like this:
 
 ![Create Icon](img/ubuntu/create_icon.png)
 
 Name the launcher LightTable. Type the path to the command `/usr/local/bin/LightTable/LightTable`. Click the icon. The LightTable icon can be found at `/usr/local/bin/LightTable/core/img/lticon.png`.
 
-### Opening files in LightTable from the command line *(optional)*
+### Opening files in Light Table from the command line *(optional)*
 
 If you'd prefer, you can open files/folders in LightTable from the command line by typing `light-table /path/to/the/file/you/want/to/open.clj`.
 
-## Installing Git
-
-See if you already have Git installed with `git version`.
-If the `git` command is not found, install it with this command in the terminal:
-
-`sudo apt-get install git`
-
-If you've used Git before then you should already have user.name and user.email configured.
-Otherwise, type this in the terminal:
-
-```
-git config --global user.name "Your Actual Name"
-git config --global user.email "Your Actual Email"
-```
-TIP: Use the same email address for git, github, and ssh.
-
-Verify by typing this in the terminal:
-
-`git config --get user.name`
-Expected result:
-`your name`
-
-`git config --get user.email`
-Expected result:
-`your email address`
 
 ## Testing your setup
 
 You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this course. Before starting, we need to test them out.
 
+#### Cloning out github repository
+
 Go to your terminal and run the following command:
 
-```
+```bash
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will check out a sample Clojure application from GitHub, a central repository for lots of source code. Your terminal should look similar to this picture:
+This will clone `welcometoclojurebridge` repository which includes sample Clojure apps.
+Your terminal should look similar to this picture:
 
-![Testing git clone](img/ubuntu/testing-step1.png)
+![Testing git clone](img/ubuntu/testing-git-clone.png)
+
+#### Testing `lein repl`
 
 Then run the command:
 
-```
+```bash
 cd welcometoclojurebridge
 ```
 
-This will put you in the directory with the source code for this sample bit of Clojure code. After that completes, run:
+This will take you to the directory with the source code. After that completes, run:
 
-```
+```bash
 lein repl
 ```
 
 This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein repl](img/ubuntu/testing-step2.png)
+![Testing lein repl](img/ubuntu/testing-lein-repl.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt.
+This is starting a REPL, which we will learn about soon. It's a
+special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and
+press Return. Did you get the answer `2` back? You will learn more
+about that in the course. For now, press the Control button and D
+button on your keyboard together (abbreviated as Ctrl+D). This should
+take you out of the Clojure REPL and back to your normal terminal
+prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
+
+#### Testing Light Table
 
 Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
 
-![Testing Light Table - starting instarepl](img/ubuntu/testing-step3.png)
+![Testing Light Table - starting instarepl](img/ubuntu/testing-start-instarepl.png)
 
 At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
 
-![Testing Light Table - running in the instarepl](img/ubuntu/testing-step4.png)
+![Testing Light Table - running in the instarepl](img/ubuntu/testing-use-instarepl.png)
 
 If that worked, great!
 
-Now we will open and run the sample Clojure app in LightTable. In LightTable, click on the menu "File" then choose "Open Folder." Find the directory you created earlier, `welcometoclojurebridge` and click "Upload." In the workspace menu on the left, click on welcometoclojurebridge - src - welcometoclojurebridge - core.clj. Double-click the core.clj file to open it. This is a Clojure program. Click on the file contents and press the following key combination:
+### Testing apps
 
-![Testing Light Table - opening core.clj](img/ubuntu/testing-step5.png)
+Now we will open and run the sample Clojure apps in Light Table. In
+Light Table, click on the menu "File" then choose "Open Folder." Find the
+directory, `welcometoclojurebridge`, which was created when you ran
+`git clone` command. Click "Upload." In the workspace menu on the
+left, click on `welcometoclojurebridge` - `src` -
+`welcometoclojurebridge` - `core.clj`. Double-click the `core.clj` file
+to open it. This is a Clojure program.
 
-<kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+![Testing apps - welcome code](img/testing-welcome-app-code.png)
+
+
+Click on the file contents and
+press the following key combination:
+
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
 
 You should see a fun welcome message.
 
-Congratulations! You have opened and run your first Clojure app, and your install and setup are complete!
+![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
+
+
+Next, in the workspace menu on the left, click on
+`welcometoclojurebridge` - `src` - `clojurebridge-turtle` -
+`walk.clj`. Double-click the core.clj file to open it.
+
+![Testing apps - walk code](img/testing-turtle-walk-code.png)
+
+press the following key combination:
+
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+
+An initial image of the turtles app will pop up.
+
+Type `(forward 40)` at the end of the `walk.clj` and press the
+following combination:
+
+<kbd>Ctrl</kbd> + <kbd>Enter</kbd>
+
+You should see this on the Light Table:
+
+![Testing apps - forward](img/testing-turtle-forward.png)
+
+also, your turtle should move.
+
+
+#### Success!
+
+Congratulations! You have opened and run your first Clojure apps, and
+your install and setup are all completed!

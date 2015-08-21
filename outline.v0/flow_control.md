@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Flow Control
-permalink: /outline/flow_control.html
+permalink: /outline.v0/flow_control.html
 ---
 
 {::options parse_block_html="true" /}
@@ -19,10 +19,11 @@ Flow Control
 
 * `if`
 * Boolean logic
+* `let`
 </section>
 
 <section>
-### What is flow control?
+## What is flow control?
 {: .slide_title .slide}
 
 #### Decisions how to react <button class="link" ng-model="block11" ng-click="block11=!block11">Details</button>
@@ -45,7 +46,7 @@ Flow Control
 </section>
 
 <section>
-### `if`
+## if
 {: .slide_title .slide}
 
 #### Example <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
@@ -54,17 +55,14 @@ Flow Control
 > operator. Here's how you might code the data validation scenario.
 {: ng-show="block21" .description}
 
-> If the `angle` is less than 360, then return `angle`; otherwise,
-> calculate modulo by 360 and return it.
-{: ng-show="block21" .description}
-
-> Reference: [Conditional if](http://clojurebridge.github.io/community-docs/docs/clojure/if/)
+> If the `data` is valid, then save `data`; otherwise, show an error
+> message.
 {: ng-show="block21" .description}
 
 ```clojure
-(if (< angle 360)
-  angle
-  (mod angle 360))
+(if (valid? data)
+  (save! data)
+  (error "Your data was invalid"))
 ```
 </section>
 
@@ -102,9 +100,6 @@ Flow Control
 > Here are some examples:
 {: ng-show="block51" .description}
 
-> Reference: [Truthiness](http://clojurebridge.github.io/community-docs/docs/clojure/truthiness/)
-{: ng-show="block51" .description}
-
 
 ```clojure
 (if "anything other than nil or false is considered true"
@@ -125,31 +120,32 @@ Flow Control
 </section>
 
 <section>
-#### EXERCISE: Real angle calculator
+### EXERCISE: Even more name formatting
 {: .slide_title .slide}
 
-* Write a function `real-angle` that takes an angle as an argument.
-* You may use if example in the slide.
-* The function should return a real-angle between 0 to 359
+* Write a function `format-name` that takes a map representing a user,
+with keys `:first`, `:last`, and possibly `:middle`.
+* It should return their name as a string, like so:
 
 ```clojure
-;; if example
-(if (< angle 360)
-  angle
-  (mod angle 360))
-```
+(format-name {:first "Margaret" :last "Atwood"})
+;=> "Margaret Atwood"
 
-```clojure
-;; usage of real-angle function
-(real-angle 180)
-;=> 180
-(real-angle 1000)
-;=> 280
+(format-name {:first "Ursula" :last "Le Guin" :middle "K."})
+;=> "Ursula K. Le Guin"
 ```
 </section>
 
 <section>
-### Boolean logic with `and`, `or`, and `not`
+### BONUS: Flexible name formatting
+{: .slide_title .slide}
+
+* Change `format-name` to take a second argument, `order`.
+* If `order` equals `:last`, then the format should be "Last, First Middle"; otherwise, it should be "First Middle Last."
+</section>
+
+<section>
+## Boolean logic with `and`, `or`, and `not`
 {: .slide_title .slide}
 
 #### <button class="link" ng-model="block81" ng-click="block81=!block81">Intro</button>
@@ -202,14 +198,113 @@ Flow Control
 ```
 </section>
 
-{% comment %}
+<section>
+## `let`
+{: .slide_title .slide}
 
-:star2: A link below is for a slide only. Go to [README.md](../README.md)
-instead. :star2:
+#### <button class="link" ng-model="block111" ng-click="block111=!block111">Intro</button>
 
-{% endcomment %}
+> When you are creating functions, you may want to assign names to
+> values in order to reuse those values or make your code more
+> readable. Inside of a function, however, you should _not_ use `def`,
+> like you would outside of a function. Instead, you should use a
+> special form called `let`.
+{: ng-show="block111" .description}
+</section>
+
+<section>
+#### `let` example
+
+<button class="link" ng-model="block121" ng-click="block121=!block121">Details 1</button>
+<button class="link" ng-model="block122" ng-click="block122=!block122">Details 2</button>
+<button class="link" ng-model="block123" ng-click="block123=!block123">Details 3</button>
+<button class="link" ng-model="block124" ng-click="block124=!block124">Details 4</button>
+
+> This is the most complicated function we've seen so far, so let's go
+> through each step. First, we have the name of the function, the
+> documentation string, and the arguments, just as in other functions
+{: ng-show="block121" .description}
+
+> Next, we see `let`. `let` takes a vector of alternating names and
+> values. `largest` is the first name, and we assign the result of
+> `(reduce max numbers)` to it. We also assign the result of `(reduce
+> min numbers)` to `smallest`.
+{: ng-show="block122" .description}
+
+> After the vector of names and values, there is the body of the
+> `let`. Just like a the body of a function, this executes and returns
+> a value. Within the `let`, `largest` and `smallest` are defined.
+{: ng-show="block123" .description}
+
+> Type the `spread` function into your instarepl and see how it
+> evaluates.
+{: ng-show="block124" .description}
+
+```clojure
+(defn spread
+  "Given a collection of numbers, return the difference between the largest and smallest number."
+  [numbers]
+  (let [largest (reduce max numbers)
+        smallest (reduce min numbers)]
+    (- largest smallest)))
+
+(spread [10 7 3 -3 8]) ;=> 13
+```
+</section>
+
+<section>
+### EXERCISE: Rewrite average
+{: .slide_title .slide}
+
+* Go back to the average bill amounts function you created before and use `let` to make it easier to read.
+</section>
+
+<section>
+### BONUS: Ordinal numbers, part one
+{: .slide_title .slide}
+
+* Given a number (positive integer), return the string representing
+the ordinal number. For many numbers, this is done by adding `"th"` to
+the end.
+* As part one, let us make an exception for numbers ending in a 1, 2,
+or 3, by adding `"st"`, `"nd"`, or `"rd"` respectively.
+* You will need the `rem` function, which takes 2 integers and returns
+the remainder from dividing the first by the second.
+* You will also find that nesting `if` forms (putting one inside
+another) to be useful.
+* Here is an example of how our function will behave:
+{: .exercise}
+
+```clojure
+(ordinal 1)  ;=> "1st"
+(ordinal 2)  ;=> "2nd"
+(ordinal 3)  ;=> "3rd"
+(ordinal 4)  ;=> "4th"
+(ordinal 5)  ;=> "5th"
+(ordinal 21) ;=> "21st"
+(ordinal 22) ;=> "22nd"
+```
+</section>
+
+<section>
+### BONUS: Ordinal numbers, part two
+{: .slide_title .slide}
+
+* As part two, our exceptions above based on the last digit are
+superceded when the last 2 digits are 11, 12, or 13, in which case we
+add `"th"`.
+* Our updated function will behave as follows:
+
+```clojure
+(ordinal 10) ;=> "10th"
+(ordinal 11) ;=> "11th"
+(ordinal 12) ;=> "12th"
+(ordinal 13) ;=> "13th"
+(ordinal 14) ;=> "14th"
+```
+</section>
 
 <section>
 Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
-or go to the [curriculum outline](/curriculum/#/1).
+or go to the [curriculum outline](/curriculum/index.v0.html).
 </section>

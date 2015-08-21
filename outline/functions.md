@@ -19,14 +19,14 @@ Functions
 
 * What are functions?
 * Naming functions
-* Important functions
-    - Collection functions
-* Functions that take other functions
+* [bonus section] Functions that take other functions
     - `map` and `reduce`
+* [bonus section] Anonymous function
+* [bonus section] Assignment: `let`
 </section>
 
 <section>
-## What are functions?
+### What are functions?
 {: .slide_title .slide}
 
 #### <button class="link" ng-model="block11" ng-click="block11=!block11">Intro</button>
@@ -37,8 +37,11 @@ Functions
 > though?
 {: ng-show="block11" .description}
 
-> A _function_ is an independent, discrete piece of code that takes in
-> some values (called _arguments_) and returns a value.
+> A *function* is an independent, discrete piece of code that takes in
+> some values (called *arguments*) and returns a value.
+{: ng-show="block11" .description}
+
+> Reference: [Basics of Function](http://clojurebridge.github.io/community-docs/docs/clojure/function-creation/)
 {: ng-show="block11" .description}
 
 * `count`, `conj`, `first`
@@ -50,30 +53,30 @@ Functions
 #### An example function <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
 
 > * `defn` specifies that we are defining a function.
-> * `total-bill` is the name of this function.
+> * `forward-right` is the *name* of this function.
 > * The string on the next line is the documentation for the function, which explains what the function does. This is optional.
-> * `[subtotal]` is the list of arguments. Here, we have one argument called `subtotal`.
-> * `(* 1.08 subtotal)` is the _body_ of the function. This is what executes when we use the function.
+> * `[turtle]` is the list of *arguments*. Here, we have one argument called `turtle`.
+> * `(forward turtle 60) (right turtle 135)` is the *body* of the function. This is what executes when we use the function.
 {: ng-show="block21" .description}
 
 ```clojure
-(defn total-bill
-  "Given subtotal of bill, return total after tax."
-  [subtotal]
-  (* 1.08 subtotal))
+(defn forward-right
+  "Moves specified turtle forward and tilts its head"
+  [turtle]
+  (forward turtle 60)
+  (right turtle 135))
 ```
 </section>
 
 <section>
-#### How to use `total-bill` function <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
+#### How to use `forward-right` function <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
 
-> To use `total-bill`, we _call_ the function, just like we've done with all the functions we've already used.
+> To use `forward-right`, we *call* the function, just like we've done with all the functions we've already used.
 {: ng-show="block31" .description}
 
 ```clojure
-(total-bill 8.5)  ;=> 9.18
-(total-bill 50)   ;=> 54.0
-(total-bill 50/6) ;=> 9.0
+(forward-right :smith1)   ;=> {:smith1 {:angle 135}}
+(forward-right :trinity)  ;=> {:trinity {:angle 135}}
 ```
 </section>
 
@@ -81,38 +84,62 @@ Functions
 #### A function with multiple arguments <button class="link" ng-model="block41" ng-click="block41=!block41">Details</button>
 
 > Functions can also take more than one argument. Let's make a
-> `total-with-tip` function that takes a tip percentage, in addition
-> to the subtotal, and calculates the total amount paid:
+> `forward-right-with-len` function that takes a forward length, in addition
+> to the turtle.
 {: ng-show="block41" .description}
 
 ```clojure
-(defn total-with-tip
-  "Given subtotal, return total after tax and tip."
-  [subtotal tip-pct]
-  (* 1.08 subtotal (+ 1 tip-pct)))
+(defn forward-right-with-len
+  "Given turtle and length, forward the turtle and tilts its head"
+  [turtle len]
+  (forward turtle len)
+  (right turtle 135))
 
-(total-with-tip 12.50 0.18) ;=> 15.93
-(total-with-tip 50 0.18)    ;=> 63.72
+(forward-right-with-len :smith0 80)  ;=> {:smith0 {:angle 135}}
+(forward-right-with-len :trinity 90) ;=> {:trinity {:angle 135}}
 ```
 </section>
 
 <section>
-### EXERCISE: Find per-person share of bill among a group
+#### EXERCISE 1: Move turtles using function
 {: .slide_title .slide}
 
-* Create a new function, `share-per-person`, that takes three
-  arguments: the subtotal, the tip percent, and the number of people
-  in the group.
+* Go to `walk.clj`
+* Write a function, `forward-right` appeared in the slide.
 
-* It should call our `total-with-tip` function but change the result
-to return the average amount each person should pay.
+```clojure
+(defn forward-right
+  "Moves specified turtle forward and tilts its head"
+  [turtle]
+  (forward turtle 60)
+  (right turtle 135))
+```
+
+* On the last line of the function, hit <kbd>Ctrl</kbd> +
+  <kbd>Enter</kbd> or <kbd>Cmd</kbd> + <kbd>Enter</kbd> to evaluate the function
+* Write a line that uses the function, for example: `(forward-right :trinity)`
+* Evaluate the line at least 8 times
 </section>
 
 <section>
-## Naming functions
+#### EXERCISE 2: Move turtles using function with parameters
 {: .slide_title .slide}
 
-#### Symbols <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
+* Go to `walk.clj`
+* Write a function, `forward-right-with-len-ang` that takes three
+  arguments, turtle, len, and angle (extension of `forward-right-with-len`)
+* On the last line of the function, evaluate it.
+* Write a line that uses the function, for example:
+  `(forward-right-with-len-ang :trinity 60 120)`
+* Evaluate the line many times
+</section>
+
+
+<section>
+### Naming functions
+{: .slide_title .slide}
+
+#### Names are Symbols <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
 
 > Function names are symbols, just like the symbols we used with `def`
 > when assigning names to values.
@@ -124,59 +151,46 @@ to return the average amount each person should pay.
 > idioms we use.
 {: ng-show="block61" .description}
 
-#### Examples of predicate functions <button class="link" ng-model="block62" ng-click="block62=!block62">Details</button>
+#### Two types of functions <button class="link" ng-model="block62" ng-click="block62=!block62">Details</button>
 
-> Functions that return true or false--called _predicates_--usually end in `?`:
+> Clojure has two type of functions:
+> 1. function that returns a value,
+> 2. function that returns true or false.
+> The second type is called *predicate*s.
 {: ng-show="block62" .description}
 
-* zero?
-* vector?
-* empty?
+
+##### Predicate function examples <button class="link" ng-model="block63" ng-click="block63=!block63">Details</button>
+
+> In Clojure, `=` is a predicate function, which may be a surprising
+> fact. Other than that, like many other computer languages,
+> Clojure has predicate functions to test greater than, less than or such.
+> Mostly predicate functions end with `?`.
+{: ng-show="block63" .description}
+
+> * `=`
+> * `>`, `<`
+> * `true?`, `false?`, `empty?`, `nil?`, `vector?`, `map?`
+
 </section>
 
 <section>
-## Important functions
+#### [Bonus section]
+
+### Functions that take other functions
 {: .slide_title .slide}
 
 #### <button class="link" ng-model="block71" ng-click="block71=!block71">Intro</button>
 
-> There are some functions that are essential when using Clojure. The
-> arithmetic functions have already been covered. Let's look at some
-> others.
-{: ng-show="block71" .description}
-</section>
-
-<section>
-### Collection functions
-{: .slide_title .slide}
-
-#### <button class="link" ng-model="block81" ng-click="block81=!block81">Intro</button>
-
-> When we learned about data structures, we saw many functions that
-> operated on those data structures, including:
-{: ng-show="block81" .description}
-
-* `count`
-* `conj`
-* `first`
-* `rest`
-* `nth`
-* `assoc`
-* `dissoc`
-* `merge`
-</section>
-
-<section>
-### Functions that take other functions
-{: .slide_title .slide}
-
-#### <button class="link" ng-model="block91" ng-click="block91=!block91">Intro</button>
-
->Some of the most powerful functions you can use with collections can take other functions as arguments.
+> Some of the most powerful functions you can use with collections can
+> take other functions as arguments.
 > This is one of the most magical things about Clojure--and many other programming languages.
 > That's a complicated idea, also, may not make sense at first.
 > Let's look at an example and learn more about that.
-{: ng-show="block91" .description}
+{: ng-show="block71" .description}
+
+> Reference: [Higher-order Function](http://clojurebridge.github.io/community-docs/docs/clojure/higher-order-function/)
+{: ng-show="block71" .description}
 </section>
 
 <section>
@@ -192,12 +206,13 @@ to return the average amount each person should pay.
 {: ng-show="block101" .description}
 
 ```clojure
-(def dine-in-orders [12.50 20 21 16 18.40])
-(def take-out-orders [6.00 6.00 7.95 6.25])
-
-(map total-bill dine-in-orders)  ;=> [13.5 21.6 22.68 17.28 19.872]
-(map total-bill take-out-orders) ;=> [6.48 6.48 8.586 6.75]
+(map name (turtle-names)) ;=> ("trinity" "smith0" "smith1" "smith2")
+(map (partial + 90) [0 30 60 90]) ;=> (90 120 150 180)
 ```
+
+> References:
+> [name](http://clojuredocs.org/clojure.core/name),
+> [partial](http://clojuredocs.org/clojure.core/partial)
 </section>
 
 <section>
@@ -218,42 +233,169 @@ to return the average amount each person should pay.
 {: ng-show="block111" .description}
 
 ```clojure
-(reduce + [1 2 3])   ;=> 6
-(reduce max [1 2 3]) ;=> 3
+(reduce str (turtle-names)) ;=> ":trinity:smith0:smith1:smith2"
+(reduce + [30 60 90])       ;=> 180
 ```
 </section>
 
 <section>
-#### `reduce` in action
-
-#### <button class="link" ng-model="block121" ng-click="block121=!block121">Details</button>
-
-> The `reduce` function's process is complicated, so let's illustrate
-> it further.
-{: ng-show="block121" .description}
-
-> In the example below, `reduce` calls `+` with the parameters `6.48`
-> and `6.48`, returning `12.96`. Then, in order, it makes the
-> following function calls:
->
-> * `(+ 12.96  8.586) ;=> 21.546`
-> * `(+ 21.546 6.75)  ;=> 28.296`
-{: ng-show="block121" .description}
-
-```clojure
-(def take-out-totals [6.48 6.48 8.586 6.75])
-(reduce + take-out-totals) ;=> 28.296
-```
-</section>
-
-<section>
-### EXERCISE: Find the average
+#### EXERCISE [BONUS]: Find the average
 {: .slide_title .slide}
 
-* Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
+* Create a function called `average` that takes a vector of maps.
+* Use `[{:angle 30} {:angle 90} {:angle 50}]` as input.
+* Calculate average value of :angle.
 
-* Hint: You will need to use the functions `reduce` and `count`.
+* Hint: You will need to use the functions `map`, `reduce` and `count`.
 </section>
+
+
+<section>
+#### [Bonus section]
+
+### Anonymous functions
+
+#### Functions without names <button class="link" ng-model="block201" ng-click="block201=!block201">Details</button>
+
+> So far, all the functions we've seen have had names, like `+` and
+> `str` and `reduce`. However, functions don't need to have names, just
+> like values don't need to have names. We call functions without names
+> *anonymous functions*.
+> An anonymous function is created with `fn`, like so:
+{: ng-show="block201" .description}
+
+> Reference: [Anonymous Function](http://clojurebridge.github.io/community-docs/docs/clojure/anonymous-function/)
+{: ng-show="block201" .description}
+
+
+```clojure
+(fn [s1 s2] (str s1 " " s2))
+```
+
+#### vs. not anonymous functions <button class="link" ng-model="block202" ng-click="block202=!block202">Details</button>
+
+> Before we go forward, you should understand that you can _always_
+> feel free to name your functions. There is nothing wrong at all with
+> doing that. However, you _will_ see Clojure code with anonymous
+> functions, so you should be able to understand it.
+{: ng-show="block202" .description}
+
+```clojure
+(defn join-with-space
+  [s1 s2]
+  (str s1 " " s2))
+```
+</section>
+
+<section>
+#### Anonymous function usage examples <button class="link" ng-model="block203" ng-click="block203=!block203">Details</button>
+
+> Why would you ever need anonymous functions?
+> Anonymous functions can be very useful
+> when we have functions that take other functions.
+> Such as `map` or `reduce`, which we learned in Functions section.
+> Let's look at usage examples of anonymous functions:
+{: ng-show="block203" .description}
+
+```clojure
+(map (fn [t] (forward t 45)) (turtle-names))
+;=> ({:trinity {:length 45}} {:smith0 {:length 45}} {:smith1 {:length
+45}} {:smith2 {:length 45}})
+
+(reduce (fn [x y] (+ x y)) [1 2 3]) ;=> 6
+
+(reduce (fn [a b] (str a ", " b)) (map name (turtle-names)))
+;=> "trinity, smith0, smith1, smith2"
+```
+</section>
+
+<section>
+#### [Bonus section]
+
+### Assignment: `let`
+{: .slide_title .slide}
+
+#### <button class="link" ng-model="block301" ng-click="block301=!block301">Intro</button>
+
+> When you are creating functions, you may want to assign names to
+> values in order to reuse those values or make your code more
+> readable. Inside of a function, however, you should _not_ use `def`,
+> like you would outside of a function. Instead, you should use a
+> special form called `let`.
+{: ng-show="block301" .description}
+</section>
+
+<section>
+#### Assigning names to values: `let`
+{: .slide_title .slide}
+
+#### <button class="link" ng-model="block305" ng-click="block305=!block305">Details</button>
+
+> We can assign a name to value using `let` like `def`.
+> When a name is assigned to a value, the name is called a *symbol*.
+{: ng-show="block305" .description}
+
+> Reference: [Assignment let](http://clojurebridge.github.io/community-docs/docs/clojure/let/)
+{: ng-show="block305" .description}
+
+```clojure
+(let [mangoes 3
+      oranges 5]
+  (+ mangoes oranges))
+;=> 8
+```
+</section>
+
+<section>
+#### `let` example
+
+<button class="link" ng-model="block311" ng-click="block311=!block311">Details 1</button>
+<button class="link" ng-model="block312" ng-click="block312=!block312">Details 2</button>
+<button class="link" ng-model="block313" ng-click="block313=!block313">Details 3</button>
+<button class="link" ng-model="block314" ng-click="block314=!block314">Exercise</button>
+
+> This is the most complicated function we've seen so far, so let's go
+> through each step. First, we have the name of the function, the
+> documentation string, and the arguments, just as in other functions
+{: ng-show="block311" .description}
+
+> Next, we see `let`. `let` takes a vector of alternating names and
+> values. `t1` is the first name, and we assign the result of
+> `(first names)` to it. We also assign the result of `(last names)`
+> to `t2`.
+{: ng-show="block312" .description}
+
+> After the vector of names and values, there is the body of the
+> `let`. Just like a the body of a function, this executes and returns
+> a value. Within the `let`, `t1` and `t2` are defined.
+{: ng-show="block313" .description}
+
+> Go to `walk.clj` and write `opposite` function.
+> Then, evaluate `opposite` function at the last line of the function definition.
+> Also, evaluate usage example of `opposite` function.
+{: ng-show="block314" .description}
+
+```clojure
+;; function definition
+(defn opposite
+  "Given a collection of turtle names, moves two of them in different directions."
+  [names]
+  (let [t1 (first names)
+        t2 (last names)]
+    (forward t1 40)
+    (backward t2 30)))
+
+;; function usage
+(opposite (turtle-names))
+```
+</section>
+
+{% comment %}
+
+:star2: A link below is for a slide only. Go to [README.md](../README.md)
+instead. :star2:
+
+{% endcomment %}
 
 <section>
 Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
