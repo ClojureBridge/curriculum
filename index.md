@@ -40,8 +40,7 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 
     - [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
 
-    - [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
-          (another drawing app)
+    - [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
 
     - [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
     - [Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api)
