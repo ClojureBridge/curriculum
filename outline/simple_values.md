@@ -184,7 +184,8 @@ nil
 ### Infix vs. prefix notation
 {: .slide-title .slide}
 
-#### <button class="link" ng-model="block121" ng-click="block121=!block121">Details</button>
+<button class="link" ng-model="block121" ng-click="block121=!block121">Details1</button>
+<button class="link" ng-model="block122" ng-click="block122=!block122">Details2</button>
 
 > In Clojure, `+`, `-`, `*` and `/` appear before two numbers. This is
 > called _prefix notation_. What you're used to seeing is called
@@ -192,9 +193,11 @@ nil
 > operands.
 {: ng-show="block121" .description}
 
+> Languages such as **JavaScript** use **infix** notation,
+> while **Clojure** only uses **prefix** notation.
 > Prefix notation is useful for many reasons. Look at this example of
 > an infix expression and the prefix equivalent:
-{: ng-show="block121" .description}
+{: ng-show="block122" .description}
 
 ```clojure
 Infix:  1 + 2 * 3 / 4 + 5 - 6 * 7 / 8 + 9
@@ -208,7 +211,7 @@ Prefix: (+ (- (+ (+ 1 (/ (* 2 3) 4)) 5) (/ (* 6 7) 8)) 9)
 
 #### Explicit precedence <button class="link" ng-model="block131" ng-click="block131=!block131">Details</button>
 
-> I imagine both are unclear, but notice that in the prefix version,
+> Imagine both are unclear, but notice that in the prefix version,
 > you do not have to ever think about the precedence of operators.
 > Because each expression has the operator before all the operands and
 > the entire expression is wrapped in parentheses, all precendence is
@@ -239,8 +242,9 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 
 <button class="link" ng-model="block141" ng-click="block141=!block141">Details</button>
 
-> I used integers with all of the above, but we can use floats or
-> ratios just fine, as well. See these examples:
+> So far, we looked at arithmetic operations by integers only.
+> However, we can use floats or ratios for those operations as well.
+> See these examples:
 {: ng-show="block141" .description}
 
 ```clojure
