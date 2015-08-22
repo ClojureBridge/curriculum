@@ -152,7 +152,7 @@ be confusing.
 * Go to `walk.clj` file
 * Type `(add-turtle)` and evaluate this line
 * Repeat adding a turtle a couple of times
-* Type `(turtle-names)` and see the result
+* Type `(turtle-names)`, evaluate this line and see the result
 </section>
 
 <section>
