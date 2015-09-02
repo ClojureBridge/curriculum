@@ -18,6 +18,7 @@ Flow Control
 {: .slide-title .chapter}
 
 * `if`
+* `cond`
 * Boolean logic
 </section>
 
@@ -48,17 +49,16 @@ Flow Control
 ### `if`
 {: .slide_title .slide}
 
-#### Example <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+#### <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
 
-> In Clojure, the most basic tool we have for this process is the `if`
-> operator. Here's how you might code the data validation scenario.
-{: ng-show="block21" .description}
-
+> In Clojure, the most basic tool we have for the flow control is the `if`
+> operator. Here's the example how you might code the data validation scenario.
+>
 > If the `angle` is less than 360, then return `angle`; otherwise,
-> calculate modulo by 360 and return it.
+> calculate modulo by 360 and return it. (because 370 degrees = 10 degrees)
 {: ng-show="block21" .description}
 
-> Reference: [Conditional if](http://clojurebridge.github.io/community-docs/docs/clojure/if/)
+> Reference: [Conditional `if`](http://clojurebridge.github.io/community-docs/docs/clojure/if/)
 {: ng-show="block21" .description}
 
 ```clojure
@@ -132,6 +132,8 @@ Flow Control
 * You may use if example in the slide.
 * The function should return a real-angle between 0 to 359
 
+    - See: [angle in absolute degrees](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md#angle-in-absolute-degrees)
+
 ```clojure
 ;; if example
 (if (< angle 360)
@@ -146,6 +148,60 @@ Flow Control
 (real-angle 1000)
 ;=> 280
 ```
+</section>
+
+<section>
+### `cond`
+{: .slide_title .slide}
+
+<button class="link" ng-model="block61" ng-click="block61=!block61">Details1</button>
+<button class="link" ng-model="block62" ng-click="block62=!block62">Details2</button>
+
+> The `if` operator takes only one predicate.
+> When we want to use multiple predicates, `if` is not a good option.
+> We have to write nested, nested, ... and nested `if` conditions.
+> To branch to multiple situations, `cond` operator works well.
+{: ng-show="block61" .description}
+
+> Here's the example. If temp is greater than 65 (in Fahrenheit),
+> evaluate the first form. If temp is greater than 45, evaluate the
+> second form. If both two predicates return false, evaluate the
+> `:else` form.
+{: ng-show="block62" .description}
+
+> Reference: [Conditional `cond`](http://clojurebridge.github.io/community-docs/docs/clojure/cond/)
+{: ng-show="block62" .description}
+
+```clojure
+(cond
+  (> temp 65) "I'll enjoy walking at a park."
+  (> temp 45) "I'll spend time at a cafe."
+  :else "I'll curl up in my bed."))
+```
+</section>
+
+<section>
+#### General form of `cond` operator
+
+```clojure
+(cond
+  predicate1 expression-to-evaluate-when-predicate1-is-true
+  predicate2 expression-to-evaluate-when-predicate2-is-true
+  ...
+  :else expression-to-evaluate-when-all-above-are-false)
+```
+</section>
+
+<section>
+#### EXERCISE [BONUS]: Shoe Size Mapping
+{: .slide_title .slide}
+
+|Suppose you are traveling abroad..<br/> (chart: www.jcpenney.com )| ![shoe size](img/shoe_size_chart_womens.png)|
+
+1. pick up some of sets from the table, for example, us 6 and 9
+2. write mapping using `cond` (us 6 -> less than or equal to euro 36)
+3. write a function, for example, `us-to-euro` with one argument
+4. use `cond` you wrote at step 2 to complete the function
 </section>
 
 <section>

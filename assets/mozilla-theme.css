@@ -206,7 +206,8 @@ body {
 }
 
 .reveal th, .reveal td {
-  border: 1px solid black;
+  border: none;
+  vertical-align: top;
   margin: 0;
   padding: 10px 15px;
 }

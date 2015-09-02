@@ -19,11 +19,15 @@ For capstone app part. 2,
 
 You may skip bonus sections and a module to fit with a workshop
 progress. However, to go over part. 2 capstone apps, some bonuses should
-be covered. For example, Turtle and Twinkle use sequences and let
-binding. Snowflakes app is the easiest to try out. It just needs a flow
-control in addition to the part. 1 app. Global Growth is quite a high
+be covered. For example, Turtles Walk, Twinkle Little Star, and later
+steps of Snowflakes use sequences and let binding. If your students
+come to these apps, it's a good idea to get back to main curriculum.
+
+Step 1-3 of Snowflakes app are the easiest to try out. It just needs a flow
+control in addition to the part. 1 app. While Global Growth is quite a high
 level app and only for very advanced students. Copy&pasting code only
-won't take so long, but it requires REST API and ring/compojure knowledge.
+won't take so long, but it requires REST API and ring/compojure
+knowledge. Snowflakes and Twinkle are fun apps and worth trying out.
 
 The slides and the narrative curriculum are the exactly the same
 files. The slide forms are what you show on the projector in front of
@@ -101,7 +105,7 @@ TODO: add tips under each heading.
   - 10 min
 
 * [Capstone App Pt. 2]
-  - 60 - 90 min
+  - 60 - 90 min each
 
 
 Supporting Materials

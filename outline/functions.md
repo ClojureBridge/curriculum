@@ -168,8 +168,8 @@ Functions
 > Mostly predicate functions end with `?`.
 {: ng-show="block63" .description}
 
-> * `=`
-> * `>`, `<`
+> * `=`, `not=`
+> * `>`, `<`, `>=`, `<=`
 > * `true?`, `false?`, `empty?`, `nil?`, `vector?`, `map?`
 
 </section>

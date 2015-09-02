@@ -258,6 +258,8 @@ be confusing.
 ;=> "Sally"
 (:last {:first "Sally"})
 ;=> nil
+
+
 (:last {:first "Sally"} :MISS)
 ;=> :MISS
 ```
@@ -279,6 +281,34 @@ be confusing.
 ;=> ("Sally" "Brown")
 ```
 </section>
+
+<section>
+#### Update <button class="link" ng-model="block110" ng-click="block110=!block110">Details</button>
+
+> After the creation, we want to save a new value associated to the
+> key. The `assoc` function can be used by assigning a new value to
+> the existing key.
+> Also, there's handy function `update-in`. The function takes map and
+> a key or list of keys with a function. The value of specified key will be the
+> first argument of the given function.
+{: ng-show="block110" .description}
+
+```clojure
+(def hello {:count 1 :words "hello"})
+
+(update-in hello [:count] inc)
+;=> {:count 2, :words "hello"}
+(update-in hello [:words] str ", world")
+{:count 1, :words "hello, world"}
+
+
+(def mine {:pet {:age 5 :name "able"}})
+
+(update-in mine [:pet :age] - 3)
+{:pet {:age 2, :name "able"}}
+```
+</section>
+
 
 <section>
 ### Collections of Collections

@@ -20,7 +20,9 @@ Sequences
 {: .slide-title .chapter}
 
 * What are sequences
-* `doseq`
+* Functions for sequences
+    * `doseq`
+    * `dotimes`
 </section>
 
 <section>
@@ -65,27 +67,33 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 </section>
 
 <section>
-### `doseq`
+### Functions for sequences
+<button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+
+> Clojure is very good at *iterate* over a sequence.
+> There are many functions that interact on sequences.
+> For example, `doseq`, `dotimes`, `for`, `loop`, `doall`, or `dorun`.
+>
+> We already saw `map` and `reduce` functions in "Functions that takes
+> other functions" section. These are also functions for sequences.
+{: ng-show="block21" .description}
+</section>
+
+<section>
+#### `doseq`
 
 <button class="link" ng-model="block31" ng-click="block31=!block31">Details1</button>
 <button class="link" ng-model="block32" ng-click="block32=!block32">Details2</button>
 
-> Clojure is very good at *iterate* over a sequence.
-> There are many functions that interact on sequences.
-> The `doseq`(for **do a sequence**) is one of the well-used functions
-> of such. This function works quite similar to `map` function we have
-> already studied.
+> The `doseq`(for **do a sequence**) is one of well-used functions
+> for sequences, and works quite similar to `map` function. The
+> function repeatedly evaluates given body form with each element in
+> the given sequence.
 {: ng-show="block31" .description}
 
-> The `doseq` function takes two parameters:
-> 1. The sequence of things, for instance, a vector
-> 2. A function which is repeatedly called with each element in the sequence
->
-> Notice that the first argument to `doseq` specifies the sequence as
-> an odd-looking vector: `[variable value ...]`.
-> The number of elements in this vector need to be even, since the
-> first element will be the **variable** and the next one will be
-> evaluated for its **value**.
+> The `doseq` function takes bindings as arguments. The arguments might be
+> an odd-looking vector: `[name sequence]`. When each element of a sequence
+> is iterated over, the element is assigned to the name one by one.
 {: ng-show="block32" .description}
 
 ```clojure
@@ -97,9 +105,49 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 <section>
 #### EXERCISE
 
-* Twinkle Little Star (making sounds)
-* Turtles Walk (more function study)
+* [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
+    - section 5 and later
+* [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
+    - step 4 and later
+* [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+    - `chord` function and later
 </section>
+
+<section>
+#### `dotimes`
+
+<button class="link" ng-model="block41" ng-click="block41=!block41">Details1</button>
+<button class="link" ng-model="block42" ng-click="block42=!block42">Details2</button>
+
+> The `dotimes`(for **do number of times**) is another well-used
+> function for sequences. Like `doseq`, the function repeatedly
+> evaluates given body form. The difference is the binding in the
+> argument. The `dotimes` takes: `[name max-integer]`.
+{: ng-show="block41" .description}
+
+> The `dotimes` function is the closest to so-called for-loop in other
+> programming languages. This function allows us an index access to
+> the given sequence by a combination with `nth`.
+{: ng-show="block42" .description}
+
+```clojure
+;; assuming there are multiple turtles
+(def names (turtle-names))
+(dotimes [n (count names)] (right (nth names n) (* 45 n)))
+```
+</section>
+
+<section>
+#### EXERCISE
+
+* [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
+    - section 6 and later
+* [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
+    - step 5-4 and later
+* [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+    - complete Twinkle Little Star section
+</section>
+
 
 {% comment %}
 
