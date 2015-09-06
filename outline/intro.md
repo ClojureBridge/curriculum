@@ -113,7 +113,7 @@ Introduction to Programming with Clojure
 {: .slide_title .slide}
 
 ```clojure
-(str "Hello, World!")
+(print-str "Hello, World!")
 (+ 3 4)
 (forward :trinity 40)
 ```
@@ -175,8 +175,8 @@ Introduction to Programming with Clojure
 
 ```clojure
 ;; example functions from a previous slide
-(str "Hello, World!")  ; a well-known hello world
-(+ 3 4)                ; why not 3 + 4? figure out later
+(print-str "Hello, World!")  ; a well-known hello world
+(+ 3 4)                      ; why not 3 + 4? figure out later
 ```
 </section>
 
@@ -248,8 +248,8 @@ Introduction to Programming with Clojure
 * Type Clojure functions below and see what happens
 
 ```clojure
-(str "Hello, World!")
-(str "Hello, World!" " " "from Clojure")
+(print-str "Hello, World!")
+(print-str "Hello, World!" " " "from Clojure")
 (+ 3 4)
 (- 3 4)
 (* 3 4)
