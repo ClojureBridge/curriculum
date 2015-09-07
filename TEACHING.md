@@ -12,14 +12,14 @@ For capstone app part. 2,
 (for function study),
 [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
 (another drawing app),
-[Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds),
+[Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds),
 [Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api),
 [Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
 (mini exercise of Strings and Characters).
 
 You may skip bonus sections and a module to fit with a workshop
 progress. However, to go over part. 2 capstone apps, some bonuses should
-be covered. For example, Turtles Walk, Twinkle Little Star, and later
+be covered. For example, Turtles Walk, Twinkle Twinkle Little Star, and later
 steps of Snowflakes use sequences and let binding. If your students
 come to these apps, it's a good idea to get back to main curriculum.
 
@@ -27,7 +27,7 @@ Step 1-3 of Snowflakes app are the easiest to try out. It just needs a flow
 control in addition to the part. 1 app. While Global Growth is quite a high
 level app and only for very advanced students. Copy&pasting code only
 won't take so long, but it requires REST API and ring/compojure
-knowledge. Snowflakes and Twinkle are fun apps and worth trying out.
+knowledge. Snowflakes and Twinkle... are fun apps and worth trying out.
 
 The slides and the narrative curriculum are the exactly the same
 files. The slide forms are what you show on the projector in front of

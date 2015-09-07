@@ -42,7 +42,7 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 
     - [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
 
-    - [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+    - [Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
     - [Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api)
     - [Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
           (mini exercise of Strings and Characters)

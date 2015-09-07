@@ -109,7 +109,7 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
     - section 5 and later
 * [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
     - step 4 and later
-* [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+* [Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
     - `chord` function and later
 </section>
 
@@ -144,7 +144,7 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
     - section 6 and later
 * [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
     - step 5-4 and later
-* [Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
+* [Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
     - complete Twinkle Little Star section
 </section>
 
