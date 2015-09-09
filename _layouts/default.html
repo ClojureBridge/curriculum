@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="slides">
 
   {% include head.html %}
 
@@ -21,7 +21,9 @@
       </script>
       <script type="text/javascript" src="{{ "/assets/prism.js" | prepend: site.baseurl }}"></script>
       <script type="text/javascript" src="{{ "/assets/prism.clojure.js" | prepend: site.baseurl }}"></script>
-      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      <script type="text/javascript" src="{{ "/assets/angular-1.4.5/angular.min.js" | prepend: site.baseurl }}"></script>
+      <script type="text/javascript" src="{{ "/assets/angular-1.4.5/angular-sanitize.min.js" | prepend: site.baseurl }}"></script>
+      <script type="text/javascript" src="{{ "/assets/script.js" | prepend: site.baseurl }}"></script>
     </div>
   </body>
 </html>
