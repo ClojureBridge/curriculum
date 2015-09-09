@@ -132,7 +132,7 @@ Introduction to Programming with Clojure
 > Next to the parentheses, we see the instructions to the
 > computer. That instruction is normally what we call a _function_.
 > The functions do all the hard work in Clojure.
-> `str`, `+` and `forward` are all functions.
+> `print-str`, `+` and `forward` are all functions.
 > When these functions get run, they return a some type of value.
 > Clojure functions always return a value.
 {: ng-show="block32" .description}
@@ -141,7 +141,7 @@ Introduction to Programming with Clojure
 
 > Many functions take in _arguments_--which are everything else inside
 > the enclosing parentheses after the function--.
-> `str` takes "Hello, World!" and returns a string.
+> `print-str` takes "Hello, World!" and returns a string.
 > `+` takes 3 and 4, adds them, and returns 7.
 > `forward` takes :trinity and 40, moves a turtle by 40 and returns
 > the result.
