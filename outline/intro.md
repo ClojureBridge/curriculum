@@ -26,8 +26,6 @@ Introduction to Programming with Clojure
 </section>
 
 <section>
-<div ng-controller="NarrativeController">
-
 ## Why Clojure?
 {: .slide_title .slide}
 
@@ -45,7 +43,7 @@ Introduction to Programming with Clojure
 > language to learn in addition to others you might already know:
 {: ng-show="block11" .description}
 
-#### Clojure is _simple_ <button class="link" ng-bind-html="details" ng-model="block12" ng-click="block12=!block12"></button>
+#### Clojure is _simple_ <button class="link" ng-model="block12" ng-click="block12=!block12">Details</button>
 
 > Clojure is _simple_. That's not to say it's not powerful; it is. The
 > number of concepts you have to know to program in Clojure is very
@@ -54,7 +52,7 @@ Introduction to Programming with Clojure
 > language.
 {: ng-show="block12" .description}
 
-#### Clojure is _all-purpose_ <button class="link" ng-bind-html="details" ng-model="block13" ng-click="block13=!block13"></button>
+#### Clojure is _all-purpose_ <button class="link" ng-model="block13" ng-click="block13=!block13">Details</button>
 
 > Clojure is _all-purpose_. Some languages have a specific focus.
 > JavaScript, for example, was traditionally used only in web pages
@@ -63,19 +61,16 @@ Introduction to Programming with Clojure
 > you can use Clojure for any sort of application easily.
 {: ng-show="block13" .description}
 
-#### Clojure is _fun_ <button class="link" ng-bind-html="details" ng-model="block14" ng-click="block14=!block14"></button>
+#### Clojure is _fun_ <button class="link" ng-model="block14" ng-click="block14=!block14">Details</button>
 
 > Clojure is _fun_. That's a matter of opinion, of course, but we
 > think it holds true. I hope that during this course you experience
 > the joy of seeing a Clojure program come together and do something
 > powerful and surprising.
 {: ng-show="block14" .description}
-</div>
 </section>
 
 <section>
-<div ng-controller="NarrativeController">
-
 ## What is Clojure good at?
 {: .slide_title .slide}
 
@@ -85,14 +80,14 @@ Introduction to Programming with Clojure
 > doesn't have strong suits, though.
 {: ng-show="block21" .description}
 
-#### Data processing <button class="link" ng-bind-html="details" ng-model="block22" ng-click="block22=!block22"></button>
+#### Data processing <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
 
 > Clojure is known for being good at data processing. That's because
 > it has a good set of data structures--that is, it has several
 > built-in ways to represent data that are easy to use and powerful.
 {: ng-show="block22" .description}
 
-#### Concurrency <button class="link" ng-bind-html="details" ng-model="block23" ng-click="block23=!block23"></button>
+#### Concurrency <button class="link" ng-model="block23" ng-click="block23=!block23">Details</button>
 
 > Clojure is known for its concurrency. Think about writing
 > instructions for four of your friends about how to assemble a
@@ -105,18 +100,15 @@ Introduction to Programming with Clojure
 > some easy ways to write these sorts of instructions for computers.
 {: ng-show="block23" .description}
 
-#### Everything! <button class="link" ng-bind-html="details" ng-model="block24" ng-click="block24=!block24"></button>
+#### Everything! <button class="link" ng-model="block24" ng-click="block24=!block24">Details</button>
 
 > Clojure also works well for building drawing applications with
 > [Quil](https://github.com/quil/quil), which is what we're going to
 > do together.
 {: ng-show="block24" .description}
-</div>
 </section>
 
 <section>
-<div ng-controller="NarrativeController">
-
 ## What does Clojure look like?
 {: .slide_title .slide}
 
@@ -126,7 +118,7 @@ Introduction to Programming with Clojure
 (forward :trinity 40)
 ```
 
-#### Parentheses <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
+#### Parentheses <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
 
 > Notice the parentheses. Parentheses enclose instructions to the
 > computer in Clojure. A left parenthesis
@@ -135,7 +127,7 @@ Introduction to Programming with Clojure
 > of nested parentheses, on other words, nested enclosing instructions.
 {: ng-show="block31" .description}
 
-#### Functions <button class="link" ng-bind-html="details" ng-model="block32" ng-click="block32=!block32"></button>
+#### Functions <button class="link" ng-model="block32" ng-click="block32=!block32">Details</button>
 
 > Next to the parentheses, we see the instructions to the
 > computer. That instruction is normally what we call a _function_.
@@ -145,7 +137,7 @@ Introduction to Programming with Clojure
 > Clojure functions always return a value.
 {: ng-show="block32" .description}
 
-#### Arguments <button class="link" ng-bind-html="details" ng-model="block33" ng-click="block33=!block33"></button>
+#### Arguments <button class="link" ng-model="block33" ng-click="block33=!block33">Details</button>
 
 > Many functions take in _arguments_--which are everything else inside
 > the enclosing parentheses after the function--.
@@ -154,16 +146,13 @@ Introduction to Programming with Clojure
 > `forward` takes :trinity and 40, moves a turtle by 40 and returns
 > the result.
 {: ng-show="block33" .description}
-</div>
 </section>
 
 <section>
-<div ng-controller="NarrativeController">
-
 ### Comments
 
-<button class="link" ng-bind-html="details1" ng-model="block41" ng-click="block41=!block41"></button>
-<button class="link" ng-bind-html="details2" ng-model="block42" ng-click="block42=!block42"></button>
+<button class="link" ng-model="block41" ng-click="block41=!block41">Details 1</button>
+<button class="link" ng-model="block42" ng-click="block42=!block42">Details 2</button>
 
 > When we write code, we try to make it as clear as possible. Doing so
 > is a huge advantage because our code gets read by others (oftentimes
@@ -189,8 +178,6 @@ Introduction to Programming with Clojure
 (print-str "Hello, World!")  ; a well-known hello world
 (+ 3 4)                      ; why not 3 + 4? figure out later
 ```
-
-</div>
 </section>
 
 <section>
@@ -213,12 +200,10 @@ Introduction to Programming with Clojure
 </section>
 
 <section>
-<div ng-controller="NarrativeController">
-
 ## REPL in action
 {: .slide_title .slide}
 
-#### Light Table's REPL <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
+#### Light Table's REPL <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
 
 > Clojure has a REPL that you can run from the terminal easily, and
 > we'll talk more about that later, but for now, let's use Light
@@ -227,7 +212,7 @@ Introduction to Programming with Clojure
 {: ng-show="block61" .description}
 
 
-#### insta-REPL <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
+#### insta-REPL <button class="link" ng-model="block62" ng-click="block62=!block62">Details</button>
 
 > Let's begin with "insta-REPL."
 > Start Light Table, go to the "View" menu and click "Commands."
@@ -242,7 +227,7 @@ Introduction to Programming with Clojure
 {: ng-show="block62" .description}
 
 
-#### Evaluate file and line <button class="link" ng-bind-html="details" ng-model="block63" ng-click="block63=!block63"></button>
+#### Evaluate file and line <button class="link" ng-model="block63" ng-click="block63=!block63">Details</button>
 
 > Also, Light Table give us a way to evaluate Clojure program file and a
 > single line of Clojure program.
@@ -253,7 +238,6 @@ Introduction to Programming with Clojure
 > file. Hit <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or <kbd>Cmd</kbd> +
 > <kbd>Enter</kbd> to evaluate each line.
 {: ng-show="block63" .description}
-</div>
 </section>
 
 <section>
