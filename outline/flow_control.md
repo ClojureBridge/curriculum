@@ -22,11 +22,11 @@ Flow Control
 * Boolean logic
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### What is flow control?
 {: .slide_title .slide}
 
-#### Decisions how to react <button class="link" ng-model="block11" ng-click="block11=!block11">Details</button>
+#### Decisions how to react <button class="link" ng-bind-html="details" ng-model="block11" ng-click="block11=!block11"></button>
 
 > "Flow control" is the programming term for deciding how to react to
 > a given circumstance. We make decisions like this all the time. *If*
@@ -36,7 +36,7 @@ Flow Control
 > continue to your destination.
 {: ng-show="block11" .description}
 
-#### Testing conditions to react <button class="link" ng-model="block12" ng-click="block12=!block12">Details</button>
+#### Testing conditions to react <button class="link" ng-bind-html="details" ng-model="block12" ng-click="block12=!block12"></button>
 
 > Software is also full of these decisions. *If* the user's input is
 > valid, *then* we should save her data; *otherwise* we show an error
@@ -45,11 +45,11 @@ Flow Control
 {: ng-show="block12" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### `if`
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
 > In Clojure, the most basic tool we have for the flow control is the `if`
 > operator. Here's the example how you might code the data validation scenario.
@@ -68,7 +68,7 @@ Flow Control
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### General form of `if` operator
 
 ```clojure
@@ -78,7 +78,7 @@ Flow Control
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### `if` examples
 
 ```clojure
@@ -94,8 +94,8 @@ Flow Control
 ```
 </section>
 
-<section>
-#### Truthiness <button class="link" ng-model="block51" ng-click="block51=!block51">Details</button>
+<section ng-controller="NarrativeController">
+#### Truthiness <button class="link" ng-bind-html="details" ng-model="block51" ng-click="block51=!block51"></button>
 
 > When testing the truth of an expression, Clojure considers the
 > values `nil` and `false` to be false and everything else to be true.
@@ -150,12 +150,12 @@ Flow Control
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### `cond`
 {: .slide_title .slide}
 
-<button class="link" ng-model="block61" ng-click="block61=!block61">Details1</button>
-<button class="link" ng-model="block62" ng-click="block62=!block62">Details2</button>
+<button class="link" ng-bind-html="details1" ng-model="block61" ng-click="block61=!block61"></button>
+<button class="link" ng-bind-html="details2" ng-model="block62" ng-click="block62=!block62"></button>
 
 > The `if` operator takes only one predicate.
 > When we want to use multiple predicates, `if` is not a good option.
@@ -180,7 +180,7 @@ Flow Control
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### General form of `cond` operator
 
 ```clojure
@@ -204,7 +204,7 @@ Flow Control
 4. use `cond` you wrote at step 2 to complete the function
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Boolean logic with `and`, `or`, and `not`
 {: .slide_title .slide}
 
@@ -224,8 +224,8 @@ Flow Control
 {: ng-show="block81" .description}
 </section>
 
-<section>
-### Truthy and falsey table <button class="link" ng-model="block91" ng-click="block91=!block91">Details</button>
+<section ng-controller="NarrativeController">
+### Truthy and falsey table <button class="link" ng-bind-html="details" ng-model="block91" ng-click="block91=!block91"></button>
 
 > `and`, `or`, and `not` work like other functions (they aren't
 > exactly functions, but work like them), so they are in _prefix
@@ -241,8 +241,8 @@ Flow Control
 
 </section>
 
-<section>
-#### `and`, `or`, and `not` combination <button class="link" ng-model="block101" ng-click="block101=!block101">Details</button>
+<section ng-controller="NarrativeController">
+#### `and`, `or`, and `not` combination <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
 
 > `and`, `or`, and `not` can be combined. This can be hard to read.
 > Here's an example:
