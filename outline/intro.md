@@ -61,7 +61,7 @@ Introduction to Programming with Clojure
 > you can use Clojure for any sort of application easily.
 {: ng-show="block13" .description}
 
-#### Clojure is _fun_ <button class="link" ng-model="block14" ng-click="block14=!block14">Details</button>
+#### Clojure is _fun_ <button class="link" ng-bind-html="details" ng-model="block14" ng-click="block14=!block14"></button>
 
 > Clojure is _fun_. That's a matter of opinion, of course, but we
 > think it holds true. I hope that during this course you experience

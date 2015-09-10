@@ -37,11 +37,11 @@ Simple Values
 {: ng-show="block71" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Strings
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
 > What is a string? A string is just a piece of text. To make a
 > string, you enclose it in quotation marks.
@@ -59,11 +59,11 @@ Simple Values
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Booleans and nil
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
 
 >A boolean is a true or false value, and you type them just like that,
 >`true` and `false`. Often in programming, we need to ask a true or
@@ -88,11 +88,11 @@ nil
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Keywords
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block41" ng-click="block41=!block41">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block41" ng-click="block41=!block41"></button>
 
 > Keywords are the strangest of the basic value types. Some computer
 > languages have similar one. However, keywords don’t have a real
@@ -110,10 +110,10 @@ nil
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Numbers
 
-#### Integers <button class="link" ng-model="block81" ng-click="block81=!block81">Details</button>
+#### Integers <button class="link" ng-bind-html="details" ng-model="block81" ng-click="block81=!block81"></button>
 
 > Clojure has several different types of numbers.
 {: ng-show="block81" .description}
@@ -130,8 +130,8 @@ nil
 ```
 </section>
 
-<section>
-#### Decimal numbers <button class="link" ng-model="block91" ng-click="block91=!block91">Details</button>
+<section ng-controller="NarrativeController">
+#### Decimal numbers <button class="link" ng-bind-html="details" ng-model="block91" ng-click="block91=!block91"></button>
 
 > Then we have decimal numbers, which are also called floats. They
 > include any numbers that have a decimal point in them.
@@ -144,8 +144,8 @@ nil
 ```
 </section>
 
-<section>
-#### Ratios <button class="link" ng-model="block101" ng-click="block101=!block101">Details</button>
+<section ng-controller="NarrativeController">
+#### Ratios <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
 
 > Finally, we have fractions, which are also called ratios. Computers
 > cannot perfectly represent all floats, but ratios are always exact.
@@ -180,12 +180,12 @@ nil
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Infix vs. prefix notation
 {: .slide-title .slide}
 
-<button class="link" ng-model="block121" ng-click="block121=!block121">Details1</button>
-<button class="link" ng-model="block122" ng-click="block122=!block122">Details2</button>
+<button class="link" ng-bind-html="details1" ng-model="block121" ng-click="block121=!block121"></button>
+<button class="link" ng-bind-html="details2" ng-model="block122" ng-click="block122=!block122"></button>
 
 > In Clojure, `+`, `-`, `*` and `/` appear before two numbers. This is
 > called _prefix notation_. What you're used to seeing is called
@@ -206,10 +206,10 @@ Prefix: (+ (- (+ (+ 1 (/ (* 2 3) 4)) 5) (/ (* 6 7) 8)) 9)
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Why prefix is better?
 
-#### Explicit precedence <button class="link" ng-model="block131" ng-click="block131=!block131">Details</button>
+#### Explicit precedence <button class="link" ng-bind-html="details" ng-model="block131" ng-click="block131=!block131"></button>
 
 > Imagine both are unclear, but notice that in the prefix version,
 > you do not have to ever think about the precedence of operators.
@@ -223,7 +223,7 @@ Infix:  1 + 2 / 3
 Prefix: (+ 1 (/ 2 3))
 ```
 
-#### Less repetitive <button class="link" ng-model="block132" ng-click="block132=!block132">Details</button>
+#### Less repetitive <button class="link" ng-bind-html="details" ng-model="block132" ng-click="block132=!block132"></button>
 
 > Another reason prefix notation can be nice is that it can make long
 > expressions less repetitive.
@@ -237,10 +237,10 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Arithmetic with all number types
 
-<button class="link" ng-model="block141" ng-click="block141=!block141">Details</button>
+<button class="link" ng-bind-html="details" ng-model="block141" ng-click="block141=!block141"></button>
 
 > So far, we looked at arithmetic operations by integers only.
 > However, we can use floats or ratios for those operations as well.
@@ -255,7 +255,7 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 </section>
 
 
-<section>
+<section ng-controller="NarrativeController">
 ## Assignment: `def`
 
 #### <button class="link" ng-model="block161" ng-click="block161=!block161">Intro</button>
@@ -267,10 +267,10 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 {: ng-show="block161" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### Assigning names to values: `def`
 
-#### <button class="link" ng-model="block171" ng-click="block171=!block171">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block171" ng-click="block171=!block171"></button>
 
 > We can assign a name to value using `def`.
 > When a name is assigned a value, that name is called a *symbol*.
@@ -287,8 +287,8 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 ```
 </section>
 
-<section>
-#### Assign results to symbols <button class="link" ng-model="block181" ng-click="block181=!block181">Details</button>
+<section ng-controller="NarrativeController">
+#### Assign results to symbols <button class="link" ng-bind-html="details" ng-model="block181" ng-click="block181=!block181"></button>
 
 > You can assign more than simple values to symbols. Try the following.
 > Look at the last line, and see how we can use symbols by themselves to refer to a value.
