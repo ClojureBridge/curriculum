@@ -25,25 +25,25 @@ Sequences
     * `dotimes`
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### What are sequences?
 {: .slide_title .slide}
 
-#### Clojure's data structures <button class="link" ng-model="block11" ng-click="block11=!block11">Details</button>
+#### Clojure's data structures <button class="link" ng-bind-html="details" ng-model="block11" ng-click="block11=!block11"></button>
 
 > In Clojure, we can say every data structure is a sequence.
 > So far, we learned `vector` and `map`, both of which are sequence.
 > String is also a sequence. When something is **seq-able**, it is a sequence.
 {: ng-show="block11" .description}
 
-#### `first` item or not <button class="link" ng-model="block12" ng-click="block12=!block12">Details</button>
+#### `first` item or not <button class="link" ng-bind-html="details" ng-model="block12" ng-click="block12=!block12"></button>
 
 > If something is **seq-able**, it returns the first item in the sequence
 > by the `first` function. This is a good test whether it is a sequence or not.
 {: ng-show="block12" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### Results of `first`
 
 ```clojure
@@ -66,9 +66,9 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Functions for sequences
-<button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+<button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
 > Clojure is very good at *iterate* over a sequence.
 > There are many functions that interact on sequences.
@@ -79,11 +79,11 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 {: ng-show="block21" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### `doseq`
 
-<button class="link" ng-model="block31" ng-click="block31=!block31">Details1</button>
-<button class="link" ng-model="block32" ng-click="block32=!block32">Details2</button>
+<button class="link" ng-bind-html="details1" ng-model="block31" ng-click="block31=!block31"></button>
+<button class="link" ng-bind-html="details2" ng-model="block32" ng-click="block32=!block32"></button>
 
 > The `doseq`(for **do a sequence**) is one of well-used functions
 > for sequences, and works quite similar to `map` function. The
@@ -113,11 +113,11 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
     - `chord` function and later
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### `dotimes`
 
-<button class="link" ng-model="block41" ng-click="block41=!block41">Details1</button>
-<button class="link" ng-model="block42" ng-click="block42=!block42">Details2</button>
+<button class="link" ng-bind-html="details1" ng-model="block41" ng-click="block41=!block41"></button>
+<button class="link" ng-bind-html="details2" ng-model="block42" ng-click="block42=!block42"></button>
 
 > The `dotimes`(for **do number of times**) is another well-used
 > function for sequences. Like `doseq`, the function repeatedly
