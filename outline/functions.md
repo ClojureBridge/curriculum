@@ -25,7 +25,7 @@ Functions
 * [bonus section] Assignment: `let`
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### What are functions?
 {: .slide_title .slide}
 
@@ -49,8 +49,8 @@ Functions
 * A piece of code that takes values and returns a value
 </section>
 
-<section>
-#### An example function <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+<section ng-controller="NarrativeController">
+#### An example function <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
 > * `defn` specifies that we are defining a function.
 > * `forward-right` is the *name* of this function.
@@ -68,8 +68,8 @@ Functions
 ```
 </section>
 
-<section>
-#### How to use `forward-right` function <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
+<section ng-controller="NarrativeController">
+#### How to use `forward-right` function <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
 
 > To use `forward-right`, we *call* the function, just like we've done with all the functions we've already used.
 {: ng-show="block31" .description}
@@ -80,8 +80,8 @@ Functions
 ```
 </section>
 
-<section>
-#### A function with multiple arguments <button class="link" ng-model="block41" ng-click="block41=!block41">Details</button>
+<section ng-controller="NarrativeController">
+#### A function with multiple arguments <button class="link" ng-bind-html="details" ng-model="block41" ng-click="block41=!block41"></button>
 
 > Functions can also take more than one argument. Let's make a
 > `forward-right-with-len` function that takes a forward length, in addition
@@ -135,11 +135,11 @@ Functions
 </section>
 
 
-<section>
+<section ng-controller="NarrativeController">
 ### Naming functions
 {: .slide_title .slide}
 
-#### Names are Symbols <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
+#### Names are Symbols <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
 > Function names are symbols, just like the symbols we used with `def`
 > when assigning names to values.
@@ -151,7 +151,7 @@ Functions
 > idioms we use.
 {: ng-show="block61" .description}
 
-#### Two types of functions <button class="link" ng-model="block62" ng-click="block62=!block62">Details</button>
+#### Two types of functions <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
 
 > Clojure has two type of functions:
 > 1. function that returns a value,
@@ -160,7 +160,7 @@ Functions
 {: ng-show="block62" .description}
 
 
-##### Predicate function examples <button class="link" ng-model="block63" ng-click="block63=!block63">Details</button>
+##### Predicate function examples <button class="link" ng-bind-html="details" ng-model="block63" ng-click="block63=!block63"></button>
 
 > In Clojure, `=` is a predicate function, which may be a surprising
 > fact. Other than that, like many other computer languages,
@@ -174,7 +174,7 @@ Functions
 
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### [Bonus section]
 
 ### Functions that take other functions
@@ -193,10 +193,10 @@ Functions
 {: ng-show="block71" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### `map` function
 
-#### <button class="link" ng-model="block101" ng-click="block101=!block101">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
 
 > `map` is a function that takes another function, along with a
 > collection. It calls the function provided to it on each member of
@@ -215,10 +215,10 @@ Functions
 > [partial](http://clojuredocs.org/clojure.core/partial)
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### `reduce` function
 
-#### <button class="link" ng-model="block111" ng-click="block111=!block111">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block111" ng-click="block111=!block111"></button>
 
 > Let's look at another function that takes a function. This one is
 > `reduce`, and it is used to turn collections into a single value.
@@ -250,12 +250,12 @@ Functions
 </section>
 
 
-<section>
+<section ng-controller="NarrativeController">
 #### [Bonus section]
 
 ### Anonymous functions
 
-#### Functions without names <button class="link" ng-model="block201" ng-click="block201=!block201">Details</button>
+#### Functions without names <button class="link" ng-bind-html="details" ng-model="block201" ng-click="block201=!block201"></button>
 
 > So far, all the functions we've seen have had names, like `+` and
 > `str` and `reduce`. However, functions don't need to have names, just
@@ -272,7 +272,7 @@ Functions
 (fn [s1 s2] (str s1 " " s2))
 ```
 
-#### vs. not anonymous functions <button class="link" ng-model="block202" ng-click="block202=!block202">Details</button>
+#### vs. not anonymous functions <button class="link" ng-bind-html="details" ng-model="block202" ng-click="block202=!block202"></button>
 
 > Before we go forward, you should understand that you can _always_
 > feel free to name your functions. There is nothing wrong at all with
@@ -287,8 +287,8 @@ Functions
 ```
 </section>
 
-<section>
-#### Anonymous function usage examples <button class="link" ng-model="block203" ng-click="block203=!block203">Details</button>
+<section ng-controller="NarrativeController">
+#### Anonymous function usage examples <button class="link" ng-bind-html="details" ng-model="block203" ng-click="block203=!block203"></button>
 
 > Why would you ever need anonymous functions?
 > Anonymous functions can be very useful
@@ -309,7 +309,7 @@ Functions
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### [Bonus section]
 
 ### Assignment: `let`
@@ -325,11 +325,11 @@ Functions
 {: ng-show="block301" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### Assigning names to values: `let`
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block305" ng-click="block305=!block305">Details</button>
+#### <button class="link" ng-bind-html="details" ng-model="block305" ng-click="block305=!block305"></button>
 
 > We can assign a name to value using `let` like `def`.
 > When a name is assigned to a value, the name is called a *symbol*.
@@ -346,13 +346,13 @@ Functions
 ```
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 #### `let` example
 
-<button class="link" ng-model="block311" ng-click="block311=!block311">Details 1</button>
-<button class="link" ng-model="block312" ng-click="block312=!block312">Details 2</button>
-<button class="link" ng-model="block313" ng-click="block313=!block313">Details 3</button>
-<button class="link" ng-model="block314" ng-click="block314=!block314">Exercise</button>
+<button class="link" ng-bind-html="details1" ng-model="block311" ng-click="block311=!block311"></button>
+<button class="link" ng-bind-html="details2" ng-model="block312" ng-click="block312=!block312"></button>
+<button class="link" ng-bind-html="details3" ng-model="block313" ng-click="block313=!block313"></button>
+<button class="link" ng-bind-html="exercise" ng-model="block314" ng-click="block314=!block314"></button>
 
 > This is the most complicated function we've seen so far, so let's go
 > through each step. First, we have the name of the function, the
