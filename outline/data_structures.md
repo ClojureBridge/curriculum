@@ -39,11 +39,11 @@ collections together.
 {: ng-show="block11" .description}
 </section>
 
-<section>
+<section ng-controller="NarrativeController">
 ### Vectors
 {: .slide_title .slide}
 
-#### Sequential collection <button class="link" ng-model="block21" ng-click="block21=!block21">Details</button>
+#### Sequential collection <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
 > A vector is a sequential collection of values. A vector may be
 > empty. A vector may contain values of different types.
@@ -52,7 +52,7 @@ collections together.
 > looking them up.
 {: ng-show="block21" .description}
 
-#### Compartment-like structure <button class="link" ng-model="block22" ng-click="block22=!block22">Details</button>
+#### Compartment-like structure <button class="link" ng-bind-html="details" ng-model="block22" ng-click="block22=!block22"></button>
 
 > To imagine a vector, imagine a box split into some number of
 > equally-sized compartments. Each of those compartments has a number.
@@ -68,8 +68,8 @@ collections together.
 
 </section>
 
-<section>
-#### Syntax <button class="link" ng-model="block31" ng-click="block31=!block31">Details</button>
+<section ng-controller="NarrativeController">
+#### Syntax <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
 
 >Vectors are written using square brackets with any number of pieces
 >of data inside them, separated by spaces. Here are some examples of
@@ -83,8 +83,8 @@ collections together.
 ```
 </section>
 
-<section>
-#### Example <button class="link" ng-model="block41" ng-click="block41=!block41">Details</button>
+<section ng-controller="NarrativeController">
+#### Example <button class="link" ng-bind-html="details" ng-model="block41" ng-click="block41=!block41"></button>
 
 > When there are a couple of turtles,
 > `(turtle-names)` command will return turtle names in the form of a
@@ -98,8 +98,8 @@ collections together.
 </section>
 
 
-<section>
-#### Creation <button class="link" ng-model="block61" ng-click="block61=!block61">Details</button>
+<section ng-controller="NarrativeController">
+#### Creation <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
 > The next two functions are used to make new vectors. The `vector`
 > function takes any number of items and puts them in a new vector.
@@ -120,8 +120,8 @@ collections together.
 ```
 </section>
 
-<section>
-#### Extraction <button class="link" ng-model="block81" ng-click="block81=!block81">Details</button>
+<section ng-controller="NarrativeController">
+#### Extraction <button class="link" ng-bind-html="details" ng-model="block81" ng-click="block81=!block81"></button>
 
 > Now, take a look at these four functions. `count` gives us a
 count of the number of items in a vector. `nth` gives us the nth
@@ -167,10 +167,10 @@ be confusing.
 </section>
 
 
-<section>
+<section ng-controller="NarrativeController">
 ### Maps
 
-#### key value pairs <button class="link" ng-model="block101" ng-click="block101=!block101">Details</button>
+#### key value pairs <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
 
 >Maps hold a set of keys and values associated with them. You can
 >think of it like a dictionary: you look up things using a word (a
@@ -182,8 +182,8 @@ be confusing.
 ![Map](img/map.png)
 </section>
 
-<section>
-#### Syntax <button class="link" ng-model="block102" ng-click="block102=!block102">Details</button>
+<section ng-controller="NarrativeController">
+#### Syntax <button class="link" ng-bind-html="details" ng-model="block102" ng-click="block102=!block102"></button>
 
 > We write maps by enclosing alternating keys and values in curly braces, like so.
 {: ng-show="block102" .description}
@@ -203,8 +203,8 @@ be confusing.
 ```
 </section>
 
-<section>
-#### Example <button class="link" ng-model="block103" ng-click="block103=!block103">Details</button>
+<section ng-controller="NarrativeController">
+#### Example <button class="link" ng-bind-html="details" ng-model="block103" ng-click="block103=!block103"></button>
 
 > When turtle received commands such that `forward` or `right`,
 > those return the result as a form of map of map.
@@ -218,8 +218,8 @@ be confusing.
 ```
 </section>
 
-<section>
-#### Creation <button class="link" ng-model="block104" ng-click="block104=!block104">Details</button>
+<section ng-controller="NarrativeController">
+#### Creation <button class="link" ng-bind-html="details" ng-model="block104" ng-click="block104=!block104"></button>
 
 > `assoc` and `dissoc` are paired functions: they associate and disassociate items from a map. See how we add the last name "Brown" to the map with `assoc`, and then we remove it with `dissoc`. `merge` merges two maps together to make a new map.
 {: ng-show="block104" .description}
@@ -236,8 +236,8 @@ be confusing.
 ```
 </section>
 
-<section>
-#### Extraction 1 <button class="link" ng-model="block105" ng-click="block105=!block105">Details</button>
+<section ng-controller="NarrativeController">
+#### Extraction 1 <button class="link" ng-bind-html="details" ng-model="block105" ng-click="block105=!block105"></button>
 
 > `count`, every collection has this function. Why do you think the
 > answer is two? `count` is returning the number of associations.
@@ -265,8 +265,8 @@ be confusing.
 ```
 </section>
 
-<section>
-#### Extraction 2 <button class="link" ng-model="block106" ng-click="block106=!block106">Details</button>
+<section ng-controller="NarrativeController">
+#### Extraction 2 <button class="link" ng-bind-html="details" ng-model="block106" ng-click="block106=!block106"></button>
 
 > Then we have `keys` and `vals`, which are pretty simple: they return
 > the keys and values in the map. The order is not guaranteed, so we
@@ -282,8 +282,8 @@ be confusing.
 ```
 </section>
 
-<section>
-#### Update <button class="link" ng-model="block110" ng-click="block110=!block110">Details</button>
+<section ng-controller="NarrativeController">
+#### Update <button class="link" ng-bind-html="details" ng-model="block110" ng-click="block110=!block110"></button>
 
 > After the creation, we want to save a new value associated to the
 > key. The `assoc` function can be used by assigning a new value to
