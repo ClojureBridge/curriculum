@@ -106,8 +106,8 @@ collections together.
 > `conj` is an interesting function that you'll see used with all the
 > data structures. With vectors, it takes a vector and an item and
 > returns a new vector with that item added to the end of the vector.
-> Why the name `conj`? The verb "conjugate" has an archaic meaning "to
-> join together," which is what we're doing: we're joining the new
+> Why the name `conj`? `conj` is short for conjoin, which means to 
+> join or combine. This is what we're doing: we're joining the new
 > item to the vector.
 {: ng-show="block61" .description}
 
