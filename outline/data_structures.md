@@ -150,8 +150,9 @@ be confusing.
 {: .slide_title .slide}
 
 * Go to `walk.clj` file
-* Type `(add-turtle)` and evaluate this line
-* Repeat adding a turtle a couple of times
+* Type `(add-turtle :neo)` and evaluate this line by hitting Cmd +
+  Enter or Ctrl + Enter (no shift key)
+* Repeat adding turtles a couple of times
 * Type `(turtle-names)`, evaluate this line and see the result
 </section>
 
@@ -370,7 +371,7 @@ st
 
 > Every time you write a line of code,
 > hit <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or <kbd>Cmd</kbd> +
-> <kbd>Enter</kbd> to evaluate it one by one.
+> <kbd>Enter</kbd> (no shift key) to evaluate it one by one.
 
 ```clojure
 (state-all)
