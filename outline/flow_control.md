@@ -49,22 +49,26 @@ Flow Control
 ### `if`
 {: .slide_title .slide}
 
-#### <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
+<button class="link" ng-bind-html="details1" ng-model="block21"
+ng-click="block21=!block21"></button>
+<button class="link" ng-bind-html="details2" ng-model="block22" ng-click="block22=!block22"></button>
 
 > In Clojure, the most basic tool we have for the flow control is the `if`
 > operator. Here's the example how you might code the data validation scenario.
->
-> If the `angle` is less than 360, then return `angle`; otherwise,
-> calculate modulo by 360 and return it. (because 370 degrees = 10 degrees)
 {: ng-show="block21" .description}
+
+> Here' an example. If adding 40 to `y` is still less than 150, then
+> return `(+ y 40)`; otherwise, returns -150. (As for turtle app's
+> frame, the top has 150 in y, while the bottom has -150 in y.)
+{: ng-show="block22" .description}
 
 > Reference: [Conditional `if`](http://clojurebridge.github.io/community-docs/docs/clojure/if/)
-{: ng-show="block21" .description}
+{: ng-show="block22" .description}
 
 ```clojure
-(if (< angle 360)
-  angle
-  (mod angle 360))
+(if (< (+ y 40) 150)
+  (+ y 40)
+  -150))
 ```
 </section>
 
@@ -125,28 +129,26 @@ Flow Control
 </section>
 
 <section>
-#### EXERCISE: Real angle calculator
+#### EXERCISE: Y value within a frame
 {: .slide_title .slide}
 
-* Write a function `real-angle` that takes an angle as an argument.
+* Write a function `y-within-frame` that takes y (vertical position) as an argument.
 * You may use if example in the slide.
-* The function should return a real-angle between 0 to 359
+* The function should return the y value that won't exceed 150.
 
-    - See: [angle in absolute degrees](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md#angle-in-absolute-degrees)
+    - See: [x and y in absolute values](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md#x-and-y-in-absolute-values)
 
 ```clojure
 ;; if example
-(if (< angle 360)
-  angle
-  (mod angle 360))
+(if (< (+ y 40) 150)
+  (+ y 40)
+  -150))
 ```
 
 ```clojure
-;; usage of real-angle function
-(real-angle 180)
-;=> 180
-(real-angle 1000)
-;=> 280
+;; usage of y-within-frame function
+(y-within-frame 80)    ;=> 120
+(y-within-frame 180)   ;=> -150
 ```
 </section>
 
@@ -163,10 +165,12 @@ Flow Control
 > To branch to multiple situations, `cond` operator works well.
 {: ng-show="block61" .description}
 
-> Here's the example. If temp is greater than 65 (in Fahrenheit),
-> evaluate the first form. If temp is greater than 45, evaluate the
-> second form. If both two predicates return false, evaluate the
-> `:else` form.
+> Here's the example. If adding 40 to y exceeds 150, evaluate the
+> first form. In this case, it returns -150. If adding 40 to y is less
+> than -150, evaluate the second form. In this case, it returns 150.
+> If both two predicates return false, evaluate the `:else` form. In
+> this case, it returns y plus 40. If we use this function in the
+> turtle app, we can keep our turtle between top and bottom of the frame.
 {: ng-show="block62" .description}
 
 > Reference: [Conditional `cond`](http://clojurebridge.github.io/community-docs/docs/clojure/cond/)
@@ -174,9 +178,9 @@ Flow Control
 
 ```clojure
 (cond
-  (> temp 65) "I'll enjoy walking at a park."
-  (> temp 45) "I'll spend time at a cafe."
-  :else "I'll curl up in my bed."))
+  (> (+ y 40) 150) -150
+  (< (+ y 40) -150) 150
+  :else (+ y 40)))
 ```
 </section>
 
@@ -193,7 +197,31 @@ Flow Control
 </section>
 
 <section>
-#### EXERCISE [BONUS]: Shoe Size Mapping
+#### EXERCISE 1: Y value within a frame - part 2
+{: .slide_title .slide}
+
+> The function we wrote in the previous exercise, `y-within-frame`, has
+> a flaw. If the given y value is -1000, the function will return -960.
+> Since y value of the frame bottom is -150, -960 is beyond that.
+> Your turtle will go invisible area. Let's make it real within-frame
+> function using `cond`.
+
+* Write a function `y-within-frame-cond` that takes y (vertical position) as an argument.
+* You may use `cond` example in the slide.
+* The function should return the y value between -150 and 150.
+
+    - See: [x and y in absolute values](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md#x-and-y-in-absolute-values)
+
+```clojure
+;; usage of y-within-frame-cond function
+(y-within-frame-cond 200)    ;=> -150
+(y-within-frame-cond -200)   ;=> 150
+(y-within-frame-cond 0)      ;=> 40
+```
+</section>
+
+<section>
+#### EXERCISE 2 [BONUS]: Shoe Size Mapping
 {: .slide_title .slide}
 
 |Suppose you are traveling abroad..<br/> (chart: www.jcpenney.com )| ![shoe size](img/shoe_size_chart_womens.png)|
