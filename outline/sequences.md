@@ -48,9 +48,9 @@ Sequences
 
 ```clojure
 (turtle-names)
-;=> [:trinity :smith0 :smith1]  ; vector
+;=> [:trinity :neo :oracle :cypher] ; vector
 (first (turtle-names))
-;=> :trinity                    ; the first item
+;=> :trinity                        ; the first item
 
 (:trinity (state))
 ;=> {:x 0, :y 0, :angle 90, :color [30 30 30]}  ; map

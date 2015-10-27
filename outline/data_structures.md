@@ -93,7 +93,7 @@ collections together.
 
 ```clojure
 (turtle-names)
-;=> [:trinity :smith0 :smith1 :smith2 :neo]
+;=> [:trinity :neo :oracle :cypher]
 ```
 </section>
 
@@ -152,7 +152,7 @@ be confusing.
 * Go to `walk.clj` file
 * Type `(add-turtle :neo)` and evaluate this line by hitting Cmd +
   Enter or Ctrl + Enter (no shift key)
-* Repeat adding turtles a couple of times
+* Repeat adding turtles a couple of times with different names
 * Type `(turtle-names)`, evaluate this line and see the result
 </section>
 
@@ -328,16 +328,16 @@ be confusing.
 
 ```clojure
 (state-all)
-;=> [{:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996, :angle 90, :color [30 30 30]}}
-{:smith0 {:x 30.0, :y 0.0, :angle 0, :color [10 107 30]}}
-{:smith1 {:x 0, :y 0, :angle 90, :color [10 107 30]}}]
+;=> [{:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996, :angle 90, :color [106 40 126]}}
+{:neo {:x 21.213202971967114, :y 21.213203899225725, :angle 45, :color [0 64 0]}}
+{:oracle {:x -49.99999999999981, :y -4.3711390001862375E-6, :angle 180, :color [43 101 236]}}]
 
 (def states (state-all))
 ;=> #'clojurebridge-turtle.walk/states
 
 (first states)
-;=> {:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996, :angle
-90, :color [30 30 30]}}
+;=> {:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996,
+:angle 90, :color [106 40 126]}}
 ```
 </section>
 

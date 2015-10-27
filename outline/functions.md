@@ -75,8 +75,8 @@ Functions
 {: ng-show="block31" .description}
 
 ```clojure
-(forward-right :smith1)   ;=> {:smith1 {:angle 135}}
 (forward-right :trinity)  ;=> {:trinity {:angle 135}}
+(forward-right :neo) ;=> {:neo {:angle 135}}
 ```
 </section>
 
@@ -95,8 +95,8 @@ Functions
   (forward turtle len)
   (right turtle 135))
 
-(forward-right-with-len :smith0 80)  ;=> {:smith0 {:angle 135}}
 (forward-right-with-len :trinity 90) ;=> {:trinity {:angle 135}}
+(forward-right-with-len :neo 80)  ;=> {:neo {:angle 135}}
 ```
 </section>
 
@@ -208,7 +208,7 @@ Functions
 {: ng-show="block101" .description}
 
 ```clojure
-(map name (turtle-names)) ;=> ("trinity" "smith0" "smith1" "smith2")
+(map name (turtle-names)) ;=> ("trinity" "neo" "oracle" "cypher")
 (map (partial + 90) [0 30 60 90]) ;=> (90 120 150 180)
 ```
 
@@ -235,8 +235,8 @@ Functions
 {: ng-show="block111" .description}
 
 ```clojure
-(reduce str (turtle-names)) ;=> ":trinity:smith0:smith1:smith2"
-(reduce + [30 60 90])       ;=> 180
+reduce str (turtle-names)) ;=> ":trinity:neo:oracle:cypher"
+(reduce + [30 60 90])      ;=> 180
 ```
 </section>
 
@@ -301,13 +301,13 @@ Functions
 
 ```clojure
 (map (fn [t] (forward t 45)) (turtle-names))
-;=> ({:trinity {:length 45}} {:smith0 {:length 45}} {:smith1 {:length
-45}} {:smith2 {:length 45}})
+;=> ({:trinity {:length 45}} {:neo {:length 45}} {:oracle {:length
+45}} {:cypher {:length 45}})
 
 (reduce (fn [x y] (+ x y)) [1 2 3]) ;=> 6
 
 (reduce (fn [a b] (str a ", " b)) (map name (turtle-names)))
-;=> "trinity, smith0, smith1, smith2"
+;=> "trinity, neo, oracle, cypher"
 ```
 </section>
 
