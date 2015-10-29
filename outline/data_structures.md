@@ -362,7 +362,7 @@ st
 
 
 <section>
-#### EXERCISE 1: See turtles states
+#### EXERCISE 3: See turtles states
 {: .slide_title .slide}
 
 * Go to `walk.clj` file
@@ -385,7 +385,7 @@ st
 </section>
 
 <section>
-#### EXERCISE 2: Modeling Yourself
+#### EXERCISE 4: Modeling Yourself
 {: .slide_title .slide}
 
 * Go to insta-REPL
@@ -397,7 +397,7 @@ st
 </section>
 
 <section>
-#### EXERCISE 3 [BONUS]: Modeling your classmates
+#### EXERCISE 5 [BONUS]: Modeling your classmates
 {: .slide_title .slide}
 
 * First, take the map you made about yourself in previous exercise.

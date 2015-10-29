@@ -129,7 +129,7 @@ ng-click="block21=!block21"></button>
 </section>
 
 <section>
-#### EXERCISE: Y value within a frame
+#### EXERCISE 1: Y value within a frame
 {: .slide_title .slide}
 
 * Write a function `y-within-frame` that takes y (vertical position) as an argument.
@@ -197,7 +197,7 @@ ng-click="block21=!block21"></button>
 </section>
 
 <section>
-#### EXERCISE 1: Y value within a frame - part 2
+#### EXERCISE 2: Y value within a frame - part 2
 {: .slide_title .slide}
 
 > The function we wrote in the previous exercise, `y-within-frame`, has
@@ -221,7 +221,7 @@ ng-click="block21=!block21"></button>
 </section>
 
 <section>
-#### EXERCISE 2 [BONUS]: Shoe Size Mapping
+#### EXERCISE 3 [BONUS]: Shoe Size Mapping
 {: .slide_title .slide}
 
 |Suppose you are traveling abroad..<br/> (chart: www.jcpenney.com )| ![shoe size](img/shoe_size_chart_womens.png)|

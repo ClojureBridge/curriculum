@@ -241,7 +241,7 @@ reduce str (turtle-names)) ;=> ":trinity:neo:oracle:cypher"
 </section>
 
 <section>
-#### EXERCISE [BONUS]: Find the average
+#### EXERCISE 3 [BONUS]: Find the average
 {: .slide_title .slide}
 
 * Create a function called `average` that takes a vector of maps.

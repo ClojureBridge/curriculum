@@ -103,7 +103,7 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 </section>
 
 <section>
-#### EXERCISE
+#### EXERCISE 1
 
 * [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
     - section 5 and later
@@ -138,7 +138,7 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 </section>
 
 <section>
-#### EXERCISE
+#### EXERCISE 2
 
 * [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
     - section 6 and later
