@@ -236,7 +236,7 @@ Functions
 
 ```clojure
 (reduce str (turtle-names)) ;=> ":trinity:neo:oracle:cypher"
-(reduce + [30 60 90])      ;=> 180
+(reduce + [30 60 90])       ;=> 180
 ```
 </section>
 
