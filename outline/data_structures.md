@@ -233,7 +233,7 @@ be confusing.
 ;=> {:first "Sally"}
 
 (merge {:first "Sally"} {:last "Brown"})
-;=> {:first "Sally" :last "Brown"}
+;=> {:first "Sally", :last "Brown"}
 ```
 </section>
 
