@@ -235,8 +235,8 @@ Functions
 {: ng-show="block111" .description}
 
 ```clojure
-reduce str (turtle-names)) ;=> ":trinity:neo:oracle:cypher"
-(reduce + [30 60 90])      ;=> 180
+(reduce str (turtle-names)) ;=> ":trinity:neo:oracle:cypher"
+(reduce + [30 60 90])       ;=> 180
 ```
 </section>
 
