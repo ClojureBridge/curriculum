@@ -208,13 +208,13 @@ Functions
 {: ng-show="block101" .description}
 
 ```clojure
-(map name (turtle-names)) ;=> ("trinity" "neo" "oracle" "cypher")
-(map (partial + 90) [0 30 60 90]) ;=> (90 120 150 180)
+(map count ["a" "abc" "abcdefg"]) ;=> (1 3 7)
+(map even? [0 1 2 3 4])           ;=> (true false true false true)
 ```
 
 > References:
-> [name](http://clojuredocs.org/clojure.core/name),
-> [partial](http://clojuredocs.org/clojure.core/partial)
+> [count](http://clojuredocs.org/clojure.core/count),
+> [even?](http://clojuredocs.org/clojure.core/even_q)
 </section>
 
 <section ng-controller="NarrativeController">
@@ -235,8 +235,8 @@ Functions
 {: ng-show="block111" .description}
 
 ```clojure
-(reduce str (turtle-names)) ;=> ":trinity:neo:oracle:cypher"
-(reduce + [30 60 90])       ;=> 180
+(reduce + [30 60 90])              ;=> 180
+(reduce str ["h" "e" "l" "l" "o"]) ;=> "hello"
 ```
 </section>
 
