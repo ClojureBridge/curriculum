@@ -49,31 +49,20 @@ Flow Control
 ### `if`
 {: .slide_title .slide}
 
-<button class="link" ng-bind-html="details1" ng-model="block21"
-ng-click="block21=!block21"></button>
-<button class="link" ng-bind-html="details2" ng-model="block22" ng-click="block22=!block22"></button>
+<button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
 > In Clojure, the most basic tool we have for the flow control is the `if`
-> operator. Here's the example how you might code the data validation scenario.
+> operator. It allows you to choose between two options depending upon a condition.
 {: ng-show="block21" .description}
 
-> Here' an example. If adding 40 to `y` is still less than 150, then
-> return `(+ y 40)`; otherwise, returns -150. (As for turtle app's
-> frame, the top has 150 in y, while the bottom has -150 in y.)
-{: ng-show="block22" .description}
-
 > Reference: [Conditional `if`](http://clojurebridge.github.io/community-docs/docs/clojure/if/)
-{: ng-show="block22" .description}
+{: ng-show="block21" .description}
 
 ```clojure
-(if (< (+ y 40) 150)
-  (+ y 40)
-  -150))
+(if (= 1 x)
+  "x is one!"
+  "x is not one!")
 ```
-</section>
-
-<section ng-controller="NarrativeController">
-#### General form of `if` operator
 
 ```clojure
 (if conditional-expression
@@ -83,18 +72,20 @@ ng-click="block21=!block21"></button>
 </section>
 
 <section ng-controller="NarrativeController">
-#### `if` examples
+### Checking for valid data
+{: .slide_title .slide}
+
+<button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
+
+> Here' an example of how you might code the data validation scenario using `if`.
+> If adding 40 to `y` is still less than 150, then return `(+ y 40)`; otherwise,
+> returns -150. (As for turtle app's frame, the top has 150 in y, while the bottom has -150 in y.)
+{: ng-show="block31" .description}
 
 ```clojure
-(if (> 3 1)
-  "3 is greater than 1"
-  "3 is not greater than 1")
-;=> "3 is greater than 1"
-
-(if (> 1 3)
-  "1 is greater than 3"
-  "1 is not greater than 3")
-  ;=> "1 is not greater than 3"
+(if (< (+ y 40) 150)  ; would the moved y still be below 150 (the top)?
+  (+ y 40)            ; if so, then move y
+  -150))              ; if not, then set y to -150 (the bottom)
 ```
 </section>
 
