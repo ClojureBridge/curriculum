@@ -45,3 +45,12 @@ button.link {
     text-align:left;
     color:#555555;
 }
+
+#back-to-outline {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    height: 130px;
+}
