@@ -195,7 +195,7 @@ Introduction to Programming with Clojure
 
 **R**ead, **E**val, **P**rint, **L**oop
 
-![Instarepl](img/instarepl.png)
+![Nightcode's repl](img/repl.png)
 
 </section>
 
