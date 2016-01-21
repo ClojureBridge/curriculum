@@ -45,3 +45,30 @@ button.link {
     text-align:left;
     color:#555555;
 }
+#back-to-outline {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    height: 130px;
+}
+/* largely stolen from http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style */
+.reveal kbd
+{
+    -moz-border-radius:3px;
+    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    background: rgba(255, 255, 255, 0.50);
+    border:1px solid #ccc;
+    border-radius:3px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    color:#333;
+    display:inline-block;
+    font-family: "Anonymous Pro",monospace
+    line-height:1;
+    margin:0 .1em;
+    padding:.05em .15em;
+    text-shadow:0 1px 0 #fff;
+}

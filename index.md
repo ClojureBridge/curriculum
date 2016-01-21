@@ -32,7 +32,7 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 * [Simple Values](outline/simple_values.html)
 * [Data Structures](outline/data_structures.html)
 * [Functions](outline/functions.html)
-* [Capstone App: Drawing Lines](https://github.com/ClojureBridge/drawing/blob/master/curriculum/first-program.md)
+* [Capstone App: Drawing Lines](https://github.com/clojurebridge-berlin/drawing/blob/master/curriculum/first-program.md)
 * [Flow Control and Logic](outline/flow_control.html)
 * [[bonus module] Sequences](outline/sequences.html)
 
