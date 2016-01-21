@@ -115,8 +115,7 @@ Functions
   (right turtle 135))
 ```
 
-* On the last line of the function, hit <kbd>Ctrl</kbd> +
-  <kbd>Enter</kbd> or <kbd>Cmd</kbd> + <kbd>Enter</kbd> (no shift key)
+* On the last line of the function, hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
   to evaluate the function
 * Write a line that uses the function, for example: `(forward-right :trinity)`
 * Evaluate the line at least 8 times
@@ -129,11 +128,10 @@ Functions
 * Go to `walk.clj`
 * Write a function, `forward-right-with-len-ang` that takes three
   arguments, turtle, len, and angle (extension of `forward-right-with-len`)
-* On the last line of the function, evaluate it by hitting Cmd + Enter
-  or Ctrl + Enter
+* On the last line of the function, evaluate it by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
 * Write a line that uses the function, for example:
   `(forward-right-with-len-ang :trinity 60 120)`
-* Evaluate the line many times by hitting Cmd + Enter or Ctrl + Enter
+* Evaluate the line many times by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
 </section>
 
 

@@ -150,7 +150,7 @@ be confusing.
 {: .slide_title .slide}
 
 * Go to `walk.clj` file
-* Type `(add-turtle :neo)` and evaluate this line by hitting hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd> or <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>e</kbd>
+* Type `(add-turtle :neo)` and evaluate this line by hitting hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>x</kbd>
 * Repeat adding turtles a couple of times with different names
 * Type `(turtle-names)`, evaluate this line and see the result
 </section>
@@ -365,13 +365,13 @@ st
 {: .slide_title .slide}
 
 * Go to `walk.clj` file
-* Click "Run with REPL" or type <kbd>ctrl</kbd> + <kbd>e</kbd>
+* Click "Run with REPL" or type <kbd>ctrl</kbd>/<kbd>cmd</kbd> + <kbd>e</kbd>
 * Try examples of previous two slides
 * See what values you get
 
 > Every time you write a line of code,
-> hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd> or 
-> <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>e</kbd>
+> hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or 
+> <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>x</kbd>
 > to evaluate it one by one.
 
 ```clojure
@@ -391,7 +391,7 @@ st
 
 * Using the Clojure REPL in the bottom left
     - (Option) You may create a new file and write code in the file. To
-    evaluate, select the code you want and hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>e</kbd> or <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>e</kbd>, or press the "Eval" button
+    evaluate, select the code you want and hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>x</kbd>, or press the "Eval" button
 * Make a map representing yourself
 * Make sure it contains your first name and last name
 * Then, add your hometown to the map using [assoc](http://grimoire.arrdem.com/1.6.0/clojure.core/assoc/) or [merge](http://grimoire.arrdem.com/1.6.0/clojure.core/merge/).
