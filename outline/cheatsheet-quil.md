@@ -14,7 +14,7 @@ Draws an ellipse (oval) in the display window.
 
 ## Color
 `(color r g b a)`  
-A color consists of 4 values. The first three values (red, green, blue in values from 0 to 255) will give a color. Adding a 4th alpha value (from 0 to 1) will give you a transparent color. For example 0 0 255 0.5 will give you a transparent blue.
+A color consists of 4 values. The first three values (red, green, blue in values from 0 to 255) will give a color. Adding a 4th alpha value (from 0 to 255) will give you a transparent color. For example 0 0 255 125 will give you a half transparent blue.
 
 `(background color)`  
 This sets the whole canvas to one color. Great for erasing the screen every draw.
