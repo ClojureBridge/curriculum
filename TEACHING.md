@@ -48,7 +48,7 @@ Saturday: Workshop -  [curriculum](README.md#curriculum).
 
 Preparation
 -----------
-Print the ([markdown](outline/cheatsheet.md) or [pdf](ClojureBridgeCheatsheet-v1.pdf)) and hand it out to students at the beginning of the day on Saturday.
+Print the ([markdown](outline/cheatsheet.md) or [pdf](ClojurebridgeCheatsheet-v2.pdf)) and hand it out to students at the beginning of the day on Saturday.
 
 Room Setup
 ----------
@@ -110,7 +110,7 @@ TODO: add tips under each heading.
 
 Supporting Materials
 --------------------
-* [Student cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
+* [Student cheatsheet](outline/cheatsheet.md) | [PDF](ClojurebridgeCheatsheet-v2.pdf)
 * [Slides](http://clojurebridge.github.io/curriculum)
 
 

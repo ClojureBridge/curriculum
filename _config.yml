@@ -21,7 +21,7 @@ exclude:
 - Gemfile.lock
 - CONTRIBUTING.md
 - EDITING-CURRICULUM.md
-- ClojureBridgeCheatsheet-v1.pdf
+- ClojurebridgeCheatsheet-v2.pdf
 - TEACHING.md
 - background-reading.md
 - tmp
