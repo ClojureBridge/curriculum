@@ -150,22 +150,9 @@ This is starting a REPL, which we will learn about soon. It's a special terminal
 
 #### Testing Light Table
 
-Now, start Applications > LightTable. Once it is started, press the
-Control button and Space Bar together (abbreviated Ctrl+Space). This
-is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+Now we will open and run the sample Clojure apps in Light Table. Start LightTable from Applications > LightTable.
 
-![Testing Light Table - starting instarepl](img/os_x/testing-start-instarepl.png)
-
-At the bottom left of the screen, you will see a cube moving and some text about connecting, retrieving and installing dependencies. Wait until that stops moving, then type `(+ 1 1)` into the window. It should look like the following image:
-
-![Testing Light Table - running in the instarepl](img/os_x/testing-use-instarepl.png)
-
-If that worked, great!
-
-#### Testing apps
-
-Now we will open and run the sample Clojure apps in Light Table. In
-Light Table, click on the menu "File" then choose "Open Folder." Find the
+In Light Table, click on the menu "File" then choose "Open Folder." Find the
 directory, `welcometoclojurebridge`, which was created when you ran
 `git clone` command. Click "Upload." In the workspace menu on the
 left, click on `welcometoclojurebridge` - `src` -
