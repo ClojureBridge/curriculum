@@ -89,14 +89,13 @@ After you run the above commands, run the `lein version` command. It should take
 
 ## Install Light Table
 
-You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this:
+LightTable is only available for 64-bit version of Ubuntu (or you can [build it from source](https://github.com/LightTable/LightTable) for 32-bit Linux).  To find out if you have 64-bit Ubuntu, click Dash Home and type Details. You should see a window like this:
 
 ![Ubuntu Version](img/ubuntu/ubuntu-version.png)
 
 Alternatively, open your terminal and type `uname -m` if the output says "x86_64" you have a 64-bit OS, if it says "i686" you have a 32-bit OS.
 
-Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table.
-Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file".
+Go to the [Light Table site](http://www.lighttable.com/) and click the "Linux64" button and select the "Save file".
 
 ![Light Table downloads](img/light-table-download.png)
 ![Light Table downloads Ubuntu](img/ubuntu/light-table-download.png)
@@ -166,20 +165,9 @@ prompt. Then, the terminal will show you the following message: `user=> Bye for 
 
 #### Testing Light Table
 
-Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+Now we will open and run the sample Clojure apps in Light Table, so start Light Table
 
-![Testing Light Table - starting instarepl](img/ubuntu/testing-start-instarepl.png)
-
-At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
-
-![Testing Light Table - running in the instarepl](img/ubuntu/testing-use-instarepl.png)
-
-If that worked, great!
-
-### Testing apps
-
-Now we will open and run the sample Clojure apps in Light Table. In
-Light Table, click on the menu "File" then choose "Open Folder." Find the
+In Light Table, click on the menu "File" then choose "Open Folder." Find the
 directory, `welcometoclojurebridge`, which was created when you ran
 `git clone` command. Click "Upload." In the workspace menu on the
 left, click on `welcometoclojurebridge` - `src` -
@@ -221,6 +209,8 @@ You should see this on the Light Table:
 ![Testing apps - forward](img/testing-turtle-forward.png)
 
 also, your turtle should move.
+
+> Pressing the Control button and Space Bar together (abbreviated `Ctrl+Space`) is how you start giving Light Table a command. 
 
 
 #### Success!
