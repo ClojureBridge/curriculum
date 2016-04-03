@@ -208,12 +208,11 @@ Functions
 {: ng-show="block101" .description}
 
 ```clojure
-(map name (turtle-names)) ;=> ("trinity" "neo" "oracle" "cypher")
+(map inc [1 2 3]) ;=> (2 3 4)
 (map (partial + 90) [0 30 60 90]) ;=> (90 120 150 180)
 ```
 
 > References:
-> [name](http://clojuredocs.org/clojure.core/name),
 > [partial](http://clojuredocs.org/clojure.core/partial)
 </section>
 
