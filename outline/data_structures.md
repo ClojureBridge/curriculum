@@ -255,13 +255,13 @@ be confusing.
 (count {:first "Sally" :last "Brown"})
 ;=> 2
 
-(:first {:first "Sally" :last "Brown"})
+(get {:first "Sally" :last "Brown"} :first)
 ;=> "Sally"
-(:last {:first "Sally"})
+(get {:first "Sally"} :last)
 ;=> nil
 
 
-(:last {:first "Sally"} :MISS)
+(get {:first "Sally"} :last :MISS)
 ;=> :MISS
 ```
 </section>
