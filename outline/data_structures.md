@@ -302,13 +302,13 @@ be confusing.
 (update hello :count inc)
 ;=> {:count 2, :words "hello"}
 (update hello :words str ", world")
-{:count 1, :words "hello, world"}
+;=> {:count 1, :words "hello, world"}
 
 
 (def mine {:pet {:age 5 :name "able"}})
 
 (update-in mine [:pet :age] - 3)
-{:pet {:age 2, :name "able"}}
+;=> {:pet {:age 2, :name "able"}}
 ```
 </section>
 
