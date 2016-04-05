@@ -380,7 +380,7 @@ st
 (first states)
 (def st (first states))
 st
-(:trinity st)
+(get st :trinity)
 (get-in st [:trinity :angle])
 ```
 </section>
