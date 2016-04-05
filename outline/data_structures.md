@@ -289,24 +289,26 @@ be confusing.
 > After the creation, we want to save a new value associated to the
 > key. The `assoc` function can be used by assigning a new value to
 > the existing key.
-> Also, there's handy function `update-in`. The function takes map and
-> a key or list of keys with a function. The value of specified key will be the
-> first argument of the given function.
+> Also, there's handy function `update`. The function takes map and
+> a key with a function. The value of specified key will be the first
+> argument of the given function.
+> The `update-in` function works like `update`, but takes a vector of keys
+> to update at a path to a nested map.
 {: ng-show="block110" .description}
 
 ```clojure
 (def hello {:count 1 :words "hello"})
 
-(update-in hello [:count] inc)
+(update hello :count inc)
 ;=> {:count 2, :words "hello"}
-(update-in hello [:words] str ", world")
-{:count 1, :words "hello, world"}
+(update hello :words str ", world")
+;=> {:count 1, :words "hello, world"}
 
 
 (def mine {:pet {:age 5 :name "able"}})
 
 (update-in mine [:pet :age] - 3)
-{:pet {:age 2, :name "able"}}
+;=> {:pet {:age 2, :name "able"}}
 ```
 </section>
 
