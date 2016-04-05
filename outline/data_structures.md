@@ -255,13 +255,13 @@ be confusing.
 (count {:first "Sally" :last "Brown"})
 ;=> 2
 
-(:first {:first "Sally" :last "Brown"})
+(get {:first "Sally" :last "Brown"} :first)
 ;=> "Sally"
-(:last {:first "Sally"})
+(get {:first "Sally"} :last)
 ;=> nil
 
 
-(:last {:first "Sally"} :MISS)
+(get {:first "Sally"} :last :MISS)
 ;=> :MISS
 ```
 </section>
@@ -349,11 +349,12 @@ be confusing.
 ;=> #'clojurebridge-turtle.walk/st
 
 st
-;=> {:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996, :angle
-90, :color [30 30 30]}}
+;=> {:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996,
+;=>            :angle 90, :color [30 30 30]}}
 
-(:trinity st)
-;=> {:x -1.7484556000744965E-6, :y 39.99999999999996, :angle 90, :color [30 30 30]}
+(get st :trinity)
+;=> {:x -1.7484556000744965E-6, :y 39.99999999999996,
+;=>  :angle 90, :color [30 30 30]}
 
 (get-in st [:trinity :angle])
 ;=> 90
