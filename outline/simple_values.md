@@ -305,16 +305,15 @@ average-fruit-amount
 <section>
 #### EXERCISE 1: Basic arithmetic
 
-* Take your height in feet and inches and convert it to inches using arithmetic in Clojure.
-* Then convert that to centimeters. There are 2.54 centimeters in an inch.
-* Lastly, ask two people near you for their height in centimeters. Find the average of your heights.
+* How many minutes have elapsed since you arrived at the workshop today?
+* Convert this value from minutes to seconds.
 </section>
 
 <section>
-#### EXERCISE 2 [BONUS]: Convert back to feet and inches
+#### EXERCISE 2 [BONUS]: Minutes and seconds
 
-* Convert that average back to feet and inches.
-* The feet and the inches will be separate numbers.
+* Convert 1000 seconds to minutes and seconds.
+* The minutes and the seconds will be separate numbers.
 * `(quot x y)` will give you the whole number part of x divided by y.
 * `(rem x y)` will give you the remainder of x divided by y.
 </section>
