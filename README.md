@@ -32,7 +32,7 @@ Choices of Capstone App - Part. 2
 
 Supporting Materials
 --------------------
-* [Student Cheatsheet](outline/cheatsheet.md) | [PDF](ClojureBridgeCheatsheet-v1.pdf)
+* [Student Cheatsheet](outline/cheatsheet.md) | [PDF](ClojurebridgeCheatsheet-v2.pdf)
 * [Old Curriculum](http://clojurebridge.github.io/curriculum/index.v0.html)
 
 Repositories
