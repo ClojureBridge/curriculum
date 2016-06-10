@@ -103,11 +103,6 @@ cd ~/Downloads/
 java -jar nightcode-1.3.1-standalone.jar
 ```
 
-There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
-
-The first time you launch Light Table you will be presented with a confirmation
-prompt. Click "Open".
-
 <img alt="Nightcode" src="img/nightcode-startup.png" width="595" height="290">
 
 
@@ -167,11 +162,11 @@ If you see the result, 2, that worked, great!
 
 #### Testing apps
 
-Now we will open and run the sample Clojure apps in Nightcode. In
-Nightcode, click on the menu "Import" then find the
-directory, `welcometoclojurebridge`, which was created when you ran
+Now we will open and run the sample Clojure apps in Nightcode.
+On the top left corner, click "Import" then find the directory,
+`welcometoclojurebridge`, which was created when you ran
 `git clone` command. Click "Open."
-In the project directory structure on the left, click on `src` - `welcometoclojurebridge` - `core.clj`. The `core.clj` file will be opened on the right side.
+In the project directory tree on the left, click on `src` - `welcometoclojurebridge` - `core.clj`. The `core.clj` file will be opened on the right side.
 This is a Clojure program.
 
 ![Testing apps - click import](img/nightcode-click-import.png)
@@ -196,7 +191,8 @@ You should see a fun welcome message.
 ![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
 
 
-Next, in the workspace menu on the left, click on
+Let's try one more sample.
+In the directory tree on the left, click on
 `welcometoclojurebridge` - `src` - `clojurebridge-turtle` -
 `walk.clj`. The `walk.clj` file will open on the right side.
 Like we did before, click "Reload" button.
