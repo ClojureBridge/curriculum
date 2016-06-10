@@ -195,7 +195,7 @@ Introduction to Programming with Clojure
 
 **R**ead, **E**val, **P**rint, **L**oop
 
-![Instarepl](img/instarepl.png)
+![Nightcode's repl](img/repl.png)
 
 </section>
 
@@ -203,49 +203,49 @@ Introduction to Programming with Clojure
 ## REPL in action
 {: .slide_title .slide}
 
-#### Light Table's REPL <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
-> Clojure has a REPL that you can run from the terminal easily, and
-> we'll talk more about that later, but for now, let's use Light
-> Table's REPL. It is a nice way to interact with Clojure from
-> within Light Table.
+#### Nightcode's REPL <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
+
+> To interact with Clojure, we're going to be using the REPL tab in
+> Nightcode. It's a nice way to play with Clojure interactively.
 {: ng-show="block61" .description}
 
 
-#### insta-REPL <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
+#### Using the REPL <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
 
-> Let's begin with "insta-REPL."
-> Start Light Table, go to the "View" menu and click "Commands."
-> Notice that typing ctrl+space is another handy way.
-> Type "insta" and press enter when the "Instarepl:
-> Open a Clojure instarepl" choice is highlighted.
+> There's a couple of ways to get to a REPL in Nightcode. One general one
+> that is always running in the corner of the window, and another that is
+> launched with the "Run with REPL". 
 {: ng-show="block62" .description}
 
-> When you hit enter, you should see a message about "connecting" or
-> "retrieving deps." Wait for the instarepl to finish connecting
-> before typing anything.
+> The easiest REPL to access and use is loaded from the beginning of
+> opening Nightcode. You can find it in the bottom left hand window
+> pane.
 {: ng-show="block62" .description}
 
 
-#### Evaluate file and line <button class="link" ng-bind-html="details" ng-model="block63" ng-click="block63=!block63"></button>
+#### Evaluate program and line <button class="link" ng-bind-html="details" ng-model="block63" ng-click="block63=!block63"></button>
 
-> Also, Light Table give us a way to evaluate Clojure program file and a
-> single line of Clojure program.
-> Open the file
-> `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`.
-> Hit <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> or
-> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> to evaluate the
-> file. Hit <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or <kbd>Cmd</kbd> +
-> <kbd>Enter</kbd> to evaluate each line.
+<!-- TODO project_name should probably be defined somewhere, right? -->
+> Nightcode also lets us evaluate a line or an entire program at a time.
+> In the big panel, navigate to the `src/`(project_name)`/main.clj` file.
+> After pressing "Run with REPL", you should see some output in the bottom
+> pane. The first time you run this, it'll take a little while.
+{: ng-show="block63" .description}
+
+> After this, you'll find a new REPL launch in that bottom pane. Here you 
+> can type commands just like the other REPL -- but now you can also type
+> code in the main file, and run it with the `Eval` button 
+> (<kbd>ctrl</kbd>/<kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>, making sure the cursor is next to the code).
 {: ng-show="block63" .description}
 </section>
 
 <section>
-#### EXERCISE 1: Try insta-REPL
+#### EXERCISE 1: Try the Clojure REPL
 
-* Start Light Table
-* Open instarepl
-* Type Clojure functions below and see what happens
+* Start Nightcode
+* Focus on the REPL in the bottom left
+* Type the Clojure functions below and see what happens
 
 ```clojure
 (print-str "Hello, World!")
@@ -254,22 +254,21 @@ Introduction to Programming with Clojure
 (- 3 4)
 (* 3 4)
 ```
-> You might see an error in red while typing. This happens
-> because Light Table is continually evaluating what you are typing,
-> and before you finish, the code might not be valid.
+> Make sure you type the lines <em>exactly</em> as you see them above,
+> taking care to put the parentheses in the right locations.
 </section>
 
 <section>
 #### EXERCISE 2: Evaluate file and line
 
+<!-- TODO change the example here away from turtles -->
 * Open the file `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`
-* Evaluate the entire file by hitting Cmd + Shift + Enter or Ctrl +
-  Shift + Enter and see what happens
-* Type `(forward 40)` and evaluate this line by hitting Cmd + Enter or
-  Ctrl + Enter (no shift key)
+* Evaluate the entire file by hitting <kbd>cmd</kbd> + <kbd>e</kbd> or <kbd>ctrl</kbd> +
+  <kbd>e</kbd> and see what happens
+* Type `(forward 40)` and evaluate this line by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
 * See what happens
 * Type `(right 90)` or other commands and evaluate the lines one by
-  one by hitting Cmd + Enter or Ctrl + Enter (no shift key)
+  one by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
 * Take a look [Turtles App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
 [How To Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md)
 [section 1 and 2], and try more commands to walk your turtle
@@ -278,14 +277,11 @@ Introduction to Programming with Clojure
 <section>
 #### EXERCISE 3: Look at Clojure docs
 
-* Go to either of `insta-REPL` or `walk.clj` file
-* Move your cursor to the end of any function name, for example `+`
-or `forward`
-* Right click and select "Show docs"
-* See the document appears on the Light Table
-* Check your cursor is still at the end of the function name
-* Right click and select "Show docs"
-* See the document disappears
+* In the REPL, try to look up the documentation for a function you have used
+* You can use the `(doc function-name)` command to do this. For instance, try typing `(doc first)` into the REPL
+* Now, make sure the "Doc" button at the top of window is selected (it'll be a lighter colour when selected)
+* In your Clojure file, start typing the name of a function
+* Before you even finish typing, the documentation for that function should appear
 </section>
 
 {% comment %}
