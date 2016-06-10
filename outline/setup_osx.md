@@ -217,3 +217,7 @@ You should see the turtle moved upword:
 Congratulations! You have opened and run your first Clojure apps, and
 your install and setup are all completed!
 
+
+If you want to know what the turtle (*a small triangle*) can do,
+see [Turtle App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
+[How to Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) for more information.
