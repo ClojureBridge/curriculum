@@ -110,14 +110,14 @@ Once the download finished, we want to start the editor.
 To startup, go into your Downloads folder (or wherever you save files from your browser) and run the nightcode-x.y.z-standalone.jar file using `java` command.
 
 
-Open a terminal and run the following commands:
+Open a command prompt and run the following commands:
 
 ```bash
 cd ~/Downloads/
 java -jar nightcode-1.3.1-standalone.jar
 ```
 
-<img alt="Nightcode" src="img/nightcode-startup.png" width="595" height="290">
+![Nightcode](img/nightcode-startup.png)
 
 
 ## Test your setup
@@ -151,7 +151,7 @@ This will take you to the folder with the source code. After that completes, run
 lein repl
 ```
 
-This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
+This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your command propmpt should look like the following:
 
 ![Testing lein repl](img/win/testing-lein-repl.png)
 
@@ -166,7 +166,7 @@ prompt. Then, the command prompt will show you the following message: `user=> By
 
 #### Testing Nightcode
 
-If Nightcode isn't started yet or closed, open it by typing the command on terminal:
+If Nightcode isn't started yet or closed, open it by typing the command on the command propmt:
 
 ```bash
 java -jar nightcode-1.3.1-standalone.jar

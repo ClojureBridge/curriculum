@@ -100,7 +100,7 @@ cd ~/Downloads/
 java -jar nightcode-1.3.1-standalone.jar
 ```
 
-<img alt="Nightcode" src="img/nightcode-startup.png" width="595" height="290">
+![Nightcode](img/nightcode-startup.png)
 
 
 ## Test your setup
