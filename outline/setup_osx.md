@@ -6,11 +6,8 @@ OS X Setup
 * Configure Git
 * Make sure Java is installed
 * Install Leiningen
-* Install Light Table
+* Install Nightcode
 * Test your setup
-* Troubleshooting
-    - OS X 10.6.8
-    - Yosemite
 
 ## Starting a terminal
 
@@ -86,32 +83,29 @@ Now run `which lein` and you should see the `lein` command.
 
 After you set up Leiningen as above, run the `lein version` command. This should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
-## Install Light Table
+## Install Nightcode
 
-Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "OS X 10.7+" button and you will download a .zip file.
+Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, you should see a link to download Nightcode, "Free Download(Version x.y.z)." Click the link and you will download a file, `nightcode-x.y.z-standalone.jar`. As of June 2016, the version is 1.3.1.
 
-![Light Table downloads](img/light-table-download.png)
-![Light Table downloads Mac](img/os_x/light-table-download.png)
+![Nightcode downloads](img/nightcode-download.png)
 
-There should now be a file named LightTableMac.zip in your Downloads folder. Double-click the file to unzip it, then move LightTable.app to your Applications folder.
+Once the download finished, we want to start the editor.
+To startup, go into your Downloads folder (or wherever you save files from your browser) and run the nightcode-x.y.z-standalone.jar file using `java` command.
 
-The first time you launch Light Table you will be presented with a confirmation
-prompt. Click "Open".
 
-<img alt="Light Table first-run dialog" src="img/os_x/light-table-first-run-dialog@2x.png" width="595" height="290">
+Open a terminal and run the following commands:
 
-### Opening files in Light Table from the command line *(optional)*
+```bash
+cd ~/Downloads/
+java -jar nightcode-1.3.1-standalone.jar
+```
 
-Run the following commands to create a "shortcut command" called `light-table`:
+![Nightcode](img/nightcode-startup.png)
 
-    echo "alias light-table='open -a /Applications/LightTable/LightTable.app'" >> ~/.bash_profile
-    source ~/.bash_profile
-
-You can now open files and folders in Light Table from the command line by entering `light-table path/to/the/file/you/want/to/open.clj`.
 
 ## Test your setup
 
-You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out.
+You have set up Java, Leiningen, Nightcode, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out.
 
 #### Cloning out github repository
 
@@ -148,64 +142,71 @@ This could take a long time, and will download many other pieces of code apps re
 This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
 
-#### Testing Light Table
+#### Testing Nightcode
 
-Now, start Applications > LightTable. Once it is started, press the
-Control button and Space Bar together (abbreviated Ctrl+Space). This
-is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+If Nightcode isn't started yet or closed, open it by typing the command on terminal:
 
-![Testing Light Table - starting instarepl](img/os_x/testing-start-instarepl.png)
+```bash
+java -jar nightcode-1.3.1-standalone.jar
+```
 
-At the bottom left of the screen, you will see a cube moving and some text about connecting, retrieving and installing dependencies. Wait until that stops moving, then type `(+ 1 1)` into the window. It should look like the following image:
+At the bottom left of the screen, type `(+ 1 1)` into the window. It should look like the following image:
 
-![Testing Light Table - running in the instarepl](img/os_x/testing-use-instarepl.png)
+<img src="img/nightcode-repl.png" alt="Testing Nightcode" width="500">
 
-If that worked, great!
+If you see the result, 2, that worked, great!
+
 
 #### Testing apps
 
-Now we will open and run the sample Clojure apps in Light Table. In
-Light Table, click on the menu "File" then choose "Open Folder." Find the
-directory, `welcometoclojurebridge`, which was created when you ran
-`git clone` command. Click "Upload." In the workspace menu on the
-left, click on `welcometoclojurebridge` - `src` -
-`welcometoclojurebridge` - `core.clj`. Double-click the `core.clj` file
-to open it. This is a Clojure program.
+Now we will open and run the sample Clojure apps in Nightcode.
+On the top left corner, click "Import" then find the directory,
+`welcometoclojurebridge`, which was created when you ran
+`git clone` command. Click "Open."
+In the project directory tree on the left, click on `src` - `welcometoclojurebridge` - `core.clj`. The `core.clj` file will be opened on the right side.
+This is a Clojure program.
 
-![Testing apps - welcome code](img/testing-welcome-app-code.png)
+<img src="img/nightcode-click-import.png" alt="Testing apps - click import" width="500">
+<img src="img/nightcode-open-project.png" alt="Testing apps - open welcometoclojurebridge" width="500">
+![Testing apps - core.clj](img/nightcode-welcometoclojurebridge-core.png)
 
-Click on the file contents and
-press the following key combination:
 
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+The next step is to run the code shown in the window.
+Click "Run with REPL" on the bottom of the right side.
+It may take a while.
+Eventually, repl will start and show a prompt on the bottom of the window.
+Once, you see the prompt, click "Reload" button.
+
+
+![Testing apps - start repl](img/nightcode-welcometoclojurebridge-run-with-repl.png)
+![Testing apps - repl started](img/nightcode-repl-started.png)
+![Testing apps - repl reload](img/nightcode-repl-reload.png)
+
 
 You should see a fun welcome message.
 
 ![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
 
 
-Next, in the workspace menu on the left, click on
+Let's try one more sample.
+In the directory tree on the left, click on
 `welcometoclojurebridge` - `src` - `clojurebridge-turtle` -
-`walk.clj`. Double-click the core.clj file to open it.
+`walk.clj`. The `walk.clj` file will open on the right side.
+Like we did before, click "Reload" button.
 
-![Testing apps - walk code](img/testing-turtle-walk-code.png)
+![Testing apps - walk code](img/nightcode-turtle-walk.png)
+![Testing apps - walk reload](img/nightcode-turtle-walk-reload.png)
 
-press the following key combination:
 
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+An initial image of the turtles app should pop up.
+A small triangle on the center is the *turtle*.
 
-An initial image of the turtles app will pop up.
 
-Type `(forward 40)` at the end of the `walk.clj` and press the
-following combination:
+Type `(forward 40)` on the repl at the bottom of the window.
+You should see the turtle moved upword:
 
-<kbd>Cmd</kbd> + <kbd>Enter</kbd>
+![Testing apps - forward](img/nightcode-turtle-forward-40.png)
 
-You should see this on the Light Table:
-
-![Testing apps - forward](img/testing-turtle-forward.png)
-
-also, your turtle should move.
 
 
 #### Success!
@@ -214,21 +215,6 @@ Congratulations! You have opened and run your first Clojure apps, and
 your install and setup are all completed!
 
 
-## Troubleshooting
-
-### OS X 10.6.8
-
-Light Table actually does work on OS X 10.6.8. It thinks it does not. To convince it otherwise, do this:
-
-  1. Use a text editor to open /Applications/LightTable.app/Contents/Info.plist
-  2. Search for the key LSMinimumSystemVersion
-  3. Remove that key from the file. Delete this entire text: LSMinimumSystemVersion 10.7.5
-  4. Save the file, and you should be able to start Light Table.
-
-### Yosemite
-
-Yosemite was released after Light Table development was stalled.
-Because of this historical reason, students may encounter troubles to start or use Light Table on Yosemite.
-In such a case, [Nightcode](https://sekao.net/nightcode/) is another option.
-See the instruction,
-[Getting Started with Clojure using Nightcode](https://github.com/ClojureBridge/getting-started/blob/master/nightcode.md).
+If you want to know what the turtle (*a small triangle*) can do,
+see [Turtle App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
+[How to Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) for more information.

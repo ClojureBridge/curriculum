@@ -6,7 +6,7 @@ Windows 8 Setup
 * Configure Git
 * Install Java
 * Install Leiningen
-* Install Light Table
+* Install Nightcode
 * Test your setup
 * Troubleshooting
 
@@ -99,21 +99,31 @@ Leiningen is a tool used on the command line to manage Clojure projects.
 
 Next, go back to [the Leiningen Windows installer site](http://leiningen-win-installer.djpowell.net/) and download the file linked as "leiningen-win-installer." Run this executable and follow the "Detailed installation" section at the Leiningen Windows Installer site. At the end of the installation, leave "Run a Clojure REPL" checked before you click "Finish." If a terminal window opens that looks like the one on the Leiningen Windows installer site, then you are good to go.
 
-## Install Light Table
 
-Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table. Click the "Win" button and you will download a .zip file.
+## Install Nightcode
 
-![Light Table downloads](img/light-table-download.png)
-![Light Table downloads Windows](img/win/light-table-download.png)
+Go to the [Nightcode site](https://sekao.net/nightcode/). On the page there, you should see a link to download Nightcode, "Free Download(Version x.y.z)." Click the link and you will download a file, `nightcode-x.y.z-standalone.jar`. As of June 2016, the version is 1.3.1.
 
-Unzip this file (either by finding it in your Downloads folder and double-clicking it, or by choosing "Open" when downloading.) Inside the .zip file, there is a a directory called "Light Table". Drag this to your desktop. (If you know what you are doing and want this somewhere else, that is fine.)
+![Nightcode downloads](img/nightcode-download.png)
 
-Inside the Light Table directory, there is an application called Light Table. Right-click it and choose "Pin to Start Menu" so you can start it more quickly.
+Once the download finished, we want to start the editor.
+To startup, go into your Downloads folder (or wherever you save files from your browser) and run the nightcode-x.y.z-standalone.jar file using `java` command.
+
+
+Open a command prompt and run the following commands:
+
+```bash
+cd ~/Downloads/
+java -jar nightcode-1.3.1-standalone.jar
+```
+
+![Nightcode](img/nightcode-startup.png)
 
 
 ## Test your setup
 
-You have set up Java, Leiningen, Light Table, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out. 
+You have set up Java, Leiningen, Nightcode, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out.
+
 
 #### Cloning out github repository
 
@@ -141,7 +151,7 @@ This will take you to the folder with the source code. After that completes, run
 lein repl
 ```
 
-This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
+This could take a long time, and will download many other pieces of code it relies on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your command propmpt should look like the following:
 
 ![Testing lein repl](img/win/testing-lein-repl.png)
 
@@ -153,62 +163,71 @@ button on your keyboard together (abbreviated as Ctrl+D). This should
 take you out of the Clojure REPL and back to your normal command
 prompt. Then, the command prompt will show you the following message: `user=> Bye for now!`
 
-#### Testing Light Table
 
-Now, start Light Table. Once it is started, press the Control button and Space Bar together (abbreviated Ctrl+Space). This is how you start giving Light Table a command. Start typing the word "instarepl" and you should see a menu of options, like below. Choose "Instarepl: open a clojure instarepl."
+#### Testing Nightcode
 
-![Testing Light Table - starting instarepl](img/win/testing-start-instarepl.png)
+If Nightcode isn't started yet or closed, open it by typing the command on the command propmt:
 
-At the bottom of the screen, you will see a cube moving and some text about connecting and installing dependencies. Once that stops moving, type `(+ 1 1)` into the window. It should look like the following image:
+```bash
+java -jar nightcode-1.3.1-standalone.jar
+```
 
-![Testing Light Table - running in the instarepl](img/win/testing-use-instarepl.png)
+At the bottom left of the screen, type `(+ 1 1)` into the window. It should look like the following image:
 
-If that worked, great!
+<img src="img/nightcode-repl.png" alt="Testing Nightcode" width="500">
+
+If you see the result, 2, that worked, great!
+
 
 #### Testing apps
 
-Now we will open and run the sample Clojure apps in Light Table. In
-Light Table, click on the menu "File" then choose "Open Folder." Find the
-directory, `welcometoclojurebridge`, which was created when you ran
-`git clone` command. Click "Upload." In the workspace menu on the
-left, click on `welcometoclojurebridge` - `src` -
-`welcometoclojurebridge` - `core.clj`. Double-click the `core.clj` file
-to open it. This is a Clojure program.
+Now we will open and run the sample Clojure apps in Nightcode.
+On the top left corner, click "Import" then find the directory,
+`welcometoclojurebridge`, which was created when you ran
+`git clone` command. Click "Open."
+In the project directory tree on the left, click on `src` - `welcometoclojurebridge` - `core.clj`. The `core.clj` file will be opened on the right side.
+This is a Clojure program.
 
-![Testing apps - welcome code](img/testing-welcome-app-code.png)
+<img src="img/nightcode-click-import.png" alt="Testing apps - click import" width="500">
+<img src="img/nightcode-open-project.png" alt="Testing apps - open welcometoclojurebridge" width="500">
+![Testing apps - core.clj](img/nightcode-welcometoclojurebridge-core.png)
 
-Click on the file contents and
-press the following key combination:
 
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+The next step is to run the code shown in the window.
+Click "Run with REPL" on the bottom of the right side.
+It may take a while.
+Eventually, repl will start and show a prompt on the bottom of the window.
+Once, you see the prompt, click "Reload" button.
+
+
+![Testing apps - start repl](img/nightcode-welcometoclojurebridge-run-with-repl.png)
+![Testing apps - repl started](img/nightcode-repl-started.png)
+![Testing apps - repl reload](img/nightcode-repl-reload.png)
+
 
 You should see a fun welcome message.
 
 ![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
 
 
-Next, in the workspace menu on the left, click on
+Let's try one more sample.
+In the directory tree on the left, click on
 `welcometoclojurebridge` - `src` - `clojurebridge-turtle` -
-`walk.clj`. Double-click the core.clj file to open it.
+`walk.clj`. The `walk.clj` file will open on the right side.
+Like we did before, click "Reload" button.
 
-![Testing apps - walk code](img/testing-turtle-walk-code.png)
+![Testing apps - walk code](img/nightcode-turtle-walk.png)
+![Testing apps - walk reload](img/nightcode-turtle-walk-reload.png)
 
-press the following key combination:
+An initial image of the turtles app should pop up.
+A small triangle on the center is the *turtle*.
 
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
 
-An initial image of the turtles app will pop up.
+Type `(forward 40)` on the repl at the bottom of the window.
+You should see the turtle moved upword:
 
-Type `(forward 40)` at the end of the `walk.clj` and press the
-following combination:
+![Testing apps - forward](img/nightcode-turtle-forward-40.png)
 
-<kbd>Ctrl</kbd> + <kbd>Enter</kbd>
-
-You should see this on the Light Table:
-
-![Testing apps - forward](img/testing-turtle-forward.png)
-
-also, your turtle should move.
 
 
 #### Success!
@@ -217,11 +236,12 @@ Congratulations! You have opened and run your first Clojure apps, and
 your install and setup are all completed!
 
 
-### Troubleshooting
+If you want to know what the turtle (*a small triangle*) can do,
+see [Turtle App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
+[How to Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) for more information.
 
-* If you receive errors while running Light Table about Java or JDK,
-  these may be resolved by finishing the installation of Leiningen
-  first. If not, see a TA to look at your environment variables.
+
+### Troubleshooting
 
 * Leiningen Windows Installer has an issue that it doesn't install
   lein.bat correctly. This causes curl.exe to fail downloading files
