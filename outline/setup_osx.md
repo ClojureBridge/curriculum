@@ -8,9 +8,6 @@ OS X Setup
 * Install Leiningen
 * Install Nightcode
 * Test your setup
-* Troubleshooting
-    - OS X 10.6.8
-    - Yosemite
 
 ## Starting a terminal
 
