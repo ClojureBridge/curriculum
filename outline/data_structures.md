@@ -149,17 +149,22 @@ be confusing.
 #### EXERCISE 1: See turtle names
 {: .slide_title .slide}
 
-* Go to `walk.clj` file
-* Type `(add-turtle :neo)` and evaluate this line by hitting hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>x</kbd>
-* Repeat adding turtles a couple of times with different names
-* Type `(turtle-names)`, evaluate this line and see the result
+1. add a turtle using the file
+  * Go to `walk.clj` file
+  * Add a line: `(add-turtle :neo)` on the bottom of `walk.clj`
+  * Select the last line and click "Eval Selection"
+  * Save the file
+2. (Optional) add a turtle using REPL
+  * Type `(add-turtle :oracle)` followed by enter on the REPL
+3. See turtle names
+  * Type `(turtle-names)` on the REPL and see the result
 </section>
 
 <section>
 #### EXERCISE 2: Make a vector
 {: .slide_title .slide}
 
-* Go to insta-REPL
+* Go to REPL (either of bottom panes)
 * Make a vector of the high temperatures for the next 7 days in the
   town where you live.
 * Then use the `nth` function to get the high temperature for next

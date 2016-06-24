@@ -104,8 +104,14 @@ Functions
 #### EXERCISE 1: Move turtles using function
 {: .slide_title .slide}
 
-* Go to `walk.clj`
-* Write a function, `forward-right` appeared in the slide.
+1. Write a function
+  * Go to `walk.clj`
+  * On the editor, write `forward-right` function (below) which appeared in the slide.
+  * (Optional) Save `walk.clj`
+  * Select whole `forward-right` function and hit Eval Selection
+2. Use a function
+  * Type `(forward-right :trinity)` on Run with REPL pane
+  * Repeat above at least 8 times (use up arrow and hit enter)
 
 ```clojure
 (defn forward-right
@@ -114,11 +120,6 @@ Functions
   (forward turtle 60)
   (right turtle 135))
 ```
-
-* On the last line of the function, hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
-  to evaluate the function
-* Write a line that uses the function, for example: `(forward-right :trinity)`
-* Evaluate the line at least 8 times
 </section>
 
 <section>
@@ -126,12 +127,11 @@ Functions
 {: .slide_title .slide}
 
 * Go to `walk.clj`
-* Write a function, `forward-right-with-len-ang` that takes three
+* On the editor, write `forward-right-with-len-ang` functon that takes three
   arguments, turtle, len, and angle (extension of `forward-right-with-len`)
-* On the last line of the function, evaluate it by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
-* Write a line that uses the function, for example:
-  `(forward-right-with-len-ang :trinity 60 120)`
-* Evaluate the line many times by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
+* Select entire `forward-right-with-len-ang` function and hit Eval Selection
+* On Run with REPL pane, type `(forward-right-with-len-ang :trinity 60 120)`
+* Repeat above many times
 </section>
 
 

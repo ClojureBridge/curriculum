@@ -206,37 +206,32 @@ Introduction to Programming with Clojure
 
 #### Nightcode's REPL <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
-> To interact with Clojure, we're going to be using the REPL tab in
-> Nightcode. It's a nice way to play with Clojure interactively.
+> To interact with Clojure, we can use REPL pane on a bottom left corner of Nightcode.
+> It's a nice way to play with Clojure interactively.
 {: ng-show="block61" .description}
 
 
 #### Using the REPL <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
 
-> There's a couple of ways to get to a REPL in Nightcode. One general one
-> that is always running in the corner of the window, and another that is
-> launched with the "Run with REPL". 
+> In addition to Nightcode's REPL pane, we can use "Run with REPL" on a right bottom pane.
+> This isn't available at the beginning. When the button gets clicked, REPL starts.
+> The difference between left and right panes' REPL is whether it looks at the project setting or not.
 {: ng-show="block62" .description}
 
-> The easiest REPL to access and use is loaded from the beginning of
-> opening Nightcode. You can find it in the bottom left hand window
-> pane.
+> Alternatively, we can start REPL using leiningen on a terminal (without Nightcode).
+> On a terminal, type `lein repl`, then, REPL starts.
+> If we hit `lein repl` command within the project directory (folder), it sees the project setting.
 {: ng-show="block62" .description}
 
 
 #### Evaluate program and line <button class="link" ng-bind-html="details" ng-model="block63" ng-click="block63=!block63"></button>
 
 <!-- TODO project_name should probably be defined somewhere, right? -->
-> Nightcode also lets us evaluate a line or an entire program at a time.
-> In the big panel, navigate to the `src/`(project_name)`/main.clj` file.
-> After pressing "Run with REPL", you should see some output in the bottom
-> pane. The first time you run this, it'll take a little while.
-{: ng-show="block63" .description}
-
-> After this, you'll find a new REPL launch in that bottom pane. Here you 
-> can type commands just like the other REPL -- but now you can also type
-> code in the main file, and run it with the `Eval` button 
-> (<kbd>ctrl</kbd>/<kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>, making sure the cursor is next to the code).
+> Nightcode also lets us evaluate a line (lines) or an entire program.
+> On the left pane, navigate to the `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`.
+> Click "Run with REPL" followed by "Reload", you should see an initial turtle window.
+> Type `(forward 40)` on the bottom line in the editor (upper right pane).
+> Select this line, and hit "Eval Selection" button. The turtle should go up.
 {: ng-show="block63" .description}
 </section>
 
@@ -244,12 +239,12 @@ Introduction to Programming with Clojure
 #### EXERCISE 1: Try the Clojure REPL
 
 * Start Nightcode
-* Focus on the REPL in the bottom left
+* Focus on the REPL on the bottom left pane
 * Type the Clojure functions below and see what happens
 
 ```clojure
-(print-str "Hello, World!")
-(print-str "Hello, World!" " " "from Clojure")
+(println "Hello, World!")
+(println "Hello, World!" " " "from Clojure")
 (+ 3 4)
 (- 3 4)
 (* 3 4)
@@ -259,29 +254,36 @@ Introduction to Programming with Clojure
 </section>
 
 <section>
-#### EXERCISE 2: Evaluate file and line
+#### EXERCISE 2: Evaluate file and line - Part 1
 
-<!-- TODO change the example here away from turtles -->
 * Open the file `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`
-* Evaluate the entire file by hitting <kbd>cmd</kbd> + <kbd>e</kbd> or <kbd>ctrl</kbd> +
-  <kbd>e</kbd> and see what happens
-* Type `(forward 40)` and evaluate this line by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
+* Evaluate the entire file by hitting "Run with REPL" followed by "Reload"
 * See what happens
-* Type `(right 90)` or other commands and evaluate the lines one by
-  one by hitting <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd>
+* Type `(forward 40)` on the bottom line of `walk.clj` in the editor. Evaluate this line by selecting line and hitting "Eval Selection"
+* See what happens
+
+(Continue on EXERCISE 3)
+</section>
+
+<section>
+#### EXERCISE 3: Evaluate file and line - Part 2
+
+(Suppose EXERCISE 2 is done)
+
+* Type `(right 90)` and "enter" in the Run with REPL pane (bottom right) ![Run with REPL pane](img/run-with-repl.png)
+* See what happens to the turtle
 * Take a look [Turtles App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
 [How To Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md)
 [section 1 and 2], and try more commands to walk your turtle
 </section>
 
 <section>
-#### EXERCISE 3: Look at Clojure docs
+#### EXERCISE 4: Look at Clojure docs
 
-* In the REPL, try to look up the documentation for a function you have used
-* You can use the `(doc function-name)` command to do this. For instance, try typing `(doc first)` into the REPL
-* Now, make sure the "Doc" button at the top of window is selected (it'll be a lighter colour when selected)
-* In your Clojure file, start typing the name of a function
-* Before you even finish typing, the documentation for that function should appear
+* In the Run with REPL pane, try to look up the documentation for a function you have used
+* You can use the `(doc function-name)` command to do this
+* Try `(doc +)` and `(doc forward)` on the REPL
+* Try other functions we used so far, for example, `-`, `*`, or `doc`
 </section>
 
 {% comment %}
