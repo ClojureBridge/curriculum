@@ -368,14 +368,13 @@ st
 {: .slide_title .slide}
 
 * Go to `walk.clj` file
-* Click "Run with REPL" or type <kbd>ctrl</kbd>/<kbd>cmd</kbd> + <kbd>e</kbd>
+* Click "Run with REPL"
 * Try examples of previous two slides
 * See what values you get
 
-> Every time you write a line of code,
-> hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or 
-> <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>x</kbd>
-> to evaluate it one by one.
+> Each time you write a line of code, select it then press
+> <kbd>control</kbd><kbd>E</kbd> (Linux, Windows) or
+> <kbd>command</kbd><kbd>E</kbd> (OS X) to evaluate it.
 
 ```clojure
 (state-all)
@@ -393,8 +392,7 @@ st
 {: .slide_title .slide}
 
 * Using the Clojure REPL in the bottom left
-    - (Option) You may create a new file and write code in the file. To
-    evaluate, select the code you want and hit <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> or <kbd>cmd</kbd> <kbd>shift</kbd> + <kbd>x</kbd>, or press the "Eval" button
+    - (Option) You may create a new file and write code in the file.
 * Make a map representing yourself
 * Make sure it contains your first name and last name
 * Then, add your hometown to the map using [assoc](http://grimoire.arrdem.com/1.6.0/clojure.core/assoc/) or [merge](http://grimoire.arrdem.com/1.6.0/clojure.core/merge/).
