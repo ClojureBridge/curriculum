@@ -155,9 +155,9 @@ be confusing.
   * Select the last line and click "Eval Selection"
   * Save the file
 2. (Optional) add a turtle using REPL
-  * Type `(add-turtle :oracle)` followed by enter on the REPL
+  * Type `(add-turtle :oracle)` followed by enter on the right REPL pane
 3. See turtle names
-  * Type `(turtle-names)` on the REPL and see the result
+  * Type `(turtle-names)` on the right REPL pane and see the result
 </section>
 
 <section>
@@ -396,7 +396,7 @@ st
 #### EXERCISE 4: Modeling Yourself
 {: .slide_title .slide}
 
-* Using the Clojure REPL in the bottom left
+* Using the Clojure REPL on the bottom left
     - (Option) You may create a new file and write code in the file.
 * Make a map representing yourself
 * Make sure it contains your first name and last name

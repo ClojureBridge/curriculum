@@ -110,7 +110,7 @@ Functions
   * (Optional) Save `walk.clj`
   * Select whole `forward-right` function and hit Eval Selection
 2. Use a function
-  * Type `(forward-right :trinity)` on Run with REPL pane
+  * Type `(forward-right :trinity)` on right REPL pane
   * Repeat above at least 8 times (use up arrow and hit enter)
 
 ```clojure
@@ -130,7 +130,7 @@ Functions
 * On the editor, write `forward-right-with-len-ang` functon that takes three
   arguments, turtle, len, and angle (extension of `forward-right-with-len`)
 * Select entire `forward-right-with-len-ang` function and hit Eval Selection
-* On Run with REPL pane, type `(forward-right-with-len-ang :trinity 60 120)`
+* On right REPL pane, type `(forward-right-with-len-ang :trinity 60 120)`
 * Repeat above many times
 </section>
 
