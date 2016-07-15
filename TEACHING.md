@@ -62,9 +62,10 @@ This is not the only way to present the material. It is just the way we have see
 
 Nightcode
 -----------
-Make sure to spend some time during the Installfest or at the beginning of Saturday showing a few key things to do in Nightcode:
+As of July 2016, ClojureBridge mateirals are based on Nightcode 1.3.x. Nightcode 2.0.0 works but some has changed. Be aware if your workshop will use version 2.0.0.
+Be aware tips below.
 
-##### Use jar archive
+#### Use jar archive
 
 Nightcode 2.0.0 got installer for OSX and Windows.
 However, jar archive is much easier to get started.
@@ -72,24 +73,24 @@ Typing a single java comamnd is the all.
 Tell students to download Jar archive.
 
 
-##### REPL without project
+#### REPL without project
 
 Some exercises are independent from a project -- just type `(+ 1 1)` on REPL or such.
 Nightcode 1.3.x has REPL pane on the bottom left,
 so students can use this for this kind of exercises.
 On version 2.0.0, it's good to create a new Console app project on Nightcode.
-Students can use InstaREPL.
+Once the new project is ready, open `core.clj` and click InstaREPL.
 Alernatively, they can use REPL of some projects, turtle or welecometoclojure.
 
 
-##### Eval region
+#### Eval region
 
 Nightcode 1.3.x has a button, "Eval Selection", but 2.0.0 doesn't have anymore.
 Since materials are based on 1.3.x version, some instructions use this feature.
 On 2.0.0, copy&paste region to REPL would be the substitute.
 
 
-##### Code in file or REPL
+#### Code in file or REPL
 
 Students may confuse where to write code.
 REPL is handy, but doesn't save.
