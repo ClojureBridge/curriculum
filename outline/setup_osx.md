@@ -93,7 +93,9 @@ ClojureBridge materials are tested on version 1.3.1.
 > The latest version is 2.0.0 as of July 2016.
 > 1.3.x and 2.0.0 are slightly different.
 > Most of materials work on 2.0.0, but Overtone app has some odds.
-
+>
+> Version 2.0.0 has binary releases for OSX and windows.
+> However, don't use those. Jar archive is much easier to get started.
 
 Once the download finished, we want to start the editor.
 To startup, go into your Downloads folder (or wherever you save files from your browser) and run the nightcode-x.y.z-standalone.jar file using `java` command.
