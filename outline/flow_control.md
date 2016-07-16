@@ -220,18 +220,6 @@ ng-click="block21=!block21"></button>
 ```
 </section>
 
-<section>
-#### EXERCISE 3 [BONUS]: Shoe Size Mapping
-{: .slide_title .slide}
-
-|Suppose you are traveling abroad..<br/> (chart: www.jcpenney.com )| ![shoe size](img/shoe_size_chart_womens.png)|
-
-1. pick up some of sets from the table, for example, us 6 and 9
-2. write mapping using `cond` (us 6 -> less than or equal to euro 36)
-3. write a function, for example, `us-to-euro` with one argument
-4. use `cond` you wrote at step 2 to complete the function
-</section>
-
 <section ng-controller="NarrativeController">
 ### Boolean logic with `and`, `or`, and `not`
 {: .slide_title .slide}
@@ -283,6 +271,53 @@ ng-click="block21=!block21"></button>
   (and (zero? (mod year 4))
        (or (zero? (mod year 400))
            (not (zero? (mod year 100))))))
+```
+</section>
+
+<section ng-controller="NarrativeController">
+#### [Bonus] `cond`, `and`, `or`, and `not` combination <button class="link" ng-bind-html="details" ng-model="block110" ng-click="block110=!block110"></button>
+
+> We have learned `cond`, `and`, `or`, and `not`. Let's think what function we can write
+> combining those.
+> Here's an example:
+{: ng-show="block110" .description}
+
+```clojure
+(defn true-or-false?
+  "Given op, returns true or false"
+  [op]
+  (let [x true
+        y false]
+    (cond
+      (= op :and) (and x y)
+      :else false)))
+
+(defn correct?
+  "Given op and ans, returns message whether ans was corret or not"
+  [op ans]
+  (if (= ans (true-or-false? op))
+      "You won"
+      "You lost"))
+```
+</section>
+
+<section>
+#### EXERCISE 3: [Bonus] Complete `true-or-false?` function
+{: .slide_title .slide}
+
+> `true-or-false?` function in previous slide sees only `:and`
+> operation. Add `:or`, `:not` operation in the function.
+
+* Create a new console project for the exercise.
+  - Only if you don't have one other than turtle or drawing.
+* Add `(= op :or)` and `(= op :not)` in `cond`
+* For `:not`, choose either x or y for the argument
+
+```clojure
+;; usage of correct? function
+(corret? :and false)   ;=> "You won"
+(corret? :or false)    ;=> "You lost"
+(corret? :not true)    ;=> "You won"  (this may be "You lost")
 ```
 </section>
 
