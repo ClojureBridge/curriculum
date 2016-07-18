@@ -90,15 +90,15 @@ After you run the above commands, run the `lein version` command. It should take
 ## Install Nightcode
 
 Go to the [Nightcode releaes site](http://github.com/oakes/Nightcode/releases).
-On the page there, you should see version numbers and links to download specific version of Nightcode, for example, nightcode-1.3.2-standalone.jar.
-Click the link ending in `.jar` and you will download a file, `nightcode-x.y.z-standalone.jar`.
-ClojureBridge materials are tested on version 1.3.1.
+On the page there, you should see version numbers and links to download specific version of Nightcode, for example, Nightcode-2.0.1.jar.
+Click the link ending in `.jar` and you will download a file, `Nightcode-x.y.z.jar` (for version 1.3.x: `nightcode-x.y.z-standalone.jar`).
+ClojureBridge materials are tested on version 1.3.1, but 2.0.1 also works.
 
-> The latest version is 2.0.0 as of July 2016.
-> 1.3.x and 2.0.0 are slightly different.
-> Most of materials work on 2.0.0, but Overtone app has some odds.
+> The latest version is 2.0.1 as of July 2016.
+> 1.3.x and 2.0.1 are slightly different.
+> But, materials work on 2.0.1
 >
-> Version 2.0.0 has binary releases for OSX and windows.
+> Since version 2.0.x, Nightcode has binary releases for OSX and windows.
 > However, don't use those. Jar archive is much easier to get started.
 
 Once the download finished, we want to start the editor.
