@@ -50,6 +50,13 @@ Expected result:
 
 ## Making sure Java is installed
 
+
+> If you have OS X version 10.11 (El Capitan), you don't have Java installed.
+> You need to install Java as well.
+> Download Java from <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html> and follow the instruction.
+> If you have a trouble, <http://osxdaily.com/2015/10/17/how-to-install-java-in-os-x-el-capitan/> article may help.
+
+
 Run `java -version` in your terminal. If you do not have Java installed, OS X will prompt you to install it. Follow all of the directions OS X gives you, then return to this part of the tutorial and run `java -version` again.
 
 If Java is installed, you will see something like this in your terminal:
