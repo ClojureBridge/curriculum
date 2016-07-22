@@ -62,14 +62,14 @@ This is not the only way to present the material. It is just the way we have see
 
 Nightcode
 -----------
-As of July 2016, ClojureBridge mateirals are based on Nightcode 1.3.x. Nightcode 2.0.1 works well but had REPL redesign. Be aware if your workshop will use version 2.0.1.
+As of July 2016, ClojureBridge mateirals are based on Nightcode 1.3.x. Nightcode 2.0.1 works well but has a REPL redesign. Be aware if your workshop will use version 2.0.1.
 The materials will be updated at some point. By then, see following tips to use version 2.0.1.
 
 #### Use jar archive
 
 Nightcode 2.0.x got installer for OSX and Windows.
 However, jar archive is much easier to get started.
-Typing a single java comamnd is the all.
+Typing a single java comamnd is all you need.
 Tell students to download Jar archive.
 
 
@@ -94,21 +94,21 @@ On 2.0.1, copy&paste region to REPL would be the substitute.
 
 Students may confuse where to write code.
 REPL is handy, but doesn't save code.
-Also, on REPL multiline input doesn't work.
+Also, on REPL, multiline input doesn't work.
 When code needs to be multiline, code should be typed in editor.
 It's a good idea to tell students to save code in a file time to time.
 Also, don't forget to click "Save" button.
 
 [background]
-Before ClojureBridge used LightTable, which allowed us to do all in editor with InstaREPL.
-So, what students wrote were saved alwasys.
+ClojureBridge used LightTable previously, which allowed us to do everything in the editor with InstaREPL.
+So, what students wrote were always saved.
 
 
-#### Keyboard short cut
+#### Keyboard shortcuts
 
-Materials don't mention about keyboard short cut.
+Materials don't mention keyboard shortcuts.
 We don't have much experience on Nightcode yet,
-so we are not sure the same sure keyboard short cut works on all platform.
+so we are not sure the same sure keyboard shortcut works on all platforms.
 If it does, we will add in the materials.
 Let us know.
 
@@ -123,7 +123,7 @@ Provide plenty of time for exercises. That is where the real fun happens. TAs sh
 
 Capstone App
 ------------
-Budget your time so that you have enough time for the part. 2 project at the end of the day.
+Budget your time so that you have enough time for the part 2 project at the end of the day.
 
 Outline
 -------
