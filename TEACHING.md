@@ -1,4 +1,4 @@
-ClojureBridge Teacher's Guide 
+ClojureBridge Teacher's Guide
 =============================
 
 There are many ways to teach the ClojureBridge material, and none of them are "right." The following is a guide to working though the curriculum with students based on the experience of some workshop organizers and teachers.
@@ -13,7 +13,7 @@ For capstone app part. 2,
 [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md)
 (another drawing app),
 [Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds),
-[Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST api),
+[Global Growth](https://github.com/ClojureBridge/global-growth)  (web app with REST API),
 [Caesar Cipher](http://clojurebridge.github.io/community-docs/docs/exercises/caesar-cipher/)
 (mini exercise of Strings and Characters).
 
@@ -38,7 +38,7 @@ own.
 
 Curriculum
 ----------
-Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) using your chapters's GitHub account (or your own personal GitHub account). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
+Fork the curriculum [repository](https://github.com/ClojureBridge/curriculum) using your chapter's GitHub account (or your own personal GitHub account). You can use your own fork to make changes or tweaks to the curriculum for your own workshop. If you make changes that would be valuable for everyone, please consider making a pull request against the main curriculum.
 
 Schedule
 --------
@@ -62,14 +62,14 @@ This is not the only way to present the material. It is just the way we have see
 
 Nightcode
 -----------
-As of July 2016, ClojureBridge mateirals are based on Nightcode 1.3.x. Nightcode 2.0.1 works well but has a REPL redesign. Be aware if your workshop will use version 2.0.1.
+As of July 2016, ClojureBridge materials are based on Nightcode 1.3.x. Nightcode 2.0.1 works well but has a REPL redesign. Be aware if your workshop will use version 2.0.1.
 The materials will be updated at some point. By then, see following tips to use version 2.0.1.
 
 #### Use jar archive
 
-Nightcode 2.0.x got installer for OSX and Windows.
+Nightcode 2.0.x got installer for OS X and Windows.
 However, jar archive is much easier to get started.
-Typing a single java comamnd is all you need.
+Typing a single java command is all you need.
 Tell students to download Jar archive.
 
 
@@ -80,7 +80,7 @@ Nightcode 1.3.x has REPL pane on the bottom left,
 so students can use this for this kind of exercises.
 On version 2.0.1, it's good to create a new Console app project on Nightcode.
 Once the new project is ready, open `core.clj` and click InstaREPL.
-Alernatively, they can use REPL of some projects, turtle or welecometoclojure.
+Alternatively, they can use REPL of some projects, turtle or welecometoclojure.
 
 
 #### Eval region
