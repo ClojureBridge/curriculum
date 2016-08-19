@@ -158,10 +158,10 @@ This is starting a REPL, which we will learn about soon. It's a special terminal
 If Nightcode isn't started yet or closed, open it by typing the command on terminal:
 
 ```bash
-java -jar nightcode-1.3.1-standalone.jar
+java -jar Nightcode-2.0.3.jar
 ```
 
-At the bottom left of the screen, type `(+ 1 1)` into the window. It should look like the following image:
+At the bottom right of the screen, type `(+ 1 1)` into the window. It should look like the following image:
 
 <img src="img/nightcode-repl.png" alt="Testing Nightcode" width="500">
 
