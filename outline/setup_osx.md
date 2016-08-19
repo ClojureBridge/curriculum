@@ -93,26 +93,22 @@ After you set up Leiningen as above, run the `lein version` command. This should
 ## Install Nightcode
 
 Go to the [Nightcode releaes site](http://github.com/oakes/Nightcode/releases).
-On the page there, you should see version numbers and links to download specific version of Nightcode, for example, Nightcode-2.0.1.jar.
-Click the link ending in `.jar` and you will download a file, `Nightcode-x.y.z.jar` (for version 1.3.x: `nightcode-x.y.z-standalone.jar`).
-ClojureBridge materials are tested on version 1.3.1, but 2.0.1 also works.
+On the page there, you should see version numbers and links to download specific version of Nightcode, for example, Nightcode-2.0.3.jar.
+Click the link ending in `.jar` and you will download a file, `Nightcode-x.y.z.jar`.
 
-> The latest version is 2.0.1 as of July 2016.
-> 1.3.x and 2.0.1 are slightly different.
-> But, materials work on 2.0.1
->
-> Since version 2.0.x, Nightcode has binary releases for OSX and windows.
-> However, don't use those. Jar archive is much easier to get started.
+> Don't download platform specific binary releases.
+> Use jar archive.
+> Jar archive is much easier to get started.
 
 Once the download finished, we want to start the editor.
-To startup, go into your Downloads folder (or wherever you save files from your browser) and run the nightcode-x.y.z-standalone.jar file using `java` command.
+To startup, go into your Downloads folder (or wherever you save files from your browser) and run the Nightcode-x.y.z.jar file using `java` command.
 
 
 Open a terminal and run the following commands:
 
 ```bash
 cd ~/Downloads/
-java -jar nightcode-1.3.1-standalone.jar
+java -jar Nightcode-2.0.3.jar
 ```
 
 ![Nightcode](img/nightcode-startup.png)
