@@ -185,9 +185,9 @@ This is a Clojure program.
 
 
 The next step is to run the code shown in the window.
-Click "Run with REPL" on the bottom of the right side.
+Click "Run with REPL" on the bottom.
 It may take a while.
-Eventually, repl will start and show a prompt on the bottom of the window.
+Eventually, REPL will start and show a prompt, `user=>`.
 Once, you see the prompt, click "Reload" button.
 
 
