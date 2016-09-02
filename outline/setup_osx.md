@@ -199,7 +199,7 @@ java -jar Nightcode-2.1.0.jar
 
 At the bottom right of the screen, type `(+ 1 1)` into the window. It should look like the following image:
 
-<img src="img/nightcode-repl.png" alt="Testing Nightcode" width="500">
+![Testing Nightcode](img/nightcode-repl.png)
 
 If you see the result, 2, that worked, great!
 
