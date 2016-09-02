@@ -218,8 +218,8 @@ On the top left corner, click "Import" then find the directory,
 In the project directory tree on the left, click on `src` - `welcometoclojurebridge` - `core.clj`. The `core.clj` file will be opened on the right side.
 This is a Clojure program.
 
-<img src="img/nightcode-click-import.png" alt="Testing apps - click import" width="500">
-<img src="img/nightcode-open-project.png" alt="Testing apps - open welcometoclojurebridge" width="500">
+![Testing apps - click import](img/nightcode-click-import.png)
+![Testing apps - open welcometoclojurebridge](img/nightcode-open-project.png)
 ![Testing apps - core.clj](img/nightcode-welcometoclojurebridge-core.png)
 
 
