@@ -121,7 +121,7 @@ You have set up Java, Leiningen, Nightcode, and Git on your computer--all the to
 
 #### Testing Leiningen
 
-Go to your terminal and run the following command:
+Open a new terminal and run the following command:
 
 ```bash
 lein new myproject
@@ -129,7 +129,8 @@ lein new myproject
 
 This will create a new project, `myproject`, which has files to form a Clojure project.
 Normally, Clojure code exists within such Clojure project.
-Next, run following commands:
+
+Run following commands:
 
 ```bash
 cd myproject
@@ -145,14 +146,14 @@ When Leiningen starts, you'll see `user=>` prompt on your terminal.
 Now, you are ready to use __REPL__, which we learn about soon.
 It's a special terminal for Clojure.
 
-At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back?
+At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? Great!
 
-You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
+Your leiningen install looks good. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
 
 
 #### Cloning out github repository
 
-Go to your terminal and run the following command:
+Open another new terminal and run the following command:
 
 ```bash
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
@@ -164,24 +165,12 @@ Your terminal should look similar to this picture:
 
 ![Testing git clone](img/os_x/testing-git-clone.png)
 
-#### Testing `lein repl`
+Once it finishes, type `ls` command on the same terminal.
+You'll see the list of directories/files like this:
 
-Then run the command:
-
-```bash
-cd welcometoclojurebridge
 ```
-
-This will take you to the directory with the source code. After that completes, run:
-
-```bash
-lein repl
+README.md       outline         project.clj     resources       src
 ```
-
-
-
-
-This is starting a REPL, which we will learn about soon. 
 
 
 #### Testing Nightcode
