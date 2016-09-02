@@ -204,18 +204,18 @@ Introduction to Programming with Clojure
 {: .slide_title .slide}
 
 
-#### Nightcode's REPL <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
+#### Nightcode InstaREPL <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
-> To interact with Clojure, we can use REPL pane on a bottom left corner of Nightcode.
+> To interact with Clojure, we can use InstaREPL feature of Nightcode.
 > It's a nice way to play with Clojure interactively.
 {: ng-show="block61" .description}
 
 
 #### Using the REPL <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
 
-> In addition to Nightcode's REPL pane, we can use "Run with REPL" on a right bottom pane.
-> This isn't available at the beginning. When the button gets clicked, REPL starts.
-> The difference between left and right panes' REPL is whether it looks at the project setting or not.
+> In addition to InstaREPL, we can use REPL on a bottom pane.
+> This isn't available at the beginning. When "Run with REPL" button gets clicked, REPL starts.
+> The difference between InstaREPL and REPL is whether it looks at the project setting or not.
 {: ng-show="block62" .description}
 
 > Alternatively, we can start REPL using leiningen on a terminal (without Nightcode).

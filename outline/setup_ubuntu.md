@@ -4,7 +4,7 @@ Ubuntu Setup
 * Start a terminal
 * Install Git
 * Configure Git
-* Make sure Java is installed
+* Install Java
 * Install Leiningen
 * Install Nightcode
 * Test your setup
@@ -53,19 +53,40 @@ Expected result:
 `your email address`
 
 
-## Making sure Java is installed
+## Install Java
 
-Run `java -version` in your terminal. If you do not have Java installed, Ubuntu will prompt you to install it. It should look something like this:
+Ubuntu comes with OpenJDK installed.
+However, newer versions of Nightcode have a problem to run on OpenJDK.
+Oracle JDK 8 is the best Java to go over our materials.
 
-![no java](img/ubuntu/no_java.png)
+```bash
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+(follow the instruction)
+```
 
-Follow all of the directions Ubuntu gives you, selecting the package "openjdk-7-jre" then return to this part of the tutorial and run `java -version` again.
+At this moment, you have installed Oracle JDK 8 on your Ubuntu box.
+There's one more step to use newly installed Oracle JDK 8.
 
-If Java is installed, you will see something like this in your terminal:
+```bash
+sudo update-alternatives --config java
+(choose /usr/lib/jvm/java-8-oracle/jre/bin/java)
+```
 
-![Java version](img/ubuntu/java_version.png)
+Run `java -version` in your terminal. You should see something like this in your terminal:
 
-The details of Java's version may differ from what you see above; that is perfectly fine.
+![Java version](img/ubuntu/ubuntu-java-version.png)
+
+The minor version may differ from what you see above; however, it must be `1.8.0`.
+Also, you should see `Java(TM) SE Runtime Environment`.
+
+
+
+Alternatively, you may download Java Development Kit (JDK) from
+[Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+In this case, you need to set `JAVA_HOME` and `PATH` environment variables after extracting the archive.
+
 
 ## Install Leiningen
 
@@ -90,7 +111,7 @@ After you run the above commands, run the `lein version` command. It should take
 ## Install Nightcode
 
 Go to the [Nightcode releaes site](http://github.com/oakes/Nightcode/releases).
-On the page there, you should see version numbers and links to download specific version of Nightcode, for example, Nightcode-2.0.3.jar.
+On the page there, you should see version numbers and links to download specific version of Nightcode, for example, Nightcode-2.1.0.jar.
 Click the link ending in `.jar` and you will download a file, `Nightcode-x.y.z.jar`.
 
 > Don't download platform specific binary releases.
@@ -105,7 +126,7 @@ Open a terminal and run the following commands:
 
 ```bash
 cd ~/Downloads/
-java -jar Nightcode-2.0.3.jar
+java -jar Nightcode-2.1.0.jar
 ```
 
 ![Nightcode](img/nightcode-startup.png)
@@ -178,7 +199,7 @@ README.md       outline         project.clj     resources       src
 If Nightcode isn't started yet or closed, open it by typing the command on terminal:
 
 ```bash
-java -jar Nightcode-2.0.3.jar
+java -jar Nightcode-2.1.0.jar
 ```
 
 At the bottom right of the screen, type `(+ 1 1)` into the window. It should look like the following image:
