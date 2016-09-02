@@ -118,6 +118,38 @@ java -jar Nightcode-2.0.3.jar
 
 You have set up Java, Leiningen, Nightcode, and Git on your computer--all the tools you will need for this workshop. Before starting, we need to test them out.
 
+
+#### Testing Leiningen
+
+Go to your terminal and run the following command:
+
+```bash
+lein new myproject
+```
+
+This will create a new project, `myproject`, which has files to form a Clojure project.
+Normally, Clojure code exists within such Clojure project.
+Next, run following commands:
+
+```bash
+cd myproject
+lein repl
+```
+
+This may take long to start up for the first time.
+Leiningen downloads libraries it needs to run Clojure.
+When Leiningen starts, you'll see `user=>` prompt on your terminal.
+
+![Testing lein repl](img/os_x/testing-lein-repl.png)
+
+Now, you are ready to use __REPL__, which we learn about soon.
+It's a special terminal for Clojure.
+
+At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back?
+
+You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
+
+
 #### Cloning out github repository
 
 Go to your terminal and run the following command:
@@ -146,11 +178,10 @@ This will take you to the directory with the source code. After that completes, 
 lein repl
 ```
 
-This could take a long time, and will download many other pieces of code apps rely on. You should see lines that start with `Retrieving ...` on your screen. When it finishes, your terminal should look like the following:
 
-![Testing lein repl](img/os_x/testing-lein-repl.png)
 
-This is starting a REPL, which we will learn about soon. It's a special terminal for Clojure. At the REPL prompt, type `(+ 1 1)` and press Return. Did you get the answer `2` back? You will learn more about that in the course. For now, press the Control button and D button on your keyboard together (abbreviated as Ctrl+D). This should take you out of the Clojure REPL and back to your normal terminal prompt. Then, the terminal will show you the following message: `user=> Bye for now!`
+
+This is starting a REPL, which we will learn about soon. 
 
 
 #### Testing Nightcode
@@ -168,7 +199,7 @@ At the bottom right of the screen, type `(+ 1 1)` into the window. It should loo
 If you see the result, 2, that worked, great!
 
 
-#### Testing apps
+#### Testing apps - welcome to clojurebridge
 
 Now we will open and run the sample Clojure apps in Nightcode.
 On the top left corner, click "Import" then find the directory,
@@ -184,7 +215,8 @@ This is a Clojure program.
 
 The next step is to run the code shown in the window.
 Click "Run with REPL" on the bottom.
-It may take a while.
+This could take a long time, and will download many other pieces of code the app relies on.
+You should see lines that start with `Retrieving ...` on your screen.
 Eventually, REPL will start and show a prompt, `user=>`.
 Once, you see the prompt, click "Reload" button.
 
@@ -198,6 +230,7 @@ You should see a fun welcome message.
 
 ![Testing apps - welcome](img/testing-welcomeclojurebridge.png)
 
+#### Testing apps - turtle walk
 
 Let's try one more sample.
 In the directory tree on the left, click on
