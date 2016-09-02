@@ -164,7 +164,7 @@ Your leiningen install looks good. For now, press the Control button and D butto
 
 #### Cloning out github repository
 
-Open another new terminal and run the following command:
+Open another terminal and run the following command:
 
 ```bash
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
@@ -175,7 +175,13 @@ Your terminal should look similar to this picture:
 
 ![Testing git clone](img/os_x/testing-git-clone.png)
 
-Once it finishes, type `ls` command on the same terminal.
+Once it finishes, type following commands on the same terminal.
+
+```bash
+cd welcometoclojurebridge
+ls
+```
+
 You'll see the list of directories/files like this:
 
 ```
