@@ -11,7 +11,9 @@ OS X Setup
 
 ## Starting a terminal
 
-For these instructions, and for much of the class, you will need to have a terminal, or command line, open. This is a text-based interface to talk to your computer, and you can open it by running Terminal.app, which is found under `/Applications/Utilities`. If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
+For these instructions, and for much of the class, you will need to have a terminal, or command line, open.
+This is a text-based interface to talk to your computer, and you can open it by running Terminal.app, which is found under `/Applications/Utilities`.
+If you have never used the terminal before, you may want to spend some time [reading up on command-line basics](http://blog.teamtreehouse.com/command-line-basics).
 
 Go ahead and open your terminal now. It should look something like this:
 
@@ -25,7 +27,15 @@ For the rest of this setup, I will tell you to run commands in your terminal. Wh
 
 To see if you have git installed type in: `git --version` If you have `git version 1.9.3 (Apple Git-50)` or above you should be fine.
 
-If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The Git installer may begin downloading automatically. If it does not, click the manual download link. Once the download has finished, open __~/Downloads__ in Finder and double-click the downloaded file (named something like __git-2.0.1-intel-universal-snow-leopard.dmg__). This will mount the disk image and open a new Finder window. Double-click the installer package (named something like __git-2.0.1-intel-universal-snow-leopard.pkg__). You may be told that the installer can't be opened because it is from an unidentified developer. If so, click "OK", then right-click (or control-click) the file and select "Open" from the contextual menu. You may be warned again that the installer is from an unidentified developer, but this time you'll have the option to click "Open". Do so. This will launch the installer. Follow its directions, and enter your password when prompted to do so. Once you have finished this process it's safe to unmount the disk image (by clicking the eject button in the Finder sidebar) and delete the file from the Downloads folder.
+If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac".
+The Git installer may begin downloading automatically. If it does not, click the manual download link.
+Once the download has finished, open __~/Downloads__ in Finder and double-click the downloaded file (named something like __git-2.0.1-intel-universal-snow-leopard.dmg__).
+This will mount the disk image and open a new Finder window. Double-click the installer package (named something like __git-2.0.1-intel-universal-snow-leopard.pkg__).
+You may be told that the installer can't be opened because it is from an unidentified developer.
+If so, click "OK", then right-click (or control-click) the file and select "Open" from the contextual menu.
+You may be warned again that the installer is from an unidentified developer, but this time you'll have the option to click "Open". Do so.
+This will launch the installer. Follow its directions, and enter your password when prompted to do so.
+Once you have finished this process it's safe to unmount the disk image (by clicking the eject button in the Finder sidebar) and delete the file from the Downloads folder.
 
 ## Configure Git
 
@@ -48,6 +58,7 @@ Expected result:
 Expected result:
 `your email address`
 
+
 ## Making sure Java is installed
 
 
@@ -57,7 +68,7 @@ Expected result:
 > If you have a trouble, the article, <http://osxdaily.com/2015/10/17/how-to-install-java-in-os-x-el-capitan/>, may help.
 
 
-Run `java -version` in your terminal. If you do not have Java installed, OS X will prompt you to install it. Follow all of the directions OS X gives you, then return to this part of the tutorial and run `java -version` again.
+Run `java -version` in your terminal. If you do not have Java installed, OS X will prompt you to install it (if your OS X is 10.10 or older). Follow all of the directions OS X gives you, then return to this part of the tutorial and run `java -version` again.
 
 If Java is installed, you will see something like this in your terminal:
 
@@ -159,8 +170,7 @@ Open another new terminal and run the following command:
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
-This will clone `welcometoclojurebridge` repository which includes
-sample Clojure apps.
+This will clone `welcometoclojurebridge` repository which includes sample Clojure apps.
 Your terminal should look similar to this picture:
 
 ![Testing git clone](img/os_x/testing-git-clone.png)
