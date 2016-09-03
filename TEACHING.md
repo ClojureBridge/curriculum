@@ -60,55 +60,44 @@ Most workshops have both teachers and TAs. Teachers present the material at the 
 
 This is not the only way to present the material. It is just the way we have seen it done at most of the workshops so far. Please feel free to experiment.
 
+
+Oracle JDK 8
+-------------
+
+#### Ubuntu
+Main curriculum and most of other materials are adjusted to Nightcode 2.1.0. This version needs Oracle JDK 8. Linux OSes are normally shipped with OpenJDK. Linux students need to install Oracle Java. The setup document only explains how to do by `apt-get`. However, they have a choice to downlad JDK and setup JAVA_HOME/PATH environment variables. They may logout once to make those variables effect on a new shell.
+
+#### El Capitan
+OSX El Capitan doesn't have Java bundled anymore. El Capitan Students must install Oracle JDK 8.
+Installation steps are the same as Windows, fairly easy. However, after installation, they should have `JAVA_HOME` environment variable setup. This, `export JAVA_HOME=/usr/libexec/java_home -v 1.8`, would be useful to set `JAVA_HOME`. Also, the `JAVA_HOME` setting should be in `.bash_profile` or some other shell setup file.
+
+
 Nightcode
------------
-As of July 2016, ClojureBridge materials are based on Nightcode 1.3.x. Nightcode 2.0.1 works well but has a REPL redesign. Be aware if your workshop will use version 2.0.1.
-The materials will be updated at some point. By then, see following tips to use version 2.0.1.
+---------
+
+As of September 2016, ClojureBridge materials are based on Nightcode 2.1.0. This version has only one REPL on the bottom and InstaREPL. However, InstREPL doesn't work well with Quil and Overton apps. For simple core Clojure only exercies, students can use `myproject` (this should be created while leningen setup) and InstaREPL.
 
 #### Use jar archive
 
-Nightcode 2.0.x got installer for OS X and Windows.
+Since Nightcode 2.0.x, it got installers.
 However, jar archive is much easier to get started.
 Typing a single java command is all you need.
 Tell students to download Jar archive.
 
-
-#### REPL without project
-
-Some exercises are independent from a project -- just type `(+ 1 1)` on REPL or such.
-Nightcode 1.3.x has REPL pane on the bottom left,
-so students can use this for this kind of exercises.
-On version 2.0.1, it's good to create a new Console app project on Nightcode.
-Once the new project is ready, open `core.clj` and click InstaREPL.
-Alternatively, they can use REPL of some projects, turtle or welecometoclojure.
-
-
-#### Eval region
-
-Nightcode 1.3.x has a button, "Eval Selection", but 2.0.1 doesn't have anymore.
-Since materials are based on 1.3.x version, some instructions use this feature.
-On 2.0.1, copy&paste region to REPL would be the substitute.
-
-
 #### Code in file or REPL
 
-Students may confuse where to write code.
-REPL is handy, but doesn't save code.
-Also, on REPL, multiline input doesn't work.
-When code needs to be multiline, code should be typed in editor.
-It's a good idea to tell students to save code in a file time to time.
-Also, don't forget to click "Save" button.
+Students may confuse where to write code. REPL is handy, but doesn't save code.
+Also, on REPL, multiline input doesn't work. When code needs to be multiline, code should be typed in editor.
+Nightcode default setting is auto-save, but it would be a good practice to click save button.
 
 [background]
 ClojureBridge used LightTable previously, which allowed us to do everything in the editor with InstaREPL.
-So, what students wrote were always saved.
-
 
 #### Keyboard shortcuts
 
 Materials don't mention keyboard shortcuts.
 We don't have much experience on Nightcode yet,
-so we are not sure the same sure keyboard shortcut works on all platforms.
+so we are not sure the same keyboard shortcut works on all platforms.
 If it does, we will add in the materials.
 Let us know.
 

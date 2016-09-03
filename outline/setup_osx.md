@@ -64,7 +64,9 @@ Expected result:
 
 > If you have OS X version 10.11 (El Capitan), you don't have Java installed.
 > You need to install Java as well.
-> Download Java from <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html> and follow the instruction.
+> Download Java from <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html> and follow the instruction. Once installation finishes, set `JAVA_HOME` environment variable on the terminal.
+> `export JAVA_HOME=/usr/libexec/java_home -v 1.8`
+>
 > If you have a trouble, the article, <http://osxdaily.com/2015/10/17/how-to-install-java-in-os-x-el-capitan/>, may help.
 
 
