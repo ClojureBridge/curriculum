@@ -129,9 +129,9 @@ Functions
 * Go to `walk.clj`
 * On the editor, write `forward-right-with-len-ang` functon that takes three
   arguments, turtle, len, and angle (extension of `forward-right-with-len`)
-* Select entire `forward-right-with-len-ang` function and hit Eval Selection
-* On right REPL pane, type `(forward-right-with-len-ang :trinity 60 120)`
-* Repeat above many times
+* Select entire `forward-right-with-len-ang` function and hit Reload Selection
+* On the REPL pane, type `(forward-right-with-len-ang :trinity 60 120)`
+* Repeat above, evaluating the function on REPL, many times
 </section>
 
 
