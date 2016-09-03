@@ -308,8 +308,7 @@ ng-click="block21=!block21"></button>
 > `true-or-false?` function in previous slide sees only `:and`
 > operation. Add `:or`, `:not` operation in the function.
 
-* Create a new console project for the exercise.
-  - Only if you don't have one other than turtle or drawing.
+* Use `core.clj` of `myproject` and InstaREPL
 * Add `(= op :or)` and `(= op :not)` in `cond`
 * For `:not`, choose either x or y for the argument
 
