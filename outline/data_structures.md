@@ -149,22 +149,21 @@ be confusing.
 #### EXERCISE 1: See turtle names
 {: .slide_title .slide}
 
-1. add a turtle using the file
+1. Add a turtle using a piece of code in the file
   * Go to `walk.clj` file
-  * Add a line: `(add-turtle :neo)` on the bottom of `walk.clj`
-  * Select the last line and click "Eval Selection"
-  * Save the file
+  * Add a line: `(add-turtle :neo)` on the last of `walk.clj` file
+  * Select this line and click "Reload Selection"
 2. (Optional) add a turtle using REPL
-  * Type `(add-turtle :oracle)` followed by enter on the right REPL pane
+  * Type `(add-turtle :oracle)` followed by enter on the bottom REPL pane
 3. See turtle names
-  * Type `(turtle-names)` on the right REPL pane and see the result
+  * Type `(turtle-names)` on the bottom REPL pane and see the result
 </section>
 
 <section>
 #### EXERCISE 2: Make a vector
 {: .slide_title .slide}
 
-* Go to REPL (either of bottom panes)
+* Go to `myproject`'s `core.clj` and start InstaREPL
 * Make a vector of the high temperatures for the next 7 days in the
   town where you live.
 * Then use the `nth` function to get the high temperature for next
@@ -373,13 +372,11 @@ st
 {: .slide_title .slide}
 
 * Go to `walk.clj` file
-* Click "Run with REPL"
-* Try examples of previous two slides
+* Try examples of previous two slides on the REPL
 * See what values you get
 
-> Each time you write a line of code, select it then press
-> <kbd>control</kbd><kbd>E</kbd> (Linux, Windows) or
-> <kbd>command</kbd><kbd>E</kbd> (OS X) to evaluate it.
+> Don't forget to hit __enter__ when you type code on the REPL
+
 
 ```clojure
 (state-all)
@@ -396,8 +393,7 @@ st
 #### EXERCISE 4: Modeling Yourself
 {: .slide_title .slide}
 
-* Using the Clojure REPL on the bottom left
-    - (Option) You may create a new Console project and write code in `core.clj`.
+* Use the `myproject`'s `core.clj` and InstaREPL
 * Make a map representing yourself
 * Make sure it contains your first name and last name
 * Then, add your hometown to the map using [assoc](http://grimoire.arrdem.com/1.6.0/clojure.core/assoc/) or [merge](http://grimoire.arrdem.com/1.6.0/clojure.core/merge/).
