@@ -213,9 +213,8 @@ Introduction to Programming with Clojure
 
 #### Using the REPL <button class="link" ng-bind-html="details" ng-model="block62" ng-click="block62=!block62"></button>
 
-> In addition to InstaREPL, we can use REPL on a bottom pane.
-> This isn't available at the beginning. When "Run with REPL" button gets clicked, REPL starts.
-> The difference between InstaREPL and REPL is whether it looks at the project setting or not.
+> Nightcode has a project setting aware REPL on a bottom pane.
+>  When "Run with REPL" button gets clicked, this REPL starts.
 {: ng-show="block62" .description}
 
 > Alternatively, we can start REPL using leiningen on a terminal (without Nightcode).
@@ -227,24 +226,23 @@ Introduction to Programming with Clojure
 #### Evaluate program and line <button class="link" ng-bind-html="details" ng-model="block63" ng-click="block63=!block63"></button>
 
 <!-- TODO project_name should probably be defined somewhere, right? -->
-> Nightcode also lets us evaluate a line (lines) or an entire program.
-> On the left pane, navigate to the `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`.
-> Click "Run with REPL" followed by "Reload", you should see an initial turtle window.
-> Type `(forward 40)` on the bottom line in the editor (upper right pane).
-> Select this line, and hit "Eval Selection" button. The turtle should go up.
+> Nightcode also lets us evaluate an entire file (program) or line(s).
+> On Nightcode, after REPL has started, "Realod File" and "Reload Selection" works.
 {: ng-show="block63" .description}
 </section>
 
 <section>
-#### EXERCISE 1: Try the Clojure REPL
+#### EXERCISE 1: Try Nightcode InstaREPL
 
-* Start Nightcode
-* Focus on the REPL on the bottom left pane
-* Type the Clojure functions below and see what happens
+1. Start Nightcode
+2. Import `myproject` <br/> (which you created while testing leiningen setup)
+3. Open `core.clj` <br/>(`myproject` -> `src` -> `myproject` -> `core.clj`
+4. Click __InstREPL__ button
+5. Type the Clojure functions below and see what happens
 
 ```clojure
-(println "Hello, World!")
-(println "Hello, World!" " " "from Clojure")
+(print-str "Hello, World!")
+(print-str "Hello, World!" " " "from Clojure")
 (+ 3 4)
 (- 3 4)
 (* 3 4)
@@ -257,9 +255,9 @@ Introduction to Programming with Clojure
 #### EXERCISE 2: Evaluate file and line - Part 1
 
 * Open the file `welcometoclojurebridge/src/clojurebridge_turtle/walk.clj`
-* Evaluate the entire file by hitting "Run with REPL" followed by "Reload"
+* Evaluate the entire file by hitting "Run with REPL" followed by "Reload File"
 * See what happens
-* Type `(forward 40)` on the bottom line of `walk.clj` in the editor. Evaluate this line by selecting line and hitting "Eval Selection"
+* Type `(forward 40)` on the bottom line of `walk.clj` in the editor. Evaluate this line by selecting line and hitting "Reload Selection"
 * See what happens
 
 (Continue on EXERCISE 3)
@@ -270,7 +268,7 @@ Introduction to Programming with Clojure
 
 (Suppose EXERCISE 2 is done)
 
-* Type `(right 90)` and "enter" in the Run with REPL pane (bottom right) ![Run with REPL pane](img/run-with-repl.png)
+* Type `(right 90)` and "enter" in the REPL pane (bottom) ![Run with REPL pane](img/run-with-repl.png)
 * See what happens to the turtle
 * Take a look [Turtles App API](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md) and
 [How To Walk Turtles](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md)
@@ -280,7 +278,7 @@ Introduction to Programming with Clojure
 <section>
 #### EXERCISE 4: Look at Clojure docs
 
-* In the Run with REPL pane, try to look up the documentation for a function you have used
+* In the bottom REPL pane, try to look up the documentation for a function you have used
 * You can use the `(doc function-name)` command to do this
 * Try `(doc +)` and `(doc forward)` on the REPL
 * Try other functions we used so far, for example, `-`, `*`, or `doc`
