@@ -124,7 +124,7 @@ Introduction to Programming with Clojure
 > computer in Clojure. A left parenthesis
 > is the start of the instruction, and a matching right parenthesis is
 > the end of enclosing instruction. Normally, Clojure code has a lot
-> of nested parentheses, on other words, nested enclosing instructions.
+> of nested parentheses, or in other words, nested enclosing instructions.
 {: ng-show="block31" .description}
 
 #### Functions <button class="link" ng-bind-html="details" ng-model="block32" ng-click="block32=!block32"></button>
@@ -133,7 +133,7 @@ Introduction to Programming with Clojure
 > computer. That instruction is normally what we call a _function_.
 > The functions do all the hard work in Clojure.
 > `print-str`, `+` and `forward` are all functions.
-> When these functions get run, they return a some type of value.
+> When these functions get run, they return some type of value.
 > Clojure functions always return a value.
 {: ng-show="block32" .description}
 
