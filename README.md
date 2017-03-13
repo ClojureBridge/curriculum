@@ -1,5 +1,6 @@
 ClojureBridge Curriculum
 ========================
+[Spanish curriculum](https://github.com/ClojureBridgeBA/curriculum/tree/gh-pages/es)
 
 Teaching guide
 -------------
