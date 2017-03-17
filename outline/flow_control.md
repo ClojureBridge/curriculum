@@ -314,9 +314,9 @@ ng-click="block21=!block21"></button>
 
 ```clojure
 ;; usage of correct? function
-(corret? :and false)   ;=> "You won"
-(corret? :or false)    ;=> "You lost"
-(corret? :not true)    ;=> "You won"  (this may be "You lost")
+(correct? :and false)   ;=> "You won"
+(correct? :or false)    ;=> "You lost"
+(correct? :not true)    ;=> "You won"  (this may be "You lost")
 ```
 </section>
 
