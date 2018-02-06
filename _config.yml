@@ -28,3 +28,5 @@ exclude:
 
 # Port number
 port: 5555
+
+theme: jekyll-theme-architect
