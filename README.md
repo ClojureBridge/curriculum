@@ -4,6 +4,7 @@ Curriculum in other languages
 
 - [Spanish](https://github.com/ClojureBridgeBA/curriculum/tree/gh-pages/es)
 - [Korean](http://bridge-seoul.clojure.kr/curriculum/)
+- [Português Brasileiro](https://github.com/clojurebridgemaringa/curriculum)
 
 Teaching guide
 -------------
